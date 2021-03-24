@@ -1,1 +1,91 @@
-.form{margin-top:5%;width:40%}.form-container form{width:100%}.form-group{margin-bottom:1em;width:100%}.form-group .form-input,.form-group .form-label,.form-group .form-label label{width:100%}.form-group .form-input input,.form-group .form-input textarea{border:2px solid #ccc;border-radius:4px;width:100%}.form-group .form-input textarea{height:9em;resize:none}.form-submit{margin-top:2%}.main{height:100vh;width:100%;display:flex;flex-flow:row wrap;justify-content:space-around}.table{width:40%}.table-title{width:100%}.table-title h2{text-align:center}.table-container{width:100%}.table-container table{margin:auto;width:100%;table-layout:auto;text-align:center;border:2px solid #ccc;border-radius:4px;border-collapse:collapse}thead{background-color:#cfcfcf}tbody tr:hover{background-color:#eeeded}
+.form {
+  margin-top: 5%;
+  width: 40%;
+}
+
+.form-container form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1em;
+  width: 100%;
+  font-weight: bold;
+  font-size: 110%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.form-group .form-label {
+  width: 100%;
+}
+
+.form-group .form-label label {
+  width: 100%;
+}
+
+.form-group .form-input {
+  width: 100%;
+}
+
+.form-group .form-input input {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.form-group .form-input textarea {
+  width: 100%;
+  height: 9em;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+
+.form-submit {
+  margin-top: 2%;
+}
+
+.main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.table {
+  width: 40%;
+}
+
+.table-title {
+  width: 100%;
+}
+
+.table-title h2 {
+  text-align: center;
+}
+
+.table-container {
+  width: 100%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 105%;
+}
+
+.table-container table {
+  margin: auto;
+  width: 100%;
+  table-layout: auto;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #CFCFCF;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+tbody tr:hover {
+  background-color: #EEEDED;
+}
