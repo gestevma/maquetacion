@@ -3,26 +3,10 @@ const forms = document.querySelectorAll(".admin-form");
 const labels = document.getElementsByTagName('label');
 const inputs = document.querySelectorAll('.input')
 const saveButton = document.getElementById("save-button");
+const table = document.getElementById("table");
 
-/*save.addEventListener("click", (event)=>{
 
-    event.preventDefault();
-
-    forms.forEach(form=>{
-        const formId=document.getElementById(form.id);
-        const data = new FormData(formId);
-
-        for (var pair of data.entries()){
-           console.log(pair[0]+": "+pair[1]); 
- 
-        
-        }
-    });
-    
-      
-});*/
-
-/*inputs.forEach(input => {
+inputs.forEach(input => {
 
     input.addEventListener('focusin', () => {
 
@@ -39,23 +23,23 @@ const saveButton = document.getElementById("save-button");
             labels[i].classList.remove("active");
         }
     });
-});*/
+});
+
 
 saveButton.addEventListener("click", (event) => {
 
-    event.preventDefault();
 
     forms.forEach(form => { 
-        
-        let data = new FormData(document.getElementById(form.id));
+
+        let data = new FormData(form);
         let url = form.action;
 
-        let sendPostRequest = async () => {
+        let sendPostRequest = async () => { 
 
-            try {
-                let response = await axios.post(url, data).then(response => {
-                    form.innerHTML = response.data.form;
-                    console.log('2');
+            try { 
+                await axios.post(url, data).then(response => {  
+                    form.id.value = response.data.id;
+                    table.innerHTML = response.data.table;
                 });
                  
             } catch (error) {
@@ -63,6 +47,7 @@ saveButton.addEventListener("click", (event) => {
             }
         };
 
+        event.preventDefault();
         sendPostRequest();
 
         console.log('1');

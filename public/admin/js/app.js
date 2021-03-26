@@ -1858,6 +1858,38 @@ var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.j
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./form */ "./resources/js/form.js");
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
+// Import Bootstrap an BootstrapVue CSS files (order is important)
+// import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+// import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+
+window.Vue = Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).default; // Vue.use(BootstrapVue)
+// Vue.use(IconsPlugin)
+
+/**
+ * The following block of code may be used to automatically register your
+ * Vue components. It will recursively scan this directory for the Vue
+ * components and automatically register them with their "basename".
+ *
+ * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ */
+// const files = require.context('./', true, /\.vue$/i)
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// /**
+//  * Next, we will create a fresh Vue application instance and attach it to
+//  * the page. Then, you may begin adding components to this application
+//  * or customize the JavaScript scaffolding to fit your unique needs.
+//  */
+// const app = new Vue({
+//     el: '#app',
+// });
 
 /***/ }),
 
@@ -1913,52 +1945,28 @@ var forms = document.querySelectorAll(".admin-form");
 var labels = document.getElementsByTagName('label');
 var inputs = document.querySelectorAll('.input');
 var saveButton = document.getElementById("save-button");
-/*save.addEventListener("click", (event)=>{
-
-    event.preventDefault();
-
-    forms.forEach(form=>{
-        const formId=document.getElementById(form.id);
-        const data = new FormData(formId);
-
-        for (var pair of data.entries()){
-           console.log(pair[0]+": "+pair[1]); 
- 
-        
-        }
-    });
-    
-      
-});*/
-
-/*inputs.forEach(input => {
-
-    input.addEventListener('focusin', () => {
-
-        for( var i = 0; i < labels.length; i++ ) {
-            if (labels[i].htmlFor == input.name){
-                labels[i].classList.add("active");
-            }
-        }
-    });
-
-    input.addEventListener('blur', () => {
-
-        for( var i = 0; i < labels.length; i++ ) {
-            labels[i].classList.remove("active");
-        }
-    });
-});*/
-
+var table = document.getElementById("table");
+inputs.forEach(function (input) {
+  input.addEventListener('focusin', function () {
+    for (var i = 0; i < labels.length; i++) {
+      if (labels[i].htmlFor == input.name) {
+        labels[i].classList.add("active");
+      }
+    }
+  });
+  input.addEventListener('blur', function () {
+    for (var i = 0; i < labels.length; i++) {
+      labels[i].classList.remove("active");
+    }
+  });
+});
 saveButton.addEventListener("click", function (event) {
-  event.preventDefault();
   forms.forEach(function (form) {
-    var data = new FormData(document.getElementById(form.id));
+    var data = new FormData(form);
     var url = form.action;
 
     var sendPostRequest = /*#__PURE__*/function () {
       var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var response;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -1966,26 +1974,25 @@ saveButton.addEventListener("click", function (event) {
                 _context.prev = 0;
                 _context.next = 3;
                 return axios.post(url, data).then(function (response) {
-                  form.innerHTML = response.data.form;
-                  console.log('2');
+                  form.id.value = response.data.id;
+                  table.innerHTML = response.data.table;
                 });
 
               case 3:
-                response = _context.sent;
-                _context.next = 9;
+                _context.next = 8;
                 break;
 
-              case 6:
-                _context.prev = 6;
+              case 5:
+                _context.prev = 5;
                 _context.t0 = _context["catch"](0);
                 console.error(_context.t0);
 
-              case 9:
+              case 8:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 6]]);
+        }, _callee, null, [[0, 5]]);
       }));
 
       return function sendPostRequest() {
@@ -1993,6 +2000,7 @@ saveButton.addEventListener("click", function (event) {
       };
     }();
 
+    event.preventDefault();
     sendPostRequest();
     console.log('1');
   });

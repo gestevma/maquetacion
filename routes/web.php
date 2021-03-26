@@ -17,9 +17,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguirá la url*/ 
 
-    Route::get('/faqs/json', 'App\Http\Controllers\Admin\FaqController@indexJson')->name('faqs_json');
+    //Route::get('/faqs/json', 'App\Http\Controllers\Admin\FaqController@indexJson')->name('faqs_json');
+
+    /*Resources te dice la ruta final de la url*/
     Route::resource('faqs', 'App\Http\Controllers\Admin\FaqController', [
         'names' => [
             'index' => 'faqs',
@@ -30,3 +32,6 @@ Route::group(['prefix' => 'admin'], function () {
         ]
     ]);
 });
+
+/*Como hemos puesto prefix=> admin y resource => faqs la url será dev-maquetación.com/admin/faqs*/
+
