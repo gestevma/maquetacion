@@ -32,6 +32,15 @@ Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguir
         ]
     ]);
 });
-
 /*Como hemos puesto prefix=> admin y resource => faqs la url será dev-maquetación.com/admin/faqs*/
 
+
+Route::resource('faqs', 'App\Http\Controllers\Front\FaqController', [
+    'names' => [
+        'index' => 'faqs',
+        //'create' => 'faqs_create',
+        //'store' => 'faqs_store',
+        //'destroy' => 'faqs_destroy',
+        //'show' => 'faqs_show',
+    ]
+]);

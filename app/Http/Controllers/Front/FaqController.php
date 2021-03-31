@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Front;
 
 use JamesDordoy\LaravelVueDatatable\Http\Resources\DataTableCollectionResource;
 use Illuminate\Support\Facades\Auth;
@@ -35,7 +35,7 @@ class FaqController extends Controller
     public function index()
     {
 
-        $view = View::make('admin.desktop.faqs.index')
+        $view = View::make('front.desktop.faqs.index')
                 ->with('faq', $this->faq)
                 ->with('faqs', $this->faq->where('active', 1)->get());
 
