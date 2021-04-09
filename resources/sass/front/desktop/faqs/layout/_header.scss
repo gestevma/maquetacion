@@ -1,0 +1,44 @@
+header{
+    background-color: hsl(11, 0%, 10%);
+    color: white;
+    height: 10vh;
+    margin-top: -3vh;
+    min-height: 100vh;
+}
+
+h1{
+    text-align: left;
+    padding-top:1%;
+    padding-left: 2%;
+}
+
+.sections{
+    display:flex;
+    flex-direction: row;
+    width:99%;
+    margin:auto;
+
+}
+
+.section{
+    width:100%;   
+}
+
+.section-title{
+    margin:auto;
+    text-align:center;
+}
+
+.section-title:hover{
+    border: white 0.5px solid;
+    cursor: pointer;
+}
+
+
+ul{
+    z-index: +1;
+    background-color: red;
+    color:rgb(0, 0, 0)
+}
+
+

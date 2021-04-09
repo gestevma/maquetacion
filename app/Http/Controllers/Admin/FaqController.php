@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use JamesDordoy\LaravelVueDatatable\Http\Resources\DataTableCollectionResource;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -19,37 +17,21 @@ class FaqController extends Controller
         $this->faq = $faq;
     }
 
-    public function indexJson(Request $request)
-    {
-        $length = $request->input('length');
-        $orderBy = $request->input('column'); 
-        $orderByDir = $request->input('dir', 'asc');
-        $searchValue = $request->input('search');
-        
-        $query = $this->faq->eloquentQuery($orderBy, $orderByDir, $searchValue);
-        $data = $query->paginate($length);
-        
-        return new DataTableCollectionResource($data);
-    }
-
     public function index()
     {
 
-        $view = View::make('admin.desktop.faqs.index')
+        $view = View::make('admin.faqs.index')
                 ->with('faq', $this->faq)
                 ->with('faqs', $this->faq->where('active', 1)->get());
 
         if(request()->ajax()) {
-
-            // $faqs = $this->faq->where('active', 1)->get();
-            // return response()->json($faqs);
             
-            // $sections = $view->renderSections(); 
+            $sections = $view->renderSections(); 
     
-            // return response()->json([
-            //     'table' => $sections['table'],
-            //     'form' => $sections['form'],
-            // ]); 
+            return response()->json([
+                'table' => $sections['table'],
+                'form' => $sections['form'],
+            ]); 
         }
 
         return $view;
@@ -73,6 +55,7 @@ class FaqController extends Controller
             'id' => request('id')],[
             'title' => request('title'),
             'description' => request('description'),
+            'category_id' => request('category_id'),
             'active' => 1,
         ]);
 
@@ -88,8 +71,25 @@ class FaqController extends Controller
         ]);
     }
 
-    public function show(Faq $faq)
+    public function edit(Faq $faq)
     {
+        $view = View::make('admin.faqs.index')
+        ->with('faq', $faq)
+        ->with('faqs', $this->faq->where('active', 1)->get());   
+        
+        if(request()->ajax()) {
+
+            $sections = $view->renderSections(); 
+    
+            return response()->json([
+                'form' => $sections['form'],
+            ]); 
+        }
+                
+        return $view;
+    }
+
+    public function show(Faq $faq){
         $view = View::make('admin.faqs.index')
         ->with('faq', $faq)
         ->with('faqs', $this->faq->where('active', 1)->get());   
@@ -110,8 +110,6 @@ class FaqController extends Controller
     {
         $faq->active = 0;
         $faq->save();
-
-        // $faq->delete();
 
         $view = View::make('admin.faqs.index')
             ->with('faq', $this->faq)

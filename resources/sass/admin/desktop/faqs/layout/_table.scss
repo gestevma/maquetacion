@@ -1,0 +1,39 @@
+.table{
+    margin-top: 2%;
+    margin-right:-3% ;
+    width: 40%;
+}
+
+.table-title{
+    width: 100%;
+}
+
+.table-title  h2{
+    text-align: center;
+}
+
+.table-container{
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:105%
+}
+
+.table-container table{
+    margin:auto;
+    width: 100%;
+    table-layout: auto;
+    text-align:center;
+    border:2px solid #ccc;
+    border-collapse:collapse; 
+}
+
+thead{
+    background-color:#CFCFCF;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+tbody tr:hover {
+    background-color:#cfcccc;
+}
+

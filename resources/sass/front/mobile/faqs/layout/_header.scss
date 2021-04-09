@@ -1,0 +1,33 @@
+header{
+    background-color: hsl(11, 0%, 10%);
+    color: white;
+    min-height: 10vh;
+}
+
+h1{
+    padding-top: 5%;
+    padding-left: 5%;
+}
+
+.fold{
+    margin-left: 5%;
+    margin-bottom: 2%;
+    //background-color: red
+}
+
+.section{
+    width:100%;   
+}
+
+.section-title{
+    margin:auto;
+    text-align:center;
+}
+
+.section-title:hover{
+    border: white 0.5px solid;
+    cursor: pointer;
+}
+
+
+

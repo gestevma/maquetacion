@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\FaqRequest;
+use App\Http\Requests\front\FaqRequest;
 use App\Models\DB\Faq;
 
 class FaqController extends Controller
@@ -58,7 +58,7 @@ class FaqController extends Controller
     public function create()
     {
 
-        $view = View::make('admin.faqs.index')
+        $view = View::make('front.faqs.index')
         ->with('faq', $this->faq)
         ->renderSections();
 
@@ -76,7 +76,7 @@ class FaqController extends Controller
             'active' => 1,
         ]);
 
-        $view = View::make('admin.faqs.index')
+        $view = View::make('front.faqs.index')
         ->with('faqs', $this->faq->where('active', 1)->get())
         ->with('faq', $faq)
         ->renderSections();        
@@ -90,7 +90,7 @@ class FaqController extends Controller
 
     public function show(Faq $faq)
     {
-        $view = View::make('admin.faqs.index')
+        $view = View::make('front.faqs.index')
         ->with('faq', $faq)
         ->with('faqs', $this->faq->where('active', 1)->get());   
         
@@ -113,7 +113,7 @@ class FaqController extends Controller
 
         // $faq->delete();
 
-        $view = View::make('admin.faqs.index')
+        $view = View::make('front.faqs.index')
             ->with('faq', $this->faq)
             ->with('faqs', $this->faq->where('active', 1)->get())
             ->renderSections();

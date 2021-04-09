@@ -19,5 +19,8 @@
         "sass-loader": "^10.1.1",
         "webpack": "^5.27.1",
         "webpack-cli": "^4.5.0"
+    },
+    "dependencies": {
+        "@ckeditor/ckeditor5-build-classic": "^27.0.0"
     }
 }
