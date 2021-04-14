@@ -1,8 +1,10 @@
 {
-    "/js/admin/faqs/app.js": "/js/admin/faqs/app.js?id=0aad5147004aa6aa11f6",
+    "/js/admin/app.js": "/js/admin/app.js?id=ecf8aa516b2eb839eacd",
     "/js/front/faqs/app.js": "/js/front/faqs/app.js?id=7ec2f1f512a17c500d4a",
+    "/js/front/login/app.js": "/js/front/login/app.js?id=9708ab5d26036081ad31",
     "/css/front/mobile/faqs/app.css": "/css/front/mobile/faqs/app.css?id=30bcaea36dc4d674f252",
     "/css/front/desktop/faqs/app.css": "/css/front/desktop/faqs/app.css?id=5d95204bd22653263519",
-    "/css/admin/mobile/faqs/app.css": "/css/admin/mobile/faqs/app.css?id=68b329da9893e34099c7",
-    "/css/admin/desktop/faqs/app.css": "/css/admin/desktop/faqs/app.css?id=d1137c38896addeca5a0"
+    "/css/admin/desktop/app.css": "/css/admin/desktop/app.css?id=d1137c38896addeca5a0",
+    "/css/front/desktop/login/app.css": "/css/front/desktop/login/app.css?id=ba4ba1b561e3e0232383",
+    "/css/front/mobile/login/app.css": "/css/front/mobile/login/app.css?id=68b329da9893e34099c7"
 }

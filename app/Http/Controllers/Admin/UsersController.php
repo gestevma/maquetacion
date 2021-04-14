@@ -3,29 +3,30 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\FaqRequest;
-use App\Models\DB\Faq;
+use App\Http\Requests\Admin\UsersRequest;
+use App\Models\DB\Users;
 
-class FaqController extends Controller
+class UsersController extends Controller
 {
-    protected $faq;
+    protected $user;
 
-    function __construct(Faq $faq)
+    function __construct(Users $user)
     {
         $this->middleware('auth');
 
-        $this->faq = $faq;
+        $this->user = $user;
     }
 
     public function index()
     {
 
-        $view = View::make('admin.faqs.index')
-                ->with('faq', $this->faq)
-                ->with('faqs', $this->faq->where('active', 1)->get());
+        $view = View::make('admin.users.index')
+            ->with('user', $this->user)        
+            ->with('users', $this->user->where('active', 1)->get());
+                
+                
 
         if(request()->ajax()) {
             
@@ -43,8 +44,8 @@ class FaqController extends Controller
     public function create()
     {
 
-        $view = View::make('admin.faqs.index')
-        ->with('faq', $this->faq)
+        $view = View::make('admin.users.index')
+        ->with('user', $this->user)
         ->renderSections();
 
         return response()->json([
@@ -52,33 +53,33 @@ class FaqController extends Controller
         ]);
     }
 
-    public function store(FaqRequest $request)
+    public function store(UsersRequest $request)
     {            
-        $faq = $this->faq->updateOrCreate([
+        $user = $this->user->updateOrCreate([
             'id' => request('id')],[
-            'title' => request('title'),
-            'description' => request('description'),
-            'category_id' => request('category_id'),
+            'name' => request('name'),
+            'email' => request('email'),
+            'password' => bcrypt(request('password')),
             'active' => 1,
         ]);
 
-        $view = View::make('admin.faqs.index')
-        ->with('faqs', $this->faq->where('active', 1)->get())
-        ->with('faq', $faq)
+        $view = View::make('admin.users.index')
+        ->with('users', $this->user->where('active', 1)->get())
+        ->with('user', $user)
         ->renderSections();        
 
         return response()->json([
             'table' => $view['table'],
             'form' => $view['form'],
-            'id' => $faq->id,
+            'id' => $user->id,
         ]);
     }
 
-    public function edit(Faq $faq)
+    public function edit(user $user)
     {
-        $view = View::make('admin.faqs.index')
-        ->with('faq', $faq)
-        ->with('faqs', $this->faq->where('active', 1)->get());   
+        $view = View::make('admin.users.index')
+        ->with('user', $user)
+        ->with('users', $this->user->where('active', 1)->get());   
         
         if(request()->ajax()) {
 
@@ -92,10 +93,10 @@ class FaqController extends Controller
         return $view;
     }
 
-    public function show(Faq $faq){
-        $view = View::make('admin.faqs.index')
-        ->with('faq', $faq)
-        ->with('faqs', $this->faq->where('active', 1)->get());   
+    public function show(user $user){
+        $view = View::make('admin.users.index')
+        ->with('user', $user)
+        ->with('users', $this->user->where('active', 1)->get());   
         
         if(request()->ajax()) {
 
@@ -109,14 +110,14 @@ class FaqController extends Controller
         return $view;
     }
 
-    public function destroy(Faq $faq)
+    public function destroy(user $user)
     {
-        $faq->active = 0;
-        $faq->save();
+        $user->active = 0;
+        $user->save();
 
-        $view = View::make('admin.faqs.index')
-            ->with('faq', $this->faq)
-            ->with('faqs', $this->faq->where('active', 1)->get())
+        $view = View::make('admin.users.index')
+            ->with('user', $this->user)
+            ->with('users', $this->user->where('active', 1)->get())
             ->renderSections();
         
         return response()->json([

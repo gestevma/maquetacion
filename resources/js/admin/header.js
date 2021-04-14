@@ -25,16 +25,13 @@ sectionsBox.forEach(sectionsBox=>{
 })
 
 content.addEventListener("click", ()=>{
-    if (slider.classList != "slider active"){
-                slider.classList.add("active");
-                content.classList.add("transparent");
-            }
-
-            else{
-                slider.classList.remove("active");
-                content.classList.remove("transparent");
-            }   
-})
+    if (slider.classList == "slider active"){
+        slider.classList.remove("active");
+        content.classList.remove("transparent");
+        
+    }
+    
+});
 
 
 sectionsTitles.forEach(sectionTitle => {

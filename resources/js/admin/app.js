@@ -1,4 +1,4 @@
-require('../../bootstrap');
+require('../bootstrap');
 require('./ckeditor');
 require('./crud');
 require('./header');

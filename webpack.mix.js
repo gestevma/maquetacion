@@ -12,11 +12,18 @@ const mix = require('laravel-mix');
  */
 
 
-  //faqs
- mix.js('resources/js/admin/faqs/app.js', 'public/js/admin/faqs').version()
-    .js('resources/js/front/faqs/app.js', 'public/js/front/faqs').version()
+  //admin
+ mix.js('resources/js/admin/app.js', 'public/js/admin').version()
+    .sass('resources/sass/admin/desktop/app.scss', 'public/css/admin/desktop').version()
 
-    .sass('resources/sass/admin/desktop/faqs/app.scss', 'public/css/admin/desktop/faqs').version()
-    .sass('resources/sass/admin/mobile/faqs/app.scss', 'public/css/admin/mobile/faqs').version()
-    .sass('resources/sass/front/desktop/faqs/app.scss', 'public/css/front/desktop/faqs').version()
-    .sass('resources/sass/front/mobile/faqs/app.scss', 'public/css/front/mobile/faqs').version();
+
+    //front
+   mix.js('resources/js/front/faqs/app.js', 'public/js/front/faqs').version()
+      .js('resources/js/front/login/app.js', 'public/js/front/login').version()
+   
+
+      .sass('resources/sass/front/desktop/faqs/app.scss', 'public/css/front/desktop/faqs').version()
+      .sass('resources/sass/front/mobile/faqs/app.scss',  'public/css/front/mobile/faqs').version()
+      .sass('resources/sass/front/desktop/login/app.scss','public/css/front/desktop/login').version()
+      .sass('resources/sass/front/mobile/login/app.scss', 'public/css/front/mobile/login').version();
+   

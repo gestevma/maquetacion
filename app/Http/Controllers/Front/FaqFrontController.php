@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\front\FaqRequest;
 use App\Models\DB\Faq;
 
-class FaqController extends Controller
+class FaqFrontController extends Controller
 {
     protected $faq;
 

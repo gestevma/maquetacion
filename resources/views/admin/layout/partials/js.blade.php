@@ -1,3 +1,3 @@
-<script src="{{mix('js/admin/faqs/app.js')}}"></script>
+<script src="{{mix('js/admin/app.js')}}"></script>
 
 

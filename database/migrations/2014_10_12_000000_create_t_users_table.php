@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTFaqsCategories extends Migration
+class CreateTusersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateTFaqsCategories extends Migration
      */
     public function up()
     {
-        Schema::create('t_faqs_categories', function (Blueprint $table) {
+        Schema::create('t_users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
             $table->boolean('active');
             $table->timestamps();
         });
@@ -28,6 +32,7 @@ class CreateTFaqsCategories extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('t_faqs_categories');
+        Schema::dropIfExists('t_users');
     }
 }
+

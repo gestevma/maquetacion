@@ -19,8 +19,19 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguirá la url*/ 
 
+    //Route::get('/faqs/json', 'App\Http\Controllers\Admin\FaqController@indexJson')->name('faqs_json');
+    /*Resources te dice la ruta final de la url*/
+    Route::resource('faqs', 'App\Http\Controllers\Admin\FaqController', [
+        'names' => [
+            'index' => 'faqs',
+            'create' => 'faqs_create',
+            'store' => 'faqs_store',
+            'destroy' => 'faqs_destroy',
+            'show' => 'faqs_show',
+        ]
+    ]);
 
-    Route::resource('faqs/categorias', 'App\Http\Controllers\Admin\FaqsCategoriesController', [
+    Route::resource('categorias', 'App\Http\Controllers\Admin\FaqsCategoriesController', [
         'parameters' => [
             'categorias' => 'faq_category', 
         ],
@@ -33,15 +44,14 @@ Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguir
         ]
     ]);
 
-    //Route::get('/faqs/json', 'App\Http\Controllers\Admin\FaqController@indexJson')->name('faqs_json');
-    /*Resources te dice la ruta final de la url*/
-    Route::resource('faqs', 'App\Http\Controllers\Admin\FaqController', [
+    Route::resource('users', 'App\Http\Controllers\Admin\UsersController', [
+
         'names' => [
-            'index' => 'faqs',
-            'create' => 'faqs_create',
-            'store' => 'faqs_store',
-            'destroy' => 'faqs_destroy',
-            'show' => 'faqs_show',
+            'index' => 'users',
+            'create' => 'users_create',
+            'store' => 'users_store',
+            'destroy' => 'users_destroy',
+            'show' => 'users_show',
         ]
     ]);
 });
@@ -49,6 +59,13 @@ Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguir
 /*Como hemos puesto prefix=> admin y resource => faqs la url será dev-maquetación.com/admin/faqs*/
 
 
-Route::get('/faqs', 'App\Http\Controllers\Front\FaqController@index')->name('faqs_front');
+Route::get('/login', 'App\Http\Controllers\Front\LoginController@index')->name('front_login');
+Route::post('/login', 'App\Http\Controllers\Front\LoginController@login')->name('front_login_submit');
+
+Route::get('/faqs', 'App\Http\Controllers\Front\FaqFrontController@index')->name('faqs_front');
+
+
+
+
 
 

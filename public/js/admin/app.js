@@ -1870,21 +1870,21 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./resources/js/admin/faqs/app.js":
-/*!****************************************!*\
-  !*** ./resources/js/admin/faqs/app.js ***!
-  \****************************************/
+/***/ "./resources/js/admin/app.js":
+/*!***********************************!*\
+  !*** ./resources/js/admin/app.js ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-__webpack_require__(/*! ../../bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ../bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./ckeditor */ "./resources/js/admin/faqs/ckeditor.js");
+__webpack_require__(/*! ./ckeditor */ "./resources/js/admin/ckeditor.js");
 
-__webpack_require__(/*! ./crud */ "./resources/js/admin/faqs/crud.js");
+__webpack_require__(/*! ./crud */ "./resources/js/admin/crud.js");
 
-__webpack_require__(/*! ./header */ "./resources/js/admin/faqs/header.js");
+__webpack_require__(/*! ./header */ "./resources/js/admin/header.js");
 
-__webpack_require__(/*! ./slider */ "./resources/js/admin/faqs/slider.js");
+__webpack_require__(/*! ./slider */ "./resources/js/admin/slider.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -1918,10 +1918,10 @@ __webpack_require__(/*! ./slider */ "./resources/js/admin/faqs/slider.js");
 
 /***/ }),
 
-/***/ "./resources/js/admin/faqs/ckeditor.js":
-/*!*********************************************!*\
-  !*** ./resources/js/admin/faqs/ckeditor.js ***!
-  \*********************************************/
+/***/ "./resources/js/admin/ckeditor.js":
+/*!****************************************!*\
+  !*** ./resources/js/admin/ckeditor.js ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1954,10 +1954,10 @@ var renderCkeditor = function renderCkeditor() {
 
 /***/ }),
 
-/***/ "./resources/js/admin/faqs/crud.js":
-/*!*****************************************!*\
-  !*** ./resources/js/admin/faqs/crud.js ***!
-  \*****************************************/
+/***/ "./resources/js/admin/crud.js":
+/*!************************************!*\
+  !*** ./resources/js/admin/crud.js ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1968,7 +1968,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ckeditor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ckeditor */ "./resources/js/admin/faqs/ckeditor.js");
+/* harmony import */ var _ckeditor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ckeditor */ "./resources/js/admin/ckeditor.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2161,17 +2161,17 @@ renderTable();
 
 /***/ }),
 
-/***/ "./resources/js/admin/faqs/header.js":
-/*!*******************************************!*\
-  !*** ./resources/js/admin/faqs/header.js ***!
-  \*******************************************/
+/***/ "./resources/js/admin/header.js":
+/*!**************************************!*\
+  !*** ./resources/js/admin/header.js ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _crud_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud.js */ "./resources/js/admin/faqs/crud.js");
+/* harmony import */ var _crud_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud.js */ "./resources/js/admin/crud.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2199,10 +2199,7 @@ sectionsBox.forEach(function (sectionsBox) {
   });
 });
 content.addEventListener("click", function () {
-  if (slider.classList != "slider active") {
-    slider.classList.add("active");
-    content.classList.add("transparent");
-  } else {
+  if (slider.classList == "slider active") {
     slider.classList.remove("active");
     content.classList.remove("transparent");
   }
@@ -2254,17 +2251,17 @@ sectionsTitles.forEach(function (sectionTitle) {
 
 /***/ }),
 
-/***/ "./resources/js/admin/faqs/slider.js":
-/*!*******************************************!*\
-  !*** ./resources/js/admin/faqs/slider.js ***!
-  \*******************************************/
+/***/ "./resources/js/admin/slider.js":
+/*!**************************************!*\
+  !*** ./resources/js/admin/slider.js ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _crud_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud.js */ "./resources/js/admin/faqs/crud.js");
+/* harmony import */ var _crud_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud.js */ "./resources/js/admin/crud.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -19565,23 +19562,10 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
-/***/ "./resources/sass/admin/desktop/faqs/app.scss":
-/*!****************************************************!*\
-  !*** ./resources/sass/admin/desktop/faqs/app.scss ***!
-  \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./resources/sass/admin/mobile/faqs/app.scss":
-/*!***************************************************!*\
-  !*** ./resources/sass/admin/mobile/faqs/app.scss ***!
-  \***************************************************/
+/***/ "./resources/sass/admin/desktop/app.scss":
+/*!***********************************************!*\
+  !*** ./resources/sass/admin/desktop/app.scss ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -19608,6 +19592,32 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************************************!*\
   !*** ./resources/sass/front/mobile/faqs/app.scss ***!
   \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/sass/front/desktop/login/app.scss":
+/*!*****************************************************!*\
+  !*** ./resources/sass/front/desktop/login/app.scss ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/sass/front/mobile/login/app.scss":
+/*!****************************************************!*\
+  !*** ./resources/sass/front/mobile/login/app.scss ***!
+  \****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -20702,11 +20712,12 @@ try {
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"/js/admin/faqs/app": 0,
+/******/ 			"/js/admin/app": 0,
+/******/ 			"css/front/mobile/login/app": 0,
+/******/ 			"css/front/desktop/login/app": 0,
 /******/ 			"css/front/mobile/faqs/app": 0,
 /******/ 			"css/front/desktop/faqs/app": 0,
-/******/ 			"css/admin/mobile/faqs/app": 0,
-/******/ 			"css/admin/desktop/faqs/app": 0
+/******/ 			"css/admin/desktop/app": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -20754,11 +20765,12 @@ try {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/front/mobile/faqs/app","css/front/desktop/faqs/app","css/admin/mobile/faqs/app","css/admin/desktop/faqs/app"], () => (__webpack_require__("./resources/js/admin/faqs/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/front/mobile/faqs/app","css/front/desktop/faqs/app","css/admin/mobile/faqs/app","css/admin/desktop/faqs/app"], () => (__webpack_require__("./resources/sass/admin/desktop/faqs/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/front/mobile/faqs/app","css/front/desktop/faqs/app","css/admin/mobile/faqs/app","css/admin/desktop/faqs/app"], () => (__webpack_require__("./resources/sass/admin/mobile/faqs/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/front/mobile/faqs/app","css/front/desktop/faqs/app","css/admin/mobile/faqs/app","css/admin/desktop/faqs/app"], () => (__webpack_require__("./resources/sass/front/desktop/faqs/app.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/front/mobile/faqs/app","css/front/desktop/faqs/app","css/admin/mobile/faqs/app","css/admin/desktop/faqs/app"], () => (__webpack_require__("./resources/sass/front/mobile/faqs/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/front/mobile/login/app","css/front/desktop/login/app","css/front/mobile/faqs/app","css/front/desktop/faqs/app","css/admin/desktop/app"], () => (__webpack_require__("./resources/js/admin/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/front/mobile/login/app","css/front/desktop/login/app","css/front/mobile/faqs/app","css/front/desktop/faqs/app","css/admin/desktop/app"], () => (__webpack_require__("./resources/sass/admin/desktop/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/front/mobile/login/app","css/front/desktop/login/app","css/front/mobile/faqs/app","css/front/desktop/faqs/app","css/admin/desktop/app"], () => (__webpack_require__("./resources/sass/front/desktop/faqs/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/front/mobile/login/app","css/front/desktop/login/app","css/front/mobile/faqs/app","css/front/desktop/faqs/app","css/admin/desktop/app"], () => (__webpack_require__("./resources/sass/front/mobile/faqs/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/front/mobile/login/app","css/front/desktop/login/app","css/front/mobile/faqs/app","css/front/desktop/faqs/app","css/admin/desktop/app"], () => (__webpack_require__("./resources/sass/front/desktop/login/app.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/front/mobile/login/app","css/front/desktop/login/app","css/front/mobile/faqs/app","css/front/desktop/faqs/app","css/admin/desktop/app"], () => (__webpack_require__("./resources/sass/front/mobile/login/app.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

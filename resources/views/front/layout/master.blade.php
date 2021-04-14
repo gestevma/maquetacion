@@ -9,15 +9,14 @@
 
         <title>Maquetación</title>
 
-        @include("front.desktop.faqs.layout.partials.styles")
+        @include("front.layout.partials.styles")
     </head>
 
     <body>
-        <div class="main">
+        <div class="main" id="main">
              @yield('content')
         </div>
 
-        @include("front.desktop.faqs.layout.partials.js")
+        @include("front.layout.partials.js")
     </body>
 </html>
-
