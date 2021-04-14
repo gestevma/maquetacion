@@ -1,45 +1,38 @@
 .form{
-    width: 40%;
-    margin-left: -3%;
+    width: 30%;
+    margin-left: -8%;
+    margin-right: -3%;
+    border: 2px solid rgb(116, 116, 116);
+    border-radius: 2em;
+    box-shadow: 0.5px 0.5px 6px #222;
+    padding: 2%;
 }
 
-.form-container form {
+.admin-form {
     width: 100%;
 }
 
 .form-group{
     margin-bottom: 1em;
     width: 100%;
-    font-weight: bold;
     font-size: 110%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.form-group .form-label{
-    width: 100%;
+.form-label{
+    font-weight: bold;
+    
 }
 
-.form-group .form-label label {
-    width: 100%;
-}
 
-.form-group .form-input{
-    width: 100%;
-}
-
-.form-group .form-input input{
+.input{
     border: 2px solid #ccc;
     border-radius: 4px; 
+    box-sizing: border-box;
     width: 100%;
+    box-shadow: 0.5px 0.5px 3px #222;
 }
 
-//.form-group .form-input textarea{
-    //width: 100%;
-    //height: 9em;
-    //border: 2px solid #ccc;
-    //border-radius: 4px;
-    //resize: none;
-//}
 
 .form-submit {
     margin-top:2%;

@@ -1,7 +1,6 @@
 .table{
-    margin-top: 2%;
-    margin-right:-3% ;
-    width: 40%;
+    margin: 2% -3% 0% -5%;
+    width: 55%;
 }
 
 .table-title{
@@ -24,7 +23,8 @@
     table-layout: auto;
     text-align:center;
     border:2px solid #ccc;
-    border-collapse:collapse; 
+    border-collapse:collapse;
+    box-shadow: 0.5px 0.5px 8px #222; 
 }
 
 thead{
@@ -32,6 +32,9 @@ thead{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+tbody{
+    border-bottom:1px solid #bebcbc;
+}
 
 tbody tr:hover {
     background-color:#cfcccc;

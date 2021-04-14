@@ -30,6 +30,19 @@ Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguir
             'show' => 'faqs_show',
         ]
     ]);
+    
+    Route::resource('clientes', 'App\Http\Controllers\Admin\ClientsController', [
+        'parameters' => [
+            'clientes' => 'clients', 
+        ],
+        'names' => [
+            'index' => 'clients',
+            'create' => 'clients_create',
+            'store' => 'clients_store',
+            'destroy' => 'clients_destroy',
+            'show' => 'clients_show',
+        ]
+    ]);
 
     Route::resource('categorias', 'App\Http\Controllers\Admin\FaqsCategoriesController', [
         'parameters' => [
