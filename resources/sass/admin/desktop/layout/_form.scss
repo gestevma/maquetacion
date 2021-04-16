@@ -2,14 +2,38 @@
     width: 30%;
     margin-left: -8%;
     margin-right: -3%;
-    border: 2px solid rgb(116, 116, 116);
-    border-radius: 2em;
-    box-shadow: 0.5px 0.5px 6px #222;
-    padding: 2%;
+    margin-top: 2%;
+    
 }
 
 .admin-form {
     width: 100%;
+    padding: 2%;
+    border: 2px solid rgb(116, 116, 116);
+    box-shadow: 0.5px 0.5px 6px #222;
+    border-radius: 0.5em;
+}
+
+.form-parts{
+    width: 100%;
+    display: flex;
+    flex: row;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+.part{
+    width: 30%;
+    margin: auto;
+    border: 2px solid black;
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.part:hover{
+    background-color: cadetblue;
+    cursor: pointer;
 }
 
 .form-group{
@@ -20,8 +44,7 @@
 }
 
 .form-label{
-    font-weight: bold;
-    
+    font-weight: bold;  
 }
 
 
@@ -36,4 +59,12 @@
 
 .form-submit {
     margin-top:2%;
+}
+
+.form-part-section{
+    display: none;
+}
+
+.active{
+    display: inline;
 }

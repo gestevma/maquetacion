@@ -32,6 +32,7 @@
                         <td id="id">{{$user_element->id}}</td>
                         <td id="name">{{$user_element->name}}</td>
                         <td id="email">{{$user_element->email}}</td>
+
                         <td class="table-buttons">
 
                             <div class="edit-button">
@@ -50,6 +51,7 @@
                                 </button> 
                             </div>      
                         </td>
+                        
                     </tr>
                 </tbody>
       
@@ -76,7 +78,7 @@
 
             <div class="form-group">
                 <div class="form-label">
-                    <label>Usuario:</label>
+                    <label>Nombre:</label>
                 </div>
                 <div class="form-input">
                     <input type="text" class="input" name="name" value="{{isset($user->name) ? $user->name : ''}}" >                  

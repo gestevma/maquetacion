@@ -71,11 +71,12 @@ Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguir
 
 /*Como hemos puesto prefix=> admin y resource => faqs la url será dev-maquetación.com/admin/faqs*/
 
+Route::post('/fingerprint', 'App\Http\Controllers\Front\FingerprintController@store')->name('front_fingerprint');
 
 Route::get('/login', 'App\Http\Controllers\Front\LoginController@index')->name('front_login');
 Route::post('/login', 'App\Http\Controllers\Front\LoginController@login')->name('front_login_submit');
 
-Route::get('/faqs', 'App\Http\Controllers\Front\FaqFrontController@index')->name('faqs_front');
+Route::get('/faqs', 'App\Http\Controllers\Front\FaqController@index')->name('faqs_front');
 
 
 

@@ -422,11 +422,12 @@ header {
   height: 8vh;
 }
 
-h1 {
+.page-title {
   text-align: left;
   padding-top: 1%;
   padding-left: 2%;
   margin-bottom: -2%;
+  font-size: 200%;
 }
 
 .sections-box {
@@ -470,7 +471,7 @@ li {
   padding-top: 5%;
 }
 
-.slider {
+.sidebar {
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -485,7 +486,7 @@ li:hover {
   border: 1px solid white;
 }
 
-.slider.active {
+.sidebar.active {
   background-color: black;
   transition: 0.3s;
   color: white;
@@ -511,14 +512,37 @@ li:hover {
   width: 30%;
   margin-left: -8%;
   margin-right: -3%;
-  border: 2px solid #747474;
-  border-radius: 2em;
-  box-shadow: 0.5px 0.5px 6px #222;
-  padding: 2%;
+  margin-top: 2%;
 }
 
 .admin-form {
   width: 100%;
+  padding: 2%;
+  border: 2px solid #747474;
+  box-shadow: 0.5px 0.5px 6px #222;
+  border-radius: 0.5em;
+}
+
+.form-parts {
+  width: 100%;
+  display: flex;
+  flex: row;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+.part {
+  width: 30%;
+  margin: auto;
+  border: 2px solid black;
+  text-align: center;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.part:hover {
+  background-color: cadetblue;
+  cursor: pointer;
 }
 
 .form-group {
@@ -544,6 +568,14 @@ li:hover {
   margin-top: 2%;
 }
 
+.form-part-section {
+  display: none;
+}
+
+.active {
+  display: inline;
+}
+
 .content {
   margin-top: -10%;
   margin-bottom: -100%;
@@ -555,7 +587,7 @@ li:hover {
   transition: 0.3s;
 }
 
-.section-content {
+.content-section {
   min-height: 50vh;
   width: 100%;
   display: flex;
@@ -603,4 +635,8 @@ tbody {
 
 tbody tr:hover {
   background-color: #cfcccc;
+}
+
+.table-buttons {
+  text-align: right;
 }

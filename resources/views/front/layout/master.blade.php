@@ -14,7 +14,7 @@
 
     <body>
         <div class="main" id="main">
-             @yield('content')
+             @yield('main')
         </div>
 
         @include("front.layout.partials.js")

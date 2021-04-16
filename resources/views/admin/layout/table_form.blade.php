@@ -4,15 +4,15 @@
 
     @include('admin.layout.partials.header')
 
-    @include('admin.layout.partials.slider')
+    @include('admin.layout.partials.sidebar')
 
     <div class="content" id="content">
 
         <div class="title">
-            @yield('title')    
+            @include('admin.layout.partials.title')    
         </div>
 
-        <div class="section-content">
+        <div class="content-section">
 
             @if($agent->isDesktop())
 

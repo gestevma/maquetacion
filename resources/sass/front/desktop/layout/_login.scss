@@ -1,0 +1,26 @@
+.login{
+    border: 2px solid rgb(116, 116, 116);
+    width: 18%;
+    padding: 2% 1% 2% 1%;
+    margin: auto;
+    min-height: 10vh;
+    border: 2px solid rgb(116, 116, 116);
+    box-shadow: 0.5px 0.5px 6px #222;
+    border-radius: 0.5em;
+}
+
+.form-group{
+    margin-bottom: 5%;
+}
+
+.form-label{
+    font-weight: bold; ;
+}
+
+.input{
+    border: 2px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box;
+    width: 100%;
+    box-shadow: 0.5px 0.5px 3px #222;
+}

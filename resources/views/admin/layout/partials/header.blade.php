@@ -1,5 +1,5 @@
 <header id="header">
-    <h1>Gestevam</h1>
+    <h2 class="page-title">Gestevam</h2>
 
     <div class="sections">
         <svg class = "sections-box" style="width:24px;height:24px" viewBox="0 0 24 24" preserveAspectRatio="none">

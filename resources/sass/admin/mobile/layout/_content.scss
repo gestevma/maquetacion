@@ -1,0 +1,14 @@
+
+.content{
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 10vh;
+}
+
+.content.transparent{
+    opacity:0.5;
+    transition:0.3s
+}
+
+
+

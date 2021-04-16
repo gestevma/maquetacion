@@ -1,16 +1,5 @@
 @extends('admin.layout.table_form')
 
-@section('title')
-
-    <h2>
-        @lang('admin/faqs.parent_section')
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left" viewBox="0 0 16 16" class=faq-icon>
-            <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-        </svg>
-    </h2>     
-
-@endsection
-
 @section('table')
 
     <div class="table-container">
@@ -28,7 +17,7 @@
             </thead>
 
             @foreach ($faqs as $faq_element)
-                <tbody>
+                <tbody class="table-line" data-url="{{route('faqs_destroy', ['faq' => $faq_element->id])}}">
                     <tr class="saved-faq">
                         <td id="id">{{$faq_element->id}}</td>
                         <td id="title">{{$faq_element->title}}</td>
