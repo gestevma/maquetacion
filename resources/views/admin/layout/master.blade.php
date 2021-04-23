@@ -13,6 +13,15 @@
     </head>
     
     <body>
+
+        @if(isset($filters))
+            @include('admin.layout.partials.table_filters', [
+                'route' => $route, 
+                'filters' => $filters, 
+                'order' => $order
+            ])
+        @endif
+
         <div class="main" id="main">
              @yield('content')
         </div>

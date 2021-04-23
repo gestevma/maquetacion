@@ -21,6 +21,8 @@ Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguir
 
     //Route::get('/faqs/json', 'App\Http\Controllers\Admin\FaqController@indexJson')->name('faqs_json');
     /*Resources te dice la ruta final de la url*/
+    Route::post('/faqs/filter', 'App\Http\Controllers\Admin\FaqController@filter')->name('faqs_filter');
+    Route::get('/faqs/pagination', 'App\Http\Controllers\Admin\FaqController@pagination')->name('faqs_pagination');
     Route::resource('faqs', 'App\Http\Controllers\Admin\FaqController', [
         'names' => [
             'index' => 'faqs',
@@ -28,6 +30,7 @@ Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguir
             'store' => 'faqs_store',
             'destroy' => 'faqs_destroy',
             'show' => 'faqs_show',
+            'edit' => 'faqs_edit',
         ]
     ]);
     

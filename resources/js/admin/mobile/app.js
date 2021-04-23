@@ -3,7 +3,8 @@ require('./ckeditor');
 require('./crud');
 require('./header');
 require('./sidebar');
-require('./slide')
+require('./switch');
+require('./verticalScroll');
 
 /**
  * First we will load all of this project's JavaScript dependencies which

@@ -1,0 +1,39 @@
+.alert{
+    display: none;
+}
+
+.alert.active{
+    display: inherit;
+    margin-top: 45%;
+    background-color: rgb(134, 134, 134);
+    width: 60%;
+    margin-left: 20%;
+    border: 1px solid black;
+    z-index: 9999;
+    position: fixed;
+}
+
+.alert-message{
+    font-weight: bold;
+}
+
+.alert-buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+#yes{
+    width: 50%;
+    height: 2em;
+    background-color: hsl(140, 64%, 56%) ;
+    border: 1px solid black;
+}
+
+
+#no{
+    width: 50%;
+    height: 2em;
+    background-color: hsl(352, 64%, 56%);
+    border: 1px solid black;
+}
+

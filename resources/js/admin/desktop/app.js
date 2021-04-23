@@ -4,6 +4,7 @@ require('./crud');
 require('./header');
 require('./sidebar');
 require('./parts')
+require('./filterTable')
 
 /**
  * First we will load all of this project's JavaScript dependencies which

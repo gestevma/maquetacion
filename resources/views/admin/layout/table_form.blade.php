@@ -6,6 +6,10 @@
 
     @include('admin.layout.partials.sidebar')
 
+    @if($agent->isMobile())
+        @include('admin.layout.partials.alert')
+    @endif
+
     <div class="content" id="content">
 
         <div class="title">
@@ -14,28 +18,17 @@
 
         <div class="content-section">
 
-            @if($agent->isDesktop())
+            <div class="table" id="table">
+                @yield('table')
+            </div>
 
-                <div class="table" id="table">
-                    @yield('table')
-                </div>
-
-                <div class="form" id="form">
-                    @yield('form')
-                </div>   
-            @endif
-
-
-            @if($agent->isMobile())
-                <div class="form" id="form">
-                    @yield('form')
-                </div>
-
-                <div class="table" id="table">
-                    @yield('table')
-                </div>
-            @endif
-
+            <div class="form" id="form">
+                @yield('form')
+            </div>   
         </div>
     </div>
+
+    @if($agent->isMobile())
+        @include('admin.layout.partials.bottombar')
+    @endif
 @endsection

@@ -1,8 +1,8 @@
-
 .content{
     box-sizing: border-box;
     width: 100%;
-    min-height: 10vh;
+    max-height: 90vh;
+    overflow: hidden;
 }
 
 .content.transparent{

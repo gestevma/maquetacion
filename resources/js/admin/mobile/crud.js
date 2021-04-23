@@ -1,7 +1,13 @@
 import { renderCkeditor } from "./ckeditor";
+import {swipeRevealItem} from './switch';
+import { showForm } from './bottombarMenu';
+import {scrollWindowElement} from './verticalScroll';
+
 
 const table = document.getElementById("table");
 const form = document.getElementById("form");
+const alert = document.querySelector(".alert")
+
 
 export let renderForm = () =>{
 
@@ -72,59 +78,81 @@ export let renderForm = () =>{
 
 
 export let renderTable = () => {
-    let editButtons = document.querySelectorAll(".edit-buttons");
-    let eliminateButtons = document.querySelectorAll(".eliminate-buttons")
+    let swipeRevealItemElements = document.querySelectorAll('.swipe-element');
+    swipeRevealItemElements.forEach(swipeRevealItemElement => {
 
-    editButtons.forEach(editButton => {
+        new swipeRevealItem(swipeRevealItemElement);
 
-        editButton.addEventListener('click', () => {
-    
-            let url = editButton.dataset.url;
-    
-            let editTable = async () => { 
-    
-                try { 
-                    await axios.get(url).then(response => { 
-                        form.innerHTML=response.data.form;
-                        renderForm(); 
-                         
-                    });
-                     
-                } catch (error) {
-                    console.error(error);
-                }
-            };
-    
-            editTable();
-    
-        });
     });
+
+    new scrollWindowElement(table);
+
     
-    eliminateButtons.forEach(eliminateButton => {
-    
-        eliminateButton.addEventListener('click', () => {
-            
-    
-            let url = eliminateButton.dataset.url;
-    
-            let deleteTable = async () => { 
-    
-                try { 
-                    await axios.delete(url).then(response => { 
-                        table.innerHTML = response.data.table;
-                        renderTable();
-                    });
-                     
-                } catch (error) {
-                    console.error(error);
-                }
-            };
-    
-            deleteTable();
-    
-        });
-    });
 }
+
+
+
+export let editElement = (url) => {
+    
+
+    let sendEditRequest = async () => {
+
+        try {
+            await axios.get(url).then(response => {
+                form.innerHTML = response.data.form;
+                showForm();
+                renderForm();
+            });
+            
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    
+    sendEditRequest();
+    table.classList.add("inactive");
+}
+
+export let removeElement = (url) => {
+    
+    let sendRemoveElement = async () => { 
+
+        try { 
+            await axios.delete(url).then(response => { 
+                table.innerHTML = response.data.table;
+                renderTable();
+            });
+                    
+        } catch (error) {
+            console.error(error);
+        }
+    };
+    
+    sendRemoveElement();
+}
+
+export let pagination = (url) => {
+
+    console.log("hola")
+
+    let paginateTable = async () =>{
+        try { 
+            await axios.get(url).then(response => { 
+                table.innerHTML = response.data.table;
+                renderTable();
+            });
+                
+        } catch (error) {
+            console.error(error);
+        }
+    };
+    paginateTable();
+
+    
+}
+
 
 renderForm()
 renderTable()
+

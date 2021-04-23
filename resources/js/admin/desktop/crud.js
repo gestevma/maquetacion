@@ -3,6 +3,8 @@ import { renderCkeditor } from "./ckeditor";
 const table = document.getElementById("table");
 const form = document.getElementById("form");
 
+
+/************************** Form ********************************************/
 export let renderForm = () =>{
 
     let forms = document.querySelectorAll(".admin-form");
@@ -54,7 +56,6 @@ export let renderForm = () =>{
                         form.id.value = response.data.id;
                         table.innerHTML = response.data.table;
                         renderTable();
-                        renderCkeditor();
                     });
                  
                 } catch (error) {
@@ -70,10 +71,11 @@ export let renderForm = () =>{
     renderCkeditor();
 }
 
-
+/************************** Table ********************************************/
 export let renderTable = () => {
     let editButtons = document.querySelectorAll(".edit-buttons");
-    let eliminateButtons = document.querySelectorAll(".eliminate-buttons")
+    let eliminateButtons = document.querySelectorAll(".eliminate-buttons");
+    
 
     editButtons.forEach(editButton => {
 
@@ -119,12 +121,39 @@ export let renderTable = () => {
                     console.error(error);
                 }
             };
-    
             deleteTable();
-    
         });
     });
+    
 }
+
+export let pagination = () => {
+
+    let paginationButtons = document.querySelectorAll(".table-pagination-button")
+
+    paginationButtons.forEach(paginationButton => {
+
+        paginationButton.addEventListener('click', () =>{
+
+            let url = paginationButton.dataset.page;
+
+            let paginateTable = async () =>{
+                try { 
+                    await axios.get(url).then(response => { 
+                        table.innerHTML = response.data.table;
+                        renderTable();
+                    });
+                     
+                } catch (error) {
+                    console.error(error);
+                }
+            };
+            paginateTable();
+        })
+    })
+}
+
 
 renderForm()
 renderTable()
+pagination()

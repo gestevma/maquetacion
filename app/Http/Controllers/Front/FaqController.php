@@ -25,4 +25,5 @@ class FaqController extends Controller
         return $view;
     }
 
+
 }
