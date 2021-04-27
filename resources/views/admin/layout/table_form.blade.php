@@ -10,6 +10,10 @@
         @include('admin.layout.partials.alert')
     @endif
 
+    @include('admin.layout.partials.message')
+
+    @include('admin.layout.partials.spinner')
+
     <div class="content" id="content">
 
         <div class="title">

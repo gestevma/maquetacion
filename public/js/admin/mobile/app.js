@@ -2218,8 +2218,14 @@ var pagination = function pagination(url) {
               _context4.prev = 0;
               _context4.next = 3;
               return axios.get(url).then(function (response) {
-                table.innerHTML = response.data.table;
-                renderTable();
+                table.insertAdjacentHTML("beforeend", response.data.table);
+                document.querySelector('.table-container').dataset.current = url;
+                renderTable(); //Para poder añadir las siguientes paginaciones hace falta cambiar la url para que sepa en que pagina estamos
+                //Sino siempre detectará que estamos en la página 1 (La url es la de la pagina 1), la url por defecto es la de la pagina 1
+                //Lo siguiente es pedirle a la BD si hay más "row" (si hay más datos). Si no hubiese quiero que no me deje ir para arriba.
+                //Si hay más datos quiero que me los muestre
+                //nextPage = currentPage+1
+                //Al final le dices con replace que cambie el número de la url por el de current page
               });
 
             case 3:
@@ -2659,8 +2665,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "scrollWindowElement": () => (/* binding */ scrollWindowElement)
 /* harmony export */ });
 /* harmony import */ var _crud__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./crud */ "./resources/js/admin/mobile/crud.js");
+//Cualquier evento en JS se campura con evt
 
 function scrollWindowElement(element) {
+  //'use strict' vuelve el JS más estructo. 
+  //Todo lo que usemos hay que definirlo y una variable no puede estar fuera de su entorno
   'use strict';
 
   var scrollWindowElement = element;
@@ -2672,10 +2681,12 @@ function scrollWindowElement(element) {
   var lastTouchPos = null;
   var currentYPosition = 0;
   var currentState = STATE_DEFAULT;
-  var handleSize = 10;
+  var handleSize = 10; //función que se activa cuando empiezas a tocar
 
   this.handleGestureStart = function (evt) {
+    //evt son los eventos que hay al final
     if (evt.touches && evt.touches.length > 1) {
+      //hace que solo haya un evento de touch (si quiero hacer más de 1 devolverá return asi que el segundo no hará nada)
       return;
     }
 
@@ -2684,15 +2695,20 @@ function scrollWindowElement(element) {
     } else {
       document.addEventListener('mousemove', this.handleGestureMove, true);
       document.addEventListener('mouseup', this.handleGestureEnd, true);
-    }
+    } //En el momento de tocar captura la posición de Y de getGesturePointFromEvent(evt) (más abajo). 
 
-    initialTouchPos = getGesturePointFromEvent(evt);
-  }.bind(this);
+
+    initialTouchPos = getGesturePointFromEvent(evt); //determina la posición inicial
+  }.bind(this); //resetea el this para que todos los this que usemos no se pisen entre si
+  //Esta función servirá para capturar el movimiento 
+
 
   this.handleGestureMove = function (evt) {
+    //Si la posición inicial es falsa (no tiene valor) no hará nada. Así aseguramos que solo se inicie cuando toquemos, no antes
     if (!initialTouchPos) {
       return;
-    }
+    } //Captura la posición final cuando he hecho movimiento
+
 
     lastTouchPos = getGesturePointFromEvent(evt);
 
@@ -2700,7 +2716,9 @@ function scrollWindowElement(element) {
       return;
     }
 
-    rafPending = true;
+    rafPending = true; //Activa una animación. 
+    //Se activará con el movimiento y la animación será la función 'onAnimFrame'
+
     window.requestAnimationFrame(onAnimFrame);
   }.bind(this);
 
@@ -2734,10 +2752,12 @@ function scrollWindowElement(element) {
     //console.log(scrollWindowElement.getBoundingClientRect());
 
     changeState();
-  }
+  } //Función para capturar la posición
+
 
   function getGesturePointFromEvent(evt) {
-    var point = {};
+    //el punto lo capturas con un JSON
+    var point = {}; //estoy cogiendo la posición de Y
 
     if (evt.targetTouches) {
       point.y = evt.targetTouches[0].clientY;
@@ -2746,15 +2766,20 @@ function scrollWindowElement(element) {
     }
 
     return point;
-  }
+  } //Define la animación
+
 
   function onAnimFrame() {
+    //Si esto es falso es que aún no se ha movido asi que no hará nada
     if (!rafPending) {
       return;
-    }
+    } //Mira la diferencia entre la posicion inicial y la final
 
-    var differenceInY = initialTouchPos.y - lastTouchPos.y;
+
+    var differenceInY = initialTouchPos.y - lastTouchPos.y; //Miramos cuato se ha movido. Es el movimiento que hará en pixeles
+
     var transformStyle = currentYPosition - differenceInY + 'px'; //console.log(scrollWindowElement.offsetTop);
+    //scrollWindowElement.style es la posición a la que estará la tabla
 
     scrollWindowElement.style.top = transformStyle;
     rafPending = false;
@@ -2764,35 +2789,47 @@ function scrollWindowElement(element) {
     var transformStyle;
     var menu = document.getElementById('bottombar-item').getBoundingClientRect(),
         elemRect = document.querySelector('.table').getBoundingClientRect(),
-        offset = elemRect.bottom - menu.top;
-    console.log(offset);
+        offset = elemRect.bottom - menu.top; //console.log(offset)
 
     if (currentYPosition > 1) {
+      console.log(currentYPosition + " arriba");
       if (scrollWindowElement.style.top >= 0 + 'px') currentYPosition = 0;
       transformStyle = currentYPosition + 'px';
       scrollWindowElement.style.top = transformStyle;
     } else if (currentYPosition < -1) {
-      if (offset < -100) {
-        (0,_crud__WEBPACK_IMPORTED_MODULE_0__.pagination)(element.querySelector('.table-container').dataset.page);
-        /*currentYPosition = (menu.top)*(-1);
-        transformStyle  = currentYPosition+'px';
-        scrollWindowElement.style.top = transformStyle;*/
-      } //editElement(element.querySelector('.right-swipe').dataset.url);
-
+      console.log(currentYPosition + " abajo");
+      /*if(offset<0){
+            (pagination(element.querySelector('.table-container').dataset.page));
+         
+          currentYPosition = (menu.top)*(-1);
+          transformStyle  = currentYPosition+'px';
+          scrollWindowElement.style.bottom = transformStyle;
+            //console.log(menu.top)
+          console.log(scrollWindowElement.style.bottom)
+      }*/
+      //editElement(element.querySelector('.right-swipe').dataset.url);
     }
 
     ;
   }
 
   ;
+  /* A la tabla le estoy pasando 4 eventos (touch, move, end, cancel)
+  *
+  */
+
   scrollWindowElement.addEventListener('touchstart', this.handleGestureStart, {
     passive: true
-  });
+  }); //Si empiezas (tocas la pantalla) irá a la función  this.handleGestureStart
+
   scrollWindowElement.addEventListener('touchmove', this.handleGestureMove, {
     passive: true
-  });
-  scrollWindowElement.addEventListener('touchend', this.handleGestureEnd, true);
-  scrollWindowElement.addEventListener('touchcancel', this.handleGestureEnd, true);
+  }); //Si mueves el dedo irá a la función  this.handleGestureMove
+
+  scrollWindowElement.addEventListener('touchend', this.handleGestureEnd, true); //Si acabas (levantas el dedo) irá a la función  this.handleGestureEnd
+
+  scrollWindowElement.addEventListener('touchcancel', this.handleGestureEnd, true); //Si cancelas irá a la función  this.handleGestureEnd
+  //passive es para que la animación de touch vaya más fluido
 }
 ;
 

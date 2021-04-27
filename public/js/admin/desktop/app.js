@@ -2017,6 +2017,11 @@ var renderForm = function renderForm() {
     });
   });
   saveButton.addEventListener("click", function (event) {
+    var message = document.querySelector(".message");
+    var messageContent = document.querySelector(".message-content");
+    var errorMessages = document.querySelectorAll(".error-message");
+    var successMessage = "Solicitud enviada correctamente";
+    var failMessage = "Fallo al enviar la solicitud";
     event.preventDefault();
     forms.forEach(function (form) {
       var data = new FormData(form);
@@ -2045,18 +2050,28 @@ var renderForm = function renderForm() {
                     form.id.value = response.data.id;
                     table.innerHTML = response.data.table;
                     renderTable();
+                    messageContent.innerHTML = successMessage;
+                    message.classList.add("success");
+                    setTimeout(function () {
+                      message.classList.remove("success");
+                    }, 1500);
                   });
 
                 case 3:
-                  _context.next = 8;
+                  _context.next = 11;
                   break;
 
                 case 5:
                   _context.prev = 5;
                   _context.t0 = _context["catch"](0);
                   console.error(_context.t0);
+                  messageContent.innerHTML = failMessage;
+                  message.classList.add("fail");
+                  setTimeout(function () {
+                    message.classList.remove("fail");
+                  }, 1500);
 
-                case 8:
+                case 11:
                 case "end":
                   return _context.stop();
               }
@@ -2073,6 +2088,48 @@ var renderForm = function renderForm() {
     });
   });
   (0,_ckeditor__WEBPACK_IMPORTED_MODULE_1__.renderCkeditor)();
+  var newEntrance = document.querySelector('.new-entrance-button');
+  newEntrance.addEventListener('click', function () {
+    var url = newEntrance.dataset.url;
+    console.log(url);
+
+    var cleanForm = /*#__PURE__*/function () {
+      var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                _context2.next = 3;
+                return axios.get(url).then(function (response) {
+                  form.innerHTML = response.data.form;
+                  renderForm();
+                });
+
+              case 3:
+                _context2.next = 8;
+                break;
+
+              case 5:
+                _context2.prev = 5;
+                _context2.t0 = _context2["catch"](0);
+                console.error(_context2.t0);
+
+              case 8:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[0, 5]]);
+      }));
+
+      return function cleanForm() {
+        return _ref4.apply(this, arguments);
+      };
+    }();
+
+    cleanForm();
+  });
 };
 /************************** Table ********************************************/
 
@@ -2084,48 +2141,6 @@ var renderTable = function renderTable() {
       var url = editButton.dataset.url;
 
       var editTable = /*#__PURE__*/function () {
-        var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
-            while (1) {
-              switch (_context2.prev = _context2.next) {
-                case 0:
-                  _context2.prev = 0;
-                  _context2.next = 3;
-                  return axios.get(url).then(function (response) {
-                    form.innerHTML = response.data.form;
-                    renderForm();
-                  });
-
-                case 3:
-                  _context2.next = 8;
-                  break;
-
-                case 5:
-                  _context2.prev = 5;
-                  _context2.t0 = _context2["catch"](0);
-                  console.error(_context2.t0);
-
-                case 8:
-                case "end":
-                  return _context2.stop();
-              }
-            }
-          }, _callee2, null, [[0, 5]]);
-        }));
-
-        return function editTable() {
-          return _ref4.apply(this, arguments);
-        };
-      }();
-
-      editTable();
-    });
-  });
-  eliminateButtons.forEach(function (eliminateButton) {
-    eliminateButton.addEventListener('click', function () {
-      var url = eliminateButton.dataset.url;
-
-      var deleteTable = /*#__PURE__*/function () {
         var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
             while (1) {
@@ -2133,9 +2148,9 @@ var renderTable = function renderTable() {
                 case 0:
                   _context3.prev = 0;
                   _context3.next = 3;
-                  return axios["delete"](url).then(function (response) {
-                    table.innerHTML = response.data.table;
-                    renderTable();
+                  return axios.get(url).then(function (response) {
+                    form.innerHTML = response.data.form;
+                    renderForm();
                   });
 
                 case 3:
@@ -2155,22 +2170,19 @@ var renderTable = function renderTable() {
           }, _callee3, null, [[0, 5]]);
         }));
 
-        return function deleteTable() {
+        return function editTable() {
           return _ref5.apply(this, arguments);
         };
       }();
 
-      deleteTable();
+      editTable();
     });
   });
-};
-var pagination = function pagination() {
-  var paginationButtons = document.querySelectorAll(".table-pagination-button");
-  paginationButtons.forEach(function (paginationButton) {
-    paginationButton.addEventListener('click', function () {
-      var url = paginationButton.dataset.page;
+  eliminateButtons.forEach(function (eliminateButton) {
+    eliminateButton.addEventListener('click', function () {
+      var url = eliminateButton.dataset.url;
 
-      var paginateTable = /*#__PURE__*/function () {
+      var deleteTable = /*#__PURE__*/function () {
         var _ref6 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
             while (1) {
@@ -2178,7 +2190,7 @@ var pagination = function pagination() {
                 case 0:
                   _context4.prev = 0;
                   _context4.next = 3;
-                  return axios.get(url).then(function (response) {
+                  return axios["delete"](url).then(function (response) {
                     table.innerHTML = response.data.table;
                     renderTable();
                   });
@@ -2200,8 +2212,54 @@ var pagination = function pagination() {
           }, _callee4, null, [[0, 5]]);
         }));
 
-        return function paginateTable() {
+        return function deleteTable() {
           return _ref6.apply(this, arguments);
+        };
+      }();
+
+      deleteTable();
+    });
+  });
+  pagination();
+};
+var pagination = function pagination() {
+  var paginationButtons = document.querySelectorAll(".table-pagination-button");
+  paginationButtons.forEach(function (paginationButton) {
+    paginationButton.addEventListener('click', function () {
+      var url = paginationButton.dataset.page;
+
+      var paginateTable = /*#__PURE__*/function () {
+        var _ref7 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
+            while (1) {
+              switch (_context5.prev = _context5.next) {
+                case 0:
+                  _context5.prev = 0;
+                  _context5.next = 3;
+                  return axios.get(url).then(function (response) {
+                    table.innerHTML = response.data.table;
+                    renderTable();
+                  });
+
+                case 3:
+                  _context5.next = 8;
+                  break;
+
+                case 5:
+                  _context5.prev = 5;
+                  _context5.t0 = _context5["catch"](0);
+                  console.error(_context5.t0);
+
+                case 8:
+                case "end":
+                  return _context5.stop();
+              }
+            }
+          }, _callee5, null, [[0, 5]]);
+        }));
+
+        return function paginateTable() {
+          return _ref7.apply(this, arguments);
         };
       }();
 
@@ -2211,7 +2269,6 @@ var pagination = function pagination() {
 };
 renderForm();
 renderTable();
-pagination();
 
 /***/ }),
 

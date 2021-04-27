@@ -3,7 +3,6 @@ import { renderCkeditor } from "./ckeditor";
 const table = document.getElementById("table");
 const form = document.getElementById("form");
 
-
 /************************** Form ********************************************/
 export let renderForm = () =>{
 
@@ -34,6 +33,12 @@ export let renderForm = () =>{
 
     saveButton.addEventListener("click", (event) => {
 
+        let message = document.querySelector(".message");
+        let messageContent = document.querySelector(".message-content");
+        let errorMessages = document.querySelectorAll(".error-message") 
+
+        let successMessage = "Solicitud enviada correctamente"
+        let failMessage = "Fallo al enviar la solicitud"
         event.preventDefault();
 
         forms.forEach(form => { 
@@ -56,10 +61,20 @@ export let renderForm = () =>{
                         form.id.value = response.data.id;
                         table.innerHTML = response.data.table;
                         renderTable();
+
+                        messageContent.innerHTML = successMessage;
+                        message.classList.add("success");
+                        setTimeout(function(){ message.classList.remove("success"); }, 1500);
+
                     });
                  
                 } catch (error) {
+                    
                     console.error(error);
+
+                    messageContent.innerHTML = failMessage;
+                    message.classList.add("fail");
+                    setTimeout(function(){ message.classList.remove("fail"); }, 1500);
 
                 }
             };
@@ -69,7 +84,34 @@ export let renderForm = () =>{
     });
 
     renderCkeditor();
+
+
+    let newEntrance = document.querySelector('.new-entrance-button');
+
+    newEntrance.addEventListener('click', () =>{
+
+        let url = newEntrance.dataset.url;
+        console.log(url)
+
+        let cleanForm = async () =>{
+            try { 
+                await axios.get(url).then(response => { 
+                    form.innerHTML = response.data.form;
+                    renderForm();
+                });
+                    
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        cleanForm();
+    });
+    
+    
+
 }
+
+
 
 /************************** Table ********************************************/
 export let renderTable = () => {
@@ -124,6 +166,8 @@ export let renderTable = () => {
             deleteTable();
         });
     });
+
+    pagination()
     
 }
 
@@ -156,4 +200,5 @@ export let pagination = () => {
 
 renderForm()
 renderTable()
-pagination()
+
+

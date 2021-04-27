@@ -1,0 +1,42 @@
+.spinner-thing{
+    position: relative;
+    top:35vh;
+    left: 72%;
+    z-index: +99;
+    display:none
+}
+
+
+$spinnerSize: 40;
+
+svg.spinner {
+    width: $spinnerSize + px;
+    height: $spinnerSize + px;
+    x: 0px;
+    y: 0px;
+    viewBox: 0 0 $spinnerSize $spinnerSize;
+    
+    circle {
+        fill: transparent;
+        stroke: #4242429d;
+        stroke-width: 4;
+        stroke-linecap: round;
+        stroke-dasharray: (3.14 * $spinnerSize);
+        transform-origin: (0.5px * $spinnerSize) (0.5px * $spinnerSize) 0;
+        animation: spinner 2s linear infinite;
+    }
+}
+
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+        stroke-dashoffset: (0.66 * $spinnerSize);
+    } 50% {
+        transform: rotate(720deg);
+        stroke-dashoffset: (3.14 * $spinnerSize);
+    } 100% {
+        transform: rotate(1080deg);
+        stroke-dashoffset: (0.66 * $spinnerSize);
+    }
+}

@@ -16,6 +16,8 @@
             <div class="three-columns-table third head">Creación</div>
         </div>
     @endif
+
+    {{----Crea las filas de la tabla----}}
     @foreach($faqs as $faq_element)
             <div class="table-row swipe-element">
                 <div class="table-field-container swipe-front">
@@ -62,6 +64,7 @@
 
 </div>
 
+{{----Botones de la paginaciión. Están en otro documento----}}
 @if($agent->isDesktop())
     @include('admin.layout.partials.table_pagination', ['items' => $faqs])
 @endif
@@ -70,11 +73,16 @@
 
 
 @section('form')
-                                                  
-    @isset($faq)                       
+
+    @isset($faq)     
         <form class="admin-form" id="faqs-form" action="{{route("faqs_store")}}" autocomplete="off">
 
-            
+            <div class=new-entrance-button data-url="{{route("faqs_create")}}">
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                </svg> 
+            </div> 
+
             <input autocomplete="false" name="hidden" type="text" style="display:none;">
             <input type="hidden" name="id" value="{{isset($faq->id) ? $faq->id : ''}}">
                             
@@ -83,10 +91,10 @@
 
                 <div class="form-group">
                     <div class="form-label">
-                        <label>Categoria:</label>
+                        <label><p class="form-label-title">Categoria:</p> <p class="error-message" id="category-message">La categoría es obligatoria</p></label>
                     </div>
                     <div class="form-input">
-                        <select name="category_id" data-placeholder="Seleccione una categoría" class="input-highlight">
+                        <select name="category_id"  class="input" data-placeholder="Seleccione una categoría" class="input-highlight">
                             <option></option>
                             @foreach($faqs_categories as $faq_category)
                                 <option value="{{$faq_category->id}}" {{$faq->category_id == $faq_category->id ? 'selected':''}} class="category_id">{{ $faq_category->name }}</option>
@@ -97,7 +105,7 @@
 
                 <div class="form-group">
                     <div class="form-label">
-                        <label>Pregunta:</label>
+                        <label><p class="form-label-title">Pregunta:</p> <p class="error-message" data-type="question">El título es obligatorio</p></label>
                     </div>
                     <div class="form-input" id="question">
                         <input type="text" class="input" name="title" value="{{isset($faq->title) ? $faq->title : ''}}" >
@@ -106,7 +114,7 @@
 
                 <div class="form-group">
                     <div class="form-label">
-                        <label >Respuesta:</label> 
+                        <label><p class="form-label-title">Respuesta:</p> <p class="error-message" id="answer-message">La descripción es obligatoria</p></label> 
                     </div>
                     <div class="form-input" id="answer">
                         <textarea class="ckeditor input" name="description" class="input-highlight">{{isset($faq->description) ? $faq->description : ''}}</textarea>

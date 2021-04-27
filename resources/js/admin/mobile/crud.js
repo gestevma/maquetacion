@@ -139,8 +139,16 @@ export let pagination = (url) => {
     let paginateTable = async () =>{
         try { 
             await axios.get(url).then(response => { 
-                table.innerHTML = response.data.table;
+                table.insertAdjacentHTML("beforeend", response.data.table);
+                document.querySelector('.table-container').dataset.current=url;
                 renderTable();
+                //Para poder añadir las siguientes paginaciones hace falta cambiar la url para que sepa en que pagina estamos
+                //Sino siempre detectará que estamos en la página 1 (La url es la de la pagina 1), la url por defecto es la de la pagina 1
+
+                //Lo siguiente es pedirle a la BD si hay más "row" (si hay más datos). Si no hubiese quiero que no me deje ir para arriba.
+                //Si hay más datos quiero que me los muestre
+                //nextPage = currentPage+1
+                //Al final le dices con replace que cambie el número de la url por el de current page
             });
                 
         } catch (error) {
