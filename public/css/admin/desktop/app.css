@@ -515,29 +515,40 @@ li:hover {
 .new-entrance-button {
   border: 1px solid black;
   border-radius: 1vh;
-  background-color: #e6e3e3;
-  width: 5%;
-  padding: 0.5%;
-  padding-bottom: 0.3%;
+  background-color: #dfdfdf;
+  width: 3.5vh;
+  height: 3.5vh;
   position: relative;
-  left: 92%;
-  top: 4.5%;
+  bottom: 2vh;
+  left: 80%;
   box-shadow: 1px 0.5px 2px #222;
+}
+.new-entrance-button svg {
+  width: 100%;
+  position: relative;
+  left: 12%;
+  top: 10%;
 }
 
 .new-entrance-button:hover {
   cursor: pointer;
 }
 .new-entrance-button:hover svg {
+  cursor: pointer;
   opacity: 0.5;
 }
 
 .admin-form {
   width: 100%;
   padding: 2%;
+  padding-top: 1%;
   border: 2px solid #747474;
   box-shadow: 0.5px 0.5px 6px #222;
   border-radius: 0.5em;
+}
+
+.form-write {
+  margin-top: -5%;
 }
 
 .form-parts {
@@ -608,6 +619,11 @@ li:hover {
 
 .active {
   display: inline;
+}
+
+.main.night {
+  background-color: #4d4c4c;
+  color: #f4faf0;
 }
 
 .content {
@@ -830,12 +846,17 @@ li:hover {
   padding: 0.5%;
 }
 
-.spinner-thing {
-  position: relative;
-  top: 35vh;
-  left: 72%;
-  z-index: 99;
+.spinner-box {
   display: none;
+}
+
+.spinner-box.active {
+  display: inline;
+  position: absolute;
+  top: 35vh;
+  left: 73%;
+  z-index: 999999;
+  opacity: 1;
 }
 
 svg.spinner {
@@ -884,4 +905,49 @@ svg.spinner circle {
     transform: rotate(1080deg);
     stroke-dashoffset: 26.4;
   }
+}
+:root {
+  --color-blue: #3a8ad4;
+  --color-grey: #7e7e7e;
+  --color-button: #fdffff;
+  --color-black: #000;
+}
+
+.switch-button {
+  padding-top: 0%;
+  position: relative;
+  left: 90%;
+}
+
+.switch-button .switch-button__checkbox {
+  display: none;
+}
+
+.switch-button .switch-button__label {
+  background-color: var(--color-grey);
+  width: 3rem;
+  height: 1rem;
+  border-radius: 3rem;
+  display: inline-block;
+  position: relative;
+}
+
+.switch-button .switch-button__label:before {
+  transition: 0.2s;
+  display: block;
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--color-button);
+  content: "";
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 0px 1px var(--color-black);
+}
+
+.switch-button .switch-button__checkbox:checked + .switch-button__label {
+  background-color: var(--color-blue);
+}
+
+.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
+  transform: translateX(2rem);
 }

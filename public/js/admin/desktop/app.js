@@ -1878,17 +1878,21 @@ module.exports = {
 
 __webpack_require__(/*! ../../bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./ckeditor */ "./resources/js/admin/desktop/ckeditor.js");
+__webpack_require__(/*! ./components/ckeditor */ "./resources/js/admin/desktop/components/ckeditor.js");
 
-__webpack_require__(/*! ./crud */ "./resources/js/admin/desktop/crud.js");
+__webpack_require__(/*! ./components/crudTable */ "./resources/js/admin/desktop/components/crudTable.js");
 
-__webpack_require__(/*! ./header */ "./resources/js/admin/desktop/header.js");
+__webpack_require__(/*! ./components/crudForm */ "./resources/js/admin/desktop/components/crudForm.js");
 
-__webpack_require__(/*! ./sidebar */ "./resources/js/admin/desktop/sidebar.js");
+__webpack_require__(/*! ./components/header */ "./resources/js/admin/desktop/components/header.js");
 
-__webpack_require__(/*! ./parts */ "./resources/js/admin/desktop/parts.js");
+__webpack_require__(/*! ./components/sidebar */ "./resources/js/admin/desktop/components/sidebar.js");
 
-__webpack_require__(/*! ./filterTable */ "./resources/js/admin/desktop/filterTable.js");
+__webpack_require__(/*! ./components/parts */ "./resources/js/admin/desktop/components/parts.js");
+
+__webpack_require__(/*! ./components/filterTable */ "./resources/js/admin/desktop/components/filterTable.js");
+
+__webpack_require__(/*! ./components/switch-button */ "./resources/js/admin/desktop/components/switch-button.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -1922,10 +1926,10 @@ __webpack_require__(/*! ./filterTable */ "./resources/js/admin/desktop/filterTab
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/ckeditor.js":
-/*!************************************************!*\
-  !*** ./resources/js/admin/desktop/ckeditor.js ***!
-  \************************************************/
+/***/ "./resources/js/admin/desktop/components/ckeditor.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/admin/desktop/components/ckeditor.js ***!
+  \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1958,22 +1962,24 @@ var renderCkeditor = function renderCkeditor() {
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/crud.js":
-/*!********************************************!*\
-  !*** ./resources/js/admin/desktop/crud.js ***!
-  \********************************************/
+/***/ "./resources/js/admin/desktop/components/crudForm.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/admin/desktop/components/crudForm.js ***!
+  \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "renderForm": () => (/* binding */ renderForm),
-/* harmony export */   "renderTable": () => (/* binding */ renderTable),
-/* harmony export */   "pagination": () => (/* binding */ pagination)
+/* harmony export */   "renderForm": () => (/* binding */ renderForm)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ckeditor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ckeditor */ "./resources/js/admin/desktop/ckeditor.js");
+/* harmony import */ var _ckeditor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ckeditor */ "./resources/js/admin/desktop/components/ckeditor.js");
+/* harmony import */ var _spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./spinner */ "./resources/js/admin/desktop/components/spinner.js");
+/* harmony import */ var _crudTable_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./crudTable.js */ "./resources/js/admin/desktop/components/crudTable.js");
+/* harmony import */ var _message_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./message.js */ "./resources/js/admin/desktop/components/message.js");
+/* harmony import */ var _switch_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./switch-button */ "./resources/js/admin/desktop/components/switch-button.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -1992,16 +1998,28 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+/***************************************************************************************************/
+
+/**Funciones:
+    Renderizar formulario
+    Enviar contenido del formulario a la base de datos. Al enviar los datos no se van del formulario
+    Limpiar el formulario para meter una nueva entrada 
+/****************************************************************************************************/
+
+
+
+
 
 var table = document.getElementById("table");
 var form = document.getElementById("form");
-/************************** Form ********************************************/
+/*******Renderiza el formulario*******/
 
 var renderForm = function renderForm() {
   var forms = document.querySelectorAll(".admin-form");
   var labels = document.getElementsByTagName('label');
   var inputs = document.querySelectorAll('.input');
   var saveButton = document.getElementById("save-button");
+  var newEntrance = document.querySelector('.new-entrance-button');
   inputs.forEach(function (input) {
     input.addEventListener('focusin', function () {
       for (var i = 0; i < labels.length; i++) {
@@ -2016,12 +2034,9 @@ var renderForm = function renderForm() {
       }
     });
   });
+  /*******Envia los datos a la base de datos*******/
+
   saveButton.addEventListener("click", function (event) {
-    var message = document.querySelector(".message");
-    var messageContent = document.querySelector(".message-content");
-    var errorMessages = document.querySelectorAll(".error-message");
-    var successMessage = "Solicitud enviada correctamente";
-    var failMessage = "Fallo al enviar la solicitud";
     event.preventDefault();
     forms.forEach(function (form) {
       var data = new FormData(form);
@@ -2044,39 +2059,32 @@ var renderForm = function renderForm() {
             while (1) {
               switch (_context.prev = _context.next) {
                 case 0:
-                  _context.prev = 0;
-                  _context.next = 3;
+                  (0,_spinner__WEBPACK_IMPORTED_MODULE_2__.spinner)();
+                  _context.prev = 1;
+                  _context.next = 4;
                   return axios.post(url, data).then(function (response) {
                     form.id.value = response.data.id;
                     table.innerHTML = response.data.table;
-                    renderTable();
-                    messageContent.innerHTML = successMessage;
-                    message.classList.add("success");
-                    setTimeout(function () {
-                      message.classList.remove("success");
-                    }, 1500);
+                    (0,_message_js__WEBPACK_IMPORTED_MODULE_4__.message)("success", response.data.message);
+                    (0,_crudTable_js__WEBPACK_IMPORTED_MODULE_3__.renderTable)();
                   });
 
-                case 3:
-                  _context.next = 11;
+                case 4:
+                  _context.next = 10;
                   break;
 
-                case 5:
-                  _context.prev = 5;
-                  _context.t0 = _context["catch"](0);
-                  console.error(_context.t0);
-                  messageContent.innerHTML = failMessage;
-                  message.classList.add("fail");
-                  setTimeout(function () {
-                    message.classList.remove("fail");
-                  }, 1500);
+                case 6:
+                  _context.prev = 6;
+                  _context.t0 = _context["catch"](1);
+                  (0,_spinner__WEBPACK_IMPORTED_MODULE_2__.spinner)();
+                  (0,_message_js__WEBPACK_IMPORTED_MODULE_4__.message)("fail", response.data.message);
 
-                case 11:
+                case 10:
                 case "end":
                   return _context.stop();
               }
             }
-          }, _callee, null, [[0, 5]]);
+          }, _callee, null, [[1, 6]]);
         }));
 
         return function sendPostRequest() {
@@ -2088,7 +2096,8 @@ var renderForm = function renderForm() {
     });
   });
   (0,_ckeditor__WEBPACK_IMPORTED_MODULE_1__.renderCkeditor)();
-  var newEntrance = document.querySelector('.new-entrance-button');
+  /*******Limpia el formulario*******/
+
   newEntrance.addEventListener('click', function () {
     var url = newEntrance.dataset.url;
     console.log(url);
@@ -2130,8 +2139,35 @@ var renderForm = function renderForm() {
 
     cleanForm();
   });
+  (0,_switch_button__WEBPACK_IMPORTED_MODULE_5__.switchButtonClick)();
 };
-/************************** Table ********************************************/
+renderForm();
+
+/***/ }),
+
+/***/ "./resources/js/admin/desktop/components/crudTable.js":
+/*!************************************************************!*\
+  !*** ./resources/js/admin/desktop/components/crudTable.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderTable": () => (/* binding */ renderTable),
+/* harmony export */   "pagination": () => (/* binding */ pagination)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _crudForm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crudForm.js */ "./resources/js/admin/desktop/components/crudForm.js");
+/* harmony import */ var _switch_button_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./switch-button.js */ "./resources/js/admin/desktop/components/switch-button.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
 
 var renderTable = function renderTable() {
   var editButtons = document.querySelectorAll(".edit-buttons");
@@ -2141,7 +2177,96 @@ var renderTable = function renderTable() {
       var url = editButton.dataset.url;
 
       var editTable = /*#__PURE__*/function () {
-        var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.prev = 0;
+                  _context.next = 3;
+                  return axios.get(url).then(function (response) {
+                    form.innerHTML = response.data.form;
+                    (0,_crudForm_js__WEBPACK_IMPORTED_MODULE_1__.renderForm)();
+                  });
+
+                case 3:
+                  _context.next = 8;
+                  break;
+
+                case 5:
+                  _context.prev = 5;
+                  _context.t0 = _context["catch"](0);
+                  console.error(_context.t0);
+
+                case 8:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee, null, [[0, 5]]);
+        }));
+
+        return function editTable() {
+          return _ref.apply(this, arguments);
+        };
+      }();
+
+      editTable();
+    });
+  });
+  eliminateButtons.forEach(function (eliminateButton) {
+    eliminateButton.addEventListener('click', function () {
+      var url = eliminateButton.dataset.url;
+
+      var deleteTable = /*#__PURE__*/function () {
+        var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+            while (1) {
+              switch (_context2.prev = _context2.next) {
+                case 0:
+                  _context2.prev = 0;
+                  _context2.next = 3;
+                  return axios["delete"](url).then(function (response) {
+                    table.innerHTML = response.data.table;
+                    renderTable();
+                  });
+
+                case 3:
+                  _context2.next = 8;
+                  break;
+
+                case 5:
+                  _context2.prev = 5;
+                  _context2.t0 = _context2["catch"](0);
+                  console.error(_context2.t0);
+
+                case 8:
+                case "end":
+                  return _context2.stop();
+              }
+            }
+          }, _callee2, null, [[0, 5]]);
+        }));
+
+        return function deleteTable() {
+          return _ref2.apply(this, arguments);
+        };
+      }();
+
+      deleteTable();
+    });
+  });
+  pagination();
+  (0,_switch_button_js__WEBPACK_IMPORTED_MODULE_2__.switchButtonClick)();
+};
+var pagination = function pagination() {
+  var paginationButtons = document.querySelectorAll(".table-pagination-button");
+  paginationButtons.forEach(function (paginationButton) {
+    paginationButton.addEventListener('click', function () {
+      var url = paginationButton.dataset.page;
+
+      var paginateTable = /*#__PURE__*/function () {
+        var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
             while (1) {
               switch (_context3.prev = _context3.next) {
@@ -2149,8 +2274,8 @@ var renderTable = function renderTable() {
                   _context3.prev = 0;
                   _context3.next = 3;
                   return axios.get(url).then(function (response) {
-                    form.innerHTML = response.data.form;
-                    renderForm();
+                    table.innerHTML = response.data.table;
+                    renderTable();
                   });
 
                 case 3:
@@ -2170,112 +2295,24 @@ var renderTable = function renderTable() {
           }, _callee3, null, [[0, 5]]);
         }));
 
-        return function editTable() {
-          return _ref5.apply(this, arguments);
-        };
-      }();
-
-      editTable();
-    });
-  });
-  eliminateButtons.forEach(function (eliminateButton) {
-    eliminateButton.addEventListener('click', function () {
-      var url = eliminateButton.dataset.url;
-
-      var deleteTable = /*#__PURE__*/function () {
-        var _ref6 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
-            while (1) {
-              switch (_context4.prev = _context4.next) {
-                case 0:
-                  _context4.prev = 0;
-                  _context4.next = 3;
-                  return axios["delete"](url).then(function (response) {
-                    table.innerHTML = response.data.table;
-                    renderTable();
-                  });
-
-                case 3:
-                  _context4.next = 8;
-                  break;
-
-                case 5:
-                  _context4.prev = 5;
-                  _context4.t0 = _context4["catch"](0);
-                  console.error(_context4.t0);
-
-                case 8:
-                case "end":
-                  return _context4.stop();
-              }
-            }
-          }, _callee4, null, [[0, 5]]);
-        }));
-
-        return function deleteTable() {
-          return _ref6.apply(this, arguments);
-        };
-      }();
-
-      deleteTable();
-    });
-  });
-  pagination();
-};
-var pagination = function pagination() {
-  var paginationButtons = document.querySelectorAll(".table-pagination-button");
-  paginationButtons.forEach(function (paginationButton) {
-    paginationButton.addEventListener('click', function () {
-      var url = paginationButton.dataset.page;
-
-      var paginateTable = /*#__PURE__*/function () {
-        var _ref7 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5() {
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
-            while (1) {
-              switch (_context5.prev = _context5.next) {
-                case 0:
-                  _context5.prev = 0;
-                  _context5.next = 3;
-                  return axios.get(url).then(function (response) {
-                    table.innerHTML = response.data.table;
-                    renderTable();
-                  });
-
-                case 3:
-                  _context5.next = 8;
-                  break;
-
-                case 5:
-                  _context5.prev = 5;
-                  _context5.t0 = _context5["catch"](0);
-                  console.error(_context5.t0);
-
-                case 8:
-                case "end":
-                  return _context5.stop();
-              }
-            }
-          }, _callee5, null, [[0, 5]]);
-        }));
-
         return function paginateTable() {
-          return _ref7.apply(this, arguments);
+          return _ref3.apply(this, arguments);
         };
       }();
 
       paginateTable();
     });
   });
+  (0,_switch_button_js__WEBPACK_IMPORTED_MODULE_2__.switchButtonClick)();
 };
-renderForm();
 renderTable();
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/filterTable.js":
-/*!***************************************************!*\
-  !*** ./resources/js/admin/desktop/filterTable.js ***!
-  \***************************************************/
+/***/ "./resources/js/admin/desktop/components/filterTable.js":
+/*!**************************************************************!*\
+  !*** ./resources/js/admin/desktop/components/filterTable.js ***!
+  \**************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2287,7 +2324,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _crud__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud */ "./resources/js/admin/desktop/crud.js");
+/* harmony import */ var _crudTable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crudTable */ "./resources/js/admin/desktop/components/crudTable.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2320,7 +2357,7 @@ var renderFilterTable = function renderFilterTable() {
                 _context.next = 3;
                 return axios.post(url, data).then(function (response) {
                   table.innerHTML = response.data.table;
-                  (0,_crud__WEBPACK_IMPORTED_MODULE_1__.renderTable)();
+                  (0,_crudTable__WEBPACK_IMPORTED_MODULE_1__.renderTable)();
                   tableFilter.classList.remove('filter-active');
                   applyFilter.classList.remove('button-active');
                   openFilter.classList.add('button-active');
@@ -2362,22 +2399,24 @@ renderFilterTable();
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/header.js":
-/*!**********************************************!*\
-  !*** ./resources/js/admin/desktop/header.js ***!
-  \**********************************************/
+/***/ "./resources/js/admin/desktop/components/header.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/admin/desktop/components/header.js ***!
+  \*********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _crud_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud.js */ "./resources/js/admin/desktop/crud.js");
+/* harmony import */ var _crudTable_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crudTable.js */ "./resources/js/admin/desktop/components/crudTable.js");
+/* harmony import */ var _crudForm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./crudForm.js */ "./resources/js/admin/desktop/components/crudForm.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 var sectionsTitles = document.querySelectorAll(".section-title");
@@ -2419,8 +2458,8 @@ sectionsTitles.forEach(function (sectionTitle) {
                 return axios.get(url).then(function (response) {
                   table.innerHTML = response.data.table;
                   form.innerHTML = response.data.form;
-                  (0,_crud_js__WEBPACK_IMPORTED_MODULE_1__.renderForm)();
-                  (0,_crud_js__WEBPACK_IMPORTED_MODULE_1__.renderTable)();
+                  (0,_crudForm_js__WEBPACK_IMPORTED_MODULE_2__.renderForm)();
+                  (0,_crudTable_js__WEBPACK_IMPORTED_MODULE_1__.renderTable)();
                 });
 
               case 3:
@@ -2451,10 +2490,48 @@ sectionsTitles.forEach(function (sectionTitle) {
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/parts.js":
-/*!*********************************************!*\
-  !*** ./resources/js/admin/desktop/parts.js ***!
-  \*********************************************/
+/***/ "./resources/js/admin/desktop/components/message.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/admin/desktop/components/message.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "message": () => (/* binding */ message)
+/* harmony export */ });
+var message = function message(type, text) {
+  var message = document.querySelector(".message");
+  var messageContent = document.querySelector(".message-content"); //let successMessage = "Solicitud enviada correctamente"
+  //let failMessage = "Fallo al enviar la solicitud"
+
+  messageContent.innerHTML = text;
+  setTimeout(function () {
+    message.classList.add(type);
+  }, 550);
+  setTimeout(function () {
+    message.classList.remove(type);
+  }, 2500);
+  /*if (result=="success"){
+      messageContent.innerHTML = successMessage;
+      setTimeout(function(){ message.classList.add("success"); }, 550);
+      setTimeout(function(){ message.classList.remove("success"); }, 2500);
+  }*/
+
+  /*else if (messageType=="fail"){
+      messageContent.innerHTML = failMessage;
+      setTimeout(function(){ message.classList.add("fail"); }, 550);
+      setTimeout(function(){ message.classList.remove("fail"); }, 2500);
+  }*/
+};
+
+/***/ }),
+
+/***/ "./resources/js/admin/desktop/components/parts.js":
+/*!********************************************************!*\
+  !*** ./resources/js/admin/desktop/components/parts.js ***!
+  \********************************************************/
 /***/ (() => {
 
 var parts = document.querySelectorAll(".part");
@@ -2473,10 +2550,10 @@ parts.forEach(function (part) {
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/sidebar.js":
-/*!***********************************************!*\
-  !*** ./resources/js/admin/desktop/sidebar.js ***!
-  \***********************************************/
+/***/ "./resources/js/admin/desktop/components/sidebar.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/admin/desktop/components/sidebar.js ***!
+  \**********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2534,6 +2611,55 @@ sidebarSections.forEach(function (sidebarSection) {
     links();
   });
 });
+
+/***/ }),
+
+/***/ "./resources/js/admin/desktop/components/spinner.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/admin/desktop/components/spinner.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "spinner": () => (/* binding */ spinner)
+/* harmony export */ });
+var spinner = function spinner() {
+  var spinner = document.querySelector('.spinner-box');
+  spinner.classList.add("active");
+  setTimeout(function () {
+    spinner.classList.remove("active");
+  }, 500);
+};
+
+/***/ }),
+
+/***/ "./resources/js/admin/desktop/components/switch-button.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/admin/desktop/components/switch-button.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "switchButtonClick": () => (/* binding */ switchButtonClick)
+/* harmony export */ });
+var switchButtonClick = function switchButtonClick() {
+  var switchButton = document.querySelector(".switch-button");
+  var main = document.querySelector(".main");
+  var position = 0;
+  switchButton.addEventListener('change', function () {
+    if (position == 0) {
+      console.log("hola");
+      position = 1;
+    } else {
+      console.log("adios");
+      position = 0;
+    }
+  });
+};
 
 /***/ }),
 

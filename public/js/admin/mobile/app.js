@@ -1870,10 +1870,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./resources/js/admin/mobile/bottombarMenu.js":
-/*!****************************************************!*\
-  !*** ./resources/js/admin/mobile/bottombarMenu.js ***!
-  \****************************************************/
+/***/ "./resources/js/admin/mobile/components/bottombarMenu.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/admin/mobile/components/bottombarMenu.js ***!
+  \***************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1884,7 +1884,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _crud__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud */ "./resources/js/admin/mobile/crud.js");
+/* harmony import */ var _crud__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud */ "./resources/js/admin/mobile/components/crud.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -1961,10 +1961,10 @@ var showTable = function showTable(url) {
 
 /***/ }),
 
-/***/ "./resources/js/admin/mobile/ckeditor.js":
-/*!***********************************************!*\
-  !*** ./resources/js/admin/mobile/ckeditor.js ***!
-  \***********************************************/
+/***/ "./resources/js/admin/mobile/components/ckeditor.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/admin/mobile/components/ckeditor.js ***!
+  \**********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1997,10 +1997,10 @@ var renderCkeditor = function renderCkeditor() {
 
 /***/ }),
 
-/***/ "./resources/js/admin/mobile/crud.js":
-/*!*******************************************!*\
-  !*** ./resources/js/admin/mobile/crud.js ***!
-  \*******************************************/
+/***/ "./resources/js/admin/mobile/components/crud.js":
+/*!******************************************************!*\
+  !*** ./resources/js/admin/mobile/components/crud.js ***!
+  \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2014,10 +2014,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ckeditor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ckeditor */ "./resources/js/admin/mobile/ckeditor.js");
-/* harmony import */ var _switch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./switch */ "./resources/js/admin/mobile/switch.js");
-/* harmony import */ var _bottombarMenu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./bottombarMenu */ "./resources/js/admin/mobile/bottombarMenu.js");
-/* harmony import */ var _verticalScroll__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./verticalScroll */ "./resources/js/admin/mobile/verticalScroll.js");
+/* harmony import */ var _ckeditor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ckeditor */ "./resources/js/admin/mobile/components/ckeditor.js");
+/* harmony import */ var _swipe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./swipe */ "./resources/js/admin/mobile/components/swipe.js");
+/* harmony import */ var _bottombarMenu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./bottombarMenu */ "./resources/js/admin/mobile/components/bottombarMenu.js");
+/* harmony import */ var _verticalScroll__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./verticalScroll */ "./resources/js/admin/mobile/components/verticalScroll.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2124,7 +2124,7 @@ var renderForm = function renderForm() {
 var renderTable = function renderTable() {
   var swipeRevealItemElements = document.querySelectorAll('.swipe-element');
   swipeRevealItemElements.forEach(function (swipeRevealItemElement) {
-    new _switch__WEBPACK_IMPORTED_MODULE_2__.swipeRevealItem(swipeRevealItemElement);
+    new _swipe__WEBPACK_IMPORTED_MODULE_2__.swipeRevealItem(swipeRevealItemElement);
   });
   new _verticalScroll__WEBPACK_IMPORTED_MODULE_4__.scrollWindowElement(table);
 };
@@ -2257,17 +2257,17 @@ renderTable();
 
 /***/ }),
 
-/***/ "./resources/js/admin/mobile/header.js":
-/*!*********************************************!*\
-  !*** ./resources/js/admin/mobile/header.js ***!
-  \*********************************************/
+/***/ "./resources/js/admin/mobile/components/header.js":
+/*!********************************************************!*\
+  !*** ./resources/js/admin/mobile/components/header.js ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _crud_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud.js */ "./resources/js/admin/mobile/crud.js");
+/* harmony import */ var _crud_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud.js */ "./resources/js/admin/mobile/components/crud.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2347,17 +2347,17 @@ sectionsTitles.forEach(function (sectionTitle) {
 
 /***/ }),
 
-/***/ "./resources/js/admin/mobile/sidebar.js":
-/*!**********************************************!*\
-  !*** ./resources/js/admin/mobile/sidebar.js ***!
-  \**********************************************/
+/***/ "./resources/js/admin/mobile/components/sidebar.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/admin/mobile/components/sidebar.js ***!
+  \*********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _crud_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud.js */ "./resources/js/admin/mobile/crud.js");
+/* harmony import */ var _crud_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud.js */ "./resources/js/admin/mobile/components/crud.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2415,10 +2415,10 @@ sidebarsSections.forEach(function (sidebarSection) {
 
 /***/ }),
 
-/***/ "./resources/js/admin/mobile/switch.js":
-/*!*********************************************!*\
-  !*** ./resources/js/admin/mobile/switch.js ***!
-  \*********************************************/
+/***/ "./resources/js/admin/mobile/components/swipe.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/admin/mobile/components/swipe.js ***!
+  \*******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2426,7 +2426,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "swipeRevealItem": () => (/* binding */ swipeRevealItem)
 /* harmony export */ });
-/* harmony import */ var _crud__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./crud */ "./resources/js/admin/mobile/crud.js");
+/* harmony import */ var _crud__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./crud */ "./resources/js/admin/mobile/components/crud.js");
 
 function swipeRevealItem(element) {
   'use strict';
@@ -2653,10 +2653,10 @@ function swipeRevealItem(element) {
 
 /***/ }),
 
-/***/ "./resources/js/admin/mobile/verticalScroll.js":
-/*!*****************************************************!*\
-  !*** ./resources/js/admin/mobile/verticalScroll.js ***!
-  \*****************************************************/
+/***/ "./resources/js/admin/mobile/components/verticalScroll.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/admin/mobile/components/verticalScroll.js ***!
+  \****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2664,7 +2664,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "scrollWindowElement": () => (/* binding */ scrollWindowElement)
 /* harmony export */ });
-/* harmony import */ var _crud__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./crud */ "./resources/js/admin/mobile/crud.js");
+/* harmony import */ var _crud__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./crud */ "./resources/js/admin/mobile/components/crud.js");
 //Cualquier evento en JS se campura con evt
 
 function scrollWindowElement(element) {
@@ -21130,17 +21130,17 @@ var __webpack_exports__ = {};
   \******************************************/
 __webpack_require__(/*! ../../bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./ckeditor */ "./resources/js/admin/mobile/ckeditor.js");
+__webpack_require__(/*! ./components/ckeditor */ "./resources/js/admin/mobile/components/ckeditor.js");
 
-__webpack_require__(/*! ./crud */ "./resources/js/admin/mobile/crud.js");
+__webpack_require__(/*! ./components/crud */ "./resources/js/admin/mobile/components/crud.js");
 
-__webpack_require__(/*! ./header */ "./resources/js/admin/mobile/header.js");
+__webpack_require__(/*! ./components/header */ "./resources/js/admin/mobile/components/header.js");
 
-__webpack_require__(/*! ./sidebar */ "./resources/js/admin/mobile/sidebar.js");
+__webpack_require__(/*! ./components/sidebar */ "./resources/js/admin/mobile/components/sidebar.js");
 
-__webpack_require__(/*! ./switch */ "./resources/js/admin/mobile/switch.js");
+__webpack_require__(/*! ./components/swipe */ "./resources/js/admin/mobile/components/swipe.js");
 
-__webpack_require__(/*! ./verticalScroll */ "./resources/js/admin/mobile/verticalScroll.js");
+__webpack_require__(/*! ./components/verticalScroll */ "./resources/js/admin/mobile/components/verticalScroll.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when

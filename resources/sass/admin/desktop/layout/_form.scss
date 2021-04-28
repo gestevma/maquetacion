@@ -7,31 +7,43 @@
 .new-entrance-button{
     border: 1px solid black;
     border-radius: 1vh;
-    background-color: rgb(230, 227, 227);
-    width: 5%;
-    padding:0.5%;
-    padding-bottom: 0.3%;
-    position: relative;
-    left: 92%;
-    top:4.5%;
+    background-color: rgb(223, 223, 223);
+    width: 3.5vh;
+    height: 3.5vh;
+    position:relative;
+    bottom: 2vh;
+    left: 80%;
     box-shadow: 1px 0.5px 2px #222;
 
+    svg{
+        width: 100%;
+        position:relative;
+        left:12%;
+        top:10%;
+    }
 }
 
 .new-entrance-button:hover{
     cursor: pointer;
 
     svg{
+        cursor: pointer;
         opacity:0.5;
     }
-    
 }
+
+
 .admin-form {
     width: 100%;
     padding: 2%;
+    padding-top:1%;
     border: 2px solid rgb(116, 116, 116);
     box-shadow: 0.5px 0.5px 6px #222;
     border-radius: 0.5em;
+}
+
+.form-write{
+    margin-top: -5%;
 }
 
 .form-parts{

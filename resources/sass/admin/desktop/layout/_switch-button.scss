@@ -1,0 +1,39 @@
+:root {
+    --color-blue: #3a8ad4;
+    --color-grey: #7e7e7e;
+    --color-button: #fdffff;
+    --color-black: #000;
+}
+.switch-button {
+    padding-top:0%;
+    position:relative;
+    left: 90%;
+}
+.switch-button .switch-button__checkbox {
+    display: none;
+}
+.switch-button .switch-button__label {
+    background-color: var(--color-grey);
+    width: 3rem;
+    height: 1rem;
+    border-radius: 3rem;
+    display: inline-block;
+    position: relative;
+}
+.switch-button .switch-button__label:before {
+    transition: .2s;
+    display: block;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--color-button);
+    content: '';
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 0px 1px var(--color-black);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label {
+    background-color: var(--color-blue);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
+    transform: translateX(2rem);
+}

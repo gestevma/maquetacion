@@ -1,9 +1,14 @@
-.spinner-thing{
-    position: relative;
+.spinner-box{
+    display: none;
+}
+
+.spinner-box.active{
+    display:inline;
+    position: absolute;
     top:35vh;
-    left: 72%;
-    z-index: +99;
-    display:none
+    left: 73%;
+    z-index: +999999;
+    opacity:1
 }
 
 

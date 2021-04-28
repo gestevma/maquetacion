@@ -1,10 +1,12 @@
 require('../../bootstrap');
-require('./ckeditor');
-require('./crud');
-require('./header');
-require('./sidebar');
-require('./parts')
-require('./filterTable')
+require('./components/ckeditor');
+require('./components/crudTable');
+require('./components/crudForm');
+require('./components/header');
+require('./components/sidebar');
+require('./components/parts');
+require('./components/filterTable');
+require('./components/switch-button');
 
 /**
  * First we will load all of this project's JavaScript dependencies which

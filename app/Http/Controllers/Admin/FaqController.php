@@ -63,6 +63,12 @@ class FaqController extends Controller
             'active' => 1,
         ]);
 
+        if (request('id')){
+            $message = \Lang::get('admin/faqs.faq-update');
+        }else{
+            $message = \Lang::get('admin/faqs.faq-create');
+        }
+
         $view = View::make('admin.faqs.index')
         ->with('faqs', $this->faq->where('active', 1)->paginate(10))
         ->with('faq', $faq)
@@ -71,6 +77,7 @@ class FaqController extends Controller
         return response()->json([
             'table' => $view['table'],
             'form' => $view['form'],
+            'message' => $message,
             'id' => $faq->id,
         ]);
     }
@@ -114,6 +121,8 @@ class FaqController extends Controller
     {
         $faq->active = 0;
         $faq->save();
+
+        $message = \Lang::get('admin/faqs.faq-delete');
 
         $view = View::make('admin.faqs.index')
             ->with('faq', $this->faq)

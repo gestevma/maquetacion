@@ -1,5 +1,5 @@
 import { renderCkeditor } from "./ckeditor";
-import {swipeRevealItem} from './switch';
+import {swipeRevealItem} from './swipe';
 import { showForm } from './bottombarMenu';
 import {scrollWindowElement} from './verticalScroll';
 

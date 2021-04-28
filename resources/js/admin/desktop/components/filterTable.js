@@ -1,4 +1,4 @@
-import {renderTable} from './crud';
+import {renderTable} from './crudTable';
 
 const table = document.getElementById("table-container");
 const tableFilter = document.getElementById("table-filter");

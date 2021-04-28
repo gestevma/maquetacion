@@ -1,10 +1,10 @@
 require('../../bootstrap');
-require('./ckeditor');
-require('./crud');
-require('./header');
-require('./sidebar');
-require('./switch');
-require('./verticalScroll');
+require('./components/ckeditor');
+require('./components/crud');
+require('./components/header');
+require('./components/sidebar');
+require('./components/swipe');
+require('./components/verticalScroll');
 
 /**
  * First we will load all of this project's JavaScript dependencies which
