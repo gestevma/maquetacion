@@ -757,7 +757,6 @@ li:hover {
   top: 10vh;
   width: 100%;
   z-index: 1003;
-  display: none;
 }
 .table-filter.filter-active .table-filter-container {
   max-height: 70vh;

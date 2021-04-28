@@ -98,9 +98,6 @@ export function scrollWindowElement (element){
         scrollWindowElement.style.top = transformStyle;
         scrollWindowElement.style.transition = 'all 300ms ease-out';
 
-        //console.log(scrollWindowElement.offsetTop);
-        //console.log(scrollWindowElement.getBoundingClientRect());
-
         changeState();
     }
 
@@ -150,7 +147,6 @@ export function scrollWindowElement (element){
         let menu = document.getElementById('bottombar-item').getBoundingClientRect(),
         elemRect = document.querySelector('.table').getBoundingClientRect(),
         offset = elemRect.bottom - menu.top;
-        //console.log(offset)
 
         if(currentYPosition > 1){
             console.log(currentYPosition+" arriba")
@@ -162,21 +158,17 @@ export function scrollWindowElement (element){
                       
 
         }else if(currentYPosition < -1){
-            console.log(currentYPosition+" abajo")
            
-            /*if(offset<0){
+            if(offset<0){
 
                 (pagination(element.querySelector('.table-container').dataset.page));
                
                 currentYPosition = (menu.top)*(-1);
                 transformStyle  = currentYPosition+'px';
                 scrollWindowElement.style.bottom = transformStyle;
-
-                //console.log(menu.top)
                 console.log(scrollWindowElement.style.bottom)
-            }*/
+            }
             
-            //editElement(element.querySelector('.right-swipe').dataset.url);
         };
 
         

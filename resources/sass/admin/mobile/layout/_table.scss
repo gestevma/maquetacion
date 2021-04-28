@@ -2,10 +2,10 @@
     display: none;
 }
 
+
 .table{
     margin-top: 3vh;
     width: 95%;
-    //min-height: max-content;
     margin:auto;
     text-align: center;
     position:relative;
@@ -16,8 +16,9 @@
         .table-row {
             border-bottom: 1px solid hsl(0, 0%, 52%);
             border-top: 1px solid hsl(0, 0%, 52%);
-            min-height: 13vh;
+            min-height: 18vh;
             position: relative;
+
 
             .table-field-container{
                 background-color: white;
@@ -26,7 +27,7 @@
                 touch-action: none;
                 width: 100%;
                 z-index: 999;
-                min-height: 13vh;
+                min-height: 18vh;
 
                 .table-field{
                     display: flex;
@@ -62,7 +63,7 @@
 
     .table-icons{
         display: none;
-        min-height: 13vh;
+        min-height: 18vh;
 
         svg{
             height: 1.5em;

@@ -604,7 +604,7 @@ li {
 .table .table-container .table-row {
   border-bottom: 1px solid #858585;
   border-top: 1px solid #858585;
-  min-height: 13vh;
+  min-height: 18vh;
   position: relative;
 }
 .table .table-container .table-row .table-field-container {
@@ -613,7 +613,7 @@ li {
   touch-action: none;
   width: 100%;
   z-index: 999;
-  min-height: 13vh;
+  min-height: 18vh;
 }
 .table .table-container .table-row .table-field-container .table-field {
   display: flex;
@@ -640,7 +640,7 @@ li {
 }
 .table-icons-container .table-icons {
   display: none;
-  min-height: 13vh;
+  min-height: 18vh;
 }
 .table-icons-container .table-icons svg {
   height: 1.5em;
@@ -678,7 +678,6 @@ li {
   top: 10vh;
   width: 100%;
   z-index: 1003;
-  display: none;
 }
 .table-filter.filter-active .table-filter-container {
   max-height: 70vh;
@@ -787,4 +786,59 @@ li {
   height: 2em;
   background-color: #d7475a;
   border: 1px solid black;
+}
+
+.table-filter {
+  background-color: white;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  position: fixed;
+  top: 10vh;
+  width: 100%;
+  z-index: 1003;
+}
+.table-filter.filter-active .table-filter-container {
+  max-height: 70vh;
+}
+.table-filter .table-filter-container {
+  max-height: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  transition: max-height 0.5s;
+  width: 30%;
+}
+.table-filter .table-filter-container form {
+  padding: 1em;
+}
+.table-filter .table-filter-buttons {
+  width: 100%;
+}
+.table-filter .table-filter-buttons .table-filter-button {
+  cursor: pointer;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+  width: 100%;
+  text-align: center;
+}
+.table-filter .table-filter-buttons .table-filter-button:hover svg path {
+  fill: #ff5100;
+}
+.table-filter .table-filter-buttons .table-filter-button.button-active {
+  max-height: 10vh;
+}
+.table-filter .table-filter-buttons .table-filter-button.open-filter {
+  background-color: #b0b0b0;
+}
+.table-filter .table-filter-buttons .table-filter-button.apply-filter {
+  background-color: #297f62;
+}
+.table-filter .table-filter-buttons .table-filter-button svg {
+  height: 1.5em;
+  padding: 0.5em;
+  width: 1.5em;
+}
+.table-filter .table-filter-buttons .table-filter-button svg path {
+  fill: white;
 }

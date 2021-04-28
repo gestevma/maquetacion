@@ -7,6 +7,7 @@ require('./components/sidebar');
 require('./components/parts');
 require('./components/filterTable');
 require('./components/switch-button');
+require('./components/spinner')
 
 /**
  * First we will load all of this project's JavaScript dependencies which

@@ -5,10 +5,9 @@
     Enviar contenido del formulario a la base de datos. Al enviar los datos no se van del formulario
     Limpiar el formulario para meter una nueva entrada 
 /****************************************************************************************************/
-
+import {renderTable} from './crudTable.js'
 import { renderCkeditor } from "./ckeditor";
 import { spinner } from "./spinner";
-import {renderTable} from './crudTable.js'
 import {message} from './message.js'
 import { switchButtonClick } from "./switch-button";
 
@@ -69,15 +68,14 @@ export let renderForm = () =>{
                         form.id.value = response.data.id;
                         table.innerHTML = response.data.table;
                         
-                        message("success", response.data.message)
+                        //message("success", response.data.message)
 
                         renderTable();
                         
                     });
                  
                 } catch (error) {
-                    spinner();
-                    message("fail", response.data.message);
+                    message(error);
                 }
             };
 

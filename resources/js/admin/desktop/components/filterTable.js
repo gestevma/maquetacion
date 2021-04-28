@@ -1,6 +1,6 @@
 import {renderTable} from './crudTable';
 
-const table = document.getElementById("table-container");
+const table = document.getElementById("table");
 const tableFilter = document.getElementById("table-filter");
 const filterForm = document.getElementById("filter-form");
 
@@ -24,7 +24,9 @@ export let renderFilterTable = () => {
 
             try {
                 await axios.post(url, data).then(response => {
+                    
                     table.innerHTML = response.data.table;
+                    console.log(url);
                     renderTable();
                     tableFilter.classList.remove('filter-active')
                     applyFilter.classList.remove('button-active');

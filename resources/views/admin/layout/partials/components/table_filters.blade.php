@@ -1,6 +1,6 @@
 <div class="table-filter" id="table-filter">
     <div class="table-filter-container">
-        <form class="filter-form" id="filter-form" action="{{route("faqs_filter")}}" autocomplete="off">             
+        <form class="filter-form" id="filter-form" action="{{route($route.'_filter')}}" autocomplete="off">             
 
             {{ csrf_field() }}
 
@@ -38,6 +38,58 @@
                                         <option value="{{$item->id}}"}}>{{ $item->name }}</option>
                                     @endforeach
                                 </select>    
+                            </div>
+                        </div>
+                    </div>    
+                @endif
+                
+                @if($key == 'search')
+                    <div class="one-column">
+                        <div class="form-group">
+                            <div class="form-label">
+                                <label for="search" class="label-highlight">Buscar palabra</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" name="search" class="input-highlight" value="">
+                            </div>
+                        </div>
+                    </div>    
+                @endif
+
+                @if($key == 'name')
+                    <div class="one-column">
+                        <div class="form-group">
+                            <div class="form-label">
+                                <label for="name" class="label-highlight">Buscar nombre</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" name="name" class="input-highlight" value="">
+                            </div>
+                        </div>
+                    </div>    
+                @endif
+
+                @if($key == 'entity')
+                    <div class="one-column">
+                        <div class="form-group">
+                            <div class="form-label">
+                                <label for="entity" class="label-highlight">Buscar Alias</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" name="entity" class="input-highlight" value="">
+                            </div>
+                        </div>
+                    </div>    
+                @endif
+
+                @if($key == 'visible')
+                    <div class="one-column">
+                        <div class="form-group">
+                            <div class="form-label">
+                                <label for="visible" class="label-highlight">Visible(1) o Invisible(0)</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" name="visible" class="input-highlight" value="">
                             </div>
                         </div>
                     </div>    
