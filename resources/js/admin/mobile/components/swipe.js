@@ -1,4 +1,4 @@
-import {editElement, removeElement, renderTable} from './crud';
+import {editElement, removeElement, renderTable} from './crudTable';
 
 export function swipeRevealItem (element){
 

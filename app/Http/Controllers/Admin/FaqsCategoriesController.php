@@ -13,7 +13,7 @@ class FaqsCategoriesController extends Controller
 
     function __construct(FaqCategory $faq_category)
     {        
-        //$this->middleware('auth');
+        $this->middleware('auth');
 
         $this->faq_category = $faq_category;
     }
@@ -22,7 +22,7 @@ class FaqsCategoriesController extends Controller
     {
 
         $view = View::make('admin.faq-category.index')
-                ->with('faqs_categories', $this->faq_category->where('active', 1)->get())
+                ->with('faqs_categories', $this->faq_category->where('active', 1)->paginate(5))
                 ->with('faq_category', $this->faq_category);
 
         if(request()->ajax()) {
@@ -60,7 +60,7 @@ class FaqsCategoriesController extends Controller
         ]);
 
         $view = View::make('admin.faq-category.index')
-        ->with('faqs_categories', $this->faq_category->where('active', 1)->get())
+        ->with('faqs_categories', $this->faq_category->where('active', 1)->paginate(5))
         ->with('faq_category', $faq_category)
         ->renderSections();
 
@@ -92,7 +92,7 @@ class FaqsCategoriesController extends Controller
     {
         $view = View::make('admin.faq-category.index')
         ->with('faq_category', $faq_category)
-        ->with('faqs_categories', $this->faq_category->where('active', 1)->get());   
+        ->with('faqs_categories', $this->faq_category->where('active', 1)->paginate(5));   
         
         if(request()->ajax()) {
 
@@ -112,7 +112,7 @@ class FaqsCategoriesController extends Controller
         $faq_category->save();
 
         $view = View::make('admin.faq-category.index')
-        ->with('faqs_categories', $this->faq_category->where('active', 1)->get())
+        ->with('faqs_categories', $this->faq_category->where('active', 1)->paginate(5))
         ->with('faq_category', $this->faq_category)
         ->renderSections();
         

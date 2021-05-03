@@ -14,8 +14,7 @@ class UsersController extends Controller
 
     function __construct(Users $user)
     {
-        //$this->middleware('auth');
-
+        $this->middleware('auth');
         $this->user = $user;
     }
 
@@ -24,7 +23,7 @@ class UsersController extends Controller
 
         $view = View::make('admin.users.index')
             ->with('user', $this->user)        
-            ->with('users', $this->user->where('active', 1)->get());
+            ->with('users', $this->user->where('active', 1)->paginate(5));
                 
                 
 
@@ -64,7 +63,7 @@ class UsersController extends Controller
         ]);
 
         $view = View::make('admin.users.index')
-        ->with('users', $this->user->where('active', 1)->get())
+        ->with('users', $this->user->where('active', 1)->paginate(5))
         ->with('user', $user)
         ->renderSections();        
 
@@ -79,7 +78,7 @@ class UsersController extends Controller
     {
         $view = View::make('admin.users.index')
         ->with('user', $user)
-        ->with('users', $this->user->where('active', 1)->get());   
+        ->with('users', $this->user->where('active', 1)->paginate(5));   
         
         if(request()->ajax()) {
 
@@ -96,7 +95,7 @@ class UsersController extends Controller
     public function show(user $user){
         $view = View::make('admin.users.index')
         ->with('user', $user)
-        ->with('users', $this->user->where('active', 1)->get());   
+        ->with('users', $this->user->where('active', 1)->paginate(5));   
         
         if(request()->ajax()) {
 
@@ -117,7 +116,7 @@ class UsersController extends Controller
 
         $view = View::make('admin.users.index')
             ->with('user', $this->user)
-            ->with('users', $this->user->where('active', 1)->get())
+            ->with('users', $this->user->where('active', 1)->paginate(5))
             ->renderSections();
         
         return response()->json([

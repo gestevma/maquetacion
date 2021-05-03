@@ -1,4 +1,4 @@
-import {renderTable} from './crud';
+import {renderTable} from './crudTable';
 
 const bottombarItems = document.querySelectorAll('.bottombar-item');
 const table = document.getElementById("table");

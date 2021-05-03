@@ -1,6 +1,7 @@
 require('../../bootstrap');
 require('./components/ckeditor');
-require('./components/crud');
+require('./components/crudTable');
+require('./components/crudForm');
 require('./components/header');
 require('./components/sidebar');
 require('./components/swipe');

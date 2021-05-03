@@ -15,7 +15,7 @@ class ClientsController extends Controller
 
     function __construct(Clients $clients)
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
 
         $this->clients = $clients;
     }
@@ -25,7 +25,7 @@ class ClientsController extends Controller
 
         $view = View::make('admin.clients.index')
                 ->with('client', $this->clients)
-                ->with('clients', $this->clients->where('active', 1)->get());
+                ->with('clients', $this->clients->where('active', 1)->paginate(5));
 
         if(request()->ajax()) {
             
@@ -68,7 +68,7 @@ class ClientsController extends Controller
         ]);
 
         $view = View::make('admin.clients.index')
-        ->with('clients', $this->clients->where('active', 1)->get())
+        ->with('clients', $this->clients->where('active', 1)->paginate(5))
         ->with('client', $clients)
         ->renderSections();        
 
@@ -83,7 +83,7 @@ class ClientsController extends Controller
     {
         $view = View::make('admin.clients.index')
         ->with('client', $clients)
-        ->with('clients', $this->clients->where('active', 1)->get());   
+        ->with('clients', $this->clients->where('active', 1)->paginate(5));   
         
         if(request()->ajax()) {
 
@@ -100,7 +100,7 @@ class ClientsController extends Controller
     public function show(Clients $clients){
         $view = View::make('admin.clients.index')
         ->with('client', $clients)
-        ->with('clients', $this->clients->where('active', 1)->get());   
+        ->with('clients', $this->clients->where('active', 1)->paginate(5));   
         
         if(request()->ajax()) {
 
@@ -121,7 +121,7 @@ class ClientsController extends Controller
 
         $view = View::make('admin.clients.index')
             ->with('client', $this->clients)
-            ->with('clients', $this->clients->where('active', 1)->get())
+            ->with('clients', $this->clients->where('active', 1)->paginate(5))
             ->renderSections();
         
         return response()->json([

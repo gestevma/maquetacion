@@ -2,22 +2,22 @@
 
 @section('content')
 
-    @include('admin.layout.partials.components.header')
+    @include('admin.components.header')
 
-    @include('admin.layout.partials.components.sidebar')
+    @include('admin.components.sidebar')
 
     @if($agent->isMobile())
-        @include('admin.layout.partials.components.alert')
+        @include('admin.components.alert')
     @endif
 
-    @include('admin.layout.partials.components.message')
+    @include('admin.components.message')
 
-    @include('admin.layout.partials.components.spinner')
+    @include('admin.components.spinner')
 
     <div class="content" id="content">
 
         <div class="title">
-            @include('admin.layout.partials.components.title')    
+            @include('admin.components.title')    
         </div>
 
         <div class="content-section">
@@ -35,6 +35,6 @@
     
 
     @if($agent->isMobile())
-        @include('admin.layout.partials.components.bottombar')
+        @include('admin.components.bottombar')
     @endif
 @endsection

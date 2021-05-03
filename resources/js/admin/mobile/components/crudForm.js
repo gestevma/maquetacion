@@ -1,28 +1,17 @@
+import { renderCkeditor } from "./ckeditor";
 
-/***************************************************************************************************/
-/**Funciones:
-    Renderizar formulario
-    Enviar contenido del formulario a la base de datos. Al enviar los datos no se van del formulario
-    Limpiar el formulario para meter una nueva entrada 
-/****************************************************************************************************/
-import {renderTable} from './crudTable.js'
-import { renderCkeditor } from "./ckeditor.js";
-import { spinner } from "./spinner.js";
-import {message} from './message.js'
-import { switchButtonClick } from "./switch-button.js";
-import { sidebar } from './sidebar.js';
 
 const table = document.getElementById("table");
 const form = document.getElementById("form");
+const alert = document.querySelector(".alert")
 
-/*******Renderiza el formulario*******/
+
 export let renderForm = () =>{
 
     let forms = document.querySelectorAll(".admin-form");
     let labels = document.getElementsByTagName('label');
     let inputs = document.querySelectorAll('.input')
     let saveButton = document.getElementById("save-button");
-    let newEntrance = document.querySelector('.new-entrance-button');
 
     inputs.forEach(input => {
 
@@ -43,7 +32,7 @@ export let renderForm = () =>{
         });
     });
 
-    /*******Envia los datos a la base de datos*******/
+
     saveButton.addEventListener("click", (event) => {
 
         event.preventDefault();
@@ -63,21 +52,17 @@ export let renderForm = () =>{
 
             let sendPostRequest = async () => { 
 
-                spinner();
                 try { 
                     await axios.post(url, data).then(response => {  
                         form.id.value = response.data.id;
                         table.innerHTML = response.data.table;
-                        
-                        message("success")
-
                         renderTable();
-                        
+                        renderCkeditor();
                     });
                  
                 } catch (error) {
-                    message(error);
-                    message("fail")
+                    console.error(error);
+
                 }
             };
 
@@ -86,33 +71,6 @@ export let renderForm = () =>{
     });
 
     renderCkeditor();
-
-
-    /*******Limpia el formulario*******/
-    newEntrance.addEventListener('click', () =>{
-
-        let url = newEntrance.dataset.url;
-        console.log(url)
-
-        let cleanForm = async () =>{
-            try { 
-                await axios.get(url).then(response => { 
-                    form.innerHTML = response.data.form;
-                    renderForm();
-                });
-                    
-            } catch (error) {
-                console.error(error);
-            }
-        };
-        cleanForm();
-    });
-
-    switchButtonClick();
-
-    
 }
 
-renderForm();
-
-
+renderForm()

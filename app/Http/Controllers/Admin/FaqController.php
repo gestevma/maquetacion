@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\FaqRequest;
 use App\Models\DB\Faq;
+use \Debugbar;
 
 class FaqController extends Controller
 {
@@ -15,7 +16,7 @@ class FaqController extends Controller
 
     function __construct(Faq $faq)
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
 
         $this->faq = $faq;
     }
@@ -25,7 +26,7 @@ class FaqController extends Controller
 
         $view = View::make('admin.faqs.index')
                 ->with('faq', $this->faq)
-                ->with('faqs', $this->faq->where('active', 1)->paginate(10));
+                ->with('faqs', $this->faq->where('active', 1)->paginate(5));
 
         if(request()->ajax()) {
             
@@ -45,7 +46,7 @@ class FaqController extends Controller
 
         $view = View::make('admin.faqs.index')
         ->with('faq', $this->faq)
-        ->with('faqs', $this->faq->where('active', 1)->paginate(10))
+        ->with('faqs', $this->faq->where('active', 1)->paginate(5))
         ->renderSections();
 
         return response()->json([
@@ -63,21 +64,21 @@ class FaqController extends Controller
             'active' => 1,
         ]);
 
-        if (request('id')){
+        /*if (request('id')){
             $message = \Lang::get('admin/faqs.faq-update');
         }else{
             $message = \Lang::get('admin/faqs.faq-create');
-        }
+        }*/
 
         $view = View::make('admin.faqs.index')
-        ->with('faqs', $this->faq->where('active', 1)->paginate(10))
+        ->with('faqs', $this->faq->where('active', 1)->paginate(5))
         ->with('faq', $faq)
         ->renderSections();        
 
         return response()->json([
             'table' => $view['table'],
             'form' => $view['form'],
-            'message' => $message,
+            //'message' => $message,
             'id' => $faq->id,
         ]);
     }
@@ -86,7 +87,7 @@ class FaqController extends Controller
     {
         $view = View::make('admin.faqs.index')
         ->with('faq', $faq)
-        ->with('faqs', $this->faq->where('active', 1)->paginate(10));   
+        ->with('faqs', $this->faq->where('active', 1)->paginate(5));   
         
         if(request()->ajax()) {
 
@@ -103,7 +104,7 @@ class FaqController extends Controller
     public function show(Faq $faq){
         $view = View::make('admin.faqs.index')
         ->with('faq', $faq)
-        ->with('faqs', $this->faq->where('active', 1)->paginate(10));   
+        ->with('faqs', $this->faq->where('active', 1)->paginate(5));   
         
         if(request()->ajax()) {
 
@@ -122,11 +123,11 @@ class FaqController extends Controller
         $faq->active = 0;
         $faq->save();
 
-        $message = Lang::get('admin/faqs.faq-delete');
+        //$message = Lang::get('admin/faqs.faq-delete');
 
         $view = View::make('admin.faqs.index')
             ->with('faq', $this->faq)
-            ->with('faqs', $this->faq->where('active', 1)->paginate(10))
+            ->with('faqs', $this->faq->where('active', 1)->paginate(5))
             ->renderSections();
         
         return response()->json([
@@ -135,62 +136,69 @@ class FaqController extends Controller
         ]);
     }
 
-    public function filter(Request $request){
 
-        $query = $this->faq->query()
-            ->join('t_faqs_categories', 't_faqs.category_id', '=', 't_faqs_categories.id')
-            ->where('t_faqs.active', 1);
+    public function filter(Request $request, $filters = null){ //Añades el $filters = null
 
-        $query->when(request('category_id'), function ($q, $category_id) {
-
-            if($category_id == 'all'){
-                return $q;
-            }
-            else {
-                return $q->where('category_id', $category_id);
-            }
-        });
-
-        $query->when(request('search'), function ($q, $search) {
-
-            if($search == null){
-                return $q;
-            }
-            else {
-                return $q->where('title', 'like', "%$search%");
-            }
-        });
-    
+        $filters = json_decode($request->input('filters')); //Aqui convertimos la url en json para poder encontrar los filtros
         
-        $query->when(request('initial_date'), function ($q, $initial_date) {
+        $query = $this->faq->query();
 
-            if($initial_date == null){
-                return $q;
-            }
-            else {
-                return $q->whereDate('created_at', '>=', $initial_date);
-                
-            }
-        });
+        if($filters != null){
+            /*No se porque pero Carlos ha cambiado la forma de escribir la busqueda de filtros así
+            Solo tienes que copiar esto con tus nombres y te deberia funcionar*/
+            $query->when($filters->category_id, function ($q, $category_id) {
 
-        $query->when(request('final_date'), function ($q, $final_date) {
+                if($category_id == 'all'){
+                    return $q;
+                }
+                else {
+                    return $q->where('category_id', $category_id);
+                }
+            });
 
-            if($final_date == null){
-                return $q;
-            }
-            else {
-                return $q->whereDate('created_at', '<=', $final_date);
-                
-            }
-        });
+            $query->when($filters->search, function ($q, $search) {
 
-        $query->when(request('order'), function ($q, $order) use ($request) {
+                if($search == null){
+                    return $q;
+                }
+                else {
+                    return $q->where('t_faqs.title', 'like', "%$search%");
+                }
+            });
 
-            $q->orderBy($order, $request->direction);
-        });
+            
+            $query->when($filters->initial_date, function ($q, $initial_date) {
 
-        $faqs = $query->join('t_faqs_categories', 't_faqs.category_id', '=', 't_faqs_categories.id')
-        ->where('t_faqs.active', 1)->paginate(10);
+                if($initial_date == null){
+                    return $q;
+                }
+                else {
+                    return $q->whereDate('t_faqs.created_at', '>=', $initial_date);
+                    
+                }
+            });
+
+            $query->when($filters->final_date, function ($q, $final_date) {
+
+                if($final_date == null){
+                    return $q;
+                }
+                else {
+                    return $q->whereDate('t_faqs.created_at', '<=', $final_date);
+                    
+                }
+            });
+
+            $query->when($filters->order, function ($q, $order) use ($filters) {
+
+                $q->orderBy($order, $filters->direction);
+            });
+
+
+        }
+
+        //Para que te pagine bien tienes que poner la parte de appends, sino se te quitará el filtro
+        $faqs = $query->where('t_faqs.active', 1)->paginate(10)->appends(['filters' => json_encode($filters)]); 
 
         $view = View::make('admin.faqs.index')
             ->with('faqs', $faqs)
@@ -201,4 +209,6 @@ class FaqController extends Controller
         ]);
     }
 }
+
+/*Ahora mismo lo de filtrar por fechas no me funciona si lo arreglo cambiare esto*/
 

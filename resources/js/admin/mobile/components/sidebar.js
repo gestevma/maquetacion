@@ -1,4 +1,5 @@
-import {renderForm, renderTable} from './crud.js'
+import {renderTable} from './crudTable.js'
+import {renderForm} from './crudForm'
 
 const sidebarsSections = document.querySelectorAll(".section-sidebar");
 const table = document.getElementById("table");

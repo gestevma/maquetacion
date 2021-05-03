@@ -21,7 +21,10 @@ Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguir
 
     //Route::get('/faqs/json', 'App\Http\Controllers\Admin\FaqController@indexJson')->name('faqs_json');
     /*Resources te dice la ruta final de la url*/
-    Route::post('/faqs/filter', 'App\Http\Controllers\Admin\FaqController@filter')->name('faqs_filter');
+
+    //1.Pega la linia de los filros así como está
+    //2. Ves al JS de filters
+    Route::get('/faqs/filter/{filters?}', 'App\Http\Controllers\Admin\FaqController@filter')->name('faqs_filter');
     Route::get('/faqs/pagination', 'App\Http\Controllers\Admin\FaqController@pagination')->name('faqs_pagination');
     Route::resource('faqs', 'App\Http\Controllers\Admin\FaqController', [
         'names' => [
@@ -60,7 +63,7 @@ Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguir
         ]
     ]);
     
-    Route::post('sliders/filter', 'App\Http\Controllers\Admin\SliderController@filter')->name('sliders_filter');
+    Route::get('/sliders/filter/{filters?}', 'App\Http\Controllers\Admin\FaqController@filter')->name('sliders_filter');
     Route::resource('sliders', 'App\Http\Controllers\Admin\SliderController', [
 
         'names' => [

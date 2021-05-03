@@ -1,60 +1,71 @@
 @extends('admin.layout.table_form')
 
 @section('table')
+    <div class="table-container" id="table-container" data-page="{{$clients->nextPageUrl()}}">
+        {{----Cabezera Tabla escritorio----}}
+        @if($agent->isDesktop())
+            <div class="thread">
+                <div class="four-columns-table first head">Nombre</div>
+                <div class="four-columns-table second head">Correo</div>
+                <div class="four-columns-table third head">Teléfono</div>
+                <div class="four-columns-table first head">Dirección</div>
+            </div>
+        @endif
 
-    <div class="table-container">
+        {{----Crea las filas de la tabla----}}
+        @foreach($clients as $client_element)
+            <div class="table-row swipe-element"> 
+                <div class="table-field-container swipe-front">
+                    <div class="table-field four-columns-table first">@if($agent->isMobile())<p class="table-field-title">Nombre: </p>@endif<p class="table-field-element">{{$client_element->name}}</p></div>
+                    <div class="table-field four-columns-table second"> @if($agent->isMobile())<p class="table-field-title">Correo: </p>@endif<p class="table-field-element">{{$client_element->email}}</p></div>
+                    <div class="table-field four-columns-table third">@if($agent->isMobile())<p class="table-field-title">Telefono: </p>@endif <p class="table-field-element">{{$client_element->telephone}}</p></div>
+                    <div class="table-field four-columns-table fourth">@if($agent->isMobile())<p class="table-field-title">Adress: </p>@endif <p class="table-field-element">{{$client_element->adress}}</p></div>
 
-        <table>
-
-            <thead>
-                <tr>
-                    <th>id</th>
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Dirección</th>
-                    <th>CP</th>
-                    <th>Teléfono</th>
-                    <th></th>     
-                </tr>
-            </thead>
-
-            @foreach ($clients as $client_element)
-                <tbody>
-                    <tr class="saved-faq">
-                        <td id="id">{{$client_element->id}}</td>
-                        <td id="name">{{$client_element->name}}</td>
-                        <td id="email">{{$client_element->email}}</td>
-                        <td id="adress">{{$client_element->adress}}</td>
-                        <td id="postcode">{{$client_element->postcode}}</td>
-                        <td id="telephone">{{$client_element->telephone}}</td>  
-                        <td class="table-buttons">
-
-                            <div class="edit-button">
-                                <button class="edit-buttons" id="edit" data-url="{{route('clients_show', ['clients' => $client_element->id])}}">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="plus-button">
-                                        <path fill="currentColor" d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
-                                    </svg>
-                                </button>
+                    {{----Botones de borrar y editar escritorio----}}
+                    @if($agent->isDesktop())
+                        <div class=buttons>
+                            <div class="edit-buttons" id="edit" data-url="{{route('clients_show', ['clients' => $client_element->id])}}">
+                                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
+                                </svg>
                             </div>
+                            <div class="eliminate-buttons" id="eliminate" data-url="{{route('clients_destroy', ['clients' => $client_element->id])}}">
+                                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    @endif
 
-                            <div class="eliminate-button">
-                                <button class="eliminate-buttons" id="eliminate" data-url="{{route('clients_destroy', ['clients' => $client_element->id])}}">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="table-button">
-                                        <path fill="currentColor" d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
-                                    </svg> 
-                                </button> 
-                            </div>      
-                        </td>
-                    </tr>
-                </tbody>
-      
-            @endforeach
-                
-            
-        </table>
+                </div>
+
+                {{----Swipe del movil para borrar y editar----}}
+                @if($agent->isMobile())
+                    <div class="table-icons-container swipe-back">
+                        <div class="table-icons edit-button right-swipe" data-url="{{route('clients_show', ['clients' => $client_element->id])}}">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
+                            </svg>
+                        </div> 
+                        
+                        <div class="table-icons delete-button left-swipe" data-url="{{route('clients_destroy', ['clients' => $client_element->id])}}">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
+                            </svg>
+                        </div>
+                    </div>
+                @endif
+            </div>
+        @endforeach
+
     </div>
-    
+
+    {{----Botones de la paginaciión. Están en otro documento----}}
+    @if($agent->isDesktop())
+        @include('admin.components.table_pagination', ['items' => $clients])
+    @endif
 @endsection
+
 
 
 @section('form')

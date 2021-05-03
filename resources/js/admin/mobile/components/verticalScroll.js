@@ -1,6 +1,6 @@
 //Cualquier evento en JS se campura con evt
 
-import { pagination } from './crud'
+import { pagination } from './crudTable'
 
 export function scrollWindowElement (element){
 

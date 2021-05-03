@@ -1,52 +1,63 @@
 @extends('admin.layout.table_form')
 
-
 @section('table')
+    <div class="table-container" id="table-container" data-page="{{$faqs_categories->nextPageUrl()}}">
+        {{----Cabezera Tabla escritorio----}}
+        @if($agent->isDesktop())
+            <div class="thread">
+                <div class="one-column-table first head">Categoria</div>
+            </div>
+        @endif
 
-    <div class="table-container">
-
-        <table>
-
-            <thead>
-                <tr>
-                    <th>id</th>
-                    <th>Categoria</th>
-                    <th></th>     
-                </tr>
-            </thead>
-
-            @foreach ($faqs_categories as $faq_category_element)
-                <tbody>
-                    <tr class="saved-faq">
-                        <td id="id">{{$faq_category_element->id}}</td>
-                        <td id="name">{{$faq_category_element->name}}</td>  
-                        <td class="table-buttons">
-
-                            <div class="edit-button">
-                                <button class="edit-buttons" id="edit" data-url="{{route('faqs_categories_show', ['faq_category' => $faq_category_element->id])}}">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="plus-button">
-                                        <path fill="currentColor" d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
-                                    </svg>
-                                </button>
+        {{----Crea las filas de la tabla----}}
+        @foreach($faqs_categories as $faq_category_element)
+            <div class="table-row swipe-element"> 
+                <div class="table-field-container swipe-front">
+                    <div class="table-field one-column-table first">@if($agent->isMobile())<p class="table-field-title">Categoria: </p>@endif<p class="table-field-element">{{$faq_category_element->name}}</p></div>
+                    {{----Botones de borrar y editar escritorio----}}
+                    @if($agent->isDesktop())
+                        <div class="buttons">
+                            <div class="edit-buttons" id="edit" data-url="{{route('faqs_categories_show', ['faq_category' => $faq_category_element->id])}}">
+                                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
+                                </svg>
                             </div>
+                            <div class="eliminate-buttons" id="eliminate" data-url="{{route('faqs_categories_destroy', ['faq_category' => $faq_category_element->id])}}">
+                                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    @endif
 
-                            <div class="eliminate-button">
-                                <button class="eliminate-buttons" id="eliminate" data-url="{{route('faqs_categories_destroy', ['faq_category' => $faq_category_element->id])}}">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="table-button">
-                                        <path fill="currentColor" d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
-                                    </svg> 
-                                </button> 
-                            </div>      
-                        </td>
-                    </tr>
-                </tbody>
-      
-            @endforeach
-                
-            
-        </table>
+                </div>
+
+                {{----Swipe del movil para borrar y editar----}}
+                @if($agent->isMobile())
+                    <div class="table-icons-container swipe-back">
+                        <div class="table-icons edit-button right-swipe" data-url="{{route('faqs_categories_show', ['faq_category' => $faq_category_element->id])}}">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
+                            </svg>
+                        </div> 
+                        
+                        <div class="table-icons delete-button left-swipe" data-url="{{route('faqs_categories_destroy', ['faq_category' => $faq_category_element->id])}}">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
+                            </svg>
+                        </div>
+                    </div>
+                @endif
+            </div>
+        @endforeach
+
     </div>
-    
+
+    {{----Botones de la paginaciión. Están en otro documento----}}
+    @if($agent->isDesktop())
+        @include('admin.components.table_pagination', ['items' => $faqs_categories])
+    @endif
+
 @endsection
 
 

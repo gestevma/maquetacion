@@ -1,19 +1,16 @@
-.spinner-box{
-    display: none;
-}
 .spinner-box.active{
-    display:inline;
     position: absolute;
     top:35vh;
     left: 73%;
     z-index: +999999;
-    opacity:1
+    opacity:0;
 }
 
 
 $spinnerSize: 40;
 
 svg.spinner {
+    display: none;
     width: $spinnerSize + px;
     height: $spinnerSize + px;
     x: 0px;

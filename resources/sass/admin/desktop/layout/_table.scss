@@ -5,9 +5,8 @@
     margin-bottom: 10vh;
     width: 40%;
     text-align: center;
+    word-wrap: break-word
 }
-
-
 
 .table-container{
     border: 2px solid rgb(116, 116, 116);
@@ -15,28 +14,73 @@
     border-radius: 0.5em;
 }
 
-.three-columns-table{
-    text-align: center;
-}
+/*****One column*****/
+    .one-column-table{
+        text-align: center;
+    }
 
-.first{
-    width: 25%;
-}
+    .one-column-table.first{
+        width: 90%;
+    }
+/*********************/
 
-.second{
-    width: 45%;
-}
 
-.third{
-    width:20%;
-}
+/*****Two columns*****/
+    .two-columns-table{
+        text-align: center;
+    }
 
-.two-columns-table{
-    border-right: 1px black solid;
-    font-weight: bold;
-    text-align: center;
-} 
+    .two-columns-table.first{
+        width: 45%;
+    }
 
+    .two-columns-table.second{
+        width: 50%;
+    }
+
+/*********************/
+
+
+/*****three columns*****/
+    .three-columns-table{
+        text-align: center;
+    }
+
+    .three-columns-table.first{
+        width: 20%;
+    }
+
+    .three-columns-table.second{
+        width: 45%;
+    }
+
+    .three-columns-table.third{
+        width:20%;
+    }
+/*********************/
+
+
+/*****four columns*****/
+    .four-columns-table{
+        text-align: center;
+    }
+
+    .four-columns-table.first{
+        width: 20%;
+    }
+
+    .four-columns-table.second{
+        width: 25%;
+    }
+
+    .four-columns-table.third{
+        width:25%;
+    }
+
+    .four-columns-table.fourth{
+        width:20%;
+    }
+/*********************/
 
 
 .thread{

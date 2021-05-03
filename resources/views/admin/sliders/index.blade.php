@@ -14,17 +14,18 @@
                 <div class="four-columns-table first head">Nombre</div>
                 <div class="four-columns-table second head">Alias</div>
                 <div class="four-columns-table third head">Visible</div>
+                <div class="four-columns-table fourth head">Fecha</div>
             </div>
         @endif
 
         {{----Crea las filas de la tabla----}}
         @foreach($sliders as $slider_element)
-                <div class="table-row four-columns-table swipe-element">
+                <div class="table-row swipe-element">
                     <div class="table-field-container swipe-front">
-                        <div class="table-field first">@if($agent->isMobile())<p class="table-field-title">Nombre: </p>@endif <p class="table-field-element" name="name">{{$slider_element->name}}</p></div>
-                        <div class="table-field second">@if($agent->isMobile())<p class="table-field-title">Alias: </p>@endif <p class="table-field-element" name="entity">{{$slider_element->entity}}</p></div>
-                        <div class="table-field third">@if($agent->isMobile())<p class="table-field-title">Visible: </p>@endif <p class="table-field-element" name="visible">{{$slider_element->visible}}</p></div>
-                        <div class="table-field fourth">@if($agent->isMobile())<p class="table-field-title">Fecha: </p>@endif <p class="table-field-element" name="date">{{ Carbon\Carbon::parse($slider_element->created_at)->format('d-m-Y') }}</p></div>
+                        <div class="table-field four-columns-table first">@if($agent->isMobile())<p class="table-field-title">Nombre: </p>@endif <p class="table-field-element" name="name">{{$slider_element->name}}</p></div>
+                        <div class="table-field four-columns-table second">@if($agent->isMobile())<p class="table-field-title">Alias: </p>@endif <p class="table-field-element" name="entity">{{$slider_element->entity}}</p></div>
+                        <div class="table-field four-columns-table third">@if($agent->isMobile())<p class="table-field-title">Visible: </p>@endif <p class="table-field-element" name="visible">{{$slider_element->visible}}</p></div>
+                        <div class="table-field four-columns-table fourth">@if($agent->isMobile())<p class="table-field-title">Fecha: </p>@endif <p class="table-field-element" name="date">{{ Carbon\Carbon::parse($slider_element->created_at)->format('d-m-Y') }}</p></div>
 
                         {{----Botones de borrar y editar escritorio----}}
                         @if($agent->isDesktop())
@@ -67,7 +68,7 @@
 
     {{----Botones de la paginaciión. Están en otro documento----}}
     @if($agent->isDesktop())
-        @include('admin.layout.partials.components.table_pagination', ['items' => $sliders])
+        @include('admin.components.table_pagination', ['items' => $sliders])
     @endif
 
 @endsection
@@ -80,7 +81,7 @@
      @isset($slider)                         
         <form class="admin-form" id="admin-form" action="{{route("sliders_store")}}" autocomplete="off">
 
-           <div>@include('admin.layout.partials.components.switch-button')</div>
+           <div>@include('admin.components.switch-button')</div>
 
             <div class="new-entrance-button" data-url="{{route("sliders_create")}}">
                 <svg style="width:24px;height:24px" viewBox="0 0 24 24">

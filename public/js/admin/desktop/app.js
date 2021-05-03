@@ -1978,10 +1978,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _crudTable_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crudTable.js */ "./resources/js/admin/desktop/components/crudTable.js");
-/* harmony import */ var _ckeditor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ckeditor */ "./resources/js/admin/desktop/components/ckeditor.js");
-/* harmony import */ var _spinner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./spinner */ "./resources/js/admin/desktop/components/spinner.js");
+/* harmony import */ var _ckeditor_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ckeditor.js */ "./resources/js/admin/desktop/components/ckeditor.js");
+/* harmony import */ var _spinner_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./spinner.js */ "./resources/js/admin/desktop/components/spinner.js");
 /* harmony import */ var _message_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./message.js */ "./resources/js/admin/desktop/components/message.js");
-/* harmony import */ var _switch_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./switch-button */ "./resources/js/admin/desktop/components/switch-button.js");
+/* harmony import */ var _switch_button_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./switch-button.js */ "./resources/js/admin/desktop/components/switch-button.js");
+/* harmony import */ var _sidebar_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sidebar.js */ "./resources/js/admin/desktop/components/sidebar.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2007,6 +2008,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     Enviar contenido del formulario a la base de datos. Al enviar los datos no se van del formulario
     Limpiar el formulario para meter una nueva entrada 
 /****************************************************************************************************/
+
 
 
 
@@ -2061,26 +2063,27 @@ var renderForm = function renderForm() {
             while (1) {
               switch (_context.prev = _context.next) {
                 case 0:
-                  (0,_spinner__WEBPACK_IMPORTED_MODULE_3__.spinner)();
+                  (0,_spinner_js__WEBPACK_IMPORTED_MODULE_3__.spinner)();
                   _context.prev = 1;
                   _context.next = 4;
                   return axios.post(url, data).then(function (response) {
                     form.id.value = response.data.id;
-                    table.innerHTML = response.data.table; //message("success", response.data.message)
-
+                    table.innerHTML = response.data.table;
+                    (0,_message_js__WEBPACK_IMPORTED_MODULE_4__.message)("success");
                     (0,_crudTable_js__WEBPACK_IMPORTED_MODULE_1__.renderTable)();
                   });
 
                 case 4:
-                  _context.next = 9;
+                  _context.next = 10;
                   break;
 
                 case 6:
                   _context.prev = 6;
                   _context.t0 = _context["catch"](1);
                   (0,_message_js__WEBPACK_IMPORTED_MODULE_4__.message)(_context.t0);
+                  (0,_message_js__WEBPACK_IMPORTED_MODULE_4__.message)("fail");
 
-                case 9:
+                case 10:
                 case "end":
                   return _context.stop();
               }
@@ -2096,7 +2099,7 @@ var renderForm = function renderForm() {
       sendPostRequest();
     });
   });
-  (0,_ckeditor__WEBPACK_IMPORTED_MODULE_2__.renderCkeditor)();
+  (0,_ckeditor_js__WEBPACK_IMPORTED_MODULE_2__.renderCkeditor)();
   /*******Limpia el formulario*******/
 
   newEntrance.addEventListener('click', function () {
@@ -2140,7 +2143,7 @@ var renderForm = function renderForm() {
 
     cleanForm();
   });
-  (0,_switch_button__WEBPACK_IMPORTED_MODULE_5__.switchButtonClick)();
+  (0,_switch_button_js__WEBPACK_IMPORTED_MODULE_5__.switchButtonClick)();
 };
 renderForm();
 
@@ -2161,15 +2164,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _crudForm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crudForm.js */ "./resources/js/admin/desktop/components/crudForm.js");
-/* harmony import */ var _message_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./message.js */ "./resources/js/admin/desktop/components/message.js");
-/* harmony import */ var _spinner_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./spinner.js */ "./resources/js/admin/desktop/components/spinner.js");
-/* harmony import */ var _switch_button_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./switch-button.js */ "./resources/js/admin/desktop/components/switch-button.js");
+/* harmony import */ var _sidebar_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sidebar.js */ "./resources/js/admin/desktop/components/sidebar.js");
+/* harmony import */ var _switch_button_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./switch-button.js */ "./resources/js/admin/desktop/components/switch-button.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
 
 
 
@@ -2262,14 +2263,13 @@ var renderTable = function renderTable() {
     });
   });
   pagination();
-  (0,_switch_button_js__WEBPACK_IMPORTED_MODULE_4__.switchButtonClick)();
+  (0,_switch_button_js__WEBPACK_IMPORTED_MODULE_3__.switchButtonClick)();
 };
 var pagination = function pagination() {
   var paginationButtons = document.querySelectorAll(".table-pagination-button");
   paginationButtons.forEach(function (paginationButton) {
     paginationButton.addEventListener('click', function () {
       var url = paginationButton.dataset.page;
-      (0,_spinner_js__WEBPACK_IMPORTED_MODULE_3__.spinner)();
 
       var paginateTable = /*#__PURE__*/function () {
         var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
@@ -2281,21 +2281,19 @@ var pagination = function pagination() {
                   _context3.next = 3;
                   return axios.get(url).then(function (response) {
                     table.innerHTML = response.data.table;
-                    (0,_message_js__WEBPACK_IMPORTED_MODULE_2__.message)("success");
                     renderTable();
                   });
 
                 case 3:
-                  _context3.next = 9;
+                  _context3.next = 8;
                   break;
 
                 case 5:
                   _context3.prev = 5;
                   _context3.t0 = _context3["catch"](0);
                   console.error(_context3.t0);
-                  (0,_message_js__WEBPACK_IMPORTED_MODULE_2__.message)("fail");
 
-                case 9:
+                case 8:
                 case "end":
                   return _context3.stop();
               }
@@ -2311,7 +2309,7 @@ var pagination = function pagination() {
       paginateTable();
     });
   });
-  (0,_switch_button_js__WEBPACK_IMPORTED_MODULE_4__.switchButtonClick)();
+  (0,_switch_button_js__WEBPACK_IMPORTED_MODULE_3__.switchButtonClick)();
 };
 renderTable();
 
@@ -2332,69 +2330,107 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _crudTable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crudTable */ "./resources/js/admin/desktop/components/crudTable.js");
+/* harmony import */ var _crudTable_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crudTable.js */ "./resources/js/admin/desktop/components/crudTable.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 
 var table = document.getElementById("table");
 var tableFilter = document.getElementById("table-filter");
-var filterForm = document.getElementById("filter-form");
+var filterForm = document.getElementById("filter-form"); //3. Pegamos la función render FilterTabla
+//4. Cuando lo pegues tienes que ir al controlador
+
 var renderFilterTable = function renderFilterTable() {
-  var openFilter = document.getElementById("open-filter");
-  var applyFilter = document.getElementById("apply-filter");
-  openFilter.addEventListener('click', function () {
-    openFilter.classList.remove('button-active');
-    tableFilter.classList.add('filter-active');
-    applyFilter.classList.add('button-active');
-  });
-  applyFilter.addEventListener('click', function () {
-    var data = new FormData(filterForm);
-    var url = filterForm.action;
+  var table = document.getElementById("table");
+  var tableFilter = document.getElementById("table-filter");
+  var filterForm = document.getElementById("filter-form");
 
-    var sendPostRequest = /*#__PURE__*/function () {
-      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.prev = 0;
-                _context.next = 3;
-                return axios.post(url, data).then(function (response) {
-                  table.innerHTML = response.data.table;
-                  console.log(url);
-                  (0,_crudTable__WEBPACK_IMPORTED_MODULE_1__.renderTable)();
-                  tableFilter.classList.remove('filter-active');
-                  applyFilter.classList.remove('button-active');
-                  openFilter.classList.add('button-active');
-                });
+  if (filterForm != null) {
+    var openFilter = document.getElementById("open-filter");
+    var applyFilter = document.getElementById("apply-filter");
+    openFilter.addEventListener('click', function () {
+      openFilter.classList.remove('button-active');
+      tableFilter.classList.add('filter-active');
+      applyFilter.classList.add('button-active');
+    });
+    applyFilter.addEventListener('click', function () {
+      var data = new FormData(filterForm);
 
-              case 3:
-                _context.next = 7;
-                break;
+      var _iterator = _createForOfIteratorHelper(data.entries()),
+          _step;
 
-              case 5:
-                _context.prev = 5;
-                _context.t0 = _context["catch"](0);
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var pair = _step.value;
+          console.log(pair[0] + ', ' + pair[1]);
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
 
-              case 7:
-              case "end":
-                return _context.stop();
+      var filters = {}; //Con esto convertiremos los parametros del filtro en un json
+
+      data.forEach(function (value, key) {
+        filters[key] = value; //Aqui le pasamos los parametros para montar el json
+      });
+      var json = JSON.stringify(filters); //El json pasamos a texto para poderlo pasar a la url
+
+      var url = filterForm.action; //Pasamos el json a la url
+
+      var sendPostRequest = /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  try {
+                    axios.get(url, {
+                      //Hacemos la llamada cogiendo los parametros del json
+                      params: {
+                        filters: json
+                      }
+                    }).then(function (response) {
+                      //Si funciona aplica el filtro
+                      table.classList.add('table-hide');
+                      table.innerHTML = response.data.table;
+                      (0,_crudTable_js__WEBPACK_IMPORTED_MODULE_1__.renderTable)();
+                      setTimeout(function () {
+                        table.classList.remove('table-hide');
+                      }, 500);
+                      tableFilter.classList.remove('filter-active');
+                      applyFilter.classList.remove('button-active');
+                      openFilter.classList.add('button-active');
+                    });
+                  } catch (error) {//Sino da error
+                  }
+
+                case 1:
+                case "end":
+                  return _context.stop();
+              }
             }
-          }
-        }, _callee, null, [[0, 5]]);
-      }));
+          }, _callee);
+        }));
 
-      return function sendPostRequest() {
-        return _ref.apply(this, arguments);
-      };
-    }();
+        return function sendPostRequest() {
+          return _ref.apply(this, arguments);
+        };
+      }();
 
-    sendPostRequest();
-  });
+      sendPostRequest();
+    });
+  }
 };
 var hideFilterTable = function hideFilterTable() {
   var openFilter = document.getElementById("open-filter");
@@ -2521,17 +2557,13 @@ var message = function message(type) {
 
   if (type == "success") {
     messageContent.innerHTML = successMessage;
-    setTimeout(function () {
-      message.classList.add("success");
-    }, 550);
+    message.classList.add("success");
     setTimeout(function () {
       message.classList.remove("success");
     }, 2500);
   } else if (type == "fail") {
     messageContent.innerHTML = failMessage;
-    setTimeout(function () {
-      message.classList.add("fail");
-    }, 550);
+    message.classList.add("fail");
     setTimeout(function () {
       message.classList.remove("fail");
     }, 2500);
@@ -2570,59 +2602,71 @@ parts.forEach(function (part) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "sidebar": () => (/* binding */ sidebar)
+/* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _crudForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crudForm */ "./resources/js/admin/desktop/components/crudForm.js");
+/* harmony import */ var _crudTable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./crudTable */ "./resources/js/admin/desktop/components/crudTable.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+
+
 var sidebarSections = document.querySelectorAll(".section-sidebar");
 var table = document.getElementById("table");
 var form = document.getElementById("form");
-sidebarSections.forEach(function (sidebarSection) {
-  sidebarSection.addEventListener("click", function () {
-    var url = sidebarSection.dataset.url;
+var sidebar = function sidebar() {
+  sidebarSections.forEach(function (sidebarSection) {
+    sidebarSection.addEventListener("click", function () {
+      var url = sidebarSection.dataset.url;
 
-    var links = /*#__PURE__*/function () {
-      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.prev = 0;
-                _context.next = 3;
-                return axios.get(url).then(function (response) {
-                  table.innerHTML = response.data.table;
-                  form.innerHTML = response.data.form;
-                });
+      var links = /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.prev = 0;
+                  _context.next = 3;
+                  return axios.get(url).then(function (response) {
+                    table.innerHTML = response.data.table;
+                    form.innerHTML = response.data.form;
+                    (0,_crudTable__WEBPACK_IMPORTED_MODULE_2__.renderTable)();
+                    (0,_crudForm__WEBPACK_IMPORTED_MODULE_1__.renderForm)();
+                  });
 
-              case 3:
-                _context.next = 8;
-                break;
+                case 3:
+                  _context.next = 8;
+                  break;
 
-              case 5:
-                _context.prev = 5;
-                _context.t0 = _context["catch"](0);
-                console.error(_context.t0);
+                case 5:
+                  _context.prev = 5;
+                  _context.t0 = _context["catch"](0);
+                  console.error(_context.t0);
 
-              case 8:
-              case "end":
-                return _context.stop();
+                case 8:
+                case "end":
+                  return _context.stop();
+              }
             }
-          }
-        }, _callee, null, [[0, 5]]);
-      }));
+          }, _callee, null, [[0, 5]]);
+        }));
 
-      return function links() {
-        return _ref.apply(this, arguments);
-      };
-    }();
+        return function links() {
+          return _ref.apply(this, arguments);
+        };
+      }();
 
-    links();
+      links();
+    });
   });
-});
+};
+sidebar();
 
 /***/ }),
 

@@ -15,7 +15,7 @@
     <body>
 
         @if(isset($filters))
-            @include('admin.layout.partials.components.table_filters', [
+            @include('admin.components.table_filters', [
                 'route' => $route, 
                 'filters' => $filters, 
                 'order' => $order

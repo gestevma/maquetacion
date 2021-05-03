@@ -12,13 +12,13 @@ export let message = (type)=>{
 
     if (type=="success"){
         messageContent.innerHTML = successMessage;
-        setTimeout(function(){ message.classList.add("success"); }, 550);
+        message.classList.add("success");
         setTimeout(function(){ message.classList.remove("success"); }, 2500);
     }
 
     else if (type=="fail"){
         messageContent.innerHTML = failMessage;
-        setTimeout(function(){ message.classList.add("fail"); }, 550);
+        message.classList.add("fail");
         setTimeout(function(){ message.classList.remove("fail"); }, 2500);
     }
 }

@@ -1,31 +1,41 @@
+import { renderForm } from "./crudForm";
+import { renderTable } from "./crudTable";
+
 const sidebarSections = document.querySelectorAll(".section-sidebar");
 const table = document.getElementById("table");
 const form = document.getElementById("form");
 
 
 
+export let sidebar = ()=>{ 
+    sidebarSections.forEach(sidebarSection => {
 
-sidebarSections.forEach(sidebarSection => {
+        sidebarSection.addEventListener("click", ()=>{
 
-    sidebarSection.addEventListener("click", ()=>{
+            let url = sidebarSection.dataset.url;
 
-        let url = sidebarSection.dataset.url;
+            let links = async () => { 
+        
+                try { 
+                    await axios.get(url).then(response => { 
+                        table.innerHTML = response.data.table;
+                        form.innerHTML = response.data.form;
+                        renderTable();
+                        renderForm();
 
-        let links = async () => { 
-    
-            try { 
-                await axios.get(url).then(response => { 
-                    table.innerHTML = response.data.table;
-                    form.innerHTML = response.data.form;
+                    });
+                    
+                } catch (error) {
+                    console.error(error);
+                }
+            };
 
-                });
-                 
-            } catch (error) {
-                console.error(error);
-            }
-        };
+            links();
+        })
 
-        links();
     })
+    
 
-})
+}
+
+sidebar()
