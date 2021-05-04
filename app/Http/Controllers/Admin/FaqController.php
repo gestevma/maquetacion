@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Jenssegers\Agent\Agent;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\FaqRequest;
 use App\Models\DB\Faq;
@@ -13,12 +14,22 @@ use \Debugbar;
 class FaqController extends Controller
 {
     protected $faq;
+    protected $agent;
+    protected $paginate;
 
-    function __construct(Faq $faq)
+    function __construct(Faq $faq, Agent $agent)
     {
         $this->middleware('auth');
-
         $this->faq = $faq;
+        $this->agent = $agent;
+
+        if ($this->agent->isMobile()) {
+            $this->paginate = 10;
+        }
+
+        if ($this->agent->isDesktop()) {
+            $this->paginate = 6;
+        }
     }
 
     public function index()
@@ -26,7 +37,7 @@ class FaqController extends Controller
 
         $view = View::make('admin.faqs.index')
                 ->with('faq', $this->faq)
-                ->with('faqs', $this->faq->where('active', 1)->paginate(5));
+                ->with('faqs', $this->faq->where('active', 1)->paginate($this->paginate));
 
         if(request()->ajax()) {
             
@@ -46,7 +57,7 @@ class FaqController extends Controller
 
         $view = View::make('admin.faqs.index')
         ->with('faq', $this->faq)
-        ->with('faqs', $this->faq->where('active', 1)->paginate(5))
+        ->with('faqs', $this->faq->where('active', 1)->paginate($this->paginate))
         ->renderSections();
 
         return response()->json([
@@ -56,6 +67,7 @@ class FaqController extends Controller
 
     public function store(FaqRequest $request)
     {            
+        Debugbar::info($request);
         $faq = $this->faq->updateOrCreate([
             'id' => request('id')],[
             'title' => request('title'),
@@ -71,7 +83,7 @@ class FaqController extends Controller
         }*/
 
         $view = View::make('admin.faqs.index')
-        ->with('faqs', $this->faq->where('active', 1)->paginate(5))
+        ->with('faqs', $this->faq->where('active', 1)->paginate($this->paginate))
         ->with('faq', $faq)
         ->renderSections();        
 
@@ -87,7 +99,7 @@ class FaqController extends Controller
     {
         $view = View::make('admin.faqs.index')
         ->with('faq', $faq)
-        ->with('faqs', $this->faq->where('active', 1)->paginate(5));   
+        ->with('faqs', $this->faq->where('active', 1)->paginate($this->paginate));   
         
         if(request()->ajax()) {
 
@@ -104,7 +116,7 @@ class FaqController extends Controller
     public function show(Faq $faq){
         $view = View::make('admin.faqs.index')
         ->with('faq', $faq)
-        ->with('faqs', $this->faq->where('active', 1)->paginate(5));   
+        ->with('faqs', $this->faq->where('active', 1)->paginate($this->paginate));   
         
         if(request()->ajax()) {
 
@@ -127,7 +139,7 @@ class FaqController extends Controller
 
         $view = View::make('admin.faqs.index')
             ->with('faq', $this->faq)
-            ->with('faqs', $this->faq->where('active', 1)->paginate(5))
+            ->with('faqs', $this->faq->where('active', 1)->paginate($this->paginate))
             ->renderSections();
         
         return response()->json([
@@ -198,7 +210,7 @@ class FaqController extends Controller
         }
 
         //Para que te pagine bien tienes que poner la parte de appends, sino se te quitará el filtro
-        $faqs = $query->where('t_faqs.active', 1)->paginate(10)->appends(['filters' => json_encode($filters)]); 
+        $faqs = $query->where('t_faqs.active', 1)->paginate($this->paginate)->appends(['filters' => json_encode($filters)]); 
 
         $view = View::make('admin.faqs.index')
             ->with('faqs', $faqs)

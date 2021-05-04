@@ -17,3 +17,5 @@ export let switchButtonClick = () =>{
 
     });
 }
+
+switchButtonClick();

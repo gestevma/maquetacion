@@ -6,8 +6,12 @@
 }
 .switch-button {
     padding-top:0%;
-    position:relative;
-    left: 90%;
+}
+
+.no-switch{
+    position: relative;
+    width: 10%;
+    margin-top: 2%;
 }
 .switch-button .switch-button__checkbox {
     display: none;

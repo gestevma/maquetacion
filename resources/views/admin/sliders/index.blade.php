@@ -1,7 +1,7 @@
 @php
     $route = 'sliders';
     $filters = ['name' => true, 'entity' => true , 'visible'=> true, 'date'=> true ];
-    $order = ['fecha de creación' => 't_sliders.created_at', 'nombre' => 't_sliders.name', 'alias' => 't_sliders.entity', 'visible' => 't_sliders.visible' ]; 
+    $order = ['Última actualización' => 't_sliders.updated_at', 'nombre' => 't_sliders.name', 'alias' => 't_sliders.entity', 'visible' => 't_sliders.visible' ]; 
 @endphp
 
 @extends('admin.layout.table_form')
@@ -25,7 +25,7 @@
                         <div class="table-field four-columns-table first">@if($agent->isMobile())<p class="table-field-title">Nombre: </p>@endif <p class="table-field-element" name="name">{{$slider_element->name}}</p></div>
                         <div class="table-field four-columns-table second">@if($agent->isMobile())<p class="table-field-title">Alias: </p>@endif <p class="table-field-element" name="entity">{{$slider_element->entity}}</p></div>
                         <div class="table-field four-columns-table third">@if($agent->isMobile())<p class="table-field-title">Visible: </p>@endif <p class="table-field-element" name="visible">{{$slider_element->visible}}</p></div>
-                        <div class="table-field four-columns-table fourth">@if($agent->isMobile())<p class="table-field-title">Fecha: </p>@endif <p class="table-field-element" name="date">{{ Carbon\Carbon::parse($slider_element->created_at)->format('d-m-Y') }}</p></div>
+                        <div class="table-field four-columns-table fourth">@if($agent->isMobile())<p class="table-field-title">Fecha: </p>@endif <p class="table-field-element" name="date">{{ Carbon\Carbon::parse($slider_element->updated_at)->format('d-m-Y') }}</p></div>
 
                         {{----Botones de borrar y editar escritorio----}}
                         @if($agent->isDesktop())
@@ -82,12 +82,6 @@
         <form class="admin-form" id="admin-form" action="{{route("sliders_store")}}" autocomplete="off">
 
            <div>@include('admin.components.switch-button')</div>
-
-            <div class="new-entrance-button" data-url="{{route("sliders_create")}}">
-                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                </svg> 
-            </div>
             
             <input autocomplete="false" name="hidden" type="text" style="display:none;">
             <input type="hidden" name="id" value="{{isset($slider->id) ? $slider->id : ''}}">
@@ -114,17 +108,17 @@
             </div>
 
             <div class="form-submit">
-                <button class="form-button" id="save-button">
+                <div class="form-button" id="save-button">
                     <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
                     </svg>
-                </button>
+                </div>
             
-                <button class="form-button" id="eliminate-button">
+                <div class="form-button new-entrance-button" id="eliminate-button" data-url="{{route('sliders_create')}}">
                     <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
+                        <path fill="currentColor" d="M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
                     </svg> 
-                </button> 
+                </div> 
             </div>
         </form>
     @endif

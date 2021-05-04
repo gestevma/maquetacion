@@ -25,8 +25,8 @@
                     </div>    
                 @endif
 
-                @if($key == 'category')
-                    <div class="one-column">
+                <div class="one-column">
+                    @if($key == 'category')
                         <div class="form-group">
                             <div class="form-label">
                                 <label for="category_id" class="label-highlight">Filtrar por categoría</label>
@@ -40,11 +40,12 @@
                                 </select>    
                             </div>
                         </div>
-                    </div>    
-                @endif
-                
-                @if($key == 'search')
-                    <div class="one-column">
+                    @endif
+                </div>
+
+
+                <div class="one-column">
+                    @if($key == 'search')
                         <div class="form-group">
                             <div class="form-label">
                                 <label for="search" class="label-highlight">Buscar palabra</label>
@@ -53,11 +54,11 @@
                                 <input type="text" name="search" class="input-highlight" value="">
                             </div>
                         </div>
-                    </div>    
-                @endif
-
-                @if($key == 'name')
-                    <div class="one-column">
+                    @endif
+                </div>
+                
+                <div class="two-columns">
+                    @if($key == 'name')
                         <div class="form-group">
                             <div class="form-label">
                                 <label for="name" class="label-highlight">Buscar nombre</label>
@@ -65,12 +66,10 @@
                             <div class="form-input">
                                 <input type="text" name="name" class="input-highlight" value="">
                             </div>
-                        </div>
-                    </div>    
-                @endif
+                        </div>  
+                    @endif
 
-                @if($key == 'entity')
-                    <div class="one-column">
+                    @if($key == 'entity')
                         <div class="form-group">
                             <div class="form-label">
                                 <label for="entity" class="label-highlight">Buscar Alias</label>
@@ -78,9 +77,10 @@
                             <div class="form-input">
                                 <input type="text" name="entity" class="input-highlight" value="">
                             </div>
-                        </div>
-                    </div>    
-                @endif
+                        </div>  
+                    @endif
+                </div>
+
 
                 @if($key == 'visible')
                     <div class="one-column">
@@ -95,21 +95,8 @@
                     </div>    
                 @endif
 
-                @if($key == 'search')
-                    <div class="one-column">
-                        <div class="form-group">
-                            <div class="form-label">
-                                <label for="search" class="label-highlight">Buscar palabra</label>
-                            </div>
-                            <div class="form-input">
-                                <input type="text" name="search" class="input-highlight" value="">
-                            </div>
-                        </div>
-                    </div>    
-                @endif
-
-                @if($key == 'date')
-                    <div class="one-column">
+                <div class = "two-columns">
+                    @if($key == 'date')
                         <div class="form-group">
                             <div class="form-label">
                                 <label for="initial_date" class="label-highlight">Fecha inicio</label>
@@ -118,11 +105,9 @@
                                 <input type="date" name="initial_date" class="input-highlight" value="">
                             </div>
                         </div>
-                    </div>    
-                @endif
+                    @endif
 
-                @if($key == 'date')
-                    <div class="one-column">
+                    @if($key == 'date')
                         <div class="form-group">
                             <div class="form-label">
                                 <label for="final_date" class="label-highlight">Fecha final</label>
@@ -131,11 +116,12 @@
                                 <input type="date" name="final_date" class="input-highlight" value="">
                             </div>
                         </div>
-                    </div>    
-                @endif
+                    @endif
+                </div>
 
             @endforeach
 
+            
             <div class="two-columns">
                 <div class="form-group">
                     <div class="form-label">

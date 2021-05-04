@@ -1,7 +1,7 @@
 @php
     $route = 'faqs';
-    $filters = ['category' => $faqs_categories, 'search' => true,  'initial_date' => true, 'final_date' => true];
-    $order = ['fecha de creación' => 't_faqs.created_at', 'nombre' => 't_faqs.title', 'categoría' => 't_faqs_categories.name']; 
+    $filters = ['category' => $faqs_categories, 'search' => true,  'date' => true];
+    $order = ['Última actualización' => 't_faqs.updated_at', 'nombre' => 't_faqs.title', 'categoría' => 't_faqs_categories.name']; 
 @endphp
 
 @extends('admin.layout.table_form')
@@ -13,7 +13,7 @@
             <div class="thread">
                 <div class="three-columns-table first head">Categoria</div>
                 <div class="three-columns-table second head">Pregunta</div>
-                <div class="three-columns-table third head">Creación</div>
+                <div class="three-columns-table third head">Actualización</div>
             </div>
         @endif
 
@@ -23,7 +23,7 @@
                 <div class="table-field-container swipe-front">
                     <div class="table-field three-columns-table first">@if($agent->isMobile())<p class="table-field-title">Categoria: </p>@endif<p class="table-field-element">{{$faq_element->category->name}}</p></div>
                     <div class="table-field three-columns-table second">@if($agent->isMobile())<p class="table-field-title">Título: </p>@endif<p class="table-field-element">{{$faq_element->title}}</p></div>
-                    <div class="table-field three-columns-table third">@if($agent->isMobile())<p class="table-field-title">Fecha: </p>@endif <p class="table-field-element">{{ Carbon\Carbon::parse($faq_element->created_at)->format('d-m-Y') }}</p></div>
+                    <div class="table-field three-columns-table third">@if($agent->isMobile())<p class="table-field-title">Fecha: </p>@endif <p class="table-field-element">{{ Carbon\Carbon::parse($faq_element->updated_at)->format('d-m-Y') }}</p></div>
 
                     {{----Botones de borrar y editar escritorio----}}
                     @if($agent->isDesktop())
@@ -77,59 +77,112 @@
     @isset($faq)     
         <form class="admin-form" id="faqs-form" action="{{route("faqs_store")}}" autocomplete="off">
 
-            <div>@include('admin.components.switch-button')</div>
-
             <input autocomplete="false" name="hidden" type="text" style="display:none;">
             <input type="hidden" name="id" value="{{isset($faq->id) ? $faq->id : ''}}">
                             
             {{ csrf_field() }}
-            <div class=form-write>
-
-                <div class="form-group">
-                    <div class="form-label">
-                        <label><p class="form-label-title">Categoria:</p></label>
-                    </div>
-                    <div class="form-input">
-                        <select name="category_id"  class="input" data-placeholder="Seleccione una categoría" class="input-highlight">
-                            <option></option>
-                            @foreach($faqs_categories as $faq_category)
-                                <option value="{{$faq_category->id}}" {{$faq->category_id == $faq_category->id ? 'selected':''}} class="category_id">{{ $faq_category->name }}</option>
-                            @endforeach
-                        </select>                   
-                    </div>
+            {{--@foreach languaje o algo--}}
+            <div class = "form-head">
+                <div class="form-parts">
+                    <p class="part" data-part="content">Contenido</p>
+                    <p class="part" data-part="images">Imágenes</p>
                 </div>
-
-                <div class="form-group">
-                    <div class="form-label">
-                        <label><p class="form-label-title">Pregunta:</p></label>
-                    </div>
-                    <div class="form-input" id="question">
-                        <input type="text" class="input" name="title" value="{{isset($faq->title) ? $faq->title : ''}}" >
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="form-label">
-                        <label><p class="form-label-title">Respuesta:</p></label> 
-                    </div>
-                    <div class="form-input" id="answer">
-                        <textarea class="ckeditor input" name="description" class="input-highlight">{{isset($faq->description) ? $faq->description : ''}}</textarea>
-                    </div>
-                </div>
+                <div class=no-switch>@include('admin.components.switch-button')</div>
             </div>
-
-            <div class="form-submit">
-                <div class="form-button" id="save-button">
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
-                    </svg>
-                </div>
             
-                <div class="form-button new-entrance-button" id="eliminate-button">
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
-                    </svg> 
-                </div> 
+            <div class = form-content>
+                <div class="form-write part-section active" data-part="content">
+                    <div class="form-group">
+                        <div class="form-label">
+                            <label><p class="form-label-title">Categoria:</p></label>
+                        </div>
+                        <div class="form-input">
+                            <select name="category_id"  class="input" data-placeholder="Seleccione una categoría" class="input-highlight">
+                                <option></option>
+                                @foreach($faqs_categories as $faq_category)
+                                    <option value="{{$faq_category->id}}" {{$faq->category_id == $faq_category->id ? 'selected':''}} class="category_id">{{ $faq_category->name }}</option>
+                                @endforeach
+                            </select>                   
+                        </div>
+                    </div>
+
+                    @component ('admin.components.locale')
+
+                        <div class="language-section active" data-part="spanish">
+                            <div class="form-group">
+                                <div class="form-label">
+                                    <label><p class="form-label-title">Pregunta:</p></label>
+                                </div>
+                                <div class="form-input" id="question">
+                                    <input type="text" class="input" name="locale[title.es]" value="{{isset($faq->title) ? $faq->title : ''}}" >
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-label">
+                                    <label><p class="form-label-title">Respuesta:</p></label> 
+                                </div>
+                                <div class="form-input" id="answer">
+                                    <textarea class="ckeditor input" name="locale[description.es]" class="input-highlight">{{isset($faq->description) ? $faq->description : ''}}</textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="language-section" data-part="english">
+                            <div class="form-group">
+                                <div class="form-label">
+                                    <label><p class="form-label-title">Question:</p></label>
+                                </div>
+                                <div class="form-input" id="question">
+                                    <input type="text" class="input" name="locale[title.en]" value="{{isset($faq->title) ? $faq->title : ''}}" >
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-label">
+                                    <label><p class="form-label-title">Answer:</p></label> 
+                                </div>
+                                <div class="form-input" id="answer">
+                                    <textarea class="ckeditor input" name="locale[description.en]" class="input-highlight">{{isset($faq->description) ? $faq->description : ''}}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    @endcomponent
+                </div>
+
+
+                <div class="form-images part-section" data-part="images">
+                    @component ('admin.components.locale')
+                        <div class="language-section" data-part="english">
+                            <div class="drop-zone">
+                                <span class="drop-zone__prompt">Drop file here or click to upload</span>
+                                <input type="file" name="myFile" class="drop-zone__input">
+                            </div>
+                        </div>
+
+                        <div class="language-section active" data-part="spanish">
+                            <div class="drop-zone">
+                                <span class="drop-zone__prompt">Suelta un archivo o haz clic para subir</span>
+                                <input type="file" name="myFile" class="drop-zone__input">
+                            </div>
+                        </div>
+                    @endcomponent
+                </div>
+                
+
+                <div class="form-submit">
+                    <div class="form-button" id="save-button">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
+                        </svg>
+                    </div>
+                
+                    <div class="form-button new-entrance-button" id="eliminate-button" data-url="{{route('faqs_create')}}">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                        </svg> 
+                    </div> 
+                </div>
             </div>
         </form>
     @endif

@@ -8,9 +8,10 @@
 import {renderTable} from './crudTable.js'
 import { renderCkeditor } from "./ckeditor.js";
 import { spinner } from "./spinner.js";
-import {message} from './message.js'
-import { switchButtonClick } from "./switch-button.js";
-import { sidebar } from './sidebar.js';
+import {message} from './message.js';
+import { languages } from './languajes.js';
+import { images } from './images.js';
+import { parts } from './parts.js';
 
 const table = document.getElementById("table");
 const form = document.getElementById("form");
@@ -108,9 +109,10 @@ export let renderForm = () =>{
         cleanForm();
     });
 
-    switchButtonClick();
+    languages();
+    images();
+    parts();
 
-    
 }
 
 renderForm();

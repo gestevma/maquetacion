@@ -1,10 +1,5 @@
 import {renderTable} from './crudTable.js';
 
-const table = document.getElementById("table");
-const tableFilter = document.getElementById("table-filter");
-const filterForm = document.getElementById("filter-form");
-
-
 //3. Pegamos la función render FilterTabla
 //4. Cuando lo pegues tienes que ir al controlador
 export let renderFilterTable = () => {

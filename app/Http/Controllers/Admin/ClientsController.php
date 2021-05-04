@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Jenssegers\Agent\Agent;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\ClientsRequest;
 use App\Models\DB\Clients;
@@ -12,20 +13,29 @@ use App\Models\DB\Clients;
 class ClientsController extends Controller
 {
     protected $clients;
+    protected $agent;
+    protected $paginate;
 
-    function __construct(Clients $clients)
+    function __construct(Clients $clients, Agent $agent)
     {
         $this->middleware('auth');
-
+        $this->agent = $agent;
         $this->clients = $clients;
-    }
 
+        if ($this->agent->isMobile()) {
+            $this->paginate = 10;
+        }
+
+        if ($this->agent->isDesktop()) {
+            $this->paginate = 6;
+        }
+    }
     public function index()
     {
 
         $view = View::make('admin.clients.index')
                 ->with('client', $this->clients)
-                ->with('clients', $this->clients->where('active', 1)->paginate(5));
+                ->with('clients', $this->clients->where('active', 1)->paginate($this->paginate));
 
         if(request()->ajax()) {
             
@@ -40,11 +50,12 @@ class ClientsController extends Controller
         return $view;
     }
 
+    
     public function create()
     {
-
         $view = View::make('admin.clients.index')
         ->with('client', $this->clients)
+        ->with('clients', $this->clients->where('active', 1)->paginate($this->paginate))
         ->renderSections();
 
         return response()->json([
@@ -68,7 +79,7 @@ class ClientsController extends Controller
         ]);
 
         $view = View::make('admin.clients.index')
-        ->with('clients', $this->clients->where('active', 1)->paginate(5))
+        ->with('clients', $this->clients->where('active', 1)->paginate($this->paginate))
         ->with('client', $clients)
         ->renderSections();        
 
@@ -83,7 +94,7 @@ class ClientsController extends Controller
     {
         $view = View::make('admin.clients.index')
         ->with('client', $clients)
-        ->with('clients', $this->clients->where('active', 1)->paginate(5));   
+        ->with('clients', $this->clients->where('active', 1)->paginate($this->paginate));   
         
         if(request()->ajax()) {
 
@@ -100,7 +111,7 @@ class ClientsController extends Controller
     public function show(Clients $clients){
         $view = View::make('admin.clients.index')
         ->with('client', $clients)
-        ->with('clients', $this->clients->where('active', 1)->paginate(5));   
+        ->with('clients', $this->clients->where('active', 1)->paginate($this->paginate));   
         
         if(request()->ajax()) {
 
@@ -121,7 +132,7 @@ class ClientsController extends Controller
 
         $view = View::make('admin.clients.index')
             ->with('client', $this->clients)
-            ->with('clients', $this->clients->where('active', 1)->paginate(5))
+            ->with('clients', $this->clients->where('active', 1)->paginate($this->paginate))
             ->renderSections();
         
         return response()->json([

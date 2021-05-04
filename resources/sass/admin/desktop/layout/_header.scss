@@ -6,6 +6,11 @@ header{
     height: 8vh;
 }
 
+h2{
+    position: relative;
+    z-index:9999;
+}
+
 .page-title{
     text-align: left;
     padding-top:1%;
@@ -19,6 +24,8 @@ header{
     height: 100px;
     position: relative;
     left: 95%;
+    position: relative;
+    z-index:9999;
 }
 
 .sections-box:hover{

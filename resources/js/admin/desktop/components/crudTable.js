@@ -1,5 +1,4 @@
 import {renderForm} from './crudForm.js'
-import { sidebar } from './sidebar.js';
 import {switchButtonClick} from './switch-button.js'
 
 export let renderTable = () => {
@@ -55,7 +54,6 @@ export let renderTable = () => {
     });
 
     pagination();
-    switchButtonClick();
     
 }
 
@@ -83,8 +81,6 @@ export let pagination = () => {
             paginateTable();
         })
     })
-
-    switchButtonClick();
 }
 
 renderTable();

@@ -1895,6 +1895,8 @@ __webpack_require__(/*! ./components/filterTable */ "./resources/js/admin/deskto
 __webpack_require__(/*! ./components/switch-button */ "./resources/js/admin/desktop/components/switch-button.js");
 
 __webpack_require__(/*! ./components/spinner */ "./resources/js/admin/desktop/components/spinner.js");
+
+__webpack_require__(/*! ./components/languajes */ "./resources/js/admin/desktop/components/languajes.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -1981,8 +1983,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ckeditor_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ckeditor.js */ "./resources/js/admin/desktop/components/ckeditor.js");
 /* harmony import */ var _spinner_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./spinner.js */ "./resources/js/admin/desktop/components/spinner.js");
 /* harmony import */ var _message_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./message.js */ "./resources/js/admin/desktop/components/message.js");
-/* harmony import */ var _switch_button_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./switch-button.js */ "./resources/js/admin/desktop/components/switch-button.js");
-/* harmony import */ var _sidebar_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sidebar.js */ "./resources/js/admin/desktop/components/sidebar.js");
+/* harmony import */ var _languajes_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./languajes.js */ "./resources/js/admin/desktop/components/languajes.js");
+/* harmony import */ var _images_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./images.js */ "./resources/js/admin/desktop/components/images.js");
+/* harmony import */ var _parts_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./parts.js */ "./resources/js/admin/desktop/components/parts.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2008,6 +2011,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     Enviar contenido del formulario a la base de datos. Al enviar los datos no se van del formulario
     Limpiar el formulario para meter una nueva entrada 
 /****************************************************************************************************/
+
 
 
 
@@ -2143,7 +2147,9 @@ var renderForm = function renderForm() {
 
     cleanForm();
   });
-  (0,_switch_button_js__WEBPACK_IMPORTED_MODULE_5__.switchButtonClick)();
+  (0,_languajes_js__WEBPACK_IMPORTED_MODULE_5__.languages)();
+  (0,_images_js__WEBPACK_IMPORTED_MODULE_6__.images)();
+  (0,_parts_js__WEBPACK_IMPORTED_MODULE_7__.parts)();
 };
 renderForm();
 
@@ -2164,14 +2170,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _crudForm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crudForm.js */ "./resources/js/admin/desktop/components/crudForm.js");
-/* harmony import */ var _sidebar_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sidebar.js */ "./resources/js/admin/desktop/components/sidebar.js");
-/* harmony import */ var _switch_button_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./switch-button.js */ "./resources/js/admin/desktop/components/switch-button.js");
+/* harmony import */ var _switch_button_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./switch-button.js */ "./resources/js/admin/desktop/components/switch-button.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
 
 
 
@@ -2263,7 +2267,6 @@ var renderTable = function renderTable() {
     });
   });
   pagination();
-  (0,_switch_button_js__WEBPACK_IMPORTED_MODULE_3__.switchButtonClick)();
 };
 var pagination = function pagination() {
   var paginationButtons = document.querySelectorAll(".table-pagination-button");
@@ -2309,7 +2312,6 @@ var pagination = function pagination() {
       paginateTable();
     });
   });
-  (0,_switch_button_js__WEBPACK_IMPORTED_MODULE_3__.switchButtonClick)();
 };
 renderTable();
 
@@ -2343,10 +2345,7 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-
-var table = document.getElementById("table");
-var tableFilter = document.getElementById("table-filter");
-var filterForm = document.getElementById("filter-form"); //3. Pegamos la función render FilterTabla
+ //3. Pegamos la función render FilterTabla
 //4. Cuando lo pegues tienes que ir al controlador
 
 var renderFilterTable = function renderFilterTable() {
@@ -2535,6 +2534,115 @@ sectionsTitles.forEach(function (sectionTitle) {
 
 /***/ }),
 
+/***/ "./resources/js/admin/desktop/components/images.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/admin/desktop/components/images.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "images": () => (/* binding */ images)
+/* harmony export */ });
+var images = function images() {
+  document.querySelectorAll(".drop-zone__input").forEach(function (inputElement) {
+    var dropZoneElement = inputElement.closest(".drop-zone");
+    dropZoneElement.addEventListener("click", function (e) {
+      inputElement.click();
+    });
+    inputElement.addEventListener("change", function (e) {
+      if (inputElement.files.length) {
+        updateThumbnail(dropZoneElement, inputElement.files[0]);
+      }
+    });
+    dropZoneElement.addEventListener("dragover", function (e) {
+      e.preventDefault();
+      dropZoneElement.classList.add("drop-zone--over");
+    });
+    ["dragleave", "dragend"].forEach(function (type) {
+      dropZoneElement.addEventListener(type, function (e) {
+        dropZoneElement.classList.remove("drop-zone--over");
+      });
+    });
+    dropZoneElement.addEventListener("drop", function (e) {
+      e.preventDefault();
+
+      if (e.dataTransfer.files.length) {
+        inputElement.files = e.dataTransfer.files;
+        updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+      }
+
+      dropZoneElement.classList.remove("drop-zone--over");
+    });
+  });
+  /**
+   * Updates the thumbnail on a drop zone element.
+   *
+   * @param {HTMLElement} dropZoneElement
+   * @param {File} file
+   */
+
+  function updateThumbnail(dropZoneElement, file) {
+    var thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb"); // First time - remove the prompt
+
+    if (dropZoneElement.querySelector(".drop-zone__prompt")) {
+      dropZoneElement.querySelector(".drop-zone__prompt").remove();
+    } // First time - there is no thumbnail element, so lets create it
+
+
+    if (!thumbnailElement) {
+      thumbnailElement = document.createElement("div");
+      thumbnailElement.classList.add("drop-zone__thumb");
+      dropZoneElement.appendChild(thumbnailElement);
+    }
+
+    thumbnailElement.dataset.label = file.name; // Show thumbnail for image files
+
+    if (file.type.startsWith("image/")) {
+      var reader = new FileReader();
+      reader.readAsDataURL(file);
+
+      reader.onload = function () {
+        thumbnailElement.style.backgroundImage = "url('".concat(reader.result, "')");
+      };
+    } else {
+      thumbnailElement.style.backgroundImage = null;
+    }
+  }
+};
+
+/***/ }),
+
+/***/ "./resources/js/admin/desktop/components/languajes.js":
+/*!************************************************************!*\
+  !*** ./resources/js/admin/desktop/components/languajes.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "languages": () => (/* binding */ languages)
+/* harmony export */ });
+var languages = function languages() {
+  var languageParts = document.querySelectorAll(".language-part");
+  var languageSections = document.querySelectorAll(".language-section");
+  languageParts.forEach(function (languagePart) {
+    languagePart.addEventListener("click", function () {
+      languageSections.forEach(function (languageSection) {
+        languageSection.classList.remove("active");
+
+        if (languagePart.dataset.part == languageSection.dataset.part) {
+          languageSection.classList.add("active");
+        }
+      });
+    });
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/admin/desktop/components/message.js":
 /*!**********************************************************!*\
   !*** ./resources/js/admin/desktop/components/message.js ***!
@@ -2576,21 +2684,28 @@ var message = function message(type) {
 /*!********************************************************!*\
   !*** ./resources/js/admin/desktop/components/parts.js ***!
   \********************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-var parts = document.querySelectorAll(".part");
-var formParts = document.querySelectorAll(".form-part-section");
-parts.forEach(function (part) {
-  part.addEventListener("click", function () {
-    formParts.forEach(function (formPart) {
-      formPart.classList.remove("active");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "parts": () => (/* binding */ parts)
+/* harmony export */ });
+var parts = function parts() {
+  var parts = document.querySelectorAll(".part");
+  var partsSections = document.querySelectorAll(".part-section");
+  parts.forEach(function (part) {
+    part.addEventListener("click", function () {
+      partsSections.forEach(function (PartSection) {
+        PartSection.classList.remove("active");
 
-      if (formPart.dataset.part == part.dataset.part) {
-        formPart.classList.add("active");
-      }
+        if (PartSection.dataset.part == part.dataset.part) {
+          PartSection.classList.add("active");
+        }
+      });
     });
   });
-});
+};
 
 /***/ }),
 
@@ -2716,6 +2831,7 @@ var switchButtonClick = function switchButtonClick() {
     }
   });
 };
+switchButtonClick();
 
 /***/ }),
 

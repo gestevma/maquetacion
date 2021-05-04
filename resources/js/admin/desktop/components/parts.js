@@ -1,16 +1,21 @@
-const parts = document.querySelectorAll(".part");
-const formParts = document.querySelectorAll(".form-part-section")
+export let parts = () => {
 
-parts.forEach(part =>{
-    part.addEventListener("click", () =>{
+    const parts = document.querySelectorAll(".part");
+    const partsSections = document.querySelectorAll(".part-section")
 
-        formParts.forEach(formPart =>{
-            formPart.classList.remove("active")
-            
-            if (formPart.dataset.part==part.dataset.part){
-                formPart.classList.add("active")
-            }
-        })        
 
+    parts.forEach(part =>{
+        part.addEventListener("click", () =>{
+
+            partsSections.forEach(PartSection =>{
+
+                PartSection.classList.remove("active");
+                
+                if (PartSection.dataset.part==part.dataset.part){
+                    PartSection.classList.add("active");
+                }
+            })        
+
+        })
     })
-})
+}
