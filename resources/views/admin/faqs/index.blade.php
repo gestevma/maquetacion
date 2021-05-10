@@ -27,7 +27,7 @@
 
                     {{----Botones de borrar y editar escritorio----}}
                     @if($agent->isDesktop())
-                        <div class=buttons>
+                        <div class=table-buttons>
                             <div class="edit-buttons" id="edit" data-url="{{route('faqs_show', ['faq' => $faq_element->id])}}">
                                 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
@@ -81,91 +81,89 @@
             <input type="hidden" name="id" value="{{isset($faq->id) ? $faq->id : ''}}">
                             
             {{ csrf_field() }}
-            {{--@foreach languaje o algo--}}
+
             <div class = "form-head">
                 <div class="form-parts">
-                    <p class="part" data-part="content">Contenido</p>
+                    <p class="part active" data-part="content">Contenido</p>
                     <p class="part" data-part="images">Imágenes</p>
                 </div>
-                <div class=no-switch>@include('admin.components.switch-button')</div>
+                <div class="switch-inactive">@include('admin.components.switch-button')</div>
             </div>
             
-            <div class = form-content>
+
+            <div class = form-body>
+
                 <div class="form-write part-section active" data-part="content">
-                    <div class="form-group">
-                        <div class="form-label">
-                            <label><p class="form-label-title">Categoria:</p></label>
+
+                    <div class="form-not-translatable">
+
+                        <div class="form-group">
+                            <div class="form-label">
+                                <label><p class="form-label-title">Categoria:</p></label>
+                            </div>
+                            <div class="form-input">
+                                <select name="category_id"  class="input" data-placeholder="Seleccione una categoría" class="input-highlight">
+                                    <option></option>
+                                    @foreach($faqs_categories as $faq_category)
+                                        <option value="{{$faq_category->id}}" {{$faq->category_id == $faq_category->id ? 'selected':''}} class="category_id">{{ $faq_category->name }}</option>
+                                    @endforeach
+                                </select>                   
+                            </div>
                         </div>
-                        <div class="form-input">
-                            <select name="category_id"  class="input" data-placeholder="Seleccione una categoría" class="input-highlight">
-                                <option></option>
-                                @foreach($faqs_categories as $faq_category)
-                                    <option value="{{$faq_category->id}}" {{$faq->category_id == $faq_category->id ? 'selected':''}} class="category_id">{{ $faq_category->name }}</option>
-                                @endforeach
-                            </select>                   
+
+                        <div class="form-group">
+                            <div class="form-label">
+                                <label><p class="form-label-title">Nombre:</p></label>
+                            </div>
+                            <div class="form-input" id="question">
+                                <input type="text" class="input" name="name">
+                            </div>
                         </div>
                     </div>
+                    
+                    <div class="form-translatable">
 
-                    @component ('admin.components.locale')
+                        @component ('admin.components.locale')
 
-                        <div class="language-section active" data-part="spanish">
-                            <div class="form-group">
-                                <div class="form-label">
-                                    <label><p class="form-label-title">Pregunta:</p></label>
-                                </div>
-                                <div class="form-input" id="question">
-                                    <input type="text" class="input" name="locale[title.es]" value="{{isset($faq->title) ? $faq->title : ''}}" >
-                                </div>
-                            </div>
+                            @foreach ($localizations as $localization)
 
-                            <div class="form-group">
-                                <div class="form-label">
-                                    <label><p class="form-label-title">Respuesta:</p></label> 
-                                </div>
-                                <div class="form-input" id="answer">
-                                    <textarea class="ckeditor input" name="locale[description.es]" class="input-highlight">{{isset($faq->description) ? $faq->description : ''}}</textarea>
-                                </div>
-                            </div>
-                        </div>
+                                <div class="language-section {{ $loop->first ? 'active':'' }}" data-part="{{$localization->alias}}">
+                                    <div class="form-group">
+                                        <div class="form-label">
+                                            <label><p class="form-label-title">Pregunta:</p></label>
+                                        </div>
+                                        <div class="form-input" id="question">
+                                            <input type="text" class="input" name="locale[title.{{$localization->alias}}]" value="{{isset($locale["title.$localization->alias"]) ? $locale["title.$localization->alias"] : ''}}" >
+                                        </div>
+                                    </div>
 
-                        <div class="language-section" data-part="english">
-                            <div class="form-group">
-                                <div class="form-label">
-                                    <label><p class="form-label-title">Question:</p></label>
+                                    <div class="form-group">
+                                        <div class="form-label">
+                                            <label><p class="form-label-title">Respuesta:</p></label> 
+                                        </div>
+                                        <div class="form-input" id="answer">
+                                            <textarea class="ckeditor input" name="locale[description.{{$localization->alias}}]]" class="input-highlight">{{isset($locale["description.$localization->alias"]) ? $locale["description.$localization->alias"] : ''}}</textarea>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-input" id="question">
-                                    <input type="text" class="input" name="locale[title.en]" value="{{isset($faq->title) ? $faq->title : ''}}" >
-                                </div>
-                            </div>
 
-                            <div class="form-group">
-                                <div class="form-label">
-                                    <label><p class="form-label-title">Answer:</p></label> 
-                                </div>
-                                <div class="form-input" id="answer">
-                                    <textarea class="ckeditor input" name="locale[description.en]" class="input-highlight">{{isset($faq->description) ? $faq->description : ''}}</textarea>
-                                </div>
-                            </div>
-                        </div>
-                    @endcomponent
+                            @endforeach
+                        @endcomponent
+                    </div>
                 </div>
 
 
                 <div class="form-images part-section" data-part="images">
                     @component ('admin.components.locale')
-                        <div class="language-section" data-part="english">
-                            <div class="drop-zone">
-                                <span class="drop-zone__prompt">Drop file here or click to upload</span>
-                                <input type="file" name="myFile" class="drop-zone__input">
-                            </div>
-                        </div>
 
-                        <div class="language-section active" data-part="spanish">
-                            <div class="drop-zone">
-                                <span class="drop-zone__prompt">Suelta un archivo o haz clic para subir</span>
-                                <input type="file" name="myFile" class="drop-zone__input">
+                        @foreach ($localizations as $localization)
+                            <div class="language-section {{ $loop->first ? 'active':'' }}" data-part="{{$localization->alias}}">
+                                <div class="drop-zone">
+                                    <span class="drop-zone__prompt">Suelta un archivo o haz clic para subir</span>
+                                    <input type="file" name="myFile" class="drop-zone__input">
+                                </div>
                             </div>
-                        </div>
+                        @endforeach
                     @endcomponent
                 </div>
                 

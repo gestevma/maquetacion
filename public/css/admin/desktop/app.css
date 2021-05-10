@@ -541,15 +541,6 @@ li:hover {
   margin-bottom: 2%;
 }
 
-.form-content {
-  padding: 2%;
-}
-
-.form-write {
-  box-sizing: content-box;
-}
-
-/****Parts****/
 .form-parts {
   width: 100%;
   display: flex;
@@ -574,7 +565,27 @@ li:hover {
   cursor: pointer;
 }
 
-/*************/
+.form-body {
+  padding: 2%;
+}
+
+.form-write {
+  box-sizing: content-box;
+}
+
+.form-not-translatable {
+  border: 1px solid black;
+  padding: 1.5%;
+  border-radius: 1.5em;
+  margin-bottom: 2%;
+}
+
+.form-translatable {
+  border: 1px solid black;
+  padding: 1.5%;
+  border-radius: 1.5em;
+}
+
 .form-group {
   margin-bottom: 5%;
   width: 100%;
@@ -582,27 +593,31 @@ li:hover {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.form-languages {
+.languages {
   display: flex;
   flex: row;
-  position: relative;
-  bottom: 3vh;
-  margin-bottom: -5%;
-  margin-left: -3%;
+  border-bottom: 1px solid black;
+  padding: 0%;
+  box-sizing: border-box;
+  border-radius: 1.5em;
+  box-shadow: 3px 3px 3px #252525;
+  background-color: #7c7c7c;
+  margin-bottom: 3%;
 }
-.form-languages p {
+.languages p {
   width: 15%;
-  border: 1px solid black;
+  border: 2px solid black;
   background-color: #e4e4e4;
+  font-weight: bold;
   border-radius: 0.4em;
-  box-shadow: 0.5px 0.5px 3px #222;
+  box-shadow: 1px 1px 3px black;
   text-align: center;
   margin-left: 3%;
   padding: 1.5%;
 }
-.form-languages p:hover {
+.languages p:hover {
   cursor: pointer;
-  background-color: #d6d6d6;
+  background-color: #dfdfdf;
 }
 
 .form-label {
@@ -724,7 +739,7 @@ li:hover {
 }
 
 .two-columns-table.first {
-  width: 45%;
+  width: 40%;
 }
 
 .two-columns-table.second {
@@ -738,15 +753,15 @@ li:hover {
 }
 
 .three-columns-table.first {
-  width: 20%;
+  width: 25%;
 }
 
 .three-columns-table.second {
-  width: 45%;
+  width: 40%;
 }
 
 .three-columns-table.third {
-  width: 20%;
+  width: 25%;
 }
 
 /*********************/
@@ -798,15 +813,9 @@ li:hover {
   flex-flow: row;
 }
 
-.table-field {
-  padding: 1%;
-  text-align: center;
-}
-
-/*.category{
-}*/
-.buttons {
+.table-buttons {
   width: 10%;
+  text-align: center;
 }
 
 .edit-buttons:hover {
@@ -843,7 +852,7 @@ li:hover {
   height: -moz-max-content;
   height: max-content;
   position: absolute;
-  top: 8vh;
+  top: 2.5vh;
   width: 100%;
   z-index: 1003;
 }
@@ -858,7 +867,8 @@ li:hover {
   width: 40%;
 }
 .table-filter .table-filter-container .one-column {
-  margin-top: 0.5%;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 .table-filter .table-filter-container .one-column .form-group {
   width: 100%;
@@ -892,7 +902,7 @@ li:hover {
   max-height: 10vh;
 }
 .table-filter .table-filter-buttons .table-filter-button.open-filter {
-  background-color: #b0b0b0;
+  background-color: #1a1a1a;
 }
 .table-filter .table-filter-buttons .table-filter-button.apply-filter {
   background-color: #297f62;
@@ -1016,13 +1026,13 @@ svg.spinner circle {
 }
 
 .switch-button {
-  padding-top: 0%;
-}
-
-.no-switch {
   position: relative;
   width: 10%;
   margin-top: 2%;
+}
+
+.switch-inactive {
+  display: none;
 }
 
 .switch-button .switch-button__checkbox {
@@ -1062,6 +1072,7 @@ svg.spinner circle {
   max-width: 200px;
   height: 200px;
   padding: 25px;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;

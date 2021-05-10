@@ -3,7 +3,7 @@
     background-color: hsl(0, 0%, 100%);
     height: max-content;
     position: absolute;
-    top: 8vh;
+    top: 2.5vh;
     width: 100%;
     z-index: 1003;
 
@@ -22,7 +22,8 @@
         width: 40%;
 
         .one-column{
-            margin-top: 0.5%;
+            margin-top: 2%;
+            margin-bottom: 2%;
 
             .form-group{
                 width: 100%;
@@ -68,7 +69,7 @@
         }
 
         &.open-filter{
-            background-color: hsl(0, 0%, 69%);
+            background-color: hsl(11, 0%, 10%);
         }
 
         &.apply-filter{
@@ -86,4 +87,3 @@
         }
     }
 }
-    

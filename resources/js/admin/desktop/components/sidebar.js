@@ -20,6 +20,7 @@ export let sidebar = ()=>{
                     await axios.get(url).then(response => { 
                         table.innerHTML = response.data.table;
                         form.innerHTML = response.data.form;
+                        window.history.pushState('','',url);
                         renderTable();
                         renderForm();
 

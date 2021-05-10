@@ -1986,6 +1986,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _languajes_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./languajes.js */ "./resources/js/admin/desktop/components/languajes.js");
 /* harmony import */ var _images_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./images.js */ "./resources/js/admin/desktop/components/images.js");
 /* harmony import */ var _parts_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./parts.js */ "./resources/js/admin/desktop/components/parts.js");
+/* harmony import */ var _switch_button_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./switch-button.js */ "./resources/js/admin/desktop/components/switch-button.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2011,6 +2012,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     Enviar contenido del formulario a la base de datos. Al enviar los datos no se van del formulario
     Limpiar el formulario para meter una nueva entrada 
 /****************************************************************************************************/
+
 
 
 
@@ -2150,6 +2152,7 @@ var renderForm = function renderForm() {
   (0,_languajes_js__WEBPACK_IMPORTED_MODULE_5__.languages)();
   (0,_images_js__WEBPACK_IMPORTED_MODULE_6__.images)();
   (0,_parts_js__WEBPACK_IMPORTED_MODULE_7__.parts)();
+  (0,_switch_button_js__WEBPACK_IMPORTED_MODULE_8__.switchButtonClick)();
 };
 renderForm();
 
@@ -2691,11 +2694,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "parts": () => (/* binding */ parts)
 /* harmony export */ });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+
 var parts = function parts() {
   var parts = document.querySelectorAll(".part");
   var partsSections = document.querySelectorAll(".part-section");
   parts.forEach(function (part) {
     part.addEventListener("click", function () {
+      part.classList.add("active");
       partsSections.forEach(function (PartSection) {
         PartSection.classList.remove("active");
 
@@ -2751,6 +2758,7 @@ var sidebar = function sidebar() {
                   return axios.get(url).then(function (response) {
                     table.innerHTML = response.data.table;
                     form.innerHTML = response.data.form;
+                    window.history.pushState('', '', url);
                     (0,_crudTable__WEBPACK_IMPORTED_MODULE_2__.renderTable)();
                     (0,_crudForm__WEBPACK_IMPORTED_MODULE_1__.renderForm)();
                   });
@@ -2819,7 +2827,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var switchButtonClick = function switchButtonClick() {
   var switchButton = document.querySelector(".switch-button");
-  var main = document.querySelector(".main");
   var position = 0;
   switchButton.addEventListener('change', function () {
     if (position == 0) {
@@ -2831,7 +2838,6 @@ var switchButtonClick = function switchButtonClick() {
     }
   });
 };
-switchButtonClick();
 
 /***/ }),
 

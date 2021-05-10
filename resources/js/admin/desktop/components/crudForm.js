@@ -1,4 +1,3 @@
-
 /***************************************************************************************************/
 /**Funciones:
     Renderizar formulario
@@ -12,6 +11,7 @@ import {message} from './message.js';
 import { languages } from './languajes.js';
 import { images } from './images.js';
 import { parts } from './parts.js';
+import { switchButtonClick } from './switch-button.js';
 
 const table = document.getElementById("table");
 const form = document.getElementById("form");
@@ -112,6 +112,7 @@ export let renderForm = () =>{
     languages();
     images();
     parts();
+    switchButtonClick();
 
 }
 

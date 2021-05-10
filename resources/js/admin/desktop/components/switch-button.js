@@ -1,9 +1,10 @@
 export let switchButtonClick = () =>{
 
     let switchButton = document.querySelector(".switch-button");
-    let main = document.querySelector(".main");
 
     let position=0
+
+
     switchButton.addEventListener( 'change', () => {
 
         if(position==0) {
@@ -16,6 +17,5 @@ export let switchButtonClick = () =>{
         }
 
     });
+    
 }
-
-switchButtonClick();

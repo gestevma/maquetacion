@@ -8,28 +8,33 @@ use Illuminate\Http\Request;
 use Jenssegers\Agent\Agent;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\FaqRequest;
+use App\Vendor\Locale\Locale;
 use App\Models\DB\Faq;
 use \Debugbar;
 
 class FaqController extends Controller
 {
     protected $faq;
+    protected $locale;
     protected $agent;
     protected $paginate;
 
-    function __construct(Faq $faq, Agent $agent)
+    function __construct(Faq $faq, Agent $agent, Locale $locale)
     {
         $this->middleware('auth');
         $this->faq = $faq;
         $this->agent = $agent;
+        $this->locale = $locale;
 
         if ($this->agent->isMobile()) {
             $this->paginate = 10;
         }
 
         if ($this->agent->isDesktop()) {
-            $this->paginate = 6;
+            $this->paginate = 8;
         }
+
+        $this->locale->setParent('faqs');
     }
 
     public function index()
@@ -67,11 +72,11 @@ class FaqController extends Controller
 
     public function store(FaqRequest $request)
     {            
-        Debugbar::info($request);
+        //Debugbar::info($request);
         $faq = $this->faq->updateOrCreate([
             'id' => request('id')],[
-            'title' => request('title'),
-            'description' => request('description'),
+            // 'title' => request('title'),
+            // 'description' => request('description'),
             'category_id' => request('category_id'),
             'active' => 1,
         ]);
@@ -82,7 +87,12 @@ class FaqController extends Controller
             $message = \Lang::get('admin/faqs.faq-create');
         }*/
 
+        if(request('locale')){
+            $locale = $this->locale->store(request('locale'), $faq->id);
+        }
+
         $view = View::make('admin.faqs.index')
+        ->with('locale', $locale) 
         ->with('faqs', $this->faq->where('active', 1)->paginate($this->paginate))
         ->with('faq', $faq)
         ->renderSections();        
@@ -98,6 +108,7 @@ class FaqController extends Controller
     public function edit(Faq $faq)
     {
         $view = View::make('admin.faqs.index')
+        ->with('locale', $locale)
         ->with('faq', $faq)
         ->with('faqs', $this->faq->where('active', 1)->paginate($this->paginate));   
         
@@ -114,7 +125,11 @@ class FaqController extends Controller
     }
 
     public function show(Faq $faq){
+
+        $locale = $this->locale->show($faq->id);
+
         $view = View::make('admin.faqs.index')
+        ->with('locale', $locale)
         ->with('faq', $faq)
         ->with('faqs', $this->faq->where('active', 1)->paginate($this->paginate));   
         
