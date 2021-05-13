@@ -9,7 +9,7 @@ import { renderCkeditor } from "./ckeditor.js";
 import { spinner } from "./spinner.js";
 import {message} from './message.js';
 import { languages } from './languajes.js';
-import { images } from './images.js';
+import { renderUpload } from './upload.js';
 import { parts } from './parts.js';
 import { switchButtonClick } from './switch-button.js';
 
@@ -110,7 +110,7 @@ export let renderForm = () =>{
     });
 
     languages();
-    images();
+    renderUpload();
     parts();
     switchButtonClick();
 

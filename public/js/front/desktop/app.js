@@ -1911,6 +1911,7 @@ var table = document.getElementById("table");
 var form = document.getElementById("form");
 var sectionsBox = document.querySelectorAll(".sections-box");
 var main = document.getElementById("main");
+var content = document.querySelector(".content");
 sectionsBox.forEach(function (sectionsBox) {
   sectionsBox.addEventListener("click", function () {
     sidebars.forEach(function (sidebar) {

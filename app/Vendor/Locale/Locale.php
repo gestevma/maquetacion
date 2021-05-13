@@ -80,4 +80,9 @@ class Locale
 
         return $items;
     }
+
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+    }
 }

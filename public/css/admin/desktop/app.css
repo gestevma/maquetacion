@@ -549,19 +549,25 @@ li:hover {
 
 .part {
   width: 20%;
+  color: #adadad;
   margin-right: 2%;
   border: 2px solid black;
   background-color: #e4e4e4;
   border-radius: 0.4em;
-  box-shadow: 0.5px 0.5px 3px #222;
+  box-shadow: 5px 4px 0.5px black;
   text-align: center;
   font-weight: bold;
   padding-top: 1%;
   padding-bottom: 1%;
 }
 
+.part-active {
+  background-color: #dfdfdf;
+  box-shadow: 0px 0px 0px black;
+  color: black;
+}
+
 .part:hover {
-  color: rgba(0, 0, 0, 0.6);
   cursor: pointer;
 }
 
@@ -604,20 +610,30 @@ li:hover {
   background-color: #7c7c7c;
   margin-bottom: 3%;
 }
-.languages p {
+.languages .language-part {
   width: 15%;
   border: 2px solid black;
-  background-color: #e4e4e4;
+  color: #adadad;
+  background-color: #8d8d8d;
   font-weight: bold;
   border-radius: 0.4em;
-  box-shadow: 1px 1px 3px black;
+  box-shadow: 5px 4px 0.5px black;
   text-align: center;
   margin-left: 3%;
   padding: 1.5%;
 }
-.languages p:hover {
+.languages .language-part .language-part:hover {
   cursor: pointer;
+  background-color: #bebebe;
+}
+.languages .language-active {
   background-color: #dfdfdf;
+  box-shadow: 0px 0px 0px black;
+  color: black;
+}
+.languages .language-part:hover {
+  cursor: pointer;
+  background-color: #bebebe;
 }
 
 .form-label {
@@ -1068,33 +1084,40 @@ svg.spinner circle {
   transform: translateX(2rem);
 }
 
-.drop-zone {
-  max-width: 200px;
-  height: 200px;
-  padding: 25px;
-  margin: auto;
-  display: flex;
+.upload {
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-family: "Quicksand", sans-serif;
-  font-weight: 500;
-  font-size: 20px;
-  cursor: pointer;
+  border: 0.2em dashed #02a8b1;
   color: #cccccc;
-  border: 4px dashed #009578;
-  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.2em;
+  font-weight: 500;
+  height: 30vh;
+  justify-content: center;
+  margin-top: 1em;
+  padding: 1em;
+  text-align: center;
 }
 
-.drop-zone--over {
+.upload:hover {
+  border: 4px dashed #ff5100;
+}
+
+.upload-over {
   border-style: solid;
 }
 
-.drop-zone__input {
+.upload-prompt {
+  position: absolute;
+  width: 15%;
+  z-index: 999;
+}
+
+.upload-input {
   display: none;
 }
 
-.drop-zone__thumb {
+.upload-thumb {
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -1104,7 +1127,7 @@ svg.spinner circle {
   position: relative;
 }
 
-.drop-zone__thumb::after {
+.upload-thumb::after {
   content: attr(data-label);
   position: absolute;
   bottom: 0;

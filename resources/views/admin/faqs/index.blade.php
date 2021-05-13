@@ -84,7 +84,7 @@
 
             <div class = "form-head">
                 <div class="form-parts">
-                    <p class="part active" data-part="content">Contenido</p>
+                    <p class="part part-active" data-part="content">Contenido</p>
                     <p class="part" data-part="images">Imágenes</p>
                 </div>
                 <div class="switch-inactive">@include('admin.components.switch-button')</div>
@@ -158,10 +158,19 @@
 
                         @foreach ($localizations as $localization)
                             <div class="language-section {{ $loop->first ? 'active':'' }}" data-part="{{$localization->alias}}">
-                                <div class="drop-zone">
-                                    <span class="drop-zone__prompt">Suelta un archivo o haz clic para subir</span>
-                                    <input type="file" name="myFile" class="drop-zone__input">
-                                </div>
+                                <div class="form-group">
+                                    <div class="form-label">
+                                        <label for="name" class="label-highlight">Foto destacada</label>
+                                    </div>
+                                    <div class="form-input">
+                                        @include('admin.components.upload', [
+                                            'type' => 'image', 
+                                            'content' => 'featured', 
+                                            'alias' => $localization->alias,
+                                            'files' => $faq->images_featured_preview
+                                        ])
+                                    </div>
+                                </div>  
                             </div>
                         @endforeach
                     @endcomponent

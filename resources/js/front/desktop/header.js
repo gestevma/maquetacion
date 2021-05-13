@@ -4,6 +4,7 @@ const table = document.getElementById("table");
 const form = document.getElementById("form");
 const sectionsBox = document.querySelectorAll(".sections-box");
 const main = document.getElementById("main");
+const content = document.querySelector(".content");
 
 sectionsBox.forEach(sectionsBox=>{
     sectionsBox.addEventListener("click", ()=>{

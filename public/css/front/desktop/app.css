@@ -1,4 +1,7 @@
 .title {
+  position: absolute;
+  top: 10%;
+  left: 34%;
   text-align: center;
   width: 30%;
   margin: auto;
@@ -16,16 +19,10 @@
   transition: 0.3s;
 }
 
-.faqs-section {
-  margin-top: -1.6%;
-}
-
-h2 {
-  text-align: center;
-  padding-top: 5%;
-}
-
 .faqs {
+  position: absolute;
+  top: 22%;
+  left: 25%;
   width: 50%;
   margin: auto;
 }
@@ -37,11 +34,11 @@ h2 {
   height: 6vh;
 }
 
-.title {
-  width: 80%;
-  margin: auto;
-  font-weight: bold;
+.faq-title-content {
+  width: 95%;
   text-align: center;
+  font-size: 120%;
+  font-weight: bold;
 }
 
 .buttons {
@@ -62,7 +59,7 @@ h2 {
   padding-left: 5%;
 }
 
-.active {
+.faq-description.active {
   max-height: 100vh;
   padding-bottom: 10%;
   transition: 0.5s;
