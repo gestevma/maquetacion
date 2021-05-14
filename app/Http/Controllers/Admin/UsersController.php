@@ -17,7 +17,6 @@ class UsersController extends Controller
 
     function __construct(Users $user, Agent $agent)
     {
-        $this->middleware('auth');
         $this->user = $user;
         $this->agent = $agent;
 

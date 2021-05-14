@@ -6,11 +6,12 @@ export let renderUpload = () => {
     
         let uploadElement = inputElement.closest(".upload");
       
-        uploadElement.addEventListener("click", (e) => {
+        uploadElement.addEventListener("click", () => {
             inputElement.click();
+
         });
       
-        inputElement.addEventListener("change", (e) => {
+        inputElement.addEventListener("change", () => {
             if (inputElement.files.length) {
                 updateThumbnail(uploadElement, inputElement.files[0]);
             }
@@ -37,11 +38,29 @@ export let renderUpload = () => {
         
             uploadElement.classList.remove("upload-over");
         });
+
+
     });
       
     function updateThumbnail(uploadElement, file) {
     
         let thumbnailElement = uploadElement.querySelector(".upload-thumb");
+        let groupElement = document.querySelector(".group");
+        let formInput = uploadElement.closest(".form-input");
+
+
+        // Crea nuevos "cuadrados" de subida cuando subo un elemento para poder subir varios
+
+        if (uploadElement.classList.contains("group")){
+            var uploadElementClone = groupElement.cloneNode(true);
+            formInput.appendChild(uploadElementClone);
+        }  
+        
+        // if (uploadElement.classList.contains("group")){
+        //     var uploadElementClone = document.createElement("div");
+        //     uploadElementClone.classList.add("upload", "group");
+        //     formInput.appendChild(uploadElementClone);
+        // } 
       
         if (uploadElement.querySelector(".upload-prompt")) {
             uploadElement.querySelector(".upload-prompt").remove();
@@ -66,5 +85,25 @@ export let renderUpload = () => {
         } else {
             thumbnailElement.style.backgroundImage = null;
         }
+
+       
     }
+
+    // function multipleUpload (uploadElement) {
+        
+    //     let multipleImages = uploadElement.querySelector(".upload-thumb");
+
+    //     if (uploadElement.querySelector(".upload-prompt")) {
+    //         uploadElement.querySelector(".upload-prompt").remove();
+    //     }
+      
+    //     if (!miltileImages) {
+    //         multipleImages = document.createElement("div");
+    //         multipleImages.classList.add("upload-thumb");
+    //         uploadElement.appendChild(multipleImages);
+    //     }
+
+    // }
+
+    // multipleUpload();
 }

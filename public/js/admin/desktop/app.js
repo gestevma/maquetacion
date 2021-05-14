@@ -2792,10 +2792,10 @@ var renderUpload = function renderUpload() {
   var inputElements = document.querySelectorAll(".upload-input");
   inputElements.forEach(function (inputElement) {
     var uploadElement = inputElement.closest(".upload");
-    uploadElement.addEventListener("click", function (e) {
+    uploadElement.addEventListener("click", function () {
       inputElement.click();
     });
-    inputElement.addEventListener("change", function (e) {
+    inputElement.addEventListener("change", function () {
       if (inputElement.files.length) {
         updateThumbnail(uploadElement, inputElement.files[0]);
       }
@@ -2823,6 +2823,18 @@ var renderUpload = function renderUpload() {
 
   function updateThumbnail(uploadElement, file) {
     var thumbnailElement = uploadElement.querySelector(".upload-thumb");
+    var groupElement = document.querySelector(".group");
+    var formInput = uploadElement.closest(".form-input"); // Crea nuevos "cuadrados" de subida cuando subo un elemento para poder subir varios
+
+    if (uploadElement.classList.contains("group")) {
+      var uploadElementClone = groupElement.cloneNode(true);
+      formInput.appendChild(uploadElementClone);
+    } // if (uploadElement.classList.contains("group")){
+    //     var uploadElementClone = document.createElement("div");
+    //     uploadElementClone.classList.add("upload", "group");
+    //     formInput.appendChild(uploadElementClone);
+    // } 
+
 
     if (uploadElement.querySelector(".upload-prompt")) {
       uploadElement.querySelector(".upload-prompt").remove();
@@ -2846,7 +2858,19 @@ var renderUpload = function renderUpload() {
     } else {
       thumbnailElement.style.backgroundImage = null;
     }
-  }
+  } // function multipleUpload (uploadElement) {
+  //     let multipleImages = uploadElement.querySelector(".upload-thumb");
+  //     if (uploadElement.querySelector(".upload-prompt")) {
+  //         uploadElement.querySelector(".upload-prompt").remove();
+  //     }
+  //     if (!miltileImages) {
+  //         multipleImages = document.createElement("div");
+  //         multipleImages.classList.add("upload-thumb");
+  //         uploadElement.appendChild(multipleImages);
+  //     }
+  // }
+  // multipleUpload();
+
 };
 
 /***/ }),

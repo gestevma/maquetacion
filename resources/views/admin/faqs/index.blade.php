@@ -19,6 +19,7 @@
 
         {{----Crea las filas de la tabla----}}
         @foreach($faqs as $faq_element)
+            {{-- <div class = "table-row swipe-element">"{{isset($faq->id) ? "" : 'La tabla está vacia'}}"</div> --}}
             <div class="table-row swipe-element"> 
                 <div class="table-field-container swipe-front">
                     <div class="table-field three-columns-table first">@if($agent->isMobile())<p class="table-field-title">Categoria: </p>@endif<p class="table-field-element">{{$faq_element->category->name}}</p></div>
@@ -171,6 +172,20 @@
                                         ])
                                     </div>
                                 </div>  
+
+                                <div class="form-group">
+                                    <div class="form-label">
+                                        <label for="name" class="label-highlight">Foto múltiple</label>
+                                    </div>
+                                    <div class="form-input">
+                                        @include('admin.components.upload', [
+                                            'type' => 'images', 
+                                            'content' => 'featured', 
+                                            'alias' => $localization->alias,
+                                            'files' => $faq->images_featured_preview
+                                        ])
+                                    </div>
+                                </div> 
                             </div>
                         @endforeach
                     @endcomponent
