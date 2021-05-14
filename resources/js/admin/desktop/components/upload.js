@@ -3,31 +3,31 @@ export let renderUpload = () => {
     let inputElements = document.querySelectorAll(".upload-input");
 
     inputElements.forEach(inputElement => {
-    
+
         let uploadElement = inputElement.closest(".upload");
-      
+        
         uploadElement.addEventListener("click", () => {
             inputElement.click();
 
         });
-      
+        
         inputElement.addEventListener("change", () => {
             if (inputElement.files.length) {
                 updateThumbnail(uploadElement, inputElement.files[0]);
             }
         });
-      
+        
         uploadElement.addEventListener("dragover", (e) => {
             e.preventDefault();
             uploadElement.classList.add("upload-over");
         });
-      
+        
         ["dragleave", "dragend"].forEach((type) => {
             uploadElement.addEventListener(type, (e) => {
                 uploadElement.classList.remove("upload-over");
             });
         });
-      
+        
         uploadElement.addEventListener("drop", (e) => {
             e.preventDefault();
         
