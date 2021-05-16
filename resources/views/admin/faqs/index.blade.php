@@ -85,8 +85,8 @@
 
             <div class = "form-head">
                 <div class="form-parts">
-                    <p class="part part-active" data-part="content">Contenido</p>
-                    <p class="part" data-part="images">Imágenes</p>
+                    <p class="part" data-part="content">Contenido</p>
+                    <p class="part part-active" data-part="images">Imágenes</p>
                 </div>
                 <div class="switch-inactive">@include('admin.components.switch-button')</div>
             </div>
@@ -94,7 +94,7 @@
 
             <div class = form-body>
 
-                <div class="form-write part-section active" data-part="content">
+                <div class="form-write part-section" data-part="content">
 
                     <div class="form-not-translatable">
 
@@ -154,7 +154,7 @@
                 </div>
 
 
-                <div class="form-images part-section" data-part="images">
+                <div class="form-images part-section active" data-part="images">
                     @component ('admin.components.locale')
 
                         @foreach ($localizations as $localization)

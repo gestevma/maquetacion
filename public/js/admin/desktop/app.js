@@ -2788,16 +2788,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "renderUpload": () => (/* binding */ renderUpload)
 /* harmony export */ });
+/* harmony import */ var _crudForm_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./crudForm.js */ "./resources/js/admin/desktop/components/crudForm.js");
+
 var renderUpload = function renderUpload() {
   var inputElements = document.querySelectorAll(".upload-input");
   inputElements.forEach(function (inputElement) {
     var uploadElement = inputElement.closest(".upload");
-    uploadElement.addEventListener("click", function () {
+    uploadElement.addEventListener("click", function (e) {
       inputElement.click();
     });
     inputElement.addEventListener("change", function () {
       if (inputElement.files.length) {
-        updateThumbnail(uploadElement, inputElement.files[0]);
+        var files = inputElement.files; // for (var i = 0; i < files.length; i++) {
+        //     var file =  inputElement.files.item(i);
+        //     updateThumbnail(uploadElement, file);
+        // }
+
+        updateThumbnail(uploadElement, files);
       }
     });
     uploadElement.addEventListener("dragover", function (e) {
@@ -2814,43 +2821,50 @@ var renderUpload = function renderUpload() {
 
       if (e.dataTransfer.files.length) {
         inputElement.files = e.dataTransfer.files;
-        updateThumbnail(uploadElement, e.dataTransfer.files[0]);
+        var files = e.dataTransfer.files; // for (var i = 0; i < files.length; i++) {
+        //     var file = e.dataTransfer.files.item(i);
+        //     updateThumbnail(uploadElement, file);
+        // }
+
+        /*************************************************/
+
+        updateThumbnail(uploadElement, files);
       }
 
       uploadElement.classList.remove("upload-over");
     });
   });
 
-  function updateThumbnail(uploadElement, file) {
+  function updateThumbnail(uploadElement, files) {
     var thumbnailElement = uploadElement.querySelector(".upload-thumb");
-    var groupElement = document.querySelector(".group");
-    var formInput = uploadElement.closest(".form-input"); // Crea nuevos "cuadrados" de subida cuando subo un elemento para poder subir varios
-
-    if (uploadElement.classList.contains("group")) {
-      var uploadElementClone = groupElement.cloneNode(true);
-      formInput.appendChild(uploadElementClone);
-    } // if (uploadElement.classList.contains("group")){
-    //     var uploadElementClone = document.createElement("div");
-    //     uploadElementClone.classList.add("upload", "group");
-    //     formInput.appendChild(uploadElementClone);
-    // } 
-
+    var groupElements = document.querySelectorAll(".group");
+    var formInput = uploadElement.closest(".form-input"); //multipleUpload(uploadElement);
 
     if (uploadElement.querySelector(".upload-prompt")) {
       uploadElement.querySelector(".upload-prompt").remove();
     }
 
     if (!thumbnailElement) {
-      thumbnailElement = document.createElement("div");
-      thumbnailElement.classList.add("upload-thumb");
-      uploadElement.appendChild(thumbnailElement);
+      for (var i = 0; i < files.length; i++) {
+        var file = files.item(i); // Crea nuevos "cuadrados" de subida cuando subo un elemento para poder subir varios
+
+        if (uploadElement.classList.contains("group")) {
+          var groupElementClone = groupElements.cloneNode(true);
+          formInput.appendChild(groupElementClone);
+          (0,_crudForm_js__WEBPACK_IMPORTED_MODULE_0__.renderForm)();
+        }
+
+        console.log(file); // thumbnailElement = document.createElement("div");
+        // thumbnailElement.classList.add("upload-thumb");
+        // uploadElement.appendChild(thumbnailElement);
+      }
     }
+    /*************************************************/
 
-    thumbnailElement.dataset.label = file.name;
 
-    if (file.type.startsWith("image/")) {
+    if (files[0].type.startsWith("image/")) {
       var reader = new FileReader();
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(files[0]);
 
       reader.onload = function () {
         thumbnailElement.style.backgroundImage = "url('".concat(reader.result, "')");
@@ -2858,19 +2872,18 @@ var renderUpload = function renderUpload() {
     } else {
       thumbnailElement.style.backgroundImage = null;
     }
-  } // function multipleUpload (uploadElement) {
-  //     let multipleImages = uploadElement.querySelector(".upload-thumb");
-  //     if (uploadElement.querySelector(".upload-prompt")) {
-  //         uploadElement.querySelector(".upload-prompt").remove();
-  //     }
-  //     if (!miltileImages) {
-  //         multipleImages = document.createElement("div");
-  //         multipleImages.classList.add("upload-thumb");
-  //         uploadElement.appendChild(multipleImages);
-  //     }
-  // }
-  // multipleUpload();
+  }
 
+  function multipleUpload(uploadElement) {
+    var groupElement = document.querySelector(".group");
+    var formInput = uploadElement.closest(".form-input"); // Crea nuevos "cuadrados" de subida cuando subo un elemento para poder subir varios
+    // if (uploadElement.classList.contains("group")){
+    //     var groupElementClone = groupElement.cloneNode(true);
+    //     uploadElement.classList.remove("group");
+    //     formInput.appendChild(groupElementClone);
+    //     renderForm();
+    // }  
+  }
 };
 
 /***/ }),
