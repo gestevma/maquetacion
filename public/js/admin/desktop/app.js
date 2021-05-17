@@ -1896,7 +1896,8 @@ __webpack_require__(/*! ./components/switch-button */ "./resources/js/admin/desk
 
 __webpack_require__(/*! ./components/spinner */ "./resources/js/admin/desktop/components/spinner.js");
 
-__webpack_require__(/*! ./components/languajes */ "./resources/js/admin/desktop/components/languajes.js");
+__webpack_require__(/*! ./components/languajes */ "./resources/js/admin/desktop/components/languajes.js"); //require('./components/upload');
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -2794,16 +2795,15 @@ var renderUpload = function renderUpload() {
   var inputElements = document.querySelectorAll(".upload-input");
   inputElements.forEach(function (inputElement) {
     var uploadElement = inputElement.closest(".upload");
+    uploadElement.removeEventListener("click", function (e) {
+      inputElement.click();
+    });
     uploadElement.addEventListener("click", function (e) {
       inputElement.click();
     });
     inputElement.addEventListener("change", function () {
       if (inputElement.files.length) {
-        var files = inputElement.files; // for (var i = 0; i < files.length; i++) {
-        //     var file =  inputElement.files.item(i);
-        //     updateThumbnail(uploadElement, file);
-        // }
-
+        var files = inputElement.files;
         updateThumbnail(uploadElement, files);
       }
     });
@@ -2821,13 +2821,7 @@ var renderUpload = function renderUpload() {
 
       if (e.dataTransfer.files.length) {
         inputElement.files = e.dataTransfer.files;
-        var files = e.dataTransfer.files; // for (var i = 0; i < files.length; i++) {
-        //     var file = e.dataTransfer.files.item(i);
-        //     updateThumbnail(uploadElement, file);
-        // }
-
-        /*************************************************/
-
+        var files = e.dataTransfer.files;
         updateThumbnail(uploadElement, files);
       }
 
@@ -2837,52 +2831,51 @@ var renderUpload = function renderUpload() {
 
   function updateThumbnail(uploadElement, files) {
     var thumbnailElement = uploadElement.querySelector(".upload-thumb");
-    var groupElements = document.querySelectorAll(".group");
-    var formInput = uploadElement.closest(".form-input"); //multipleUpload(uploadElement);
+    var groupElement = document.querySelector(".group");
+    var formInput = uploadElement.closest(".form-input");
 
     if (uploadElement.querySelector(".upload-prompt")) {
       uploadElement.querySelector(".upload-prompt").remove();
     }
 
-    if (!thumbnailElement) {
-      for (var i = 0; i < files.length; i++) {
-        var file = files.item(i); // Crea nuevos "cuadrados" de subida cuando subo un elemento para poder subir varios
+    if (thumbnailElement) {
+      thumbnailElement.remove();
+    }
 
-        if (uploadElement.classList.contains("group")) {
-          var groupElementClone = groupElements.cloneNode(true);
-          formInput.appendChild(groupElementClone);
-          (0,_crudForm_js__WEBPACK_IMPORTED_MODULE_0__.renderForm)();
-        }
+    for (var i = 0; i < files.length; i++) {
+      var file = files.item(i);
 
-        console.log(file); // thumbnailElement = document.createElement("div");
-        // thumbnailElement.classList.add("upload-thumb");
-        // uploadElement.appendChild(thumbnailElement);
+      if (uploadElement.classList.contains("group")) {
+        var groupElementClone = groupElement.cloneNode(true);
+        groupElementClone.querySelector(".upload-input").removeAttribute("multiple");
+        groupElementClone.classList.remove("group");
+        formInput.insertBefore(groupElementClone, uploadElement);
+        var inputElementCloned = groupElementClone.querySelector(".upload-input"); //inputElementCloned.setAttribute("name", "images[{{$content}}.{{$alias}}]" );
+
+        console.log(inputElementCloned);
+        thumbnailElement = document.createElement("div");
+        thumbnailElement.classList.add("upload-thumb");
+        groupElementClone.appendChild(thumbnailElement);
+        renderUpload();
+      } else {
+        thumbnailElement = document.createElement("div");
+        thumbnailElement.classList.add("upload-thumb");
+        uploadElement.appendChild(thumbnailElement);
+      }
+
+      if (file.type.startsWith("image/")) {
+        (function () {
+          var reader = new FileReader();
+          reader.readAsDataURL(file);
+
+          reader.onload = function () {
+            thumbnailElement.style.backgroundImage = "url('".concat(reader.result, "')");
+          };
+        })();
+      } else {
+        thumbnailElement.style.backgroundImage = null;
       }
     }
-    /*************************************************/
-
-
-    if (files[0].type.startsWith("image/")) {
-      var reader = new FileReader();
-      reader.readAsDataURL(files[0]);
-
-      reader.onload = function () {
-        thumbnailElement.style.backgroundImage = "url('".concat(reader.result, "')");
-      };
-    } else {
-      thumbnailElement.style.backgroundImage = null;
-    }
-  }
-
-  function multipleUpload(uploadElement) {
-    var groupElement = document.querySelector(".group");
-    var formInput = uploadElement.closest(".form-input"); // Crea nuevos "cuadrados" de subida cuando subo un elemento para poder subir varios
-    // if (uploadElement.classList.contains("group")){
-    //     var groupElementClone = groupElement.cloneNode(true);
-    //     uploadElement.classList.remove("group");
-    //     formInput.appendChild(groupElementClone);
-    //     renderForm();
-    // }  
   }
 };
 

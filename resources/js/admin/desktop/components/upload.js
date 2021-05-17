@@ -1,32 +1,26 @@
 import {renderForm} from './crudForm.js'
 
 export let renderUpload = () => {
-    
-    
-
     let inputElements = document.querySelectorAll(".upload-input");
 
     inputElements.forEach(inputElement => {
 
         
         let uploadElement = inputElement.closest(".upload");
-        
+
+        uploadElement.removeEventListener("click", (e) => {
+            inputElement.click();
+        });
+
         uploadElement.addEventListener("click", (e) => {
             inputElement.click();
         });
+
         
         inputElement.addEventListener("change", () => {
             if (inputElement.files.length) {
 
                 var files = inputElement.files
-
-        
-                // for (var i = 0; i < files.length; i++) {
-                //     var file =  inputElement.files.item(i);
-                //     updateThumbnail(uploadElement, file);
-                // }
-
-
                 updateThumbnail(uploadElement, files);  
                 
             }
@@ -51,15 +45,6 @@ export let renderUpload = () => {
                 inputElement.files = e.dataTransfer.files;
 
                 var files = e.dataTransfer.files
-
-
-
-                // for (var i = 0; i < files.length; i++) {
-                //     var file = e.dataTransfer.files.item(i);
-                //     updateThumbnail(uploadElement, file);
-                // }
-                /*************************************************/
-
                 updateThumbnail(uploadElement, files); 
                     
             }
@@ -75,70 +60,66 @@ export let renderUpload = () => {
     function updateThumbnail(uploadElement, files) {
     
         let thumbnailElement = uploadElement.querySelector(".upload-thumb");
-        let groupElements = document.querySelectorAll(".group");
+        let groupElement = document.querySelector(".group");
         let formInput = uploadElement.closest(".form-input");
-
-        //multipleUpload(uploadElement);
       
         if (uploadElement.querySelector(".upload-prompt")) {
             uploadElement.querySelector(".upload-prompt").remove();
         }
-      
 
-        if (!thumbnailElement) {
-            for (var i = 0; i < files.length ; i++){
-                var file =  files.item(i);
+        if (thumbnailElement) {
+            thumbnailElement.remove();
+        }
 
-                // Crea nuevos "cuadrados" de subida cuando subo un elemento para poder subir varios
 
-                if (uploadElement.classList.contains("group")){
-                    var groupElementClone = groupElements.cloneNode(true);
-                    formInput.appendChild(groupElementClone);
-                    
-                    renderForm();
-                }  
+        for (var i = 0; i < files.length ; i++){
+            
+            var file = files.item(i);
 
-                console.log(file);
-                // thumbnailElement = document.createElement("div");
-                // thumbnailElement.classList.add("upload-thumb");
-                // uploadElement.appendChild(thumbnailElement);
+            if (uploadElement.classList.contains("group")){
+
+                var groupElementClone = groupElement.cloneNode(true);
+                groupElementClone.querySelector(".upload-input").removeAttribute("multiple");
+                groupElementClone.classList.remove("group");
+                formInput.insertBefore(groupElementClone, uploadElement);
+
+                var inputElementCloned = groupElementClone.querySelector(".upload-input");
+
+                //inputElementCloned.setAttribute("name", "images[{{$content}}.{{$alias}}]" );
+
+                console.log(inputElementCloned);
+
+                thumbnailElement = document.createElement("div");
+                thumbnailElement.classList.add("upload-thumb");
+                groupElementClone.appendChild(thumbnailElement);
+
+                renderUpload();
+    
+                
+            } else{
+                thumbnailElement = document.createElement("div");
+                thumbnailElement.classList.add("upload-thumb");
+                uploadElement.appendChild(thumbnailElement);
+                
             }
 
-
+            if (file.type.startsWith("image/")) {
+                let reader = new FileReader();
             
-        }
-        /*************************************************/
-      
-        if (files[0].type.startsWith("image/")) {
-            let reader = new FileReader();
+                reader.readAsDataURL(file);
         
-            reader.readAsDataURL(files[0]);
+                reader.onload = () => {
+                    thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+                };
+            } 
+            else {
+                thumbnailElement.style.backgroundImage = null;
+            }
     
-            reader.onload = () => {
-                thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
-            };
-        } else {
-            thumbnailElement.style.backgroundImage = null;
+            
         }
 
        
-    }
-
-    function multipleUpload (uploadElement) {
-        
-        let groupElement = document.querySelector(".group");
-        let formInput = uploadElement.closest(".form-input");
-
-
-        // Crea nuevos "cuadrados" de subida cuando subo un elemento para poder subir varios
-
-        // if (uploadElement.classList.contains("group")){
-        //     var groupElementClone = groupElement.cloneNode(true);
-        //     uploadElement.classList.remove("group");
-        //     formInput.appendChild(groupElementClone);
-        //     renderForm();
-        // }  
-
     }
 
    

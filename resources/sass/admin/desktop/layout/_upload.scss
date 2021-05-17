@@ -31,7 +31,9 @@
   display: none;
 }
 
+
 .upload-thumb {
+  display: block;
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -42,7 +44,7 @@
 }
 
 .upload-thumb::after {
-content: attr(data-label);
+  content: attr(data-label);
   position: absolute;
   bottom: 0;
   left: 0;

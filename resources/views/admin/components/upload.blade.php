@@ -20,7 +20,7 @@
         @endforeach
 
         <span class="upload-prompt">@lang('admin/upload.image')</span>
-        <input class="upload-input" type="file" multiple name="images[{{$content}}.{{$alias}}][]">
+        <input class="upload-input" type="file" multiple name="images[{{$content}}.{{$alias}}]">
     </div>
 
 @endif
