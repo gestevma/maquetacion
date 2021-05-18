@@ -24,6 +24,11 @@ Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguir
 
     //1.Pega la linia de los filros así como está
     //2. Ves al JS de filters
+
+    Route::get('/image/delete/{image?}', 'App\Vendor\Image\Image@destroy')->name('delete_image');
+    Route::get('/image/{image}', 'App\Vendor\Image\Image@showImageSeo')->name('show_image_seo');
+    Route::post('/image', 'App\Vendor\Image\Image@storeImageSeo')->name('store_image_seo');
+
     Route::get('/faqs/filter/{filters?}', 'App\Http\Controllers\Admin\FaqController@filter')->name('faqs_filter');
     Route::get('/faqs/pagination', 'App\Http\Controllers\Admin\FaqController@pagination')->name('faqs_pagination');
     Route::resource('faqs', 'App\Http\Controllers\Admin\FaqController', [

@@ -2615,6 +2615,135 @@ var message = function message(type) {
 
 /***/ }),
 
+/***/ "./resources/js/admin/desktop/components/modalImage.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/admin/desktop/components/modalImage.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "openImageModal": () => (/* binding */ openImageModal)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//Este archivo abre la imagen en grande y recibe los inputs del alt y descripción de las fotos
+// import {startOverlay, startWait, stopWait} from './wait';
+// import {showMessage} from './messages';
+var modalImageStoreButton = document.getElementById('modal-image-store-button');
+var modalImageDeleteButton = document.getElementById('modal-image-delete-button');
+var openImageModal = function openImageModal(image) {
+  //Inputs del formulario
+  var modal = document.getElementById('upload-image-modal');
+  var imageContainer = document.getElementById('modal-image-original');
+  var imageId = document.getElementById('modal-image-id');
+  var imageFilename = document.getElementById('modal-image-filename');
+  var imageEntityId = document.getElementById('modal-image-entity-id');
+  var imageLanguage = document.getElementById('modal-image-language');
+  var imageTitle = document.getElementById('modal-image-title');
+  var imageAlt = document.getElementById('modal-image-alt');
+  imageContainer.src = '../storage/' + image.path;
+  imageFilename.value = image.filename;
+  imageEntityId.value = image.entity_id;
+  imageLanguage.value = image.language;
+  imageId.value = image.id;
+  imageTitle.value = image.title;
+  imageAlt.value = image.alt;
+  modal.classList.add('modal-active'); //startOverlay();
+};
+modalImageStoreButton.addEventListener("click", function (e) {
+  //Cuando envie el formulario le digo que me lleve a la url imageForm.action (url del html en modal_image)
+  var modal = document.getElementById('upload-image-modal');
+  var imageForm = document.getElementById('image-form');
+  var data = new FormData(imageForm);
+  var url = imageForm.action;
+
+  var sendImagePostRequest = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              try {
+                axios.post(url, data).then(function (response) {
+                  modal.classList.remove('modal-active');
+                });
+              } catch (error) {}
+
+            case 1:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function sendImagePostRequest() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  sendImagePostRequest();
+});
+modalImageDeleteButton.addEventListener("click", function (e) {
+  var modal = document.getElementById('upload-image-modal');
+  var url = modalImageDeleteButton.dataset.route;
+  var imageId = document.getElementById('modal-image-id').value;
+
+  var sendImageDeleteRequest = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              try {
+                axios.get(url, {
+                  //Cuando cojo la url le paso un marametro imagen que es = a la imageId
+                  params: {
+                    'image': imageId
+                  }
+                }).then(function (response) {
+                  //Primero elimina la foto de la base de datos
+                  modal.classList.remove('modal-active');
+                  stopWait();
+                  showMessage('success', response.data.message); //Despues selecciono las imagenes que tengo subidas
+
+                  var uploadImages = document.querySelectorAll(".upload-image");
+                  uploadImages.forEach(function (uploadImage) {
+                    //Miro si elguno tiene una clase igual a la id que he eliminado
+                    if (uploadImage.classList.contains(imageId)) {
+                      //Si se cumple elimino el div
+                      uploadImage.remove();
+                    }
+                  });
+                });
+              } catch (error) {}
+
+            case 1:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+
+    return function sendImageDeleteRequest() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+
+  sendImageDeleteRequest();
+});
+
+/***/ }),
+
 /***/ "./resources/js/admin/desktop/components/parts.js":
 /*!********************************************************!*\
   !*** ./resources/js/admin/desktop/components/parts.js ***!
@@ -2789,11 +2918,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "renderUpload": () => (/* binding */ renderUpload)
 /* harmony export */ });
-/* harmony import */ var _crudForm_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./crudForm.js */ "./resources/js/admin/desktop/components/crudForm.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _modalImage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modalImage */ "./resources/js/admin/desktop/components/modalImage.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 var renderUpload = function renderUpload() {
   var inputElements = document.querySelectorAll(".upload-input");
+  var previews = document.querySelectorAll(".upload-preview");
   inputElements.forEach(function (inputElement) {
+    uploadImage(inputElement);
+  });
+
+  function uploadImage(inputElement) {
     var uploadElement = inputElement.closest(".upload");
     uploadElement.removeEventListener("click", function (e) {
       inputElement.click();
@@ -2803,7 +2945,7 @@ var renderUpload = function renderUpload() {
     });
     inputElement.addEventListener("change", function () {
       if (inputElement.files.length) {
-        var files = inputElement.files;
+        var files = inputElement.files[0];
         updateThumbnail(uploadElement, files);
       }
     });
@@ -2820,63 +2962,136 @@ var renderUpload = function renderUpload() {
       e.preventDefault();
 
       if (e.dataTransfer.files.length) {
-        inputElement.files = e.dataTransfer.files;
+        inputElement.files = e.dataTransfer.files[0];
         var files = e.dataTransfer.files;
         updateThumbnail(uploadElement, files);
       }
 
       uploadElement.classList.remove("upload-over");
     });
-  });
+  }
 
-  function updateThumbnail(uploadElement, files) {
+  function updateThumbnail(uploadElement, file) {
     var thumbnailElement = uploadElement.querySelector(".upload-thumb");
-    var groupElement = document.querySelector(".group");
-    var formInput = uploadElement.closest(".form-input");
+
+    if (uploadElement.classList.contains('collection')) {
+      if (thumbnailElement == null) {
+        var cloneUploadElement = uploadElement.cloneNode(true);
+        var cloneInput = cloneUploadElement.querySelector('.upload-input');
+        uploadImage(cloneInput);
+        uploadElement.parentElement.appendChild(cloneUploadElement);
+      }
+    }
 
     if (uploadElement.querySelector(".upload-prompt")) {
       uploadElement.querySelector(".upload-prompt").remove();
     }
 
-    if (thumbnailElement) {
-      thumbnailElement.remove();
+    if (!thumbnailElement) {
+      thumbnailElement = document.createElement("div");
+      thumbnailElement.classList.add("upload-thumb");
+      uploadElement.appendChild(thumbnailElement);
     }
 
-    for (var i = 0; i < files.length; i++) {
-      var file = files.item(i);
+    if (file.type.startsWith("image/")) {
+      //FileReader recoge el valor del input que pongamos
+      var reader = new FileReader(); //reader es FileReader (Porque lo hemos dicho antes), un objeto que tiene un atribito reasAsDataURL que transforma el input en una URL 
 
-      if (uploadElement.classList.contains("group")) {
-        var groupElementClone = groupElement.cloneNode(true);
-        groupElementClone.querySelector(".upload-input").removeAttribute("multiple");
-        groupElementClone.classList.remove("group");
-        formInput.insertBefore(groupElementClone, uploadElement);
-        var inputElementCloned = groupElementClone.querySelector(".upload-input"); //inputElementCloned.setAttribute("name", "images[{{$content}}.{{$alias}}]" );
+      reader.readAsDataURL(file); //onload mete la url donde le pidamos. En este caso en style
 
-        console.log(inputElementCloned);
-        thumbnailElement = document.createElement("div");
-        thumbnailElement.classList.add("upload-thumb");
-        groupElementClone.appendChild(thumbnailElement);
-        renderUpload();
-      } else {
-        thumbnailElement = document.createElement("div");
-        thumbnailElement.classList.add("upload-thumb");
-        uploadElement.appendChild(thumbnailElement);
+      reader.onload = function () {
+        thumbnailElement.style.backgroundImage = "url('".concat(reader.result, "')");
+      }; //Comprueba si tiene la clase collection
+
+
+      if (uploadElement.classList.contains('collection')) {
+        //Para poder añadir lo del nombre hay que declarar primero estas variables
+        var content = uploadElement.dataset.content;
+        var alias = uploadElement.dataset.alias;
+        var inputElement = uploadElement.getElementsByClassName("upload-input")[0];
+        console.log(content); //Cambio de nombre. Para hacer esto el input no puede tener nombre
+
+        inputElement.name = "images[" + content + "-" + Math.floor(Math.random() * 99999 + 1) + "." + alias + "]";
       }
-
-      if (file.type.startsWith("image/")) {
-        (function () {
-          var reader = new FileReader();
-          reader.readAsDataURL(file);
-
-          reader.onload = function () {
-            thumbnailElement.style.backgroundImage = "url('".concat(reader.result, "')");
-          };
-        })();
-      } else {
-        thumbnailElement.style.backgroundImage = null;
-      }
+    } else {
+      thumbnailElement.style.backgroundImage = null;
     }
   }
+
+  previews.forEach(function (preview) {
+    //Función para enviar fotos a la base de datos
+    preview.addEventListener("click", function (e) {
+      //Al clicar en la imagen va a buscar la url que está en el html
+      var url = preview.dataset.url;
+
+      var sendImageRequest = /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  //Al clicar en la imagen va a la función openImageModal (está en modelImage.js)
+                  try {
+                    axios.get(url).then(function (response) {
+                      (0,_modalImage__WEBPACK_IMPORTED_MODULE_1__.openImageModal)(response.data);
+                    });
+                  } catch (error) {}
+
+                case 1:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        }));
+
+        return function sendImageRequest() {
+          return _ref.apply(this, arguments);
+        };
+      }();
+
+      sendImageRequest();
+    });
+  }); //     let thumbnailElement = uploadElement.querySelector(".upload-thumb");
+  //     let groupElement = document.querySelector(".group");
+  //     let formInput = uploadElement.closest(".form-input");
+  //     if (uploadElement.querySelector(".upload-prompt")) {
+  //         uploadElement.querySelector(".upload-prompt").remove();
+  //     }
+  //     if (thumbnailElement) {
+  //         thumbnailElement.remove();
+  //     }
+  //     for (var i = 0; i < files.length ; i++){
+  //         var file = files.item(i);
+  //         if (uploadElement.classList.contains("group")){
+  //             var groupElementClone = groupElement.cloneNode(true);
+  //             groupElementClone.querySelector(".upload-input").removeAttribute("multiple");
+  //             groupElementClone.classList.remove("group");
+  //             formInput.insertBefore(groupElementClone, uploadElement);
+  //             var inputElementCloned = groupElementClone.querySelector(".upload-input");
+  //             //inputElementCloned.setAttribute("name", "images[{{$content}}.{{$alias}}]" );
+  //             console.log(inputElementCloned);
+  //             thumbnailElement = document.createElement("div");
+  //             thumbnailElement.classList.add("upload-thumb");
+  //             groupElementClone.appendChild(thumbnailElement);
+  //             renderUpload();
+  //         } else{
+  //             thumbnailElement = document.createElement("div");
+  //             thumbnailElement.classList.add("upload-thumb");
+  //             uploadElement.appendChild(thumbnailElement);
+  //         }
+  //         if (file.type.startsWith("image/")) {
+  //             let reader = new FileReader();
+  //             reader.readAsDataURL(file);
+  //             reader.onload = () => {
+  //                 thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+  //             };
+  //         } 
+  //         else {
+  //             thumbnailElement.style.backgroundImage = null;
+  //         }
+  //     }
+  // }
 };
 
 /***/ }),

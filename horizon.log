@@ -235,3 +235,1984 @@ Horizon started successfully.
 [2021-05-14 09:48:03][9a005a07-c415-4b10-97a4-af69bc8faf88] Processing: App\Jobs\ProcessImage
 [2021-05-14 09:48:03][9a005a07-c415-4b10-97a4-af69bc8faf88] Processed:  App\Jobs\ProcessImage
 Horizon started successfully.
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Warning:  require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+
+Warning: require(/home/vagrant/code/maquetacion/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vagrant/code/maquetacion/artisan on line 18
+PHP Fatal error:  Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+
+Fatal error: Uncaught Error: Failed opening required '/home/vagrant/code/maquetacion/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/vagrant/code/maquetacion/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/vagrant/code/maquetacion/artisan on line 18
+Horizon started successfully.
+[2021-05-18 13:17:52][c838ffa2-e8e5-4041-a06b-70dc82206d29] Processing: App\Jobs\ProcessImage
+[2021-05-18 13:17:52][c838ffa2-e8e5-4041-a06b-70dc82206d29] Processing: App\Jobs\ProcessImage
+[2021-05-18 13:17:52][d49a458b-e0fb-4ef7-b213-55d23991e517] Processing: App\Jobs\ProcessImage
+[2021-05-18 13:17:52][d49a458b-e0fb-4ef7-b213-55d23991e517] Processing: App\Jobs\ProcessImage
+[2021-05-18 13:17:52][28e28bc3-6dd4-48ba-ab02-869bbc4bf8b4] Processing: App\Jobs\ProcessImage
+[2021-05-18 13:17:52][c838ffa2-e8e5-4041-a06b-70dc82206d29] Processing: App\Jobs\ProcessImage
+[2021-05-18 13:17:52][c838ffa2-e8e5-4041-a06b-70dc82206d29] Failed:     App\Jobs\ProcessImage
+[2021-05-18 13:17:52][28e28bc3-6dd4-48ba-ab02-869bbc4bf8b4] Processing: App\Jobs\ProcessImage
+[2021-05-18 13:17:52][28e28bc3-6dd4-48ba-ab02-869bbc4bf8b4] Processing: App\Jobs\ProcessImage
+[2021-05-18 13:17:52][28e28bc3-6dd4-48ba-ab02-869bbc4bf8b4] Failed:     App\Jobs\ProcessImage
+[2021-05-18 13:17:52][d49a458b-e0fb-4ef7-b213-55d23991e517] Processing: App\Jobs\ProcessImage
+[2021-05-18 13:17:52][d49a458b-e0fb-4ef7-b213-55d23991e517] Failed:     App\Jobs\ProcessImage
+[2021-05-18 13:29:48][191642b4-0105-4897-bfd7-a7caf6fdd327] Processing: App\Jobs\ProcessImage
+[2021-05-18 13:29:48][191642b4-0105-4897-bfd7-a7caf6fdd327] Processing: App\Jobs\ProcessImage
+[2021-05-18 13:29:48][ca28a391-d513-408d-942a-a9f07a87af8d] Processing: App\Jobs\ProcessImage
+[2021-05-18 13:29:48][d0bb3896-6ce2-4f06-96b9-b4edef2216ac] Processing: App\Jobs\ProcessImage
+[2021-05-18 13:29:48][d0bb3896-6ce2-4f06-96b9-b4edef2216ac] Processing: App\Jobs\ProcessImage
+[2021-05-18 13:29:49][d0bb3896-6ce2-4f06-96b9-b4edef2216ac] Processing: App\Jobs\ProcessImage
+[2021-05-18 13:29:49][191642b4-0105-4897-bfd7-a7caf6fdd327] Processing: App\Jobs\ProcessImage
+[2021-05-18 13:29:49][191642b4-0105-4897-bfd7-a7caf6fdd327] Failed:     App\Jobs\ProcessImage
+[2021-05-18 13:29:49][ca28a391-d513-408d-942a-a9f07a87af8d] Processing: App\Jobs\ProcessImage
+[2021-05-18 13:29:49][ca28a391-d513-408d-942a-a9f07a87af8d] Processing: App\Jobs\ProcessImage
+[2021-05-18 13:29:49][ca28a391-d513-408d-942a-a9f07a87af8d] Failed:     App\Jobs\ProcessImage
+[2021-05-18 13:29:49][d0bb3896-6ce2-4f06-96b9-b4edef2216ac] Failed:     App\Jobs\ProcessImage

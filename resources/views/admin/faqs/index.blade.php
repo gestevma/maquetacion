@@ -180,7 +180,7 @@
                                     <div class="form-input">
                                         @include('admin.components.upload', [
                                             'type' => 'images', 
-                                            'content' => 'featured', 
+                                            'content' => 'collection', 
                                             'alias' => $localization->alias,
                                             'files' => $faq->images_featured_preview
                                         ])

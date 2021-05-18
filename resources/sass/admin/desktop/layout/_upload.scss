@@ -17,6 +17,13 @@
   border: 4px dashed hsl(19, 100%, 50%);
 }
 
+.upload.group{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+
 .upload-over {
   border-style: solid;
 }
@@ -55,5 +62,7 @@
   font-size: 14px;
   text-align: center;
 }
+
+
 
   

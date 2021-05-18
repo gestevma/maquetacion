@@ -43,5 +43,22 @@ class Faq extends DBModel
         return $this->hasOne(ImageResized::class, 'entity_id')->where('grid', 'mobile')->where('content', 'featured')->where('entity', 'faqs')->where('language', App::getLocale());
     }
 
+
+
+    public function images_collection_preview()
+    {
+        return $this->hasMany(ImageResized::class, 'entity_id')->where('grid', 'preview')->where('content', 'collection')->where('entity', 'faqs');
+    }
+
+    public function image_collection_desktop()
+    {
+        return $this->hasOne(ImageResized::class, 'entity_id')->where('grid', 'desktop')->where('content', 'collection')->where('entity', 'faqs')->where('language', App::getLocale());
+    }
+
+    public function image_collection_mobile()
+    {
+        return $this->hasOne(ImageResized::class, 'entity_id')->where('grid', 'mobile')->where('content', 'collection')->where('entity', 'faqs')->where('language', App::getLocale());
+    }
+
 }
 

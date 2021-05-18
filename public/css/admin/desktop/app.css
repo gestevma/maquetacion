@@ -1104,6 +1104,12 @@ svg.spinner circle {
   border: 4px dashed #ff5100;
 }
 
+.upload.group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
 .upload-over {
   border-style: solid;
 }

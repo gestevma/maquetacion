@@ -14,6 +14,9 @@
     
     <body>
 
+        @include('admin.components.modal_delete')
+        @include('admin.components.modal_image')
+
         @if(isset($filters))
             @include('admin.components.table_filters', [
                 'route' => $route, 
