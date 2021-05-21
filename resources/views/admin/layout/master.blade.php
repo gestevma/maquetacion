@@ -13,9 +13,10 @@
     </head>
     
     <body>
-
-        @include('admin.components.modal_delete')
-        @include('admin.components.modal_image')
+        <div class=photos>
+            @include('admin.components.modal_delete') 
+            @include('admin.components.modal_image')
+        </div>
 
         @if(isset($filters))
             @include('admin.components.table_filters', [

@@ -30,7 +30,13 @@ class FaqController extends Controller
     public function index()
     {        
 
-        $faqs = $this->faq->with('image_featured_desktop')->where('active', 1)->get();
+        if($this->agent->isDesktop()){
+            $faqs = $this->faq->with('image_featured_desktop')->where('active', 1)->get();
+        }
+        
+        elseif($this->agent->isMobile()){
+            $faqs = $this->faq->with('image_featured_mobile')->where('active', 1)->get();
+        }
 
         $faqs = $faqs->each(function($faq) {  
             

@@ -5,13 +5,15 @@
 
     <div class="modal-image-attributes">
 
-        <form class="image-form" id="image-form" action="{{route('store_image_seo')}}" autocomplete="off">             
+        <form class="image-form" id="image-form" action="{{route('store_image')}}" autocomplete="off">             
 
             {{ csrf_field() }}
 
-            <input id="modal-image-id" type="hidden" name="id" class="input-highlight"  /> 
+            <input id="modal-image-temporal-id" type="hidden" name="temporalId" class="input-highlight"  /> 
+            <input id="modal-image-entity-id" type="hidden" name="entityId" class="input-highlight"  />                              
+            <input id="modal-image-entity" type="hidden" name="entity" class="input-highlight"  />                              
+            <input id="modal-image-content" type="hidden" name="content" class="input-highlight"  />                              
             <input id="modal-image-filename" type="hidden" name="filename" class="input-highlight"  />                              
-            <input id="modal-image-entity-id" type="hidden" name="entity_id" class="input-highlight"  />                              
             <input id="modal-image-language" type="hidden" name="language" class="input-highlight"  />                                                           
 
             <div class="one-column">
@@ -49,7 +51,6 @@
             </svg>
         </div>
 
-        {{--Al seleccionar el botón de eliminar me envia a la ruta delete_image que me envia a la función destroy del Vendor/Image--}}
         <div class="form-button modal-image-delete-button" data-route="{{route('delete_image')}}" id="modal-image-delete-button"> 
             <p>Eliminar imagen</p>
         </div>

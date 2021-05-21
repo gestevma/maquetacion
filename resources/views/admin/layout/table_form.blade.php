@@ -12,7 +12,7 @@
 
     @include('admin.components.message')
 
-    @include('admin.components.spinner')
+    {{-- @include('admin.components.wait') --}}
 
     <div class="content" id="content">
 

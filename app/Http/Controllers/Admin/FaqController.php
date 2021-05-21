@@ -41,6 +41,8 @@ class FaqController extends Controller
         $this->image->setEntity('faqs');
     }
 
+
+
     public function index()
     {
 
@@ -61,6 +63,8 @@ class FaqController extends Controller
         return $view;
     }
 
+
+
     public function create()
     {
 
@@ -74,85 +78,88 @@ class FaqController extends Controller
         ]);
     }
 
+
+
     public function store(FaqRequest $request)
     {            
         Debugbar::info(request('images'));
-        
+                  
+                
         $faq = $this->faq->updateOrCreate([
             'id' => request('id')],[
-            // 'title' => request('title'),
-            // 'description' => request('description'),
-            'category_id' => request('category_id'),
+            // 'name' => request('name'),
             'active' => 1,
+            // 'visible' => request('visible') == "true" ? 1 : 0 ,
+            'category_id' => request('category_id'),
         ]);
 
-
-        /*if (request('id')){
-            $message = \Lang::get('admin/faqs.faq-update');
-        }else{
-            $message = \Lang::get('admin/faqs.faq-create');
-        }*/
+        // if(request('seo')){
+        //     $seo = $this->locale_slug_seo->store(request("seo"), $faq->id, 'front_faq');
+        // }
 
         if(request('locale')){
             $locale = $this->locale->store(request('locale'), $faq->id);
         }
 
         if(request('images')){
-            $images = $this->image->storeRequest(request('images'), 'webp', $faq->id);
+            $images = $this->image->store(request('images'), $faq->id);
         }
 
+        // if (request('id')){
+        //     $message = \Lang::get('admin/faqs.faq-update');
+        // }else{
+        //     $message = \Lang::get('admin/faqs.faq-create');
+        // }
+
         $view = View::make('admin.faqs.index')
-        ->with('locale', $locale) 
-        ->with('faqs', $this->faq->where('active', 1)->paginate($this->paginate))
-        ->with('faq', $faq)
+        ->with('faqs', $this->faq->where('active', 1)->orderBy('created_at', 'desc')->paginate($this->paginate))
+        ->with('faq', $this->faq)
         ->renderSections();        
 
         return response()->json([
             'table' => $view['table'],
             'form' => $view['form'],
-            //'message' => $message,
-            'id' => $faq->id,
+            // 'message' => $message,
         ]);
     }
 
+
+
     public function edit(Faq $faq)
     {
+        $locale = $this->locale->show($faq->id);
+        // $seo = $this->locale_slug_seo->show($faq->id);
+
         $view = View::make('admin.faqs.index')
         ->with('locale', $locale)
+        ->with('seo', $seo)
         ->with('faq', $faq)
-        ->with('faqs', $this->faq->where('active', 1)->paginate($this->paginate));   
+        ->with('faqs', $this->faq->where('active', 1)->orderBy('created_at', 'desc')->paginate($this->paginate));        
         
         if(request()->ajax()) {
 
             $sections = $view->renderSections(); 
     
             return response()->json([
+                'table' => $sections['table'],
                 'form' => $sections['form'],
             ]); 
         }
                 
-        return $view;
+        return $view;;
     }
 
     public function show(Faq $faq){
 
-        $locale = $this->locale->show($faq->id);
-
         $view = View::make('admin.faqs.index')
-        ->with('locale', $locale)
         ->with('faq', $faq)
-        ->with('faqs', $this->faq->where('active', 1)->paginate($this->paginate));   
-        
-        if(request()->ajax()) {
+        ->with('faqs', $this->faq->where('active', 1)->orderBy('created_at', 'desc')->paginate($this->paginate))
+        ->renderSections();        
 
-            $sections = $view->renderSections(); 
-    
-            return response()->json([
-                'form' => $sections['form'],
-            ]); 
-        }
-                
-        return $view;
+        return response()->json([
+            'table' => $view['table'],
+            'form' => $view['form'],
+        ]);
     }
 
     public function destroy(Faq $faq)

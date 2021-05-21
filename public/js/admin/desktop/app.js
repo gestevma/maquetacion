@@ -1892,12 +1892,12 @@ __webpack_require__(/*! ./components/parts */ "./resources/js/admin/desktop/comp
 
 __webpack_require__(/*! ./components/filterTable */ "./resources/js/admin/desktop/components/filterTable.js");
 
-__webpack_require__(/*! ./components/switch-button */ "./resources/js/admin/desktop/components/switch-button.js");
+__webpack_require__(/*! ./components/switch-button */ "./resources/js/admin/desktop/components/switch-button.js"); // require('./components/spinner');
 
-__webpack_require__(/*! ./components/spinner */ "./resources/js/admin/desktop/components/spinner.js");
 
-__webpack_require__(/*! ./components/languajes */ "./resources/js/admin/desktop/components/languajes.js"); //require('./components/upload');
+__webpack_require__(/*! ./components/languajes */ "./resources/js/admin/desktop/components/languajes.js");
 
+__webpack_require__(/*! ./components/upload */ "./resources/js/admin/desktop/components/upload.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -1983,6 +1983,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _crudTable_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crudTable.js */ "./resources/js/admin/desktop/components/crudTable.js");
 /* harmony import */ var _ckeditor_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ckeditor.js */ "./resources/js/admin/desktop/components/ckeditor.js");
 /* harmony import */ var _spinner_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./spinner.js */ "./resources/js/admin/desktop/components/spinner.js");
+/* harmony import */ var _spinner_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_spinner_js__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _message_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./message.js */ "./resources/js/admin/desktop/components/message.js");
 /* harmony import */ var _languajes_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./languajes.js */ "./resources/js/admin/desktop/components/languajes.js");
 /* harmony import */ var _upload_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./upload.js */ "./resources/js/admin/desktop/components/upload.js");
@@ -2070,9 +2071,8 @@ var renderForm = function renderForm() {
             while (1) {
               switch (_context.prev = _context.next) {
                 case 0:
-                  (0,_spinner_js__WEBPACK_IMPORTED_MODULE_3__.spinner)();
-                  _context.prev = 1;
-                  _context.next = 4;
+                  _context.prev = 0;
+                  _context.next = 3;
                   return axios.post(url, data).then(function (response) {
                     form.id.value = response.data.id;
                     table.innerHTML = response.data.table;
@@ -2080,22 +2080,22 @@ var renderForm = function renderForm() {
                     (0,_crudTable_js__WEBPACK_IMPORTED_MODULE_1__.renderTable)();
                   });
 
-                case 4:
-                  _context.next = 10;
+                case 3:
+                  _context.next = 9;
                   break;
 
-                case 6:
-                  _context.prev = 6;
-                  _context.t0 = _context["catch"](1);
+                case 5:
+                  _context.prev = 5;
+                  _context.t0 = _context["catch"](0);
                   (0,_message_js__WEBPACK_IMPORTED_MODULE_4__.message)(_context.t0);
                   (0,_message_js__WEBPACK_IMPORTED_MODULE_4__.message)("fail");
 
-                case 10:
+                case 9:
                 case "end":
                   return _context.stop();
               }
             }
-          }, _callee, null, [[1, 6]]);
+          }, _callee, null, [[0, 5]]);
         }));
 
         return function sendPostRequest() {
@@ -2624,42 +2624,98 @@ var message = function message(type) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "openImageModal": () => (/* binding */ openImageModal)
+/* harmony export */   "openModal": () => (/* binding */ openModal),
+/* harmony export */   "openImageModal": () => (/* binding */ openImageModal),
+/* harmony export */   "updateImageModal": () => (/* binding */ updateImageModal)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _upload__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./upload */ "./resources/js/admin/desktop/components/upload.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//Este archivo abre la imagen en grande y recibe los inputs del alt y descripción de las fotos
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 // import {startOverlay, startWait, stopWait} from './wait';
 // import {showMessage} from './messages';
+
 var modalImageStoreButton = document.getElementById('modal-image-store-button');
 var modalImageDeleteButton = document.getElementById('modal-image-delete-button');
+var openModal = function openModal() {
+  var modal = document.getElementById('upload-image-modal');
+  modal.classList.add('modal-active'); // startOverlay();
+};
 var openImageModal = function openImageModal(image) {
-  //Inputs del formulario
   var modal = document.getElementById('upload-image-modal');
   var imageContainer = document.getElementById('modal-image-original');
-  var imageId = document.getElementById('modal-image-id');
-  var imageFilename = document.getElementById('modal-image-filename');
-  var imageEntityId = document.getElementById('modal-image-entity-id');
-  var imageLanguage = document.getElementById('modal-image-language');
-  var imageTitle = document.getElementById('modal-image-title');
-  var imageAlt = document.getElementById('modal-image-alt');
-  imageContainer.src = '../storage/' + image.path;
-  imageFilename.value = image.filename;
-  imageEntityId.value = image.entity_id;
-  imageLanguage.value = image.language;
-  imageId.value = image.id;
-  imageTitle.value = image.title;
-  imageAlt.value = image.alt;
-  modal.classList.add('modal-active'); //startOverlay();
+  var imageForm = document.getElementById('image-form');
+
+  if (image.path) {
+    imageContainer.src = '../storage/' + image.path;
+  }
+
+  for (var _i = 0, _Object$entries = Object.entries(image); _i < _Object$entries.length; _i++) {
+    var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+        key = _Object$entries$_i[0],
+        val = _Object$entries$_i[1];
+
+    var input = imageForm.elements[key];
+
+    if (input) {
+      switch (input.type) {
+        case 'checkbox':
+          input.checked = !!val;
+          break;
+
+        default:
+          input.value = val;
+          break;
+      }
+    }
+  }
+
+  modal.classList.add('modal-active'); // startOverlay();
+};
+var updateImageModal = function updateImageModal(image) {
+  var imageContainer = document.getElementById('modal-image-original');
+  imageContainer.src = image.dataset.image;
+  var imageForm = document.getElementById('image-form');
+  imageForm.reset();
+
+  for (var _i2 = 0, _Object$entries2 = Object.entries(image.dataset); _i2 < _Object$entries2.length; _i2++) {
+    var _Object$entries2$_i = _slicedToArray(_Object$entries2[_i2], 2),
+        key = _Object$entries2$_i[0],
+        val = _Object$entries2$_i[1];
+
+    var input = imageForm.elements[key];
+
+    if (input) {
+      switch (input.type) {
+        case 'checkbox':
+          input.checked = !!val;
+          break;
+
+        default:
+          input.value = val;
+          break;
+      }
+    }
+  }
 };
 modalImageStoreButton.addEventListener("click", function (e) {
-  //Cuando envie el formulario le digo que me lleve a la url imageForm.action (url del html en modal_image)
   var modal = document.getElementById('upload-image-modal');
   var imageForm = document.getElementById('image-form');
   var data = new FormData(imageForm);
@@ -2673,7 +2729,8 @@ modalImageStoreButton.addEventListener("click", function (e) {
             case 0:
               try {
                 axios.post(url, data).then(function (response) {
-                  modal.classList.remove('modal-active');
+                  modal.classList.remove('modal-active'); // stopWait();
+                  // showMessage('success', response.data.message);
                 });
               } catch (error) {}
 
@@ -2695,51 +2752,44 @@ modalImageStoreButton.addEventListener("click", function (e) {
 modalImageDeleteButton.addEventListener("click", function (e) {
   var modal = document.getElementById('upload-image-modal');
   var url = modalImageDeleteButton.dataset.route;
-  var imageId = document.getElementById('modal-image-id').value;
+  var temporalId = document.getElementById('modal-image-temporal-id').value;
+  var entityId = document.getElementById('modal-image-entity-id').value;
 
-  var sendImageDeleteRequest = /*#__PURE__*/function () {
-    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
-            case 0:
-              try {
-                axios.get(url, {
-                  //Cuando cojo la url le paso un marametro imagen que es = a la imageId
-                  params: {
-                    'image': imageId
-                  }
-                }).then(function (response) {
-                  //Primero elimina la foto de la base de datos
-                  modal.classList.remove('modal-active');
-                  stopWait();
-                  showMessage('success', response.data.message); //Despues selecciono las imagenes que tengo subidas
-
-                  var uploadImages = document.querySelectorAll(".upload-image");
-                  uploadImages.forEach(function (uploadImage) {
-                    //Miro si elguno tiene una clase igual a la id que he eliminado
-                    if (uploadImage.classList.contains(imageId)) {
-                      //Si se cumple elimino el div
-                      uploadImage.remove();
+  if (entityId) {
+    var sendImageDeleteRequest = /*#__PURE__*/function () {
+      var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                try {
+                  axios.get(url, {
+                    params: {
+                      'image': imageId
                     }
+                  }).then(function (response) {// showMessage('success', response.data.message);
                   });
-                });
-              } catch (error) {}
+                } catch (error) {}
 
-            case 1:
-            case "end":
-              return _context2.stop();
+              case 1:
+              case "end":
+                return _context2.stop();
+            }
           }
-        }
-      }, _callee2);
-    }));
+        }, _callee2);
+      }));
 
-    return function sendImageDeleteRequest() {
-      return _ref2.apply(this, arguments);
-    };
-  }();
+      return function sendImageDeleteRequest() {
+        return _ref2.apply(this, arguments);
+      };
+    }();
 
-  sendImageDeleteRequest();
+    sendImageDeleteRequest();
+  }
+
+  modal.classList.remove('modal-active'); // stopWait();
+
+  (0,_upload__WEBPACK_IMPORTED_MODULE_1__.deleteThumbnail)(temporalId);
 });
 
 /***/ }),
@@ -2863,20 +2913,13 @@ sidebar();
 /*!**********************************************************!*\
   !*** ./resources/js/admin/desktop/components/spinner.js ***!
   \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "spinner": () => (/* binding */ spinner)
-/* harmony export */ });
-var spinner = function spinner() {
-  var spinner = document.querySelector('.spinner-box');
-  spinner.classList.add("active");
-  setTimeout(function () {
-    spinner.classList.remove("active");
-  }, 500);
-};
+// export let spinner = () =>{
+//     let spinner = document.querySelector('.spinner-box');
+//     spinner.classList.add("active")
+//     setTimeout(function(){ spinner.classList.remove("active"); }, 500);
+// }
 
 /***/ }),
 
@@ -2916,7 +2959,8 @@ var switchButtonClick = function switchButtonClick() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "renderUpload": () => (/* binding */ renderUpload)
+/* harmony export */   "renderUpload": () => (/* binding */ renderUpload),
+/* harmony export */   "deleteThumbnail": () => (/* binding */ deleteThumbnail)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
@@ -2929,170 +2973,161 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 var renderUpload = function renderUpload() {
-  var inputElements = document.querySelectorAll(".upload-input");
-  var previews = document.querySelectorAll(".upload-preview");
+  var inputElements = document.querySelectorAll(".upload-image-input");
+  var uploadImages = document.querySelectorAll(".upload-image");
   inputElements.forEach(function (inputElement) {
     uploadImage(inputElement);
   });
-
-  function uploadImage(inputElement) {
-    var uploadElement = inputElement.closest(".upload");
-    uploadElement.removeEventListener("click", function (e) {
-      inputElement.click();
+  uploadImages.forEach(function (uploadImage) {
+    uploadImage.addEventListener("click", function (e) {
+      openImage(uploadImage);
     });
-    uploadElement.addEventListener("click", function (e) {
-      inputElement.click();
-    });
-    inputElement.addEventListener("change", function () {
-      if (inputElement.files.length) {
-        var files = inputElement.files[0];
-        updateThumbnail(uploadElement, files);
-      }
-    });
-    uploadElement.addEventListener("dragover", function (e) {
-      e.preventDefault();
-      uploadElement.classList.add("upload-over");
-    });
-    ["dragleave", "dragend"].forEach(function (type) {
-      uploadElement.addEventListener(type, function (e) {
-        uploadElement.classList.remove("upload-over");
-      });
-    });
-    uploadElement.addEventListener("drop", function (e) {
-      e.preventDefault();
+  });
+};
 
-      if (e.dataTransfer.files.length) {
-        inputElement.files = e.dataTransfer.files[0];
-        var files = e.dataTransfer.files;
-        updateThumbnail(uploadElement, files);
-      }
-
-      uploadElement.classList.remove("upload-over");
-    });
-  }
-
-  function updateThumbnail(uploadElement, file) {
-    var thumbnailElement = uploadElement.querySelector(".upload-thumb");
-
-    if (uploadElement.classList.contains('collection')) {
-      if (thumbnailElement == null) {
-        var cloneUploadElement = uploadElement.cloneNode(true);
-        var cloneInput = cloneUploadElement.querySelector('.upload-input');
-        uploadImage(cloneInput);
-        uploadElement.parentElement.appendChild(cloneUploadElement);
-      }
-    }
-
-    if (uploadElement.querySelector(".upload-prompt")) {
-      uploadElement.querySelector(".upload-prompt").remove();
-    }
+function uploadImage(inputElement) {
+  var uploadElement = inputElement.parentElement;
+  uploadElement.addEventListener("click", function (e) {
+    var thumbnailElement = uploadElement.querySelector(".upload-image-thumb");
 
     if (!thumbnailElement) {
-      thumbnailElement = document.createElement("div");
-      thumbnailElement.classList.add("upload-thumb");
-      uploadElement.appendChild(thumbnailElement);
-    }
-
-    if (file.type.startsWith("image/")) {
-      //FileReader recoge el valor del input que pongamos
-      var reader = new FileReader(); //reader es FileReader (Porque lo hemos dicho antes), un objeto que tiene un atribito reasAsDataURL que transforma el input en una URL 
-
-      reader.readAsDataURL(file); //onload mete la url donde le pidamos. En este caso en style
-
-      reader.onload = function () {
-        thumbnailElement.style.backgroundImage = "url('".concat(reader.result, "')");
-      }; //Comprueba si tiene la clase collection
-
-
-      if (uploadElement.classList.contains('collection')) {
-        //Para poder añadir lo del nombre hay que declarar primero estas variables
-        var content = uploadElement.dataset.content;
-        var alias = uploadElement.dataset.alias;
-        var inputElement = uploadElement.getElementsByClassName("upload-input")[0];
-        console.log(content); //Cambio de nombre. Para hacer esto el input no puede tener nombre
-
-        inputElement.name = "images[" + content + "-" + Math.floor(Math.random() * 99999 + 1) + "." + alias + "]";
-      }
+      inputElement.click();
     } else {
-      thumbnailElement.style.backgroundImage = null;
+      openImage(uploadElement);
     }
-  }
 
-  previews.forEach(function (preview) {
-    //Función para enviar fotos a la base de datos
-    preview.addEventListener("click", function (e) {
-      //Al clicar en la imagen va a buscar la url que está en el html
-      var url = preview.dataset.url;
-
-      var sendImageRequest = /*#__PURE__*/function () {
-        var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-            while (1) {
-              switch (_context.prev = _context.next) {
-                case 0:
-                  //Al clicar en la imagen va a la función openImageModal (está en modelImage.js)
-                  try {
-                    axios.get(url).then(function (response) {
-                      (0,_modalImage__WEBPACK_IMPORTED_MODULE_1__.openImageModal)(response.data);
-                    });
-                  } catch (error) {}
-
-                case 1:
-                case "end":
-                  return _context.stop();
-              }
-            }
-          }, _callee);
-        }));
-
-        return function sendImageRequest() {
-          return _ref.apply(this, arguments);
-        };
-      }();
-
-      sendImageRequest();
+    ;
+  });
+  inputElement.addEventListener("change", function (e) {
+    if (inputElement.files.length) {
+      updateThumbnail(uploadElement, inputElement.files[0]);
+    }
+  });
+  uploadElement.addEventListener("dragover", function (e) {
+    e.preventDefault();
+    uploadElement.classList.add("upload-image-over");
+  });
+  ["dragleave", "dragend"].forEach(function (type) {
+    uploadElement.addEventListener(type, function (e) {
+      uploadElement.classList.remove("upload-image-over");
     });
-  }); //     let thumbnailElement = uploadElement.querySelector(".upload-thumb");
-  //     let groupElement = document.querySelector(".group");
-  //     let formInput = uploadElement.closest(".form-input");
-  //     if (uploadElement.querySelector(".upload-prompt")) {
-  //         uploadElement.querySelector(".upload-prompt").remove();
-  //     }
-  //     if (thumbnailElement) {
-  //         thumbnailElement.remove();
-  //     }
-  //     for (var i = 0; i < files.length ; i++){
-  //         var file = files.item(i);
-  //         if (uploadElement.classList.contains("group")){
-  //             var groupElementClone = groupElement.cloneNode(true);
-  //             groupElementClone.querySelector(".upload-input").removeAttribute("multiple");
-  //             groupElementClone.classList.remove("group");
-  //             formInput.insertBefore(groupElementClone, uploadElement);
-  //             var inputElementCloned = groupElementClone.querySelector(".upload-input");
-  //             //inputElementCloned.setAttribute("name", "images[{{$content}}.{{$alias}}]" );
-  //             console.log(inputElementCloned);
-  //             thumbnailElement = document.createElement("div");
-  //             thumbnailElement.classList.add("upload-thumb");
-  //             groupElementClone.appendChild(thumbnailElement);
-  //             renderUpload();
-  //         } else{
-  //             thumbnailElement = document.createElement("div");
-  //             thumbnailElement.classList.add("upload-thumb");
-  //             uploadElement.appendChild(thumbnailElement);
-  //         }
-  //         if (file.type.startsWith("image/")) {
-  //             let reader = new FileReader();
-  //             reader.readAsDataURL(file);
-  //             reader.onload = () => {
-  //                 thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
-  //             };
-  //         } 
-  //         else {
-  //             thumbnailElement.style.backgroundImage = null;
-  //         }
-  //     }
-  // }
-};
+  });
+  uploadElement.addEventListener("drop", function (e) {
+    e.preventDefault();
+
+    if (e.dataTransfer.files.length) {
+      inputElement.files = e.dataTransfer.files;
+      updateThumbnail(uploadElement, e.dataTransfer.files[0]);
+    }
+
+    uploadElement.classList.remove("upload-image-over");
+  });
+}
+
+function updateThumbnail(uploadElement, file) {
+  if (file.type.startsWith("image/")) {
+    var _thumbnailElement = uploadElement.querySelector(".upload-image-thumb");
+
+    if (uploadElement.classList.contains('collection')) {
+      if (!_thumbnailElement) {
+        var cloneUploadElement = uploadElement.cloneNode(true);
+        var cloneInput = cloneUploadElement.querySelector('.upload-image-input');
+        uploadImage(cloneInput);
+        uploadElement.parentElement.insertBefore(cloneUploadElement, uploadElement);
+      }
+    }
+
+    if (uploadElement.querySelector(".upload-image-prompt")) {
+      uploadElement.querySelector(".upload-image-prompt").classList.add('hidden');
+    }
+
+    if (!_thumbnailElement) {
+      _thumbnailElement = document.createElement("div");
+
+      _thumbnailElement.classList.add("upload-image-thumb");
+
+      uploadElement.appendChild(_thumbnailElement);
+    }
+
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = function () {
+      var temporalId = Math.floor(Math.random() * 99999 + 1);
+      var content = uploadElement.dataset.content;
+      var language = uploadElement.dataset.language;
+      var inputElement = uploadElement.getElementsByClassName("upload-image-input")[0];
+      _thumbnailElement.style.backgroundImage = "url('".concat(reader.result, "')");
+      uploadElement.dataset.temporalId = temporalId;
+      uploadElement.dataset.image = reader.result;
+      inputElement.name = "images[" + content + "-" + temporalId + "." + language + "]";
+      uploadElement.classList.remove('upload-image-add');
+      uploadElement.classList.add('upload-image');
+      (0,_modalImage__WEBPACK_IMPORTED_MODULE_1__.updateImageModal)(uploadElement);
+      (0,_modalImage__WEBPACK_IMPORTED_MODULE_1__.openModal)();
+    };
+  } else {
+    thumbnailElement.style.backgroundImage = null;
+  }
+}
+
+function openImage(image) {
+  var url = image.dataset.url;
+
+  if (url) {
+    var sendImageRequest = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                try {
+                  axios.get(url).then(function (response) {
+                    (0,_modalImage__WEBPACK_IMPORTED_MODULE_1__.openImageModal)(response.data);
+                  });
+                } catch (error) {}
+
+              case 1:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function sendImageRequest() {
+        return _ref.apply(this, arguments);
+      };
+    }();
+
+    sendImageRequest();
+  } else {
+    console.log("no-url");
+    (0,_modalImage__WEBPACK_IMPORTED_MODULE_1__.updateImageModal)(image);
+    (0,_modalImage__WEBPACK_IMPORTED_MODULE_1__.openModal)();
+  }
+}
+
+function deleteThumbnail(imageId) {
+  var uploadImages = document.querySelectorAll(".upload-image");
+  uploadImages.forEach(function (uploadImage) {
+    if (uploadImage.classList.contains('collection') && uploadImage.dataset.imageid == imageId) {
+      uploadImage.remove();
+    }
+
+    if (uploadImage.classList.contains('single') && uploadImage.dataset.imageid == imageId) {
+      uploadImage.querySelector(".upload-image-thumb").remove();
+      uploadImage.dataset.imageid == '';
+      uploadImage.querySelector(".upload-image-prompt").classList.remove('hidden');
+      uploadImage.classList.remove('upload-image');
+      uploadImage.classList.add('upload-image-add');
+
+      if (uploadImage.querySelector(".upload-image-input")) {
+        uploadImage.querySelector(".upload-image-input").value = "";
+      }
+    }
+  });
+}
 
 /***/ }),
 

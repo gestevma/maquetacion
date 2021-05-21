@@ -7,9 +7,12 @@ require('./components/sidebar');
 require('./components/parts');
 require('./components/filterTable');
 require('./components/switch-button');
-require('./components/spinner');
+// require('./components/spinner');
 require('./components/languajes');
-//require('./components/upload');
+require('./components/upload');
+
+
+
 
 /**
  * First we will load all of this project's JavaScript dependencies which

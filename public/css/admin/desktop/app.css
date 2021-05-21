@@ -1085,7 +1085,8 @@ svg.spinner circle {
   transform: translateX(2rem);
 }
 
-.upload {
+.upload-image,
+.upload-image-add {
   align-items: center;
   border: 0.2em dashed #02a8b1;
   color: #cccccc;
@@ -1095,37 +1096,60 @@ svg.spinner circle {
   font-weight: 500;
   height: 30vh;
   justify-content: center;
-  margin-top: 1em;
-  padding: 1em;
+  padding: 0.5em;
   text-align: center;
 }
 
-.upload:hover {
-  border: 4px dashed #ff5100;
-}
-
-.upload.group {
+.upload-image-collection {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
 }
 
-.upload-over {
+.upload-image.collection,
+.upload-image-add.collection {
+  height: 15vh;
+  padding: 0;
+}
+
+.upload-image:hover,
+.upload-image-add:hover {
+  border: 4px dashed #ff5100;
+}
+
+.upload-image-over {
   border-style: solid;
 }
 
-.upload-prompt {
+.upload-image-prompt {
   position: absolute;
   width: 15%;
   z-index: 999;
 }
 
-.upload-input {
+.upload-image-options {
   display: none;
 }
 
-.upload-thumb {
-  display: block;
+.upload-image:hover .upload-image-options {
+  display: initial;
+  position: absolute;
+  width: 15%;
+  z-index: 999;
+}
+.upload-image:hover .upload-image-options svg {
+  height: 1.2em;
+  width: 1.2em;
+}
+.upload-image:hover .upload-image-options svg path {
+  fill: white;
+}
+
+.upload-image-input {
+  display: none;
+}
+
+.upload-image-thumb {
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -1133,9 +1157,10 @@ svg.spinner circle {
   background-color: #cccccc;
   background-size: cover;
   position: relative;
+  z-index: 900;
 }
 
-.upload-thumb::after {
+.upload-image-thumb::after {
   content: attr(data-label);
   position: absolute;
   bottom: 0;
@@ -1143,7 +1168,112 @@ svg.spinner circle {
   width: 100%;
   padding: 5px 0;
   color: #ffffff;
-  background: rgba(0, 0, 0, 0.75);
   font-size: 14px;
   text-align: center;
+}
+
+#upload-image-modal {
+  background-color: white;
+  display: flex;
+  height: 80vh;
+  justify-content: space-between;
+  left: 10%;
+  padding: 1em;
+  position: fixed;
+  top: -100vh;
+  transition: top 0.3s;
+  width: 80%;
+  z-index: 3000;
+}
+
+#upload-image-modal.modal-active {
+  top: 10vh;
+  transition: top 0.3s;
+}
+
+.modal-image {
+  padding: 1em;
+  width: 65%;
+}
+
+#modal-image-original {
+  height: 100%;
+  width: 100%;
+}
+
+.modal-image-attributes {
+  padding: 1em;
+  width: 30%;
+}
+
+.modal-image-store-button {
+  cursor: pointer;
+}
+.modal-image-store-button:hover .store-button-icon {
+  fill: #ff5100;
+}
+.modal-image-store-button svg {
+  float: right;
+  height: 2.4em;
+  width: 2.4em;
+}
+.modal-image-store-button svg .store-button-icon {
+  fill: gray;
+}
+
+.modal-image-delete-button {
+  bottom: 1em;
+  cursor: pointer;
+  position: absolute;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.modal-image-delete-button p {
+  color: red;
+  text-decoration: underline;
+}
+
+.modal-delete {
+  background-color: white;
+  transform: translateY(-200%);
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: -10%;
+  transition: transform 0.5s;
+  width: 40%;
+  z-index: 3000;
+}
+.modal-delete.open {
+  top: 30%;
+  transform: translateY(0);
+}
+.modal-delete .modal-delete-header {
+  background-color: grey;
+  border-bottom: 1px solid #e9ecef;
+  padding: 0.5em 1em;
+  text-align: center;
+}
+.modal-delete .modal-delete-header h4 {
+  font-size: 1.2em;
+  margin: 0;
+}
+.modal-delete .modal-delete-footer {
+  display: flex;
+}
+.modal-delete .modal-delete-footer .modal-delete-option {
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  width: 50%;
+}
+.modal-delete .modal-delete-footer .modal-delete-option#delete-cancel {
+  background-color: #02a8b1;
+}
+.modal-delete .modal-delete-footer .modal-delete-option#delete-confirm {
+  background-color: #d74242;
 }

@@ -1,6 +1,115 @@
 <?php
 
+// use Illuminate\Support\Facades\Route;
+
+// /*
+// |--------------------------------------------------------------------------
+// | Web Routes
+// |--------------------------------------------------------------------------
+// |
+// | Here is where you can register web routes for your application. These
+// | routes are loaded by the RouteServiceProvider within a group which
+// | contains the "web" middleware group. Now create something great!
+// |
+// */
+
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+// Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguirá la url*/ 
+
+//     //Route::get('/faqs/json', 'App\Http\Controllers\Admin\FaqController@indexJson')->name('faqs_json');
+//     /*Resources te dice la ruta final de la url*/
+
+//     //1.Pega la linia de los filros así como está
+//     //2. Ves al JS de filters
+
+//     Route::get('/image/delete/{image?}', 'App\Vendor\Image\Image@destroy')->name('delete_image');
+//     Route::get('/image/{image}', 'App\Vendor\Image\Image@showImageSeo')->name('show_image_seo');
+//     Route::post('/image', 'App\Vendor\Image\Image@storeImageSeo')->name('store_image_seo');
+
+//     Route::get('/faqs/filter/{filters?}', 'App\Http\Controllers\Admin\FaqController@filter')->name('faqs_filter');
+//     Route::get('/faqs/pagination', 'App\Http\Controllers\Admin\FaqController@pagination')->name('faqs_pagination');
+//     Route::resource('faqs', 'App\Http\Controllers\Admin\FaqController', [
+//         'names' => [
+//             'index' => 'faqs',
+//             'create' => 'faqs_create',
+//             'store' => 'faqs_store',
+//             'destroy' => 'faqs_destroy',
+//             'show' => 'faqs_show',
+//             'edit' => 'faqs_edit',
+//         ]
+//     ]);
+    
+//     Route::resource('clientes', 'App\Http\Controllers\Admin\ClientsController', [
+//         'parameters' => [
+//             'clientes' => 'clients', 
+//         ],
+//         'names' => [
+//             'index' => 'clients',
+//             'create' => 'clients_create',
+//             'store' => 'clients_store',
+//             'destroy' => 'clients_destroy',
+//             'show' => 'clients_show',
+//         ]
+//     ]);
+
+//     Route::resource('categorias', 'App\Http\Controllers\Admin\FaqsCategoriesController', [
+//         'parameters' => [
+//             'categorias' => 'faq_category', 
+//         ],
+//         'names' => [
+//             'index' => 'faqs_categories',
+//             'create' => 'faqs_categories_create',
+//             'store' => 'faqs_categories_store',
+//             'destroy' => 'faqs_categories_destroy',
+//             'show' => 'faqs_categories_show',
+//         ]
+//     ]);
+    
+//     Route::get('/sliders/filter/{filters?}', 'App\Http\Controllers\Admin\FaqController@filter')->name('sliders_filter');
+//     Route::resource('sliders', 'App\Http\Controllers\Admin\SliderController', [
+
+//         'names' => [
+//             'index' => 'sliders',
+//             'create' => 'sliders_create',
+//             'store' => 'sliders_store',
+//             'destroy' => 'sliders_destroy',
+//             'show' => 'sliders_show',
+//         ]
+//     ]);
+
+//     Route::resource('users', 'App\Http\Controllers\Admin\UsersController', [
+
+//         'names' => [
+//             'index' => 'users',
+//             'create' => 'users_create',
+//             'store' => 'users_store',
+//             'destroy' => 'users_destroy',
+//             'show' => 'users_show',
+//         ]
+//     ]);
+// });
+
+// /*Como hemos puesto prefix=> admin y resource => faqs la url será dev-maquetación.com/admin/faqs*/
+
+// Route::post('/fingerprint', 'App\Http\Controllers\Front\FingerprintController@store')->name('front_fingerprint');
+
+// Route::get('/login', 'App\Http\Controllers\Front\LoginController@index')->name('front_login');
+// Route::post('/login', 'App\Http\Controllers\Front\LoginController@login')->name('front_login_submit');
+
+// Route::get('/faqs', 'App\Http\Controllers\Front\FaqController@index')->name('faqs_front');
+
+
+
+
+// <?php
+
 use Illuminate\Support\Facades\Route;
+// use App\Vendor\Locale\LocalizationSeo;
+
+// $localizationseo = new LocalizationSeo();
 
 /*
 |--------------------------------------------------------------------------
@@ -13,36 +122,70 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguirá la url*/ 
-
-    //Route::get('/faqs/json', 'App\Http\Controllers\Admin\FaqController@indexJson')->name('faqs_json');
-    /*Resources te dice la ruta final de la url*/
-
-    //1.Pega la linia de los filros así como está
-    //2. Ves al JS de filters
+Route::group(['prefix' => 'admin'], function () {
 
     Route::get('/image/delete/{image?}', 'App\Vendor\Image\Image@destroy')->name('delete_image');
-    Route::get('/image/{image}', 'App\Vendor\Image\Image@showImageSeo')->name('show_image_seo');
-    Route::post('/image', 'App\Vendor\Image\Image@storeImageSeo')->name('store_image_seo');
+    Route::get('/image/{image}', 'App\Vendor\Image\Image@show')->name('show_image');
+    Route::post('/image/seo', 'App\Vendor\Image\Image@storeSeo')->name('store_image');
+
+    Route::resource('clientes', 'App\Http\Controllers\Admin\CustomerController', [
+        'parameters' => [
+            'clientes' => 'customer', 
+        ],
+        'names' => [
+            'index' => 'customers',
+            'create' => 'customers_create',
+            'edit' => 'customers_edit',
+            'store' => 'customers_store',
+            'destroy' => 'customers_destroy',
+            'show' => 'customers_show',
+        ]
+    ]);
+
+    Route::resource('usuarios', 'App\Http\Controllers\Admin\UserController', [
+        'parameters' => [
+            'usuarios' => 'user', 
+        ],
+        'names' => [
+            'index' => 'users',
+            'create' => 'users_create',
+            'edit' => 'users_edit',
+            'store' => 'users_store',
+            'destroy' => 'users_destroy',
+            'show' => 'users_show',
+        ]
+    ]);
+
+    Route::resource('faqs/categorias', 'App\Http\Controllers\Admin\FaqCategoryController', [
+        'parameters' => [
+            'categorias' => 'faq_category', 
+        ],
+        'names' => [
+            'index' => 'faqs_categories',
+            'create' => 'faqs_categories_create',
+            'edit' => 'faqs_categories_edit',
+            'store' => 'faqs_categories_store',
+            'destroy' => 'faqs_categories_destroy',
+            'show' => 'faqs_categories_show',
+        ]
+    ]);
 
     Route::get('/faqs/filter/{filters?}', 'App\Http\Controllers\Admin\FaqController@filter')->name('faqs_filter');
-    Route::get('/faqs/pagination', 'App\Http\Controllers\Admin\FaqController@pagination')->name('faqs_pagination');
     Route::resource('faqs', 'App\Http\Controllers\Admin\FaqController', [
+        'parameters' => [
+            'faqs' => 'faq', 
+        ],
         'names' => [
             'index' => 'faqs',
             'create' => 'faqs_create',
+            'edit' => 'faqs_edit',
             'store' => 'faqs_store',
             'destroy' => 'faqs_destroy',
             'show' => 'faqs_show',
-            'edit' => 'faqs_edit',
         ]
     ]);
-    
-    Route::resource('clientes', 'App\Http\Controllers\Admin\ClientsController', [
+
+        Route::resource('clientes', 'App\Http\Controllers\Admin\ClientsController', [
         'parameters' => [
             'clientes' => 'clients', 
         ],
@@ -55,20 +198,7 @@ Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguir
         ]
     ]);
 
-    Route::resource('categorias', 'App\Http\Controllers\Admin\FaqsCategoriesController', [
-        'parameters' => [
-            'categorias' => 'faq_category', 
-        ],
-        'names' => [
-            'index' => 'faqs_categories',
-            'create' => 'faqs_categories_create',
-            'store' => 'faqs_categories_store',
-            'destroy' => 'faqs_categories_destroy',
-            'show' => 'faqs_categories_show',
-        ]
-    ]);
-    
-    Route::get('/sliders/filter/{filters?}', 'App\Http\Controllers\Admin\FaqController@filter')->name('sliders_filter');
+        Route::get('/sliders/filter/{filters?}', 'App\Http\Controllers\Admin\FaqController@filter')->name('sliders_filter');
     Route::resource('sliders', 'App\Http\Controllers\Admin\SliderController', [
 
         'names' => [
@@ -80,19 +210,43 @@ Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguir
         ]
     ]);
 
-    Route::resource('users', 'App\Http\Controllers\Admin\UsersController', [
 
+    Route::resource('tracking/scroll', 'App\Http\Controllers\Admin\TrackingScrollController', [
+        'parameters' => [
+            'scroll' => 'scroll', 
+        ],
         'names' => [
-            'index' => 'users',
-            'create' => 'users_create',
-            'store' => 'users_store',
-            'destroy' => 'users_destroy',
-            'show' => 'users_show',
+            'index' => 'tracking_scroll',
+            'create' => 'tracking_scroll_create',
+            'edit' => 'tracking_scroll_edit',
+            'store' => 'tracking_scroll_store',
+            'destroy' => 'tracking_scroll_destroy',
+            'show' => 'tracking_scroll_show',
+        ]
+    ]);
+
+    Route::resource('tracking/pagination', 'App\Http\Controllers\Admin\TrackingPaginationController', [
+        'parameters' => [
+            'pagination' => 'pagination', 
+        ],
+        'names' => [
+            'index' => 'tracking_pagination',
+            'create' => 'tracking_pagination_create',
+            'edit' => 'tracking_pagination_edit',
+            'store' => 'tracking_pagination_store',
+            'destroy' => 'tracking_pagination_destroy',
+            'show' => 'tracking_pagination_show',
         ]
     ]);
 });
 
-/*Como hemos puesto prefix=> admin y resource => faqs la url será dev-maquetación.com/admin/faqs*/
+// Route::group(['prefix' => $localizationseo->setLocale(),
+//               'middleware' => [ 'localize' ]
+//             ], function () use ($localizationseo) {
+
+//     Route::get($localizationseo->transRoute('routes.front_faqs'), 'App\Http\Controllers\Front\FaqController@index')->name('front_faqs');
+//     Route::get($localizationseo->transRoute('routes.front_faq'), 'App\Http\Controllers\Front\FaqController@show')->name('front_faq');
+// });
 
 Route::post('/fingerprint', 'App\Http\Controllers\Front\FingerprintController@store')->name('front_fingerprint');
 
@@ -102,7 +256,6 @@ Route::post('/login', 'App\Http\Controllers\Front\LoginController@login')->name(
 Route::get('/faqs', 'App\Http\Controllers\Front\FaqController@index')->name('faqs_front');
 
 
-
-
+Route::get('/', 'App\Http\Controllers\Front\HomeController@index')->name('home_front');
 
 

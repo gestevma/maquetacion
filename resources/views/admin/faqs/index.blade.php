@@ -47,7 +47,7 @@
                 {{----Swipe del movil para borrar y editar----}}
                 @if($agent->isMobile())
                     <div class="table-icons-container swipe-back">
-                        <div class="table-icons edit-button right-swipe" data-url="{{route('faqs_show', ['faq' => $faq_element->id])}}">
+                        <div class="table-icons edit-button right-swipe" data-url="{{route('faqs_edit', ['faq' => $faq_element->id])}}">
                             <svg viewBox="0 0 24 24">
                                 <path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
                             </svg>
@@ -73,6 +73,8 @@
 @endsection
 
 
+
+
 @section('form')
 
     @isset($faq)     
@@ -85,8 +87,8 @@
 
             <div class = "form-head">
                 <div class="form-parts">
-                    <p class="part" data-part="content">Contenido</p>
-                    <p class="part part-active" data-part="images">Imágenes</p>
+                    <p class="part  part-active" data-part="content">Contenido</p>
+                    <p class="part" data-part="images">Imágenes</p>
                 </div>
                 <div class="switch-inactive">@include('admin.components.switch-button')</div>
             </div>
@@ -94,7 +96,7 @@
 
             <div class = form-body>
 
-                <div class="form-write part-section" data-part="content">
+                <div class="form-write part-section active" data-part="content">
 
                     <div class="form-not-translatable">
 
@@ -154,7 +156,7 @@
                 </div>
 
 
-                <div class="form-images part-section active" data-part="images">
+                <div class="form-images part-section" data-part="images">
                     @component ('admin.components.locale')
 
                         @foreach ($localizations as $localization)
@@ -165,7 +167,8 @@
                                     </div>
                                     <div class="form-input">
                                         @include('admin.components.upload', [
-                                            'type' => 'image', 
+                                            'entity' => 'faqs',
+                                            'type' => 'single', 
                                             'content' => 'featured', 
                                             'alias' => $localization->alias,
                                             'files' => $faq->images_featured_preview
@@ -179,10 +182,11 @@
                                     </div>
                                     <div class="form-input">
                                         @include('admin.components.upload', [
-                                            'type' => 'images', 
-                                            'content' => 'collection', 
+                                            'entity' => 'faqs',
+                                            'type' => 'collection', 
+                                            'content' => 'grid', 
                                             'alias' => $localization->alias,
-                                            'files' => $faq->images_featured_preview
+                                            'files' => $faq->images_collection_preview
                                         ])
                                     </div>
                                 </div> 

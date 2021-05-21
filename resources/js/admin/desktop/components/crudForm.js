@@ -64,7 +64,7 @@ export let renderForm = () =>{
 
             let sendPostRequest = async () => { 
 
-                spinner();
+                // spinner();
                 try { 
                     await axios.post(url, data).then(response => {  
                         form.id.value = response.data.id;
