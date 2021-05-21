@@ -195,7 +195,8 @@ export function deleteThumbnail(imageId) {
             if(uploadImage.dataset.temporalId == imageId || uploadImage.dataset.imageId == imageId){
 
                 uploadImage.querySelector(".upload-image-thumb").remove();
-                uploadImage.dataset.temporalId == '';
+                uploadImage.dataset.imageId = '';
+                uploadImage.dataset.url = '';
                 uploadImage.querySelector(".upload-image-prompt").classList.remove('hidden');
                 uploadImage.classList.remove('upload-image');
                 uploadImage.classList.add('upload-image-add');
@@ -203,8 +204,9 @@ export function deleteThumbnail(imageId) {
                 if(uploadImage.querySelector(".upload-image-input")){
                     uploadImage.querySelector(".upload-image-input").value = "";
                 }
+
             }
+            
         }
     });
 }
-
