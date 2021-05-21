@@ -82,9 +82,8 @@ class FaqController extends Controller
 
     public function store(FaqRequest $request)
     {            
-        Debugbar::info(request('images'));
-                  
-                
+        Debugbar::info(request('images')); 
+        
         $faq = $this->faq->updateOrCreate([
             'id' => request('id')],[
             // 'name' => request('name'),
@@ -112,7 +111,7 @@ class FaqController extends Controller
         // }
 
         $view = View::make('admin.faqs.index')
-        ->with('faqs', $this->faq->where('active', 1)->orderBy('created_at', 'desc')->paginate($this->paginate))
+        ->with('faqs', $this->faq->where('active', 1)->paginate($this->paginate))
         ->with('faq', $this->faq)
         ->renderSections();        
 
@@ -134,7 +133,7 @@ class FaqController extends Controller
         ->with('locale', $locale)
         ->with('seo', $seo)
         ->with('faq', $faq)
-        ->with('faqs', $this->faq->where('active', 1)->orderBy('created_at', 'desc')->paginate($this->paginate));        
+        ->with('faqs', $this->faq->where('active', 1)->paginate($this->paginate));        
         
         if(request()->ajax()) {
 
@@ -151,9 +150,12 @@ class FaqController extends Controller
 
     public function show(Faq $faq){
 
+        $locale = $this->locale->show($faq->id);
+
         $view = View::make('admin.faqs.index')
+        ->with('locale', $locale)
         ->with('faq', $faq)
-        ->with('faqs', $this->faq->where('active', 1)->orderBy('created_at', 'desc')->paginate($this->paginate))
+        ->with('faqs', $this->faq->where('active', 1)->paginate($this->paginate))
         ->renderSections();        
 
         return response()->json([

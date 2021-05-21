@@ -94,4 +94,3 @@ class ImageResized extends Model
             ->select('path','filename','language');
     }
 }
-

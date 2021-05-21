@@ -186,7 +186,7 @@
                                             'type' => 'collection', 
                                             'content' => 'grid', 
                                             'alias' => $localization->alias,
-                                            'files' => $faq->images_collection_preview
+                                            'files' => $faq->images_grid_preview
                                         ])
                                     </div>
                                 </div> 
