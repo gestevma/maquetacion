@@ -1989,6 +1989,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _upload_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./upload.js */ "./resources/js/admin/desktop/components/upload.js");
 /* harmony import */ var _parts_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./parts.js */ "./resources/js/admin/desktop/components/parts.js");
 /* harmony import */ var _switch_button_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./switch-button.js */ "./resources/js/admin/desktop/components/switch-button.js");
+/* harmony import */ var _seo_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./seo.js */ "./resources/js/admin/desktop/components/seo.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2014,6 +2015,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     Enviar contenido del formulario a la base de datos. Al enviar los datos no se van del formulario
     Limpiar el formulario para meter una nueva entrada 
 /****************************************************************************************************/
+
 
 
 
@@ -2048,112 +2050,121 @@ var renderForm = function renderForm() {
   });
   /*******Envia los datos a la base de datos*******/
 
-  saveButton.addEventListener("click", function (event) {
-    event.preventDefault();
-    forms.forEach(function (form) {
-      var data = new FormData(form);
+  if (saveButton) {
+    saveButton.addEventListener("click", function (event) {
+      event.preventDefault();
+      forms.forEach(function (form) {
+        var data = new FormData(form);
 
-      if (ckeditors != 'null') {
-        Object.entries(ckeditors).forEach(function (_ref) {
-          var _ref2 = _slicedToArray(_ref, 2),
-              key = _ref2[0],
-              value = _ref2[1];
+        if (ckeditors != 'null') {
+          Object.entries(ckeditors).forEach(function (_ref) {
+            var _ref2 = _slicedToArray(_ref, 2),
+                key = _ref2[0],
+                value = _ref2[1];
 
-          data.append(key, value.getData());
-        });
-      }
+            data.append(key, value.getData());
+          });
+        }
 
-      var url = form.action;
+        var url = form.action;
 
-      var sendPostRequest = /*#__PURE__*/function () {
-        var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-            while (1) {
-              switch (_context.prev = _context.next) {
-                case 0:
-                  _context.prev = 0;
-                  _context.next = 3;
-                  return axios.post(url, data).then(function (response) {
-                    form.id.value = response.data.id;
-                    table.innerHTML = response.data.table;
-                    (0,_message_js__WEBPACK_IMPORTED_MODULE_4__.message)("success");
-                    (0,_crudTable_js__WEBPACK_IMPORTED_MODULE_1__.renderTable)();
-                  });
+        var sendPostRequest = /*#__PURE__*/function () {
+          var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    _context.prev = 0;
+                    _context.next = 3;
+                    return axios.post(url, data).then(function (response) {
+                      if (response.data.id) {
+                        form.id.value = response.data.id;
+                      }
 
-                case 3:
-                  _context.next = 9;
-                  break;
+                      table.innerHTML = response.data.table;
+                      (0,_message_js__WEBPACK_IMPORTED_MODULE_4__.message)("success");
+                      (0,_crudTable_js__WEBPACK_IMPORTED_MODULE_1__.renderTable)();
+                    });
 
-                case 5:
-                  _context.prev = 5;
-                  _context.t0 = _context["catch"](0);
-                  (0,_message_js__WEBPACK_IMPORTED_MODULE_4__.message)(_context.t0);
-                  (0,_message_js__WEBPACK_IMPORTED_MODULE_4__.message)("fail");
+                  case 3:
+                    _context.next = 9;
+                    break;
 
-                case 9:
-                case "end":
-                  return _context.stop();
+                  case 5:
+                    _context.prev = 5;
+                    _context.t0 = _context["catch"](0);
+                    (0,_message_js__WEBPACK_IMPORTED_MODULE_4__.message)(_context.t0);
+                    (0,_message_js__WEBPACK_IMPORTED_MODULE_4__.message)("fail");
+
+                  case 9:
+                  case "end":
+                    return _context.stop();
+                }
               }
-            }
-          }, _callee, null, [[0, 5]]);
-        }));
+            }, _callee, null, [[0, 5]]);
+          }));
 
-        return function sendPostRequest() {
-          return _ref3.apply(this, arguments);
-        };
-      }();
+          return function sendPostRequest() {
+            return _ref3.apply(this, arguments);
+          };
+        }();
 
-      sendPostRequest();
+        sendPostRequest();
+      });
     });
-  });
+  }
+
   (0,_ckeditor_js__WEBPACK_IMPORTED_MODULE_2__.renderCkeditor)();
   /*******Limpia el formulario*******/
 
-  newEntrance.addEventListener('click', function () {
-    var url = newEntrance.dataset.url;
-    console.log(url);
+  if (newEntrance) {
+    newEntrance.addEventListener('click', function () {
+      var url = newEntrance.dataset.url;
 
-    var cleanForm = /*#__PURE__*/function () {
-      var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.prev = 0;
-                _context2.next = 3;
-                return axios.get(url).then(function (response) {
-                  form.innerHTML = response.data.form;
-                  renderForm();
-                });
+      var cleanForm = /*#__PURE__*/function () {
+        var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+            while (1) {
+              switch (_context2.prev = _context2.next) {
+                case 0:
+                  _context2.prev = 0;
+                  _context2.next = 3;
+                  return axios.get(url).then(function (response) {
+                    form.innerHTML = response.data.form;
+                    renderForm();
+                  });
 
-              case 3:
-                _context2.next = 8;
-                break;
+                case 3:
+                  _context2.next = 8;
+                  break;
 
-              case 5:
-                _context2.prev = 5;
-                _context2.t0 = _context2["catch"](0);
-                console.error(_context2.t0);
+                case 5:
+                  _context2.prev = 5;
+                  _context2.t0 = _context2["catch"](0);
+                  console.error(_context2.t0);
 
-              case 8:
-              case "end":
-                return _context2.stop();
+                case 8:
+                case "end":
+                  return _context2.stop();
+              }
             }
-          }
-        }, _callee2, null, [[0, 5]]);
-      }));
+          }, _callee2, null, [[0, 5]]);
+        }));
 
-      return function cleanForm() {
-        return _ref4.apply(this, arguments);
-      };
-    }();
+        return function cleanForm() {
+          return _ref4.apply(this, arguments);
+        };
+      }();
 
-    cleanForm();
-  });
+      cleanForm();
+    });
+  }
+
   (0,_languajes_js__WEBPACK_IMPORTED_MODULE_5__.languages)();
   (0,_upload_js__WEBPACK_IMPORTED_MODULE_6__.renderUpload)();
   (0,_parts_js__WEBPACK_IMPORTED_MODULE_7__.parts)();
   (0,_switch_button_js__WEBPACK_IMPORTED_MODULE_8__.switchButtonClick)();
+  (0,_seo_js__WEBPACK_IMPORTED_MODULE_9__.editSeo)();
 };
 renderForm();
 
@@ -2174,7 +2185,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _crudForm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crudForm.js */ "./resources/js/admin/desktop/components/crudForm.js");
-/* harmony import */ var _switch_button_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./switch-button.js */ "./resources/js/admin/desktop/components/switch-button.js");
+/* harmony import */ var _message_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./message.js */ "./resources/js/admin/desktop/components/message.js");
+/* harmony import */ var _switch_button_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./switch-button.js */ "./resources/js/admin/desktop/components/switch-button.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2183,9 +2195,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
+
 var renderTable = function renderTable() {
   var editButtons = document.querySelectorAll(".edit-buttons");
   var eliminateButtons = document.querySelectorAll(".eliminate-buttons");
+  var importButton = document.querySelector(".import-button");
   editButtons.forEach(function (editButton) {
     editButton.addEventListener('click', function () {
       var url = editButton.dataset.url;
@@ -2271,6 +2285,50 @@ var renderTable = function renderTable() {
     });
   });
   pagination();
+
+  if (importButton) {
+    importButton.addEventListener("click", function () {
+      var url = importButton.dataset.url;
+
+      var importTable = /*#__PURE__*/function () {
+        var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+            while (1) {
+              switch (_context3.prev = _context3.next) {
+                case 0:
+                  _context3.prev = 0;
+                  (0,_message_js__WEBPACK_IMPORTED_MODULE_2__.message)("succes");
+                  _context3.next = 4;
+                  return axios.get(url).then(function (response) {
+                    table.innerHTML = response.data.table;
+                    renderTable();
+                  });
+
+                case 4:
+                  _context3.next = 9;
+                  break;
+
+                case 6:
+                  _context3.prev = 6;
+                  _context3.t0 = _context3["catch"](0);
+                  console.error(_context3.t0);
+
+                case 9:
+                case "end":
+                  return _context3.stop();
+              }
+            }
+          }, _callee3, null, [[0, 6]]);
+        }));
+
+        return function importTable() {
+          return _ref3.apply(this, arguments);
+        };
+      }();
+
+      importTable();
+    });
+  }
 };
 var pagination = function pagination() {
   var paginationButtons = document.querySelectorAll(".table-pagination-button");
@@ -2279,37 +2337,37 @@ var pagination = function pagination() {
       var url = paginationButton.dataset.page;
 
       var paginateTable = /*#__PURE__*/function () {
-        var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+        var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
             while (1) {
-              switch (_context3.prev = _context3.next) {
+              switch (_context4.prev = _context4.next) {
                 case 0:
-                  _context3.prev = 0;
-                  _context3.next = 3;
+                  _context4.prev = 0;
+                  _context4.next = 3;
                   return axios.get(url).then(function (response) {
                     table.innerHTML = response.data.table;
                     renderTable();
                   });
 
                 case 3:
-                  _context3.next = 8;
+                  _context4.next = 8;
                   break;
 
                 case 5:
-                  _context3.prev = 5;
-                  _context3.t0 = _context3["catch"](0);
-                  console.error(_context3.t0);
+                  _context4.prev = 5;
+                  _context4.t0 = _context4["catch"](0);
+                  console.error(_context4.t0);
 
                 case 8:
                 case "end":
-                  return _context3.stop();
+                  return _context4.stop();
               }
             }
-          }, _callee3, null, [[0, 5]]);
+          }, _callee4, null, [[0, 5]]);
         }));
 
         return function paginateTable() {
-          return _ref3.apply(this, arguments);
+          return _ref4.apply(this, arguments);
         };
       }();
 
@@ -2734,10 +2792,10 @@ modalImageDeleteButton.addEventListener("click", function (e) {
   var url = modalImageDeleteButton.dataset.route;
   var modal = document.getElementById('upload-image-modal');
   var imageForm = document.getElementById('image-form');
-  var temporalId = document.getElementById('modal-image-temporal-id').value;
-  var id = document.getElementById('modal-image-id').value;
+  var temporalId = document.getElementById('modal-image-temporal-id');
+  var id = document.getElementById('modal-image-id');
 
-  if (id) {
+  if (id.value) {
     var sendImageDeleteRequest = /*#__PURE__*/function () {
       var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
@@ -2747,7 +2805,7 @@ modalImageDeleteButton.addEventListener("click", function (e) {
                 try {
                   axios.get(url, {
                     params: {
-                      'image': id
+                      'image': id.value
                     }
                   }).then(function (response) {
                     (0,_upload__WEBPACK_IMPORTED_MODULE_1__.deleteThumbnail)(response.data.imageId);
@@ -2770,11 +2828,13 @@ modalImageDeleteButton.addEventListener("click", function (e) {
 
     sendImageDeleteRequest();
   } else {
-    (0,_upload__WEBPACK_IMPORTED_MODULE_1__.deleteThumbnail)(temporalId);
+    (0,_upload__WEBPACK_IMPORTED_MODULE_1__.deleteThumbnail)(temporalId.value);
   }
 
-  modal.classList.remove('modal-active');
-  imageForm.reset(); // stopWait();
+  temporalId.value = "";
+  id.value = "";
+  imageForm.reset();
+  modal.classList.remove('modal-active'); // stopWait();
 });
 
 /***/ }),
@@ -2812,6 +2872,52 @@ var parts = function parts() {
         }
       });
     });
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/admin/desktop/components/seo.js":
+/*!******************************************************!*\
+  !*** ./resources/js/admin/desktop/components/seo.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "editSeo": () => (/* binding */ editSeo)
+/* harmony export */ });
+var editSeo = function editSeo() {
+  var blockInputs = document.querySelectorAll(".block-input");
+  blockInputs.forEach(function (blockInput) {
+    var originalInput = blockInput.value.match(/\{.*?\}/g);
+    var originalSetInput = blockInput.value;
+    var setInput = "";
+
+    if (originalInput) {
+      blockInput.addEventListener("keydown", function () {
+        var keyDownInput = blockInput.value.match(/\{.*?\}/g);
+        setInput = blockInput.value;
+
+        if (!keyDownInput) {
+          setInput = originalSetInput;
+        }
+      });
+      blockInput.addEventListener("keyup", function () {
+        var finalInput = blockInput.value.match(/\{.*?\}/g);
+
+        if (finalInput) {
+          if (originalInput.toString() != finalInput.toString()) {
+            blockInput.value = setInput;
+          }
+        } else {
+          blockInput.value = setInput;
+        }
+
+        setInput = blockInput.value;
+      });
+    }
   });
 };
 
@@ -2922,15 +3028,18 @@ __webpack_require__.r(__webpack_exports__);
 var switchButtonClick = function switchButtonClick() {
   var switchButton = document.querySelector(".switch-button");
   var position = 0;
-  switchButton.addEventListener('change', function () {
-    if (position == 0) {
-      console.log(position);
-      position = 1;
-    } else {
-      console.log(position);
-      position = 0;
-    }
-  });
+
+  if (switchButton) {
+    switchButton.addEventListener('change', function () {
+      if (position == 0) {
+        console.log(position);
+        position = 1;
+      } else {
+        console.log(position);
+        position = 0;
+      }
+    });
+  }
 };
 
 /***/ }),
@@ -3143,7 +3252,8 @@ function deleteThumbnail(imageId) {
     if (uploadImage.classList.contains('single')) {
       if (uploadImage.dataset.temporalId == imageId || uploadImage.dataset.imageId == imageId) {
         uploadImage.querySelector(".upload-image-thumb").remove();
-        uploadImage.dataset.temporalId == '';
+        uploadImage.dataset.imageId = '';
+        uploadImage.dataset.url = '';
         uploadImage.querySelector(".upload-image-prompt").classList.remove('hidden');
         uploadImage.classList.remove('upload-image');
         uploadImage.classList.add('upload-image-add');

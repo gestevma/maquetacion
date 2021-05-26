@@ -89,6 +89,7 @@
                 <div class="form-parts">
                     <p class="part  part-active" data-part="content">Contenido</p>
                     <p class="part" data-part="images">Imágenes</p>
+                    <p class="part" data-part="seo">Seo</p>
                 </div>
                 <div class="switch-inactive">@include('admin.components.switch-button')</div>
             </div>
@@ -136,7 +137,7 @@
                                             <label><p class="form-label-title">Pregunta:</p></label>
                                         </div>
                                         <div class="form-input" id="question">
-                                            <input type="text" class="input" name="locale[title.{{$localization->alias}}]" value="{{isset($locale["title.$localization->alias"]) ? $locale["title.$localization->alias"] : ''}}" >
+                                            <input type="text" class="input" name="seo[title.{{$localization->alias}}]" value="{{isset($seo["title.$localization->alias"]) ? $seo["title.$localization->alias"] : ''}}" >
                                         </div>
                                     </div>
 
@@ -194,6 +195,40 @@
                         @endforeach
                     @endcomponent
                 </div>
+
+                <div class="form-write part-section" data-part="seo">
+                    
+
+                    @component ('admin.components.locale')
+
+                        @foreach ($localizations as $localization)
+
+                            <div class="language-section {{ $loop->first ? 'active':'' }}" data-part="{{$localization->alias}}">
+                                <div class="form-group">
+                                    <div class="form-label">
+                                        <label><p class="form-label-title">keywords:</p></label>
+                                    </div>
+                                    <div class="form-input" id="question">
+                                        <input type="text" class="input" name="seo[keywords.{{$localization->alias}}]" value="{{isset($seo["keywords.$localization->alias"]) ? $seo["keywords.$localization->alias"] : ''}}" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-label">
+                                        <label><p class="form-label-title">description:</p></label> 
+                                    </div>
+                                    <div class="form-input" id="answer">
+                                        <textarea class="input" name="seo[description.{{$localization->alias}}]]" class="input-highlight">{{isset($seo["description.$localization->alias"]) ? $seo["description.$localization->alias"] : ''}}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                        @endforeach
+                    @endcomponent
+
+                </div>
+
+                
                 
 
                 <div class="form-submit">

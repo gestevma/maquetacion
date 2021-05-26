@@ -1,10 +1,13 @@
 import {renderForm} from './crudForm.js'
+import { message } from './message.js';
 import {switchButtonClick} from './switch-button.js'
 
 export let renderTable = () => {
 
     let editButtons = document.querySelectorAll(".edit-buttons");
     let eliminateButtons = document.querySelectorAll(".eliminate-buttons");
+    let importButton = document.querySelector(".import-button");
+
 
     editButtons.forEach(editButton => {
 
@@ -36,6 +39,8 @@ export let renderTable = () => {
             
     
             let url = eliminateButton.dataset.url;
+
+            
     
             let deleteTable = async () => { 
     
@@ -54,6 +59,30 @@ export let renderTable = () => {
     });
 
     pagination();
+
+    if (importButton){
+        
+        importButton.addEventListener("click", () =>{
+
+        let url = importButton.dataset.url;
+
+        let importTable = async () => { 
+    
+            try { 
+                message("succes")
+                await axios.get(url).then(response => { 
+                    table.innerHTML = response.data.table;
+                    renderTable();
+                });
+                 
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        importTable();
+    });}
+
+    
     
 }
 

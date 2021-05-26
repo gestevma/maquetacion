@@ -12,6 +12,7 @@ import { languages } from './languajes.js';
 import { renderUpload } from './upload.js';
 import { parts } from './parts.js';
 import { switchButtonClick } from './switch-button.js';
+import { editSeo } from "./seo.js"
 
 const table = document.getElementById("table");
 const form = document.getElementById("form");
@@ -45,74 +46,83 @@ export let renderForm = () =>{
     });
 
     /*******Envia los datos a la base de datos*******/
-    saveButton.addEventListener("click", (event) => {
+    
+    if (saveButton){
+        saveButton.addEventListener("click", (event) => {
 
-        event.preventDefault();
-
-        forms.forEach(form => { 
-
-            let data = new FormData(form);
-
-            if( ckeditors != 'null'){
-
-                Object.entries(ckeditors).forEach(([key, value]) => {
-                    data.append(key, value.getData());
-                });
-            }
-
-            let url = form.action;
-
-            let sendPostRequest = async () => { 
-
-                // spinner();
-                try { 
-                    await axios.post(url, data).then(response => {  
-                        form.id.value = response.data.id;
-                        table.innerHTML = response.data.table;
-                        
-                        message("success")
-
-                        renderTable();
-                        
+            event.preventDefault();
+    
+            forms.forEach(form => { 
+    
+                let data = new FormData(form);
+    
+                if( ckeditors != 'null'){
+    
+                    Object.entries(ckeditors).forEach(([key, value]) => {
+                        data.append(key, value.getData());
                     });
-                 
-                } catch (error) {
-                    message(error);
-                    message("fail")
                 }
-            };
+    
+                let url = form.action;
 
-            sendPostRequest();
+               
+                let sendPostRequest = async () => { 
+    
+                    try { 
+                        await axios.post(url, data).then(response => {
+
+                            if(response.data.id){
+                                form.id.value = response.data.id;
+                            }
+                            
+                            table.innerHTML = response.data.table;
+                            
+                            message("success")
+                            renderTable();
+                            
+                        });
+                     
+                    } catch (error) {
+                        message(error);
+                        message("fail")
+                    }
+                };
+    
+                sendPostRequest();
+            });
         });
-    });
-
+    
+    }
     renderCkeditor();
 
 
     /*******Limpia el formulario*******/
-    newEntrance.addEventListener('click', () =>{
+    if (newEntrance){
+        newEntrance.addEventListener('click', () =>{
 
-        let url = newEntrance.dataset.url;
-        console.log(url)
-
-        let cleanForm = async () =>{
-            try { 
-                await axios.get(url).then(response => { 
-                    form.innerHTML = response.data.form;
-                    renderForm();
-                });
-                    
-            } catch (error) {
-                console.error(error);
-            }
-        };
-        cleanForm();
-    });
+            let url = newEntrance.dataset.url;
+    
+            let cleanForm = async () =>{
+                try { 
+                    await axios.get(url).then(response => { 
+                        form.innerHTML = response.data.form;
+                        renderForm();
+                    });
+                        
+                } catch (error) {
+                    console.error(error);
+                }
+            };
+            cleanForm();
+        });
+    }
+    
 
     languages();
     renderUpload();
     parts();
     switchButtonClick();
+    editSeo()
 
 }
 

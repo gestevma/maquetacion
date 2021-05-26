@@ -2,6 +2,8 @@
 
 @section("section")
 
+    <h2 class="title"> @lang('front/faqs.title')</h2>  
+
     <div class="login-form">
 
         <form class="login" id="login" method="POST" action="{{route('front_login_submit')}}" autocomplete="off">

@@ -94,6 +94,44 @@
                         </div>
                     </div>    
                 @endif
+                
+                {{---- tag filter ----}}
+               <div class="two-columns">
+                    @if($key == 'group')
+                        <div class="form-group">
+                            <div class="form-label">
+                                <label for="group" class="label-highlight">Grupo</label>
+                            </div>
+
+                            <div class="form-input">
+                                <select name="group" data-placeholder="Seleccione un grupo" class="input-highlight">
+                                    <option value="all"}}>Todas</option>
+                                    @foreach($items as $item)
+                                    
+                                        <option value="{{$item->group}}"}}>{{ $item->group}}</option>
+                                    @endforeach
+                                </select> 
+                            </div>
+                        </div>
+    
+                    @endif
+
+                    @if($key == 'key')
+                        <div class="form-group">
+                            <div class="form-label">
+                                <label for="key" class="label-highlight">Clave</label>
+                            </div>
+                            <div class="form-input">
+                                <select name="key" data-placeholder="Seleccione una clave" class="input-highlight">
+                                    <option value="all"}}>Todas</option>
+                                    @foreach($items as $item)
+                                        <option value="{{$item->key}}"}}>{{ $item->key }}</option>
+                                    @endforeach
+                                </select> 
+                            </div>
+                        </div>   
+                    @endif
+                </div>
 
                 <div class = "two-columns">
                     @if($key == 'date')
@@ -148,6 +186,8 @@
                     </div>
                 </div>
             </div>
+
+            
                  
         </form>
     </div>
@@ -163,6 +203,11 @@
             </svg>
         </div>
     </div>
+
+
+    
+
+
 </div>
 
 {{-- <div class="filters-container">

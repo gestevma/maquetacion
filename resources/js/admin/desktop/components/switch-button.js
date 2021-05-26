@@ -4,18 +4,20 @@ export let switchButtonClick = () =>{
 
     let position=0
 
+    if (switchButton){
+        switchButton.addEventListener( 'change', () => {
 
-    switchButton.addEventListener( 'change', () => {
-
-        if(position==0) {
-            console.log(position)
-            position=1;
-
-        } else {
-            console.log(position)
-            position=0;
-        }
-
-    });
+            if(position==0) {
+                console.log(position)
+                position=1;
+    
+            } else {
+                console.log(position)
+                position=0;
+            }
+    
+        });
+    }
+    
     
 }

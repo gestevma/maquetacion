@@ -1,17 +1,12 @@
 .title {
-  position: absolute;
-  top: 10%;
-  left: 34%;
   text-align: center;
   width: 30%;
   margin: auto;
-  font-size: 115%;
+  font-size: 175%;
 }
 
 .content {
-  margin-top: -10%;
-  margin-bottom: -100%;
-  padding-top: 10%;
+  margin-top: 2%;
 }
 
 .content.transparent {
@@ -99,6 +94,11 @@
   border: 2px solid black;
 }
 
+.faq .faq-description {
+  max-height: 100vh;
+  padding-bottom: 10%;
+}
+
 header {
   background-color: #1a1a1a;
   color: white;
@@ -184,6 +184,10 @@ li:hover {
   text-align: left;
   opacity: 0.8;
   min-height: 92.5vh;
+}
+
+.login-form {
+  margin-top: 7.5%;
 }
 
 .login {
