@@ -86,6 +86,20 @@ Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguir
         ]
     ]);
 
+
+    Route::get('/products/filter/{filters?}', 'App\Http\Controllers\Admin\ProductController@filter')->name('products_filter');
+    Route::get('/products/pagination', 'App\Http\Controllers\Admin\ProductController@pagination')->name('products_pagination');
+    Route::resource('products', 'App\Http\Controllers\Admin\ProductController', [
+        'names' => [
+            'index' => 'products',
+            'create' => 'products_create',
+            'store' => 'products_store',
+            'destroy' => 'products_destroy',
+            'show' => 'products_show',
+            'edit' => 'products_edit',
+        ]
+    ]);
+
     
     Route::get('/sliders/filter/{filters?}', 'App\Http\Controllers\Admin\FaqController@filter')->name('sliders_filter');
     Route::resource('sliders', 'App\Http\Controllers\Admin\SliderController', [
