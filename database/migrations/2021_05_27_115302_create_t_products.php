@@ -16,15 +16,11 @@ class CreateTProducts extends Migration
         Schema::create('t_products', function (Blueprint $table) {
             $table->id();
             $table->integer('product_id');
-            $table->boolean('visible');
-            $table->boolean('active');
+            $table->string('rel_parent');
             $table->float('original_price');
             $table->float('taxes');
             $table->float('discount');
             $table->float('final_price');
-            $table->integer('stock');
-            $table->string('type');
-            $table->integer('reserved');
             $table->timestamps();
         });
     }

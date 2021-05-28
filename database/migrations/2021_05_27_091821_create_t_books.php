@@ -15,7 +15,8 @@ class CreateTBooks extends Migration
     {
         Schema::create('t_books', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->boolean('active');
+            $table->boolean('visible');
             $table->string('autor');
             $table->string('editorial');
             $table->string('genre');

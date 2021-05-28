@@ -93,11 +93,10 @@ class FaqController extends Controller
             // 'name' => request('name'),
             'active' => 1,
             'category_id' => request('category_id'),
-
-
         ]);
         
-        Debugbar::info(request("seo")); 
+        Debugbar::info(request('locale'));
+    
         if(request('seo')){
             $seo = $this->locale_slug_seo->store(request('seo'), $faq->id, 'front_faq');
         }

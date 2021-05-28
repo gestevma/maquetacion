@@ -87,16 +87,16 @@ Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguir
     ]);
 
 
-    Route::get('/products/filter/{filters?}', 'App\Http\Controllers\Admin\ProductController@filter')->name('products_filter');
-    Route::get('/products/pagination', 'App\Http\Controllers\Admin\ProductController@pagination')->name('products_pagination');
-    Route::resource('products', 'App\Http\Controllers\Admin\ProductController', [
+    Route::get('/books/filter/{filters?}', 'App\Http\Controllers\Admin\BookController@filter')->name('book_filter');
+    Route::get('/books/pagination', 'App\Http\Controllers\Admin\BookController@pagination')->name('book_pagination');
+    Route::resource('books', 'App\Http\Controllers\Admin\BookController', [
         'names' => [
-            'index' => 'products',
-            'create' => 'products_create',
-            'store' => 'products_store',
-            'destroy' => 'products_destroy',
-            'show' => 'products_show',
-            'edit' => 'products_edit',
+            'index' => 'books',
+            'create' => 'books_create',
+            'store' => 'books_store',
+            'destroy' => 'books_destroy',
+            'show' => 'books_show',
+            'edit' => 'books_edit',
         ]
     ]);
 

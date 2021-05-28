@@ -39,6 +39,18 @@ class ViewComposerServiceProvider extends ServiceProvider
             'admin.*'], 
             'App\Http\ViewComposers\Admin\LocaleLanguage'
         );
+
+        view()->composer([
+            'admin.*'], 
+            'App\Http\ViewComposers\Admin\Taxes'
+        );
+
+        view()->composer([
+            'admin.*'], 
+            'App\Http\ViewComposers\Admin\Products'
+        );
+
+
     }
 
     public function register()

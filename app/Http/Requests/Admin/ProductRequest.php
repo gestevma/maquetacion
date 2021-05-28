@@ -18,7 +18,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BookRequest extends FormRequest
+class ProductRequest extends FormRequest
 {
     public function authorize()
     {
@@ -28,22 +28,22 @@ class BookRequest extends FormRequest
     public function rules()
     {
         return [
-            'original_price' => 'required',
-            'taxes' => 'required',
-            'final_price' => 'required',
-            'stock' => 'required',
-            'type' => 'required',
+            // 'original_price' => 'required',
+            // 'taxes' => 'required',
+            // 'final_price' => 'required',
+            // 'stock' => 'required',
+            // 'type' => 'required',
         ];
     }
 
     public function messages()
     {
         return [
-            'original_price.required' => 'El precio es obligatorio',
-            'taxes.required' => 'Debe añadir los impuestos',
-            'final_price.required' => 'No se ha registrado el precio final',
-            'stock.required' =>'El stock no se ha añadido correctamente',
-            'type.required' => 'El tipo de libro es obligatorio',
+            // 'original_price.required' => 'El precio es obligatorio',
+            // 'taxes.required' => 'Debe añadir los impuestos',
+            // 'final_price.required' => 'No se ha registrado el precio final',
+            // 'stock.required' =>'El stock no se ha añadido correctamente',
+            // 'type.required' => 'El tipo de libro es obligatorio',
         ];
     }
 }

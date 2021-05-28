@@ -11,10 +11,11 @@ use App\Http\Requests\Admin\BookRequest;
 use App\Vendor\Locale\Locale;
 use App\Vendor\Locale\LocaleSlugSeo;
 use App\Vendor\Image\Image;
+use App\Vendor\Product\Product;
 use App\Models\DB\Book;
 use \Debugbar;
 
-class BooksController extends Controller
+class BookController extends Controller
 {
     protected $book;
     protected $image;
@@ -22,8 +23,9 @@ class BooksController extends Controller
     protected $locale_slug_seo;
     protected $agent;
     protected $paginate;
+    protected $product;
 
-    function __construct(Book $book, Agent $agent, Locale $locale, Image $image, LocaleSlugSeo $locale_slug_seo)
+    function __construct(Book $book, Agent $agent, Locale $locale, Image $image, LocaleSlugSeo $locale_slug_seo, Product $product)
     {
         $this->middleware('auth');
         $this->book = $book;
@@ -43,6 +45,7 @@ class BooksController extends Controller
         $this->locale->setParent('books');
         $this->image->setEntity('books');
         $this->locale_slug_seo->setParent('books');
+        $this->product->setParent('books');
     }
 
 
@@ -52,7 +55,7 @@ class BooksController extends Controller
 
         $view = View::make('admin.books.index')
                 ->with('book', $this->book)
-                ->with('books', $this->book->where('active', 1)->paginate($this->paginate));
+                ->with('books', $this->book->where('active', 1)->where('visible', 1)->paginate($this->paginate));
 
         if(request()->ajax()) {
             
@@ -74,7 +77,7 @@ class BooksController extends Controller
 
         $view = View::make('admin.books.index')
         ->with('book', $this->book)
-        ->with('books', $this->book->where('active', 1)->paginate($this->paginate))
+        ->with('books', $this->book->where('active', 1)->where('visible', 1)->paginate($this->paginate))
         ->renderSections();
 
         return response()->json([
@@ -86,28 +89,28 @@ class BooksController extends Controller
 
     public function store(BookRequest $request)
     {            
-        $languages = $this->language->get();
 
-        foreach ($languages as $language){
-
-            $language = $language->alias;
-
-            $book = $this->book->updateOrCreate([
-                'id' => request('id')],[
-                'title' => request('title'),
-                'autor' => request('autor'),
-                'editorial' => request('editorial'),
-                'genre' => request('genre'),
-                'language' => request('language'),
-                'type' => request('type'),
-                'ISBN' => request('ISBN'),
-                'edition' => request('edition'),
-            
+        $book = $this->book->updateOrCreate([
+            'id' => request('id')],[
+            'autor' => request('autor'),
+            'editorial' => request('editorial'),
+            'genre' => request('genre'),
+            'language' => $language,
+            'type' => request('type'),
+            'edition' => request('edition'),
+            'ISBN' => request('ISBN'),
+        
 
         ]);
         
+        
+        
+        if(request('product')){
+            $seo = $this->product->store(request('product'), $book->id);
+        }
+
         if(request('seo')){
-            $seo = $this->locale_slug_seo->store(request('seo'), $book->id, 'front_faq');
+            $seo = $this->locale_slug_seo->store(request('seo'), $book->id);
         }
 
         if(request('locale')){
@@ -119,8 +122,8 @@ class BooksController extends Controller
         }
 
 
-        $view = View::make('admin.faqs.index')
-        ->with('books', $this->book->where('active', 1)->paginate($this->paginate))
+        $view = View::make('admin.books.index')
+        ->with('books', $this->book->where('active', 1)->where('visible', 1)->paginate($this->paginate))
         ->with('book', $this->book)
         ->renderSections();        
 
@@ -141,7 +144,7 @@ class BooksController extends Controller
         ->with('locale', $locale)
         ->with('seo', $seo)
         ->with('book', $book)
-        ->with('books', $this->book->where('active', 1)->paginate($this->paginate));        
+        ->with('books', $this->book->where('active', 1)->where('visible', 1)->paginate($this->paginate));        
         
         if(request()->ajax()) {
 
@@ -165,7 +168,7 @@ class BooksController extends Controller
         ->with('locale', $locale)
         ->with('seo', $seo)
         ->with('book', $book)
-        ->with('books', $this->book->where('active', 1)->paginate($this->paginate))
+        ->with('books', $this->book->where('active', 1)->where('visible', 1)->paginate($this->paginate))
         ->renderSections();        
 
         return response()->json([
@@ -182,7 +185,7 @@ class BooksController extends Controller
       
         $view = View::make('admin.books.index')
             ->with('book', $this->book)
-            ->with('books', $this->book->where('active', 1)->paginate($this->paginate))
+            ->with('books', $this->book->where('active', 1)->where('visible', 1)->paginate($this->paginate))
             ->renderSections();
         
         return response()->json([
