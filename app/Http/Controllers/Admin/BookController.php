@@ -33,6 +33,8 @@ class BookController extends Controller
         $this->locale = $locale;
         $this->locale_slug_seo = $locale_slug_seo;
         $this->image = $image;
+        $this->product = $product;
+
 
         if ($this->agent->isMobile()) {
             $this->paginate = 20;
@@ -89,36 +91,31 @@ class BookController extends Controller
 
     public function store(BookRequest $request)
     {            
-
+        
         $book = $this->book->updateOrCreate([
             'id' => request('id')],[
-            'autor' => request('autor'),
-            'editorial' => request('editorial'),
-            'genre' => request('genre'),
-            'language' => $language,
-            'type' => request('type'),
-            'edition' => request('edition'),
-            'ISBN' => request('ISBN'),
-        
-
+            'active'=>1,
+            'visible'=>1,
+            'autor' =>request('autor'),
         ]);
-        
-        
-        
-        if(request('product')){
-            $seo = $this->product->store(request('product'), $book->id);
-        }
-
-        if(request('seo')){
-            $seo = $this->locale_slug_seo->store(request('seo'), $book->id);
-        }
+    
 
         if(request('locale')){
             $locale = $this->locale->store(request('locale'), $book->id);
         }
 
+
+        if(request('seo')){
+            $seo = $this->locale_slug_seo->store(request('seo'), $book->id, 'front_book');
+        }
+        
         if(request('images')){
             $images = $this->image->store(request('images'), $book->id);
+        }
+
+        if(request('product')){
+            $product = $this->product->store(request('product'), $book->id);
+            
         }
 
 
@@ -163,10 +160,14 @@ class BookController extends Controller
 
         $locale = $this->locale->show($book->id);
         $seo = $this->locale_slug_seo->show($book->id);
+        $product = $this->product->show($book->id);
+
+       
 
         $view = View::make('admin.books.index')
         ->with('locale', $locale)
         ->with('seo', $seo)
+        ->with('product', $product)
         ->with('book', $book)
         ->with('books', $this->book->where('active', 1)->where('visible', 1)->paginate($this->paginate))
         ->renderSections();        

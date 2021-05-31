@@ -18,12 +18,6 @@ class CreateTBooks extends Migration
             $table->boolean('active');
             $table->boolean('visible');
             $table->string('autor');
-            $table->string('editorial');
-            $table->string('genre');
-            $table->string('language');
-            $table->string('type');
-            $table->string('edition');
-            $table->string('ISBN');
             $table->timestamps();
         });
     }

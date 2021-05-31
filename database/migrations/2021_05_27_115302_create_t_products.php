@@ -21,6 +21,7 @@ class CreateTProducts extends Migration
             $table->float('taxes');
             $table->float('discount');
             $table->float('final_price');
+            $table->integer('stock');
             $table->timestamps();
         });
     }

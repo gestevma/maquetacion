@@ -131,6 +131,8 @@ Route::group(['prefix' => $localizationseo->setLocale(),
 
     Route::get($localizationseo->transRoute('routes.front_faqs'), 'App\Http\Controllers\Front\FaqController@index')->name('front_faqs');
     Route::get($localizationseo->transRoute('routes.front_faq'), 'App\Http\Controllers\Front\FaqController@show')->name('front_faq');
+    Route::get($localizationseo->transRoute('routes.front_books'), 'App\Http\Controllers\Front\BookController@index')->name('front_books');
+    Route::get($localizationseo->transRoute('routes.front_book'), 'App\Http\Controllers\Front\BookController@show')->name('front_book');
 });
 
 /*Como hemos puesto prefix=> admin y resource => faqs la url será dev-maquetación.com/admin/faqs*/

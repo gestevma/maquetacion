@@ -146,7 +146,7 @@
                                             <label><p class="form-label-title">Respuesta:</p></label> 
                                         </div>
                                         <div class="form-input" id="answer">
-                                            <textarea class="ckeditor input" name="locale[description.{{$localization->alias}}]]" class="input-highlight">{{isset($locale["description.$localization->alias"]) ? $locale["description.$localization->alias"] : ''}}</textarea>
+                                            <textarea class="ckeditor input" name="locale[description.{{$localization->alias}}]" class="input-highlight">{{isset($locale["description.$localization->alias"]) ? $locale["description.$localization->alias"] : ''}}</textarea>
                                         </div>
                                     </div>
                                 </div>

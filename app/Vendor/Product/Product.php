@@ -3,6 +3,7 @@
 namespace App\Vendor\Product;
 
 use App\Vendor\Product\Models\Product as DBProduct;
+use \Debugbar;
 
 class Product
 {
@@ -22,28 +23,30 @@ class Product
     {
         return $this->rel_parent;
     }
-    
 
-    public function store($product_id)
+
+    public function store($product, $product_id)
     {  
+        $final_price = ($product['original_price']*(1-($product['discount']/100)))*(1+($product['taxes']/100));
 
-        $product = $this->product->updateOrCreate([
 
-            'product_id' => $product_id,
-            'rel_parent' => $this->rel_parent,],[
-            'rel_parent' => $this->rel_parent,
-            'origina_price' => request("original_price"),
-            'taxes' => request("taxes"),
-            'discount' => request("discount"),
-            // "final_price"=> //Es una suma pero no se como hacerla 
-        ]);
+        $product[] = $this->product->updateOrCreate([
+                'product_id' => $product_id,
+                'rel_parent'=>$this->rel_parent],[
+                'original_price'=>$product['original_price'],
+                'discount'=>$product['discount'],
+                'taxes' =>$product['taxes'],
+                'stock' =>$product['stock'],
+                'final_price' => $final_price,
+                    
+            ]);
 
-        return $locale;
+        return $product;
     }
 
-    public function show($key)
+    public function show($product_id)
     {
-        return DBLocale::getValues($this->rel_parent, $key)->pluck('value','rel_anchor')->all();   
+        return DBProduct::getValues($this->rel_parent, $product_id)->pluck('original_price','original_price')->all();  
     }
 
     public function delete($key)

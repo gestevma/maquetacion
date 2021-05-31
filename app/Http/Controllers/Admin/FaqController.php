@@ -95,7 +95,6 @@ class FaqController extends Controller
             'category_id' => request('category_id'),
         ]);
         
-        Debugbar::info(request('locale'));
     
         if(request('seo')){
             $seo = $this->locale_slug_seo->store(request('seo'), $faq->id, 'front_faq');

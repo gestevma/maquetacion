@@ -28,28 +28,28 @@ class BookRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'autor' => 'required',
-            'editorial' =>'required',
-            'genre' => 'required',
-            'type' => 'required',
-            'ISBN' => 'required',
-            'edition' => 'required',
+            // 'name' => 'required',
+            // 'autor' => 'required',
+            // 'editorial' =>'required',
+            // 'genre' => 'required',
+            // 'type' => 'required',
+            // 'ISBN' => 'required',
+            // 'edition' => 'required',
         ];
     }
 
-    public function messages()
-    {
-        return [
-            'title.required' => 'El titulo es obligatorio',
-            'description.required' => 'Debe añadir una descripción',
-            'title.required' => 'El autor es obligatorio',
-            'autor.required' => 'El autor es obligatorio',
-            'editorial.required' =>'La editorial es obligatoria',
-            'genre.required' => 'El género es obligatorio',
-            'type.required' => 'El tipo de libro es obligatorio',
-            'ISBN.required' => 'El ISBN es obligatorio',
-            'edition.required' => 'La edición es obligatoria',
-        ];
-    }
+    // public function messages()
+    // {
+    //     return [
+    //         'title.required' => 'El titulo es obligatorio',
+    //         'description.required' => 'Debe añadir una descripción',
+    //         'title.required' => 'El autor es obligatorio',
+    //         'autor.required' => 'El autor es obligatorio',
+    //         'editorial.required' =>'La editorial es obligatoria',
+    //         'genre.required' => 'El género es obligatorio',
+    //         'type.required' => 'El tipo de libro es obligatorio',
+    //         'ISBN.required' => 'El ISBN es obligatorio',
+    //         'edition.required' => 'La edición es obligatoria',
+    //     ];
+    // }
 }

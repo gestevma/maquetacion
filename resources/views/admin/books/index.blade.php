@@ -109,6 +109,16 @@
 
                     @component ('admin.components.locale')
 
+                        <div class="form-group">
+                            <div class="form-label">
+                                <label><p class="form-label-title">Autor:</p></label>
+                            </div>
+                            <div class="form-input" id="question">
+                                <input type="text" class="input" name="autor" value="{{isset($book->autor) ? $book->autor : ''}}" >
+                            </div>
+                        </div>
+
+
                         @foreach ($localizations as $localization)
 
                             <div class="language-section {{ $loop->first ? 'active':'' }}" data-part="{{$localization->alias}}">
@@ -123,10 +133,19 @@
 
                                 <div class="form-group">
                                     <div class="form-label">
-                                        <label><p class="form-label-title">autor:</p></label>
+                                        <label><p class="form-label-title">Nombre:</p></label>
                                     </div>
                                     <div class="form-input" id="question">
-                                        <input type="text" class="input" name="books[autor.{{$localization->alias}}]" value="{{isset($books["autor.$localization->alias"]) ? $books["autor.$localization->alias"] : ''}}" >
+                                        <input type="text" class="input" name="locale[name.{{$localization->alias}}]" value="{{isset($locale["name.$localization->alias"]) ? $locale["name.$localization->alias"] : ''}}" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-label">
+                                        <label><p class="form-label-title">Descripción:</p></label> 
+                                    </div>
+                                    <div class="form-input" id="answer">
+                                        <textarea class="ckeditor input" name="locale[description.{{$localization->alias}}]]" class="input-highlight">{{isset($locale["description.$localization->alias"]) ? $locale["description.$localization->alias"] : ''}}</textarea>
                                     </div>
                                 </div>
 
@@ -135,7 +154,7 @@
                                         <label><p class="form-label-title">Editorial:</p></label>
                                     </div>
                                     <div class="form-input" id="question">
-                                        <input type="text" class="input" name="books[editorial.{{$localization->alias}}]" value="{{isset($books["editorial.$localization->alias"]) ? $books["editorial.$localization->alias"] : ''}}" >
+                                        <input type="text" class="input"  name="locale[editorial.{{$localization->alias}}]" value="{{isset($locale["editorial.$localization->alias"]) ? $locale["editorial.$localization->alias"] : ''}}" >
                                     </div>
                                 </div>
 
@@ -144,7 +163,7 @@
                                         <label><p class="form-label-title">Género:</p></label>
                                     </div>
                                     <div class="form-input" id="question">
-                                        <input type="text" class="input" name="books[genre.{{$localization->alias}}]" value="{{isset($books["genre.$localization->alias"]) ? $books["genre.$localization->alias"] : ''}}" >
+                                        <input type="text" class="input"  name="locale[genre.{{$localization->alias}}]" value="{{isset($locale["genre.$localization->alias"]) ? $locale["genre.$localization->alias"] : ''}}" >
                                     </div>
                                 </div>
 
@@ -153,16 +172,7 @@
                                         <label><p class="form-label-title">Tipo de libro:</p></label>
                                     </div>
                                     <div class="form-input" id="question">
-                                        <input type="text" class="input" name="books[type.{{$localization->alias}}]" value="{{isset($books["type.$localization->alias"]) ? $books["type.$localization->alias"] : ''}}" >
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="form-label">
-                                        <label><p class="form-label-title">edition:</p></label>
-                                    </div>
-                                    <div class="form-input" id="question">
-                                        <input type="number" class="input" name="books[edition.{{$localization->alias}}]" value="{{isset($books["edition.$localization->alias"]) ? $books["edition.$localization->alias"] : ''}}" >
+                                        <input type="text" class="input"  name="locale[type.{{$localization->alias}}]" value="{{isset($locale["type.$localization->alias"]) ? $locale["type.$localization->alias"] : ''}}">
                                     </div>
                                 </div>
 
@@ -171,9 +181,11 @@
                                         <label><p class="form-label-title">ISBN:</p></label>
                                     </div>
                                     <div class="form-input" id="question">
-                                        <input type="text" class="input" name="books[ISBN.{{$localization->alias}}]" value="{{isset($books["ISBN.$localization->alias"]) ? $books["ISBN.$localization->alias"] : ''}}" >
+                                        <input type="text" class="input" name="locale[ISBN.{{$localization->alias}}]" value="{{isset($locale["ISBN.$localization->alias"]) ? $locale["ISBN.$localization->alias"] : ''}}" >
                                     </div>
                                 </div>
+
+                               
 
                             </div>
                         @endforeach
@@ -187,16 +199,16 @@
                             <label><p class="form-label-title">Base Imponible:</p></label> 
                         </div>
                         <div class="form-input" id="answer">
-                            <input type="number" class="input" name="original_price" value="{{isset($product->original_price) ? $product->original_price : ''}}" >
+                            <input type="number" class="input" name="product[original_price]" value="{{isset($product["original_price"]) ? $product["original_price"] : ''}}" >
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="form-label">
-                            <label><p class="form-label-title">Descuento:</p></label> 
+                            <label><p class="form-label-title">Descuento(%):</p></label> 
                         </div>
                         <div class="form-input" id="answer">
-                            <input type="number" class="input" name="discount" value="{{isset($product->discount) ? $product->discount : ''}}" >
+                            <input type="number" class="input" name="product[discount]" value="{{isset($product["discount"]) ? $product["discount"] : ''}}" >
                         </div>
                     </div>
 
@@ -205,12 +217,13 @@
                             <label><p class="form-label-title">IVA(%):</p></label>
                         </div>
                         <div class="form-input">
-                            <select name="taxes"  class="input" data-placeholder="Impuestos" class="input-highlight">
+                            <input type="number" class="input" name="product[taxes]" value="{{isset($product["taxes"]) ? $product["taxes"] : ''}}" >
+                            {{-- <select name="taxes"  class="input" data-placeholder="Impuestos" class="input-highlight">
                                 <option value="" class="taxes"></option>
                                 @foreach($taxes as $tax_element)
-                                    <option {{--Falta el value para poder mandarlo a products--}} class="taxes">{{ $tax_element->taxes }}</option>
+                                    <option value="product[{{$tax_element->taxes}}]" {{$book->taxes == $tax_element->taxes ? 'selected':''}} class="category_id">{{ $tax_element->taxes }}</option>
                                 @endforeach
-                            </select>                   
+                            </select>                    --}}
                         </div>
                     </div>
 
@@ -219,14 +232,14 @@
                             <label><p class="form-label-title">Stock:</p></label> 
                         </div>
                         <div class="form-input" id="answer">
-                            <input type="number" class="input" name="stock" value="{{isset($product->stock) ? $product->stock : ''}}" >
+                            <input type="number" class="input" name="product[stock]" value="{{isset($product["stock"]) ? $product["stock"] : ''}}" >
                         </div>
                     </div>   
                     
                 </div>
 
 
-                {{-- <div class="form-images part-section" data-part="images">
+                <div class="form-images part-section" data-part="images">
                     @component ('admin.components.locale')
 
                         @foreach ($localizations as $localization)
@@ -237,11 +250,11 @@
                                     </div>
                                     <div class="form-input">
                                         @include('admin.components.upload', [
-                                            'entity' => 'faqs',
+                                            'entity' => 'books',
                                             'type' => 'single', 
                                             'content' => 'featured', 
                                             'alias' => $localization->alias,
-                                            'files' => $faq->images_featured_preview
+                                            'files' => $book->images_featured_preview
                                         ])
                                     </div>
                                 </div>  
@@ -252,18 +265,18 @@
                                     </div>
                                     <div class="form-input">
                                         @include('admin.components.upload', [
-                                            'entity' => 'faqs',
+                                            'entity' => 'books',
                                             'type' => 'collection', 
                                             'content' => 'grid', 
                                             'alias' => $localization->alias,
-                                            'files' => $faq->images_grid_preview
+                                            'files' => $book->images_grid_preview
                                         ])
                                     </div>
                                 </div> 
                             </div>
                         @endforeach
                     @endcomponent
-                </div> --}}
+                </div>
 
                 <div class="form-write part-section" data-part="seo">
                     
