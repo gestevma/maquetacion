@@ -1934,6 +1934,83 @@ content.addEventListener("click", function () {
 
 /***/ }),
 
+/***/ "./resources/js/front/desktop/shop.js":
+/*!********************************************!*\
+  !*** ./resources/js/front/desktop/shop.js ***!
+  \********************************************/
+/***/ (() => {
+
+productBoxes = document.querySelectorAll(".product-box");
+wishes = document.querySelector(".wishes");
+hearts = document.querySelectorAll(".heart");
+individualProductDescription = document.querySelector(".individual-product-description");
+more = document.querySelector(".more");
+shopCart = document.querySelector(".shop-cart");
+addToCart = document.querySelector(".add-to-cart");
+
+if (productBoxes) {
+  productBoxes.forEach(function (productBox) {
+    productBox.addEventListener("mouseover", function () {
+      productMore = productBox.querySelectorAll(".product-more");
+      productMore.forEach(function (productMoreElement) {
+        productMoreElement.classList.add("active");
+      });
+    });
+    productBox.addEventListener("mouseout", function () {
+      productMore = productBox.querySelectorAll(".product-more");
+      productMore.forEach(function (productMoreElement) {
+        productMoreElement.classList.remove("active");
+      });
+    });
+  });
+} // moreProducts.forEach(moreProduct =>{
+// })
+
+
+if (more) {
+  more.addEventListener("click", function () {
+    if (individualProductDescription.classList.contains("active")) {
+      individualProductDescription.classList.remove("active");
+      more.innerHTML = "leer más...";
+    } else {
+      individualProductDescription.classList.add("active");
+      more.innerHTML = "cerrar";
+    }
+  });
+}
+
+;
+
+if (shopCart) {
+  shopCart.addEventListener("click", function () {
+    if (shopCart.classList.contains("active")) {
+      shopCart.classList.remove("active");
+      addToCart.innerHTML = "Añadir al carrito";
+    } else {
+      shopCart.classList.add("active");
+      addToCart.innerHTML = "Producto añadido";
+    }
+  });
+}
+
+;
+
+if (wishes) {
+  wishes.addEventListener("click", function () {
+    hearts.forEach(function (heart) {
+      if (heart.classList.contains("inactive")) {
+        heart.classList.remove("inactive");
+      } else {
+        heart.classList.add("inactive");
+      }
+    });
+  });
+}
+
+;
+
+/***/ }),
+
 /***/ "./resources/js/front/desktop/sidebar.js":
 /*!***********************************************!*\
   !*** ./resources/js/front/desktop/sidebar.js ***!
@@ -20435,6 +20512,8 @@ __webpack_require__(/*! ./faqs */ "./resources/js/front/desktop/faqs.js");
 __webpack_require__(/*! ./header */ "./resources/js/front/desktop/header.js");
 
 __webpack_require__(/*! ./sidebar */ "./resources/js/front/desktop/sidebar.js");
+
+__webpack_require__(/*! ./shop */ "./resources/js/front/desktop/shop.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when

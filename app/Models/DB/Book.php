@@ -5,6 +5,7 @@ use App\Vendor\Locale\Models\Locale;
 use App\Vendor\Locale\Models\LocaleSlugSeo;
 use App\Vendor\Image\Models\ImageResized;
 use App\Vendor\Product\Models\Product;
+use App;
 
 class Book extends DBModel
 {
@@ -12,12 +13,22 @@ class Book extends DBModel
 
     public function products()
     {
-        return $this->hasOne(Product::class, 'product_id');
+        return $this->hasOne(Product::class, 'product_id')->where('rel_parent', 'books');
     }
 
     public function taxes()
     {
         return $this->belongsTo(Tax::class);
+    }
+
+    public function locale()
+    {
+        return $this->hasMany(Locale::class, 'key')->where('rel_parent', 'books')->where('language', App::getLocale());
+    }
+
+    public function seo()
+    {
+        return $this->hasOne(LocaleSlugSeo::class, 'key')->where('rel_parent', 'books')->where('language', App::getLocale());
     }
 
     public function images_featured_preview()

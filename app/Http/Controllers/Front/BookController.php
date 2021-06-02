@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Jenssegers\Agent\Agent;
 use App\Vendor\Locale\LocaleSlugSeo;
+use App\Vendor\Product\Product;
 use App\Models\DB\Book;
 use Debugbar;
 
@@ -16,20 +17,24 @@ class BookController extends Controller
     protected $agent;
     protected $book;
     protected $locale_slug_seo;
+    protected $product;
 
-    function __construct(Agent $agent, Book $book, LocaleSlugSeo $locale_slug_seo)
+    function __construct(Agent $agent, Book $book, LocaleSlugSeo $locale_slug_seo, Product $product)
     {
         $this->agent = $agent;
         $this->book = $book;
         $this->locale_slug_seo = $locale_slug_seo;
+        $this->product = $product;
 
         $this->locale_slug_seo->setLanguage(app()->getLocale()); 
-        $this->locale_slug_seo->setParent('books');      
+        $this->locale_slug_seo->setParent('books');
+        $this->product->setParent('books');      
     }
 
     public function index()
     {        
         $seo = $this->locale_slug_seo->getByKey(Route::currentRouteName());
+        // $product = $this->product->getByKey(Route::currentRouteName());
 
         if($this->agent->isDesktop()){
 
@@ -52,12 +57,13 @@ class BookController extends Controller
         $books = $books->each(function($book){  
             
             $book['locale'] = $book->locale->pluck('value','tag');
-            
+
             return $book;
         });
 
+
         $view = View::make('front.books.index')
-                ->with('books', $books) 
+                ->with('books', $books)
                 ->with('seo', $seo );
         
         return $view;
@@ -87,7 +93,7 @@ class BookController extends Controller
                     ->find($seo->key);
             }
 
-            // $book['locale'] = $book->locale->pluck('value','tag');
+            $book['locale'] = $book->locale->pluck('value','tag');
 
             $view = View::make('front.books.single')->with('book', $book);
 

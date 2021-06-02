@@ -109,6 +109,7 @@ class BookController extends Controller
             $seo = $this->locale_slug_seo->store(request('seo'), $book->id, 'front_book');
         }
         
+
         if(request('images')){
             $images = $this->image->store(request('images'), $book->id);
         }

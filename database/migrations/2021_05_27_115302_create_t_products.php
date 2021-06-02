@@ -17,10 +17,10 @@ class CreateTProducts extends Migration
             $table->id();
             $table->integer('product_id');
             $table->string('rel_parent');
-            $table->float('original_price');
-            $table->float('taxes');
-            $table->float('discount');
-            $table->float('final_price');
+            $table->decimal('original_price', 8,2);
+            $table->decimal('taxes',8,2);
+            $table->decimal('discount',4,2);
+            $table->decimal('final_price',8,2);
             $table->integer('stock');
             $table->timestamps();
         });

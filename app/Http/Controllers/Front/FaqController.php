@@ -74,7 +74,6 @@ class FaqController extends Controller
                    
                     ->with('image_featured_desktop')
                     ->where('active', 1)
-                    // ->where('visible', 1)
                     ->find($seo->key);
             }
             
@@ -83,7 +82,6 @@ class FaqController extends Controller
                   
                     ->with('image_featured_mobile')
                     ->where('active', 1)
-                    // ->where('visible', 1)
                     ->find($seo->key);
             }
 

@@ -1,43 +1,37 @@
-<div class="faqs">
+<div class="products">
 
-    <div class="faqs-title">
-        <h3>@lang('front/faqs.title')</h3>
+    <div class="products-title">
+        <h3>@lang('front/books.title')</h3>
     </div>
-    
-    @foreach ($faqs as $faq_element)
-        <div class="individual-faq" id="{{$faq_element->id}}" >
-            <div class="faq-title">                            
-                <div class="faq-title-content">{{isset($faq_element->seo['title']) ? $faq_element->seo['title'] : ""}}</div>
-                <a class="buttons">
-                    <svg class="plus-button" style="width:24px;height:24px" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
-                    </svg>
-                </a>
-            </div>
 
-            <div class="faq-description" id="{{$faq_element->id}}">
-                <div class="description" id="description">{!!isset($faq_element->locale['description']) ? $faq_element->locale['description'] : "" !!} </div>
-                
-                <div class = faq-description-images>
-                    <div class = "main-image">
-                       
-                        @isset($faq_element->image_featured_desktop->path)  
-                            <img src="{{Storage::url($faq_element->image_featured_desktop->path)}}" alt="{{$faq_element->image_featured_desktop->alt}}" title="{{$faq_element->image_featured_desktop->title}}" />
-                        @endif
+
+    <div class="products-grid">
+        @foreach ($books as $book_element)
+            <div class = "product-box">
+                <div class="product-image-bok">
+                    @isset($book_element->image_featured_desktop->path)  
+                        <img class="product-image" src="{{Storage::url($book_element->image_featured_desktop->path)}}" alt="{{$book_element->image_featured_desktop->alt}}" title="{{$book_element->image_featured_desktop->title}}" />
+                    @endif
+                </div>
+                <div class="product-information-box">
+                    <div class="product-references">
+                        
+                        <p class="product-title">{{isset($book_element->seo['title']) ? $book_element->seo['title'] : ""}}</p>
+
+                        <div class="product-second-line">
+                            <p class="product-autor">{{isset($book_element['autor']) ? $book_element['autor'] : ""}}</p>
+                            <p class=product-price>{{isset($book_element->products['final_price']) ? $book_element->products['final_price']."€" : ""}}</p>
+                        </div>
+       
                     </div>
-
-                    <div class = "grid-images">
-                        <?php Debugbar::info($faq_element->image_grid_desktop)  ?>
-
-                        @isset($faq_element->image_grid_desktop)
-                            @foreach($faq_element->image_grid_desktop as $grid_element)
-                                <img src="{{Storage::url($grid_element->path)}}" />
-                            @endforeach
-                        @endif
+                    <div class="product-more">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M17,13H13V17H11V13H7V11H11V7H13V11H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z" />
+                        </svg>
                     </div>
                 </div>
-
             </div>
-        </div>
-    @endforeach 
+       
+        @endforeach 
+    </div>
 </div>

@@ -133,15 +133,6 @@
 
                                 <div class="form-group">
                                     <div class="form-label">
-                                        <label><p class="form-label-title">Nombre:</p></label>
-                                    </div>
-                                    <div class="form-input" id="question">
-                                        <input type="text" class="input" name="locale[name.{{$localization->alias}}]" value="{{isset($locale["name.$localization->alias"]) ? $locale["name.$localization->alias"] : ''}}" >
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="form-label">
                                         <label><p class="form-label-title">Descripción:</p></label> 
                                     </div>
                                     <div class="form-input" id="answer">
