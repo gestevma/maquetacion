@@ -1,50 +1,90 @@
+.products-title{
+    h2{
+        text-align: center;
+        text-transform: capitalize;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    }
+}
+
 .products-grid{
     width:80%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     padding:0%;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
 
 .product-box{
     margin-right: 10%;
     margin-top: 5%;
-    border: rgba(155, 155, 155, 0.377) solid 1px;
+    padding-top: 5%;
+    border: rgba(179, 179, 179, 0.5) solid 3px;
+    border-radius: 0.1em;
+    // box-shadow: 1px 1px 7px;
 }
 
 .product-box:hover{
-    border: rgb(155, 155, 155) solid 3px;
+    border: rgb(99, 99, 99) solid 3px;
     cursor: pointer;
 }
-
-
 
 
 .product-information-box{
     position:relative;
     bottom: 0px;
-    min-height: 10vh;
+    height: 11vh; 
 }
 
 .product-references{
-    min-height: 10vh;
+    height: 10vh;
 }
+
 
 .product-image{
     width: 15vh;
+    max-width: max-content;
     height: 15vh;
-    margin-left: 2.3vh;
-    margin-top:1.5vh;
-    border: 2px black solid
+    display:block;
+    margin:auto;
+    border: 2px black solid;
+    border-radius:0.1em;
 }
 
 
 .product-title{
     margin-left: 3%;
     text-transform: uppercase;
-    font-size: 90%;
+    font-size: 95%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    height: 2vh;
+    
+}
+
+.product-discount{
+    display: flex;
+    flex-flow:row-reverse;
+    align-items: center;
+    margin-top: 12%;
+    // height: 2vh;
+    
+
+    svg{
+        width: 15px;
+        color:rgb(247, 65, 65);
+        // margin-top: 18%;
+    }
+
+    p{
+        font-size: 90%;
+        color:rgb(247, 65, 65);
+        font-weight: bold;
+        
+        
+    }
+    
 }
 
 
@@ -75,10 +115,11 @@
 .product-more{
     opacity: 0;  
     height: 0;
+    border-radius: 0.1em;
 }
 
 .product-more.active{
-    height:3vh;
+    height:3.5vh;
     display: inline;
     position:absolute;
     z-index: +1;
@@ -110,12 +151,13 @@
 .extra-images{
     width: 15%;
     margin-top:5%;
+    // ;
 
     img{
         width: 75%;
         margin-top:5%;
-        border: black solid 1.5px;
-        box-shadow: rgb(51, 51, 51) 2px 2px 0px;
+        margin-left: 10%;
+        border: black 2px solid
     }
 }
 
@@ -138,11 +180,10 @@
    
     img{
         padding-right: 10%;
-        width: 30vh;
+        width: 85%;
         
     }
 }
-
 
 
 .individual-product-characteristics{
@@ -154,10 +195,9 @@
 }
 
 
-
-.product-title{
+.individual-product-title{
     h3{
-        font-size: 150%;
+        font-size: 140%;
         text-transform: uppercase;
         margin-bottom:0%;
 
@@ -205,7 +245,7 @@
 }
 
 .individual-product-description.active{
-    max-height: 90vh;
+    max-height: 200vh;
 }
 
 .more{
@@ -227,13 +267,17 @@
     height: 30vh;
     box-shadow: 1.5px 1.5px 7px black;
     padding-top:1.5%;
-    max-height: 50vh;
+    min-height: 10vh;
 }
 
 .discount-price{
     margin-top:-3%;
     display: flex;
     flex-flow: row;
+}
+
+.shop-information.none{
+    margin-top:10%
 }
 
 .original-price{
@@ -253,6 +297,8 @@
 .second-line{
     display: flex;
     flex-flow: row;
+    align-items: center;
+
 }
 
 
@@ -339,6 +385,7 @@
     p{
         margin-left: 2%;  
         font-weight: bold;
+        margin-bottom: 0%;
     }
 }
 

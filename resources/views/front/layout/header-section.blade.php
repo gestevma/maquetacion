@@ -6,6 +6,6 @@
     @include('front.layout.partials.sidebar')
 
     <div class="content">
-        @yield('section')
+        @yield('content')
     </div>
 @endsection

@@ -34,7 +34,6 @@ class BookController extends Controller
     public function index()
     {        
         $seo = $this->locale_slug_seo->getByKey(Route::currentRouteName());
-        // $product = $this->product->getByKey(Route::currentRouteName());
 
         if($this->agent->isDesktop()){
 
@@ -77,16 +76,20 @@ class BookController extends Controller
 
             if($this->agent->isDesktop()){
                 $book = $this->book
-                   
                     ->with('image_featured_desktop')
                     ->where('active', 1)
                     ->where('visible', 1)
                     ->find($seo->key);
+
+                    // $books = $this->book
+                    // ->with('image_featured_desktop')
+                    // ->where('active', 1)
+                    // ->where('visible', 1)
+                    // ->get();
             }
             
             elseif($this->agent->isMobile()){
                 $book = $this->book
-                  
                     ->with('image_featured_mobile')
                     ->where('active', 1)
                     ->where('visible', 1)
@@ -97,10 +100,20 @@ class BookController extends Controller
 
             $view = View::make('front.books.single')->with('book', $book);
 
+            if(request()->ajax()) {
+    
+                $sections = $view->renderSections(); 
+                return response()->json([
+                    'product' => $sections['content'],
+                ]); 
+    
+            }
+
             return $view;
 
         }else{
             return response()->view('errors.404', [], 404);
         }
+          
     }
 }

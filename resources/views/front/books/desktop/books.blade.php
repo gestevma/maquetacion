@@ -1,14 +1,14 @@
 <div class="products">
 
     <div class="products-title">
-        <h3>@lang('front/books.title')</h3>
+        <h2>@lang('front/books.title')</h2>
     </div>
 
 
     <div class="products-grid">
         @foreach ($books as $book_element)
-            <div class = "product-box">
-                <div class="product-image-bok">
+            <div class = "product-box" data-url="{{route('front_book', ['slug'=>$book_element->seo['slug']])}}">
+                <div class="product-image-box">
                     @isset($book_element->image_featured_desktop->path)  
                         <img class="product-image" src="{{Storage::url($book_element->image_featured_desktop->path)}}" alt="{{$book_element->image_featured_desktop->alt}}" title="{{$book_element->image_featured_desktop->title}}" />
                     @endif
@@ -18,9 +18,18 @@
                         
                         <p class="product-title">{{isset($book_element->seo['title']) ? $book_element->seo['title'] : ""}}</p>
 
+                        @if($book_element->products['discount']>0)
+                            <div class="product-discount">
+                                <svg  viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z" />
+                                </svg>
+                                <p>{{isset($book_element->products['discount']) ? floatval($book_element->products['discount'])."%" : ""}}</p>
+                            </div>
+                        @endif
+
                         <div class="product-second-line">
                             <p class="product-autor">{{isset($book_element['autor']) ? $book_element['autor'] : ""}}</p>
-                            <p class=product-price>{{isset($book_element->products['final_price']) ? $book_element->products['final_price']."€" : ""}}</p>
+                            <p class=product-price>{{isset($book_element->products['final_price']) ? str_replace('.',',',$book_element->products['final_price'])."€" : ""}}</p>
                         </div>
        
                     </div>

@@ -1934,80 +1934,153 @@ content.addEventListener("click", function () {
 
 /***/ }),
 
+/***/ "./resources/js/front/desktop/renderProducts.js":
+/*!******************************************************!*\
+  !*** ./resources/js/front/desktop/renderProducts.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _shop__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./shop */ "./resources/js/front/desktop/shop.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+/*Función->Cambia la vista de grupo productos a producto individual*/
+
+var productBoxes = document.querySelectorAll(".product-box");
+var grid = document.querySelector(".grid");
+productBoxes.forEach(function (productBox) {
+  productBox.addEventListener("click", function () {
+    var url = productBox.dataset.url;
+
+    var showProduct = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return axios.get(url).then(function (response) {
+                  console.log(response.data.product);
+                  grid.innerHTML = response.data.product;
+                  window.history.pushState('', '', url);
+                  (0,_shop__WEBPACK_IMPORTED_MODULE_1__.renderShop)();
+                });
+
+              case 3:
+                _context.next = 7;
+                break;
+
+              case 5:
+                _context.prev = 5;
+                _context.t0 = _context["catch"](0);
+
+              case 7:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[0, 5]]);
+      }));
+
+      return function showProduct() {
+        return _ref.apply(this, arguments);
+      };
+    }();
+
+    showProduct();
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/js/front/desktop/shop.js":
 /*!********************************************!*\
   !*** ./resources/js/front/desktop/shop.js ***!
   \********************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-productBoxes = document.querySelectorAll(".product-box");
-wishes = document.querySelector(".wishes");
-hearts = document.querySelectorAll(".heart");
-individualProductDescription = document.querySelector(".individual-product-description");
-more = document.querySelector(".more");
-shopCart = document.querySelector(".shop-cart");
-addToCart = document.querySelector(".add-to-cart");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderShop": () => (/* binding */ renderShop)
+/* harmony export */ });
+var renderShop = function renderShop() {
+  var productBoxes = document.querySelectorAll(".product-box");
+  var wishes = document.querySelector(".wishes");
+  var hearts = document.querySelectorAll(".heart");
+  var individualProductDescription = document.querySelector(".individual-product-description");
+  var more = document.querySelector(".more");
+  var shopCart = document.querySelector(".shop-cart");
+  var addToCart = document.querySelector(".add-to-cart");
 
-if (productBoxes) {
-  productBoxes.forEach(function (productBox) {
-    productBox.addEventListener("mouseover", function () {
-      productMore = productBox.querySelectorAll(".product-more");
-      productMore.forEach(function (productMoreElement) {
-        productMoreElement.classList.add("active");
+  if (productBoxes) {
+    productBoxes.forEach(function (productBox) {
+      productBox.addEventListener("mouseover", function () {
+        var productMore = productBox.querySelectorAll(".product-more");
+        productMore.forEach(function (productMoreElement) {
+          productMoreElement.classList.add("active");
+        });
+      });
+      productBox.addEventListener("mouseout", function () {
+        var productMore = productBox.querySelectorAll(".product-more");
+        productMore.forEach(function (productMoreElement) {
+          productMoreElement.classList.remove("active");
+        });
       });
     });
-    productBox.addEventListener("mouseout", function () {
-      productMore = productBox.querySelectorAll(".product-more");
-      productMore.forEach(function (productMoreElement) {
-        productMoreElement.classList.remove("active");
-      });
-    });
-  });
-} // moreProducts.forEach(moreProduct =>{
-// })
+  }
 
-
-if (more) {
-  more.addEventListener("click", function () {
-    if (individualProductDescription.classList.contains("active")) {
-      individualProductDescription.classList.remove("active");
-      more.innerHTML = "leer más...";
-    } else {
-      individualProductDescription.classList.add("active");
-      more.innerHTML = "cerrar";
-    }
-  });
-}
-
-;
-
-if (shopCart) {
-  shopCart.addEventListener("click", function () {
-    if (shopCart.classList.contains("active")) {
-      shopCart.classList.remove("active");
-      addToCart.innerHTML = "Añadir al carrito";
-    } else {
-      shopCart.classList.add("active");
-      addToCart.innerHTML = "Producto añadido";
-    }
-  });
-}
-
-;
-
-if (wishes) {
-  wishes.addEventListener("click", function () {
-    hearts.forEach(function (heart) {
-      if (heart.classList.contains("inactive")) {
-        heart.classList.remove("inactive");
+  if (more) {
+    more.addEventListener("click", function () {
+      if (individualProductDescription.classList.contains("active")) {
+        individualProductDescription.classList.remove("active");
+        more.innerHTML = "leer más...";
       } else {
-        heart.classList.add("inactive");
+        individualProductDescription.classList.add("active");
+        more.innerHTML = "cerrar";
       }
     });
-  });
-}
+  }
 
-;
+  ;
+
+  if (shopCart) {
+    shopCart.addEventListener("click", function () {
+      if (shopCart.classList.contains("active")) {
+        shopCart.classList.remove("active");
+        addToCart.innerHTML = "Añadir al carrito";
+      } else {
+        shopCart.classList.add("active");
+        addToCart.innerHTML = "Producto añadido";
+      }
+    });
+  }
+
+  ;
+
+  if (wishes) {
+    wishes.addEventListener("click", function () {
+      hearts.forEach(function (heart) {
+        if (heart.classList.contains("inactive")) {
+          heart.classList.remove("inactive");
+        } else {
+          heart.classList.add("inactive");
+        }
+      });
+    });
+  }
+
+  ;
+};
+renderShop();
 
 /***/ }),
 
@@ -20514,6 +20587,8 @@ __webpack_require__(/*! ./header */ "./resources/js/front/desktop/header.js");
 __webpack_require__(/*! ./sidebar */ "./resources/js/front/desktop/sidebar.js");
 
 __webpack_require__(/*! ./shop */ "./resources/js/front/desktop/shop.js");
+
+__webpack_require__(/*! ./renderProducts */ "./resources/js/front/desktop/renderProducts.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when

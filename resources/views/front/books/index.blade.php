@@ -7,15 +7,15 @@
 @section('facebook-title'){{$seo->title}} @stop
 @section('facebook-description'){{$seo->description}} @stop
 
-@section("section")
+@section("content")
     @if($agent->isDesktop())
-        <div class="page-section">
+        <div class="page-section grid">
             @include("front.books.desktop.books")
         </div>
     @endif
 
     @if($agent->isMobile())
-        <div class="page-section">
+        <div class="page-section grid">
             @include("front.books.mobile.books")
         </div>
     @endif

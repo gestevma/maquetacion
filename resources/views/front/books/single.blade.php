@@ -7,15 +7,15 @@
 @section('facebook-title'){{$book->seo->title}} @stop
 @section('facebook-description'){{$book->seo->description != null ? $book->seo->description : $book->seo->locale_seo->description}} @stop
 
-@section("section")
+@section("content")
     @if($agent->isDesktop())
-        <div class="page-section">
+        <div class="page-section individual">
             @include("front.books.desktop.book")
         </div>
     @endif
 
     @if($agent->isMobile())
-        <div class="page-section">
+        <div class="page-section individual">
             @include("front.books.mobile.book")
         </div>
     @endif
