@@ -1,0 +1,115 @@
+.footer{
+	background-color: rgb(56, 56, 56);
+	max-height: max-content;
+	margin-top: 0px;
+	padding: 3% 10%;
+	position: relative;
+	width: 80%;
+	margin-top: 8%;
+}
+
+.footer-logo{
+	width: 7vh;
+	height: 7vh;
+
+	img{
+		width:7vh;
+		height: 7vh;
+	}
+}
+
+.footer:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 20px;
+    background-size: 40px 40px;
+}
+
+.footer:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 30px;
+    background-size: 80px 40px;
+}
+
+.footer-flex{
+	display: flex;
+	flex-flow: row;
+
+	.footer-menu{
+		width: 10%;
+	}
+
+	.footer-socials{
+		width: 15%;
+
+	}
+
+	.footer-contact{
+		width: 30%;
+	}
+}
+
+.footer .footer-element-title{
+	color: white;
+	margin-bottom: 0em;
+}
+
+.footer .footer-element-container{
+
+	p,a,h1,h2,h3,h4,h5{
+		color: white;
+		font-weight: 400;
+		margin-top:0.1em;
+	}
+
+	a:link, a:visited, a:active{
+        text-decoration: none;
+    }
+
+	h4:hover{
+		font-weight: bold;
+	}
+
+}
+
+
+.footer .footer-element-icon{
+
+	margin-right: 0.5em;
+
+	svg{
+		height: 1em;
+		width: 1em;
+
+		path{
+			fill: white;
+		}
+	}
+}
+
+.footer-element-text{
+	a:link, a:visited, a:active{
+        text-decoration: none;
+    }
+
+	a:hover{
+		font-weight: bold;
+	}
+}
+
+.footer .footer-socials-container{
+	display: flex;
+}
+
+
+.footer .footer-contact-item{
+	display: flex;
+	margin: 0.5em 0;
+}

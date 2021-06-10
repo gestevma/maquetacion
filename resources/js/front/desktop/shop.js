@@ -35,12 +35,12 @@ export let renderShop = () =>{
         more.addEventListener("click", () =>{
             if (individualProductDescription.classList.contains("active")){
                 individualProductDescription.classList.remove("active");
-                more.innerHTML = "leer más..."
+                more.innerHTML = "Leer más..."
             }
         
             else{
                 individualProductDescription.classList.add("active");
-                more.innerHTML="cerrar"
+                more.innerHTML="Cerrar"
             }
         });
     };

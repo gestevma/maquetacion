@@ -7,9 +7,12 @@ require('./components/sidebar');
 require('./components/parts');
 require('./components/filterTable');
 require('./components/switch-button');
-// require('./components/spinner');
 require('./components/languajes');
 require('./components/upload');
+require('./components/menuItems');
+require('./components/modalMenuItem');
+require('./components/selects');
+require('./components/sortable');
 
 
 

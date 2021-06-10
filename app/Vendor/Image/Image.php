@@ -32,10 +32,11 @@ class Image
 			$language = end($explode_key);
 
 			$temporal_id = str_replace(['.', $content, $language], "", $key);
-
+			
 			$image = $this->storeOriginal($file, $entity_id, $content, $language);
 			$image->temporal_id = $temporal_id;
 
+			
 			$this->storeResize($file, $entity_id, $content, $language, $image);
 		}
 	}
@@ -73,6 +74,7 @@ class Image
 		$name = str_replace(" ", "-", $name);
 		$file_extension = strtolower(pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION));
 
+		
 		$filename = $name .'.'. $file_extension;
 
 		if($file_extension != 'svg'){
@@ -80,11 +82,15 @@ class Image
 			$width = $data[0];
 			$height = $data[1];
 		}
+
+		Debugbar::info($this->entity);
 		
 		$settings = ImageConfiguration::where('entity', $this->entity)
 		->where('content', $content)
 		->where('grid', 'original')
 		->first();
+
+		
 
 		$path = '/' . $entity_id . '/' . $language . '/' . $content . '/original/' . $name . '.' . $file_extension;
 		$path = str_replace(" ", "-", $path);

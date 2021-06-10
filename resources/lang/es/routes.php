@@ -6,4 +6,5 @@ return array (
   'front_faq' => 'preguntas-frecuentes/{slug}',
   'front_books'=>'libros',
   'front_book'=>'libros/{slug}',
+  'front_contact'=>'contacto'
 );

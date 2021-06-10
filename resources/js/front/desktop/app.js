@@ -5,6 +5,10 @@ require('./header');
 require('./sidebar');
 require('./shop');
 require('./renderProducts');
+require('./sendEmail');
+require('./menu');
+require('./components');
+require('./localization');
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when

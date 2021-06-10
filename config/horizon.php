@@ -190,7 +190,7 @@ return [
         'local' => [
             'supervisor-1' => [
                 'connection' => 'redis',
-                'queue' => ['process_image', 'delete_image'],  //Colas que procesa horizon
+                'queue' => ['process_image', 'delete_image', 'email'],  //Colas que procesa horizon
                 'balance' => 'simple',
                 'processes' => 6,
                 'tries' => 3,

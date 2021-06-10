@@ -25,6 +25,10 @@ Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguir
     //Route::get('/faqs/json', 'App\Http\Controllers\Admin\FaqController@indexJson')->name('faqs_json');
     /*Resources te dice la ruta final de la url*/
 
+    /******Información empresa******/
+    Route::get('/informacion-de-la-empresa', 'App\Http\Controllers\Admin\BusinessInformationController@index')->name('business_information');
+    Route::post('/informacion-de-la-empresa', 'App\Http\Controllers\Admin\BusinessInformationController@store')->name('business_information_store');
+
 
     /******Images******/
     Route::get('/image/delete/{image?}', 'App\Vendor\Image\Image@destroy')->name('delete_image');
@@ -47,6 +51,27 @@ Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguir
     Route::post('/seo', 'App\Http\Controllers\Admin\LocaleSeoController@store')->name('seo_store');
     Route::get('/ping-google', 'App\Http\Controllers\Admin\LocaleSeoController@pingGoogle')->name('ping_google');
 
+
+    /******menu******/
+    Route::get('/menus/item/index/{language?}/{item?}', 'App\Http\Controllers\Admin\MenuItemController@index')->name('menus_item_index');
+    Route::get('/menus/item/create/{language?}', 'App\Http\Controllers\Admin\MenuItemController@create')->name('menus_item_create');
+    Route::delete('/menus/item/delete/{item?}', 'App\Http\Controllers\Admin\MenuItemController@destroy')->name('menus_item_destroy');
+    Route::get('/menus/item/edit/{item?}', 'App\Http\Controllers\Admin\MenuItemController@edit')->name('menus_item_edit');
+    Route::post('/menus/item/store', 'App\Http\Controllers\Admin\MenuItemController@store')->name('menus_item_store'); 
+    Route::post('/menus/item/reordermenu', 'App\Http\Controllers\Admin\MenuItemController@orderItem')->name('menus_reorder');
+
+
+    Route::resource('menus', 'App\Http\Controllers\Admin\MenuController', [
+        'names' => [
+            'index' => 'menus',
+            'create' => 'menus_create',
+            'store' => 'menus_store',
+            'destroy' => 'menus_destroy',
+            'edit' => 'menus_edit',
+        ]
+    ]);
+
+    
     Route::get('/faqs/filter/{filters?}', 'App\Http\Controllers\Admin\FaqController@filter')->name('faqs_filter');
     Route::get('/faqs/pagination', 'App\Http\Controllers\Admin\FaqController@pagination')->name('faqs_pagination');
     Route::resource('faqs', 'App\Http\Controllers\Admin\FaqController', [
@@ -125,6 +150,8 @@ Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguir
     ]);
 });
 
+
+
 Route::group(['prefix' => $localizationseo->setLocale(),
               'middleware' => [ 'localize' ]
             ], function () use ($localizationseo) {
@@ -133,6 +160,7 @@ Route::group(['prefix' => $localizationseo->setLocale(),
     Route::get($localizationseo->transRoute('routes.front_faq'), 'App\Http\Controllers\Front\FaqController@show')->name('front_faq');
     Route::get($localizationseo->transRoute('routes.front_books'), 'App\Http\Controllers\Front\BookController@index')->name('front_books');
     Route::get($localizationseo->transRoute('routes.front_book'), 'App\Http\Controllers\Front\BookController@show')->name('front_book');
+    Route::get($localizationseo->transRoute('routes.front_contact'), 'App\Http\Controllers\Front\ContactController@index')->name('front_contact');
 });
 
 /*Como hemos puesto prefix=> admin y resource => faqs la url será dev-maquetación.com/admin/faqs*/
@@ -145,8 +173,9 @@ Route::post('/login', 'App\Http\Controllers\Front\LoginController@login')->name(
 
 Route::get('/', 'App\Http\Controllers\Front\HomeController@index')->name('home_front');
 
+Route::post('/contacto', 'App\Http\Controllers\Front\ContactController@store')->name('contact_store');
 
-
+Route::get('/traduccion/{language}/{parent}/{slug?}', 'App\Http\Controllers\Front\LocalizationController@show')->name('front_localization');
 
 
 

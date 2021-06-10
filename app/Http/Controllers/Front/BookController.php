@@ -64,6 +64,15 @@ class BookController extends Controller
         $view = View::make('front.books.index')
                 ->with('books', $books)
                 ->with('seo', $seo );
+
+        if(request()->ajax()) {
+
+            $sections = $view->renderSections(); 
+    
+            return response()->json([
+                'view' => $sections['content'],
+            ]); 
+        }
         
         return $view;
     }
@@ -81,11 +90,13 @@ class BookController extends Controller
                     ->where('visible', 1)
                     ->find($seo->key);
 
-                    // $books = $this->book
-                    // ->with('image_featured_desktop')
-                    // ->where('active', 1)
-                    // ->where('visible', 1)
-                    // ->get();
+                    $books = $this->book
+                    ->with('image_featured_desktop')
+                    ->where('active', 1)
+                    ->where('visible', 1)
+                    ->get();
+                
+                Debugbar::info($books);
             }
             
             elseif($this->agent->isMobile()){
@@ -98,7 +109,9 @@ class BookController extends Controller
 
             $book['locale'] = $book->locale->pluck('value','tag');
 
-            $view = View::make('front.books.single')->with('book', $book);
+            
+
+            $view = View::make('front.books.single')->with('book', $book)->with('books', $books);
 
             if(request()->ajax()) {
     
@@ -114,6 +127,10 @@ class BookController extends Controller
         }else{
             return response()->view('errors.404', [], 404);
         }
+
           
     }
+
+
+  
 }

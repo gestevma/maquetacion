@@ -25,7 +25,7 @@ class LocaleTagController extends Controller
 
     function __construct(LocaleTag $locale_tag, Agent $agent, Locale $locale, LocaleLanguage $language, Manager $manager)
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
         $this->locale_tag = $locale_tag;
         $this->agent = $agent;
         $this->locale = $locale;

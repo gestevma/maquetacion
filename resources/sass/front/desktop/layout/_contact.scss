@@ -1,0 +1,52 @@
+.contact{
+    display: flex;
+    flex-flow: row;
+}
+
+.ourinformation{
+    width: 50%;
+}
+
+.text-information{
+    display: flex;
+    flex-flow: row;
+
+    p,a,h1,h2,h3,h5{
+        color: rgb(0, 0, 0);
+        font-weight: 400;
+        font-size: 100%;
+        margin-top:0.1em;
+    }
+
+    .contact-information{
+        width: 40%;
+        margin-left: 5%;
+        
+    }
+
+    .socials{
+        width: 15%;
+        text-align: center;
+
+        .socials-container{
+            display: flex;
+            justify-content: space-between;
+            color: black;
+
+        }
+    }
+}
+
+.map{
+    // border: 1px black solid;
+    box-sizing: content-box;
+
+    iframe{
+       
+    }
+}
+
+.contact-form{
+    width: 50%;
+}
+

@@ -25,7 +25,7 @@ class FaqController extends Controller
 
     function __construct(Faq $faq, Agent $agent, Locale $locale, Image $image, LocaleSlugSeo $locale_slug_seo)
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
         $this->faq = $faq;
         $this->agent = $agent;
         $this->locale = $locale;
@@ -87,6 +87,7 @@ class FaqController extends Controller
     public function store(FaqRequest $request)
     {            
 
+        Debugbar::info(request('images'));
         
         $faq = $this->faq->updateOrCreate([
             'id' => request('id')],[

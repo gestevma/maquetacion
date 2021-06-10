@@ -13,6 +13,9 @@ import { renderUpload } from './upload.js';
 import { parts } from './parts.js';
 import { switchButtonClick } from './switch-button.js';
 import { editSeo } from "./seo.js"
+import {renderNestedSortables} from './sortable';
+import {renderMenuItems} from './menuItems';
+import {renderSelects} from './selects';
 
 const table = document.getElementById("table");
 const form = document.getElementById("form");
@@ -122,7 +125,10 @@ export let renderForm = () =>{
     renderUpload();
     parts();
     switchButtonClick();
-    editSeo()
+    editSeo();
+    renderNestedSortables();
+    renderMenuItems();
+    renderSelects();
 
 }
 

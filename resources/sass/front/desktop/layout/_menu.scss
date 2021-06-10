@@ -1,0 +1,72 @@
+.menu-inline{
+	
+	position: relative;
+    width: max-content;
+	z-index: 1001;
+	margin: 0%;
+
+	li{
+
+		margin: 0.5em; 
+
+		h4{
+			margin: 0%;
+		}
+
+		.menu-item.menu-item-selected{
+
+			h4,
+			a h4{
+				
+				color: rgb(255, 255, 255);
+			}
+		}
+
+		cursor: pointer;
+		display: inline-flex;
+
+		span h4,
+		a h4{
+			color: rgb(0, 0, 0);
+			opacity: 0.8;
+			font-size: 1em;
+		}
+
+		&:hover a h4,
+		&:hover span h4{
+			color: rgb(65, 65, 65);
+			
+		}
+	}
+
+	&:hover .menu{
+		opacity: 1;
+		top: 5vh;
+		transition: all 0.7s;
+	}
+}
+
+.menu-vertical{
+
+	li{
+		margin: 0.5em 0;
+	}
+}
+
+.menu{
+
+	display: flex;
+	opacity: 0;
+	position: absolute;
+	left: 0; 
+	right: 0; 
+	margin-left: auto; 
+	margin-right: auto; 
+	transition: all 0.7s;
+	top: 0;
+
+	li{
+		margin: 1em 0.5em;
+
+	}
+}

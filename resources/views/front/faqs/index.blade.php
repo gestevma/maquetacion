@@ -7,7 +7,7 @@
 @section('facebook-title'){{$seo->title}} @stop
 @section('facebook-description'){{$seo->description}} @stop
 
-@section("section")
+@section("content")
     @if($agent->isDesktop())
         <div class="page-section">
             @include("front.faqs.desktop.faqs")

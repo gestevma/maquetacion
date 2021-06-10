@@ -24,6 +24,7 @@
     </head>
 
     <body>
+        @include("front.layout.partials.modal_localization")
         <div class="main" id="main">
              @yield('main')
         </div>

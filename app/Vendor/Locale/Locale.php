@@ -4,7 +4,6 @@ namespace App\Vendor\Locale;
 
 use App\Vendor\Locale\Models\Locale as DBLocale;
 use App\Vendor\Locale\Models\LocaleLanguage;
-use \Debugbar;
 
 class Locale
 {
@@ -35,7 +34,6 @@ class Locale
     {  
 
         foreach ($locale as $rel_anchor => $value){
-
 
             $rel_anchor = str_replace(['-', '_'], ".", $rel_anchor); 
             $explode_rel_anchor = explode('.', $rel_anchor);
