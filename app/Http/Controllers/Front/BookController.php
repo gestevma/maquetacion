@@ -95,8 +95,6 @@ class BookController extends Controller
                     ->where('active', 1)
                     ->where('visible', 1)
                     ->get();
-                
-                Debugbar::info($books);
             }
             
             elseif($this->agent->isMobile()){

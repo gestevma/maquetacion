@@ -1,5 +1,5 @@
 import {renderComponents} from './components';
-// import {sendFingerprintRequest} from './fingerprint';
+
 
 export let renderMenu = () => {
 
@@ -75,5 +75,6 @@ export let renderMenu = () => {
     });
     
 }
+
 
 renderMenu();

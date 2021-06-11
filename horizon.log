@@ -4146,3 +4146,17 @@ Horizon started successfully.
 [2021-06-09 06:12:38][683d52b7-50d2-4045-8574-b83be6b7f72e] Processing: App\Jobs\ContactEmail
 [2021-06-09 06:12:38][683d52b7-50d2-4045-8574-b83be6b7f72e] Failed:     App\Jobs\ContactEmail
 Horizon started successfully.
+[2021-06-10 07:25:43][435df3b9-2e66-457e-a943-764684c9022b] Processing: App\Jobs\ProcessImage
+[2021-06-10 07:25:44][435df3b9-2e66-457e-a943-764684c9022b] Processed:  App\Jobs\ProcessImage
+[2021-06-10 07:25:44][876b2dda-963c-49ef-91c0-34800ae409d9] Processing: App\Jobs\ProcessImage
+[2021-06-10 07:25:43][a54f6d8d-644a-4c09-bf05-c483e1083fcf] Processing: App\Jobs\ProcessImage
+[2021-06-10 07:25:44][a54f6d8d-644a-4c09-bf05-c483e1083fcf] Processed:  App\Jobs\ProcessImage
+[2021-06-10 07:25:44][e7f8078f-ac01-4ab0-a626-0547c8883454] Processing: App\Jobs\ProcessImage
+[2021-06-10 07:25:44][876b2dda-963c-49ef-91c0-34800ae409d9] Processed:  App\Jobs\ProcessImage
+[2021-06-10 07:25:44][48c1af09-5fd2-4b8d-a164-de8c700355b9] Processing: App\Jobs\ProcessImage
+[2021-06-10 07:25:45][48c1af09-5fd2-4b8d-a164-de8c700355b9] Processed:  App\Jobs\ProcessImage
+[2021-06-10 07:25:44][e7f8078f-ac01-4ab0-a626-0547c8883454] Processed:  App\Jobs\ProcessImage
+[2021-06-10 07:25:44][99d04f69-b5a1-4661-af60-8abd75a05f84] Processing: App\Jobs\ProcessImage
+[2021-06-10 07:25:44][99d04f69-b5a1-4661-af60-8abd75a05f84] Processed:  App\Jobs\ProcessImage
+Horizon started successfully.
+Horizon started successfully.

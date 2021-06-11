@@ -3,10 +3,7 @@ require('../fingerprint')
 require('./faqs');
 require('./header');
 require('./sidebar');
-require('./shop');
-require('./renderProducts');
 require('./sendEmail');
-require('./menu');
 require('./components');
 require('./localization');
 /**

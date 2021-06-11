@@ -58,9 +58,6 @@
 
     .topbar-center{
 
-
-        
-        
         .page-title{
             font-size: 200%;
             margin:0%;
@@ -71,7 +68,6 @@
     }
 
     .topbar-element-text{
-        // background-color: red;
 
         a:link, a:visited, a:active{
             text-decoration: none;
@@ -110,6 +106,7 @@ header{
     width: 10%;
     padding-right: 5%;
     text-align: right;
+    display:none;
 }
 
 .sections-box:hover{

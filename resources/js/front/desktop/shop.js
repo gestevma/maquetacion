@@ -1,35 +1,11 @@
 
 export let renderShop = () =>{
-    let productBoxes = document.querySelectorAll(".product-box");
     let wishes = document.querySelector(".wishes");
     let hearts=document.querySelectorAll(".heart");
     let individualProductDescription = document.querySelector(".individual-product-description");
     let more=document.querySelector(".more");
     let shopCart = document.querySelector(".shop-cart");
     let addToCart = document.querySelector(".add-to-cart");
-
-    if (productBoxes){
-        productBoxes.forEach(productBox => {
-
-            productBox.addEventListener("mouseover", () =>{
-                let productMore = productBox.querySelectorAll(".product-more");
-
-                productMore.forEach(productMoreElement =>{
-                    productMoreElement.classList.add("active");   
-                })
-    
-            })
-
-            productBox.addEventListener("mouseout", () =>{
-                let productMore = productBox.querySelectorAll(".product-more");
-                productMore.forEach(productMoreElement =>{
-                    productMoreElement.classList.remove("active");   
-                })
-    
-            })
-        })
-    }
-
 
     if(more){
         more.addEventListener("click", () =>{
@@ -76,9 +52,11 @@ export let renderShop = () =>{
             });
         });
     };
+
+
 }
 
-renderShop();
+
 
 
 

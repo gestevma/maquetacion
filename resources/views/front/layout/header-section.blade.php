@@ -6,8 +6,8 @@
         @include("front.layout.partials.top-bar")
         @include('front.layout.partials.header')
     </div>
+    
     @include('front.layout.partials.sidebar')
-
     <div class="content" id = "content">
         @yield('content')
     </div>

@@ -1,34 +1,35 @@
 /*Función->Cambia la vista de grupo productos a producto individual*/
-import{ renderShop } from "./shop";
-
-let productBoxes = document.querySelectorAll(".product-box");
-let grid = document.querySelector(".grid");
+import { renderComponents} from './components';
 
 
+export let renderProducts = () =>{
+    let productBoxes = document.querySelectorAll(".product-box");
+    let grid = document.querySelector(".grid");
 
-productBoxes.forEach(productBox => {
+    productBoxes.forEach(productBox => {
 
-    productBox.addEventListener("click", () =>{
+        productBox.addEventListener("click", () =>{
         
-        let url = productBox.dataset.url;
+            let url = productBox.dataset.url;
 
-        let showProduct = async () => {
+            let showProduct = async () => {
 
-            try {
-                await axios.get(url).then(response => { 
-                    console.log(response.data.product);
-                    grid.innerHTML = response.data.product;
-                    window.history.pushState('','',url);
-                    renderShop();
-                });
+                try {
+                    await axios.get(url).then(response => { 
+                        console.log(response.data.product);
+                        grid.innerHTML = response.data.product;
+                        window.history.pushState('','',url);
+                        renderComponents();
+                    });
 
-            } catch (error) {  
+                } catch (error) {  
     
+                }
             }
-        }
-
-        showProduct();
+            showProduct();
+        }); 
     });
-});
+}
+
 
 
