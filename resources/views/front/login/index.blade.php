@@ -1,6 +1,6 @@
 @extends('front.layout.header-section')
 
-@section("section")
+@section("content")
 
     <h2 class="title"> @lang('front/faqs.title')</h2>  
 
