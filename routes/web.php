@@ -61,6 +61,18 @@ Route::group(['prefix' => 'admin'], function () { /*-->Indica la ruta que seguir
     Route::post('/menus/item/reordermenu', 'App\Http\Controllers\Admin\MenuItemController@orderItem')->name('menus_reorder');
 
 
+    Route::get('/calendar/pagination', 'App\Http\Controllers\Admin\CalendarController@pagination')->name('calendar_pagination');
+    Route::resource('calendars/{calendar?}', 'App\Http\Controllers\Admin\CalendarController', [
+        'names' => [
+            'index' => 'calendars',
+            'create' => 'calendars_create',
+            'store' => 'calendars_store',
+            'destroy' => 'calendars_destroy',
+            'show' => 'calendars_show',
+            'edit' => 'calendars_edit',
+        ]
+    ]);
+
     Route::resource('menus', 'App\Http\Controllers\Admin\MenuController', [
         'names' => [
             'index' => 'menus',
